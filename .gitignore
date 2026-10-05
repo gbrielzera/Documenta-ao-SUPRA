@@ -1,0 +1,7 @@
+# XMLs originais (512 MB, dados internos) e HTML bruto: os resumos em fluxos/ e docs/ bastam
+XMLs para teste/
+raw/
+raw_falhas.txt
+# índice de busca: recriado com `python -X utf8 tools/indexar.py`
+kb.sqlite
+__pycache__/

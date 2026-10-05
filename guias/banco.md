@@ -1,0 +1,256 @@
+# Banco de dados do Supravizio — tabelas do modelo oficial
+Caminho: Guias > Banco de dados
+
+Fonte: docs/dados_<tabela>.md (colunas, descrição, tipo SQL Server e Oracle, nulos).
+Colunas de todas as tabelas em uma linha cada: `catalogo/schema.txt` (ex.: `grep -i '^OCORRENCIA:' catalogo/schema.txt`).
+Tabelas de campos customizados (CP_*/CPE_*) não estão no modelo oficial: ver `catalogo/tabelas_customizadas.md` e `catalogo/campos.tsv`.
+Tabelas/views realmente usadas nos scripts do cliente: `catalogo/tabelas_usadas_em_sql.md`.
+O ambiente dos XMLs é Oracle (TO_CHAR, NVL, SYSDATE, ||).
+
+
+## Ativos
+- **APLIC_CONH_SERV** (4 col.) — Escopo de aplicação de um Artigo da Base de Conhecimento em Serviços. → docs/dados_aplic_conh_serv.md
+- **ARTEFATO** (1 col.) — Itens de Configuração do tipo 'Artefato'. Um Artefato é o produto de uma fase qualquer do ciclo de desenvolvimento de um software. Exemplos: → docs/dados_artefato.md
+- **ATOR_ITEM** (5 col.) — Atores → docs/dados_ator_item.md
+- **CLASSE_COMPONENTE** (2 col.) — Tipos de Itens de Configuração que podem ser utilizadas como Componentes. → docs/dados_classe_componente.md
+- **CLASSE_CONFIGURACAO** (19 col.) — Um Tipo de Item de Configuração é utilizado para classificar Itens de Configuração, que são ativos sujeitos a alteração (como entrada ou saí → docs/dados_classe_configuracao.md
+- **CLASSE_COPIA** (2 col.) — Tipos de Itens de Configuração que podem ser utilizadas como redundâncias. → docs/dados_classe_copia.md
+- **CLASSE_DEPENDENCIA** (2 col.) — Tipos de Itens de Configuração que podem ser associados como Dependências → docs/dados_classe_dependencia.md
+- **CONHECIMENTO** (5 col.) — Artigo de Base de Conhecimento → docs/dados_conhecimento.md
+- **DISPOSITIVO_TELEFONICO** (2 col.) — Dispositivo Telefônico → docs/dados_dispositivo_telefonico.md
+- **FABRICANTE** (4 col.) — Fabricante de um Item de Configuração. → docs/dados_fabricante.md
+- **HARDWARE** (6 col.) — Itens de Configuração do tipo 'Equipamento' → docs/dados_hardware.md
+- **HISTORICO_ITEM** (5 col.) — Histórico de alterações no arquivo anexo → docs/dados_historico_item.md
+- **ITEM** (24 col.) — Classe abstrata para todos os Itens de Configuração do CMDB → docs/dados_item.md
+- **ITEM_COMPONENTE** (17 col.) — Componentes de um Item de Configuração → docs/dados_item_componente.md
+- **ITEM_COPIA** (3 col.) — Itens que são cópias → docs/dados_item_copia.md
+- **ITEM_DEPENDENCIA** (3 col.) — Itens de Configuração que possuem relação de Dependência. → docs/dados_item_dependencia.md
+- **MODELO** (5 col.) — Modelo de Item de Configuração segundo especificação de um Fabricante. → docs/dados_modelo.md
+- **OBSERVACAO_ITEM** (4 col.) — Observações a respeito do Item de Configuração → docs/dados_observacao_item.md
+- **PERM_CONH_PAPEL** (2 col.) — Entidade responsavel por montar o relacionamento entre Conhecimento e Papel → docs/dados_perm_conh_papel.md
+- **SITUACAO_CLASSE** (6 col.) — Configura todos os Estados possíveis para um Item do Tipo de Item de Configuração associada. → docs/dados_situacao_classe.md
+- **SOFTWARE** (5 col.) — Itens de Configuração do tipo 'Licenças de Software'. → docs/dados_software.md
+- **TIPO_POSSE** (4 col.) — Tipo de Posse → docs/dados_tipo_posse.md
+- **TOPICO_ARTIGO** (5 col.) — Tópico de Artigo → docs/dados_topico_artigo.md
+- **TOPICO_CONH** (4 col.) — Tópico que deve ser preenchido na elaboração de um artigo da base de conhecimento. Quando um artigo é criado todos os tópicos são preenchido → docs/dados_topico_conh.md
+- **USUARIO_ITEM** (6 col.) — Usuários do Item de Configuração → docs/dados_usuario_item.md
+
+## Processo
+- **ACAO_ACORDO** (8 col.) — Ações disparadas pela atividade (email, encaminhamento etc) mediante a um marca atingida no tempo do Acordo de Nível Operacional. → docs/dados_acao_acordo.md
+- **ACAO_GAP** (3 col.) — Item do Plano de Ação relacionado com um Gap. → docs/dados_acao_gap.md
+- **AFIRM_FINANC** (3 col.) — Afirmações Financeiras → docs/dados_afirm_financ.md
+- **ANEXO_EVNT_MSG** (2 col.) — Tipos de arquivos que serão anexados no comunicado gerado pelo evento → docs/dados_anexo_evnt_msg.md
+- **APONT_OCORRENCIA** (2 col.) — Apontamento genérico para Ocorrências de Processo → docs/dados_apont_ocorrencia.md
+- **APONT_RESPONSAVEL** (6 col.) — Mantém histórico de Responsáveis por Item de Processo → docs/dados_apont_responsavel.md
+- **APONTAMENTO** (16 col.) — Apontamento → docs/dados_apontamento.md
+- **APROPRIACAO** (4 col.) — Apropriação de horas trabalhadas → docs/dados_apropriacao.md
+- **APROPRIACAO_APROVACAO** (3 col.) — Apropriação em uma Aprovação → docs/dados_apropriacao_aprovacao.md
+- **APROVACAO** (11 col.) — Registro de Aprovação por Aprovador → docs/dados_aprovacao.md
+- **APROVADOR_OPERACAO** (4 col.) — Aprovadores → docs/dados_aprovador_operacao.md
+- **APUR_IND_ITEM** (7 col.) — Apuração de Indicador de Desempenho que tenha como fonte de dados banco de Itens de Configuração. → docs/dados_apur_ind_item.md
+- **APUR_IND_OS** (10 col.) — Apuração de Indicador de Desempenho associado a Ordens de Serviço → docs/dados_apur_ind_os.md
+- **APUR_IND_PESQ** (10 col.) — Apuração de Indicadores de Pesquisa de Satisfação → docs/dados_apur_ind_pesq.md
+- **APURACAO_INDICADOR** (16 col.) — Valores apurador para um Indicador de Desempenho → docs/dados_apuracao_indicador.md
+- **AREA_RISCO** (3 col.) — Área de negócio atingida pelo Risco → docs/dados_area_risco.md
+- **ASSOCIACAO** (10 col.) — Uma Associação define um relacionamento entre duas Ocorrências de Processo. Estas associações podem ser estabelecidas pelo usuário na tela d → docs/dados_associacao.md
+- **ASSOCIACAO_OCORR** (6 col.) — Estabelece Associações entre Ocorrências de Processo. → docs/dados_associacao_ocorr.md
+- **ASSOCIACAO_SUBPROCESSO** (2 col.) — Indica uma associação entre uma atividade do tipo Link Inicial de um subprocesso específico e uma Associação → docs/dados_associacao_subprocesso.md
+- **ASSUNTO_APROVACAO** (6 col.) — Assunto para Aprovação → docs/dados_assunto_aprovacao.md
+- **ATIVIDADE** (87 col.) — Uma Atividade de Processo corresponde a Tarefas, Subprocessos e Eventos de Processos. → docs/dados_atividade.md
+- **ATOR** (3 col.) — Ator participante na execução de um Processo → docs/dados_ator.md
+- **ATOR_SERVICO** (5 col.) — Atores → docs/dados_ator_servico.md
+- **CAIXA_MENSAGEM** (6 col.) — Caixas de mensagens (email por exemplo) que são monitoradas pela máquina de processos e geram alguma ação configurada em eventos. No caso de → docs/dados_caixa_mensagem.md
+- **CAMPO_APROV** (8 col.) — Campo para Aprovação → docs/dados_campo_aprov.md
+- **CAMPO_PREENCH** (11 col.) — Campo para Preenchimento durante a execução do Processo. → docs/dados_campo_preench.md
+- **CAMPO_PREENCH_APROV** (8 col.) — Campo para Preenchimento em Aprovação → docs/dados_campo_preench_aprov.md
+- **CATEGORIA** (7 col.) — Classificação manual atribuída a Ordens de Serviço associadas com uma cor e com possibilidade de exibição na barra de rolagem de Ordens de S → docs/dados_categoria.md
+- **CATEGORIA_RISCO** (3 col.) — Categoria de Riscos e Controles → docs/dados_categoria_risco.md
+- **CLASSE_ANEXO** (9 col.) — Classe de Item para Anexar → docs/dados_classe_anexo.md
+- **CLASSE_APONTAMENTO** (30 col.) — Classe de Apontamento → docs/dados_classe_apontamento.md
+- **CLASSE_APROVACAO** (5 col.) — Tipo de Item de Configuração sujeito a aprovação → docs/dados_classe_aprovacao.md
+- **CLASSE_CONF_INDICADOR** (4 col.) — Relação de tipos de Itens de Configuração que serão recuperadaos para cálculo do indicador. → docs/dados_classe_conf_indicador.md
+- **CLASSE_CONTROLE** (5 col.) — Classificação de Controles → docs/dados_classe_controle.md
+- **CLASSE_GAP** (4 col.) — Classificações de Gaps → docs/dados_classe_gap.md
+- **CLASSE_PESQ_SATISF** (7 col.) — Uma Classe de Pesquisa de Satisfação define um conjunto de configurações utilizado para geração de Pesquisas de Satisfação enviadas para cli → docs/dados_classe_pesq_satisf.md
+- **CLASSE_SERVICO** (7 col.) — Um Tipo de Serviço define classificações para Serviços. Registros deste cadastro são utilizados em diversas configurações do sistema incluin → docs/dados_classe_servico.md
+- **CLASSE_SUB_PROCESSO** (22 col.) — Um Tipo de Subprocesso mantém características de um fluxo que são invariáveis entre suas diversas versões. → docs/dados_classe_sub_processo.md
+- **CLASSE_SUBPROC_INDICADOR** (2 col.) — Tipos de Subprocessos que serão utilizados como filtro das ocorrências utilizados no cálculo do indicador → docs/dados_classe_subproc_indicador.md
+- **CLIENTE_AUTORIZADO** (2 col.) — Papel de processo utilizado para identificar as pessoas autorizadas a gerar solicitações em um determinado Subprocesso. Estas autorizações s → docs/dados_cliente_autorizado.md
+- **COMP_SERVICO** (3 col.) — Item de Configuração Componente de Serviço → docs/dados_comp_servico.md
+- **CONTROL_AFIRM** (4 col.) — Afirmações → docs/dados_control_afirm.md
+- **CONTROLE** (26 col.) — Controles → docs/dados_controle.md
+- **DESENHO_PROCESSO** (8 col.) — Desenho do Processo a ser executado. Permite que uma Etapa do Processo possa armazenar versões do Processo → docs/dados_desenho_processo.md
+- **DIAGRAMA** (2 col.) — Diagrama → docs/dados_diagrama.md
+- **EMISSOR** (12 col.) — Saída de um Gateway → docs/dados_emissor.md
+- **ENUM_VARIAVEL** (5 col.) — Enumeração de valores para Variável. Quando não existir então o campo é numérico de livre digitação. → docs/dados_enum_variavel.md
+- **ENV_GRUPO** (2 col.) — Os Grupos de Trabalho envolvidos (incluindo seus sub-níveis) identificam todas as equipes que atuam Macroprocesso. A definição de Grupos env → docs/dados_env_grupo.md
+- **ESCOPO_CLASSE_ANEXO** (4 col.) — Relação de Tipos de Itens de Configuração que podem ser associados na ocorrência. → docs/dados_escopo_classe_anexo.md
+- **ESCOPO_CLASSE_APROV** (4 col.) — Relação de Tipos de Itens de Configuração que podem ser aprovados na ocorrência. → docs/dados_escopo_classe_aprov.md
+- **ESCORE_QUESTAO** (5 col.) — Escore de Questão → docs/dados_escore_questao.md
+- **EVENTO_OCORR** (8 col.) — Um Evento é um fato ocorridos durante o ciclo de vida de uma Ocorrência de Processo. Um evento pode ser utilizado para envio de um comunicad → docs/dados_evento_ocorr.md
+- **EXEC_TIMER** (2 col.) — Execução de Eventos baseados em Tempo → docs/dados_exec_timer.md
+- **EXECUCAO_ACAO** (3 col.) — Execução de Ação prevista em Acordo → docs/dados_execucao_acao.md
+- **EXECUCAO_ATIVIDADE** (26 col.) — Atividade executada por uma Ordem de Serviço → docs/dados_execucao_atividade.md
+- **EXECUCAO_GATEWAY** (7 col.) — Execução Gateway → docs/dados_execucao_gateway.md
+- **FATOR_PRIORIDADE** (6 col.) — Fator utilizado no cálculo de Prioridade → docs/dados_fator_prioridade.md
+- **FIGURA** (21 col.) — Representa graficamente alguma ferramenta de modelagem BPMN - Business Processs Management Notation → docs/dados_figura.md
+- **FLUXO_SEQUENCIA** (4 col.) — Fluxo de Sequência entre duas Atividades → docs/dados_fluxo_sequencia.md
+- **FREQ_CONTROLE** (3 col.) — Frequências de testes ou execução de Controles → docs/dados_freq_controle.md
+- **GAP** (11 col.) — Gaps encontrado durante testes de Controles. → docs/dados_gap.md
+- **GATEWAY** (8 col.) — Representa uma Decisão ou Merge a ser tomado durante a execução do Processo → docs/dados_gateway.md
+- **GATILHO_ASSOC** (3 col.) — Gatilhos disparados na ocorrência de um Evento → docs/dados_gatilho_assoc.md
+- **GRAU_PRIORIDADE** (6 col.) — Graus de Prioridade → docs/dados_grau_prioridade.md
+- **GRUPO_INDICADOR** (3 col.) — Um Grupo de Indicadores é utilizado para classificar um Indicador de Desempenho. Também permite que Indicadores relacionados sejam agrupados → docs/dados_grupo_indicador.md
+- **GRUPO_PAPEL** (7 col.) — Grupos de Trabalho relacionados em um papel para recuperação de atores do tipo solucionador. → docs/dados_grupo_papel.md
+- **GRUPO_QUESTAO** (3 col.) — Um Grupo de Questões define um agrupamento de questões de Pesquisa de Satisfação que possuem um objetivo comum na avaliação de um Serviço. T → docs/dados_grupo_questao.md
+- **GRUPO_QUESTAO_INDICADOR** (3 col.) — Grupos de Questões para Filtro durante a Apuração de Pesquisas de Satisfação. → docs/dados_grupo_questao_indicador.md
+- **GRUPO_SERVICO** (4 col.) — Um Grupo de Serviço é o segundo mais elevado nível hierárquico de classificação de Serviços. → docs/dados_grupo_servico.md
+- **INDICADOR** (24 col.) — Um Indicador de Desempenho, também conhecido como KPI (Key Performance Indicator), define uma medição realizada sobre a execução de Processo → docs/dados_indicador.md
+- **INDICADOR_PLANO** (7 col.) — Indicador de Plano de Gestão → docs/dados_indicador_plano.md
+- **INTER_SLA** (12 col.) — Apontamento de interrupção de contagem de tempo estabelecido em Acordo de Nível de Serviço → docs/dados_inter_sla.md
+- **ITEM_APROVACAO** (3 col.) — Item de Configuração sujeito a Aprovação. → docs/dados_item_aprovacao.md
+- **ITEM_OCORRENCIA** (6 col.) — Item de Configuração associado a uma ocorrência de processo. → docs/dados_item_ocorrencia.md
+- **ITEM_PESQUISA** (3 col.) — Item a ser avaliado em uma Pesquisa → docs/dados_item_pesquisa.md
+- **MACRO_PROCESSO** (3 col.) — Agrupamento de processos endereçados a uma área de negócio → docs/dados_macro_processo.md
+- **MENSAGEM_EVENTO** (11 col.) — Mensagens programadas para um determinado Evento. → docs/dados_mensagem_evento.md
+- **METODO_PRIORIZACAO** (7 col.) — Define uma Metodologia para Priorização de Ocorrências e cálculo de ANS. → docs/dados_metodo_priorizacao.md
+- **MODELO_COMUNICA** (3 col.) — Template utilizado para produzir o corpo de um email. Neste template podemos utilizar campos especiais para produção de conteúdo dinâmico. → docs/dados_modelo_comunica.md
+- **MOTIVO_APONTAMENTO** (4 col.) — Motivo Apontamento → docs/dados_motivo_apontamento.md
+- **MOTIVO_CLASSE_APONT** (3 col.) — Motivos para Classe de Apontamento → docs/dados_motivo_classe_apont.md
+- **NIVEL_SLA** (6 col.) — Nível de ANS define faixas de tempo para escalonamento de ANS em um Método de Priorização (por exemplo Incidentes). → docs/dados_nivel_sla.md
+- **OCORRENCIA** (39 col.) — Ocorrências de Processos → docs/dados_ocorrencia.md
+- **OPCAO_ATIVIDADE** (2 col.) — Opções em atividades de processo. Uma opção diferencia-se de uma configuração de atividade por ser algo não-necessário durante a execução do → docs/dados_opcao_atividade.md
+- **OPERACAO** (5 col.) — Uma Operação define uma Ação que pode ser configurada em uma Atividade de Processo. → docs/dados_operacao.md
+- **OPERACAO_ATIVIDADE** (18 col.) — Operação de uma Atividade → docs/dados_operacao_atividade.md
+- **ORDEM_SERVICO** (36 col.) — Uma Ordem de Serviço é uma ocorrência de Processo em atendimento a uma solicitação de serviço de Tecnologia da Informação. Ordens de Serviço → docs/dados_ordem_servico.md
+- **ORGAO_PAPEL** (5 col.) — Órgãos relacionados em um papel para recuperação de atores. → docs/dados_orgao_papel.md
+- **OUTPUT_SUB_PROC** (4 col.) — Parâmetros de Saída de Subprocesso → docs/dados_output_sub_proc.md
+- **PAPEL_CLASSE_NEGOCIO** (27 col.) — Um Papel representa uma importante ferramenta para configuração de responsabilidades em um Processo. Com este recurso é possível definir no  → docs/dados_papel_classe_negocio.md
+- **PAPEL_COMP** (3 col.) — Permite que um Papel seja definido pela composição de um ou mais Papéis. No primeiro caso ocorre um simples redirecionamento no instante de  → docs/dados_papel_comp.md
+- **PAPEL_PROCESSO** (11 col.) — Papel de uma Pessoa dentro da execução do Processo. → docs/dados_papel_processo.md
+- **PASSAGEM_ITEM** (4 col.) — Configura uma regra de passagem de Itens de Configuração para Ordens de Serviço invocadas como Subprocessos ou link final. → docs/dados_passagem_item.md
+- **PERIODO_PLANO** (11 col.) — Período de Plano de Gestão → docs/dados_periodo_plano.md
+- **PESQUISA** (15 col.) — Uma Pesquisa de Satisfação é composta por um formulário enviado para Clientes após finalização de uma Ordem de Serviço. As respostas coletad → docs/dados_pesquisa.md
+- **PESSOA_PAPEL** (5 col.) — Pessoas relacionadas para recuperação. A seleção destas pessoas ainda está condicionada a configuração de parâmetros complementadores no pap → docs/dados_pessoa_papel.md
+- **PLANO_GESTAO** (5 col.) — O Plano de Gestão é utilizado para gerenciar Indicadores de Desempenho. Este plano pode ser utilizado para gestão de Indicadores de Desempen → docs/dados_plano_gestao.md
+- **PRIOR_ENTIDADE** (4 col.) — Configuração de Fatores de Priorização para Entidade do sistema. → docs/dados_prior_entidade.md
+- **PROCESSO** (10 col.) — Um Processo é composto por uma coleção de rotinas denominadas Subprocessos. As rotinas de um Processo são especificadas por uma linguagem gr → docs/dados_processo.md
+- **QUESTAO_CLASSE_PESQ** (2 col.) — Questões de Classes de Pesquisa → docs/dados_questao_classe_pesq.md
+- **QUESTAO_PESQUISA** (5 col.) — Uma Questão de Pesquisa pode ser utilizada na elaboração de Pesquisas de Satisfação enviadas para Clientes após a finalização de uma Ordem d → docs/dados_questao_pesquisa.md
+- **RECEPTOR** (4 col.) — Atividade de entrada em um Gateway → docs/dados_receptor.md
+- **REL_ATIVIDADE** (4 col.) — Relatório de apoio utilizado na execução de alguma tarefa de processo ou relatório anexado no envio de emails configurados no processo como  → docs/dados_rel_atividade.md
+- **REL_ATIVIDADE_PARAM** (5 col.) — Configuração de valores para os parâmetros existentes no relatório. Estes parâmetros são definidos no Editor de Relatórios. → docs/dados_rel_atividade_param.md
+- **REL_OPERACAO** (4 col.) — Relatórios envolvidos em aprovações ou utilizados para geração de arquivos anexados na ocorrência. → docs/dados_rel_operacao.md
+- **REL_OPERACAO_PARAM** (4 col.) — Configuração de valores para os parâmetros existentes no relatório da aprovação ou relatório utilizado para gerar arquivos anexados na ocorr → docs/dados_rel_operacao_param.md
+- **REST_SERV_ANEXO** (4 col.) — Restrições de Anexos por Serviço ou Tipo de Serviço. → docs/dados_rest_serv_anexo.md
+- **REST_SERV_APROV** (4 col.) — Restrição de Itens por Serviço ou Tipo de Serviço → docs/dados_rest_serv_aprov.md
+- **REST_SERVICO** (4 col.) — Restringe a seleção de Serviços para uma determinado Tipo de Subprocesso (tipo de Solicitação). Esta restrição é visível no assistente de ab → docs/dados_rest_servico.md
+- **RETORNO_ITEM** (4 col.) — Configura uma regra de retorno de Itens de Configuração para Ordens de Serviço invocadas como Subprocessos ou link final. Quando uma Ordem d → docs/dados_retorno_item.md
+- **RISC_PROC_AFIRM** (3 col.) — Afirmações → docs/dados_risc_proc_afirm.md
+- **RISCO** (5 col.) — Risco cadastrado na biblioteca de Riscos → docs/dados_risco.md
+- **RISCO_AFIRM** (2 col.) — Afirmações Financeiras do Risco → docs/dados_risco_afirm.md
+- **RISCO_CLASSE_CONTR** (2 col.) — Riscos que são mitigados por um Controle → docs/dados_risco_classe_contr.md
+- **RISCO_GAP** (4 col.) — Riscos adicionais do Gap → docs/dados_risco_gap.md
+- **RISCO_PROCESSO** (7 col.) — Risco de Subprocesso → docs/dados_risco_processo.md
+- **SERVICO** (18 col.) — Um Serviço pode ser definido como um sistema composto por Tecnologia, Facilidades, Processos e Pessoas que habilitam um processo de negócio. → docs/dados_servico.md
+- **SLA_OS** (4 col.) — Acordo de Nível de Serviço selecionado para Ordem de Serviço → docs/dados_sla_os.md
+- **SUB_PROCESSO** (3 col.) — Subprocesso → docs/dados_sub_processo.md
+- **SUPER_CLASSE_SERVICO** (3 col.) — Uma Classe de Serviço é o maior nível hierárquico de classificação de Serviços. → docs/dados_super_classe_servico.md
+- **TEMPO_ANO** (6 col.) — Tempos registrados para cada solucionador em decorrência de configuração do Acordo de Nível Operacional. → docs/dados_tempo_ano.md
+- **TESTE_CONTROLE** (3 col.) — Ocorrências de Teste do Controle → docs/dados_teste_controle.md
+- **TIME_SHEET** (14 col.) — Apontamento de Horas Trabalhadas → docs/dados_time_sheet.md
+- **TIME_SHEET_APROPRIADO** (3 col.) — Apontamento Apropriado → docs/dados_time_sheet_apropriado.md
+- **TIPO_EVENTO** (9 col.) — Um Tipo de Evento define um marco (evento) ocorrido em uma Ocorrência de Processo. Este evento pode ser publicado para o Cliente para que es → docs/dados_tipo_evento.md
+- **TIPO_SOLICITACAO** (2 col.) — Agrupamento de solicitações exibido em um dos primeiros passos da Abertura de Ordens de Serviço do Autoatendimento. → docs/dados_tipo_solicitacao.md
+- **VALOR_INPUT** (5 col.) — Valores de Parâmetors de Entrada → docs/dados_valor_input.md
+- **VARIAVEL_PRIORIZACAO** (3 col.) — Variável utilizada para cálculo de Prioridade. → docs/dados_variavel_priorizacao.md
+- **VERSAO_APROVACAO** (13 col.) — Versão para Aprovação → docs/dados_versao_aprovacao.md
+
+## Recurso
+- **ACORDO_INTER_SLA** (2 col.) — Motivos de interrupção habilitados para o Acordo de Nível de Serviço. Um motivo pode estar condicionado a uma aprovação. → docs/dados_acordo_inter_sla.md
+- **APLIC_PROCESSO** (2 col.) — Relação de subprocessos onde o Acordo de Nível de Serviço pode ser aplicado. → docs/dados_aplic_processo.md
+- **APROV_INTER_SLA** (3 col.) — Aprovador de Interrupção em cronometragem de tempo de atendimento de ocorrências. → docs/dados_aprov_inter_sla.md
+- **AUSENCIA** (9 col.) — Registra a Ausência Temporária de um Solucionador. Com este registro o sistema impoem restrições em algumas operações como o Encaminhamento. → docs/dados_ausencia.md
+- **CALENDARIO** (3 col.) — Um Acordo de Nível de Serviço define prazos de atendimento para solicitações de um cliente. Além de prazos o acordo define condições tais co → docs/dados_calendario.md
+- **CHARGE_BACK** (6 col.) — Cobrança por uso de Ativo ou serviço prestado. → docs/dados_charge_back.md
+- **CHARGE_BACK_ORGAO** (3 col.) — Conta de charge-back destinada a uma área. → docs/dados_charge_back_orgao.md
+- **CONTRATO** (14 col.) — Um Contrato relaciona recursos (pessoas), Itens de configuração e regras para apontamento de horas trabalhadas. Além destas informações o co → docs/dados_contrato.md
+- **CONTRATO_ITEM** (3 col.) — Relaciona Itens de Configuração com o Contrato e define valor mensal para manutenção. → docs/dados_contrato_item.md
+- **CONTRATO_TECNICO** (2 col.) — Grupos de trabalho onde estão lotados os Solucionadores correspondentes ao tipo de recurso do contrato. → docs/dados_contrato_tecnico.md
+- **DISP_ATEND** (7 col.) — Relação de períodos na semana de disponibilidade do serviço, ou seja, os períodos onde será contabilizado o tempo de atendimento. → docs/dados_disp_atend.md
+- **EMPRESA** (7 col.) — Uma Empresa é uma entidade composta por um ou mais órgãos onde estão lotadas pessoas. Uma empresa também pode pertencer a um grupo de empres → docs/dados_empresa.md
+- **EXCECAO_SLA** (6 col.) — Redefinição do tempo de atendimento para períodos de exceção em um mês ou ano. → docs/dados_excecao_sla.md
+- **FERIADO** (3 col.) — Um Feriado constitui uma data especial onde considerada, a princípio, dia não-útil. → docs/dados_feriado.md
+- **FORNECEDOR** (1 col.) — Um Fornecedor é uma tipo especial de Empresa habilitada como prestador de serviços para a área. → docs/dados_fornecedor.md
+- **GRUPO_EMPRESA** (5 col.) — Grupo empresarial controlador de empresas cadastradas no sistema. Na aplicação de Autoatendimento um grupo pode ser utilizado para restringi → docs/dados_grupo_empresa.md
+- **GRUPO_TRABALHO** (15 col.) — Um Grupo de Trabalho define uma estrutura hierárquica de equipes contendo um coordenador e um ou mais solucionadores. O coordenador de um Gr → docs/dados_grupo_trabalho.md
+- **HIST_COMP** (8 col.) — Histórico de componentes para um item de Configuração. Este histórico é gerado pela rotina de charge-back para rastreabilidade da base de cá → docs/dados_hist_comp.md
+- **HIST_ITEM** (5 col.) — Informações do Item de Configuração no instante em que foi apurado o Charge-back → docs/dados_hist_item.md
+- **HIST_ORGAO** (4 col.) — Histórico de estrutura organizacional na ocasião do processamento do Charge-back. → docs/dados_hist_orgao.md
+- **HIST_PESSOA** (3 col.) — Pessoas lotadas na área na ocasião do processamento do Charge-back → docs/dados_hist_pessoa.md
+- **HIST_USUARIO** (3 col.) — Histórico de usuários para um Item de Configuração. Este histórico é gerado pela rotina de charge-back para rastreabilidade da base de cálcu → docs/dados_hist_usuario.md
+- **ITEM_CHARGE_BACK** (10 col.) — Item combrado de uma área em Charge-back. Este item pode se tratar de uso de Ativo, Acordo de Nível de Serviço e Serviço prestado por Ordem  → docs/dados_item_charge_back.md
+- **ITEM_SLA** (7 col.) — Conjunto prazos de atendimento de uma Ordem de Serviço com respectivos critérios de aplicação. → docs/dados_item_sla.md
+- **LOCAL** (4 col.) — Um Local pode representar um andar, sala ou outra unidade de um Prédio. Também são utilizados para definir localização de Clientes e Ativos  → docs/dados_local.md
+- **MOTIVO_INTER_SLA** (4 col.) — Motivo para interrupção na cronometragem do tempo de atendimento de uma ocorrência. → docs/dados_motivo_inter_sla.md
+- **ORGAO** (8 col.) — Diretoria, Gerência, Departamento ou Área que compõe a estrutura organizacional. Em um Órgão, também denominado Área, podemos associar empre → docs/dados_orgao.md
+- **ORGAO_SLA** (3 col.) — Órgão atendido por um ANS → docs/dados_orgao_sla.md
+- **PERFIL_CLIENTE** (3 col.) — O Perfil de Cliente pode ser utilizado para definição de privilégios do Cliente em atendimentos diversos com impacto na definição de ANS. → docs/dados_perfil_cliente.md
+- **PERIODO_UTIL** (8 col.) — Regra que define a disponibilidade de recursos em função dos dias da semana. → docs/dados_periodo_util.md
+- **PESSOA** (29 col.) — Uma Pessoa pode representar um Cliente, um Solucionador ou uma fila de atendimento. Um registro do tipo Pessoa deve obrigatoriamente estar a → docs/dados_pessoa.md
+- **PREDIO** (3 col.) — Um Prédio define uma edificação dentro de uma Unidade de Negócio onde estão localizados Clientes ou Ativos (Itens de Configuração). → docs/dados_predio.md
+- **RECURSO_APLICADO** (8 col.) — Recurso a ser Aplicado no cumprimento do Contrato → docs/dados_recurso_aplicado.md
+- **REST_HORA_APONT** (8 col.) — Faixas de horários em dias da semana onde são possíveis apontamentos de um determinado tipo. → docs/dados_rest_hora_apont.md
+- **SLA** (12 col.) — Um Calendário é um cadastro que contém feriados e períodos úteis de trabalho. O Calendário pode ser utilizado no cálculo de Acordos de Nível → docs/dados_sla.md
+- **TECNICO** (8 col.) — Um Solucionador é uma Pessoa que trabalha no atendimento de solicitações de Serviço. Este solucionador deve estar lotado em somente um Grupo → docs/dados_tecnico.md
+- **TIPO_APONT_CONT** (3 col.) — Tipo de apontamento em um contrato. → docs/dados_tipo_apont_cont.md
+- **TIPO_APONTAMENTO** (2 col.) — Um Tipo de Apontamento pode ser utilizado no cadastro de Contratos para definir um fator aplicado a um valor/recurso também registrado no co → docs/dados_tipo_apontamento.md
+- **UNIDADE_NEGOCIO** (8 col.) — A Unidade de Negócio define uma localização (site, filial etc) onde estão localizados os Clientes e Ativos. Para uma Unidade de Negócio é po → docs/dados_unidade_negocio.md
+
+## Utilitários
+- **DATA_REST** (5 col.) — Filtra registros para edição em transações de cadastro. → docs/dados_data_rest.md
+- **FIELD_REST** (4 col.) — Desabilita ou oculta campos em transações de cadastro. → docs/dados_field_rest.md
+- **SV_ATTACHMENT_FILE** (10 col.) — Arquivos anexados aos registros → docs/dados_sv_attachment_file.md
+- **SV_AUTHORIZATION** (3 col.) — Autorização para um Perfil de acesso → docs/dados_sv_authorization.md
+- **SV_CHANGE_ITEM** (7 col.) — Modificação de Propriedades → docs/dados_sv_change_item.md
+- **SV_CHANGE_LOG** (10 col.) — Registro de modificação de um objeto. → docs/dados_sv_change_log.md
+- **SV_CLASS** (15 col.) — Implementa um cadastro de todas as Classes de Negócio existentes no sistema. Este cadastro torna possível a customização do software permiti → docs/dados_sv_class.md
+- **SV_COMMAND** (7 col.) — Um Comando pode ser um item de menu, botão ou qualquer outro recurso de interface para acesso a uma transação (janela windows, página Intern → docs/dados_sv_command.md
+- **SV_COMMAND_CLASS** (6 col.) — Classe de Comandos para customização do aplicativo → docs/dados_sv_command_class.md
+- **SV_CULTURE** (3 col.) — Cultura disponível para localização de conteúdo de objetos de negócio. Todo usuário possui uma cultura associada e esta cultura é importante → docs/dados_sv_culture.md
+- **SV_CUSTOM_CLASS** (4 col.) — Customização de uma Classe de Negócio → docs/dados_sv_custom_class.md
+- **SV_CUSTOM_EVENT** (4 col.) — Evento para disponível para Customização em uma determinada Classe de Negócio. Todos os eventos são implementados pela linguagem de scripts  → docs/dados_sv_custom_event.md
+- **SV_CUSTOM_EVENT_ARGS** (4 col.) — Argumentos disponibilizados pelo mecanismo invocador de Eventos Customizados. Estes argumentos, somente leitura, podem ser utilizados na imp → docs/dados_sv_custom_event_args.md
+- **SV_CUSTOM_EVENT_IMPL** (3 col.) — Implementação de Eventos → docs/dados_sv_custom_event_impl.md
+- **SV_CUSTOM_PROPERTY** (21 col.) — Propriedade de uma Classe de Negócio criada pelo próprio usuário com escopo válido para um determinado Domínio de uso. Propriedades customiz → docs/dados_sv_custom_property.md
+- **SV_CUSTOM_PROPERTY_SCOPE** (4 col.) — Escopo para Propriedades Customizadas. Se não for cadastrada restrição de Escopo então a Propriedade Customizada vale para todos os objetos  → docs/dados_sv_custom_property_scope.md
+- **SV_DB_CONNECTION** (5 col.) — Conexão de banco de dados externo → docs/dados_sv_db_connection.md
+- **SV_DOMAIN** (5 col.) — Um Domínio define um namespace de banco de dados. Quando um Usuário realiza uma conexão ele seleciona o Domínio no qual deseja acessar e a p → docs/dados_sv_domain.md
+- **SV_EXCEPTION_CLASS** (11 col.) — Uma Exceção representa uma situação de erro verificada e documentada pelo sistema. Neste cadastro um usuário especial do sistema, denominado → docs/dados_sv_exception_class.md
+- **SV_FILE_TYPE** (4 col.) — Tipos de arquivos que podem ser anexados em cadastros. → docs/dados_sv_file_type.md
+- **SV_GLOBAL** (4 col.) — Informações globais sobre a instalação → docs/dados_sv_global.md
+- **SV_INSTALL_LOG** (4 col.) — Mensagens geradas pelas rotinas de instalação. Este log é consultado por uma janela exibida após configuração da camada servidora. → docs/dados_sv_install_log.md
+- **SV_JOB** (28 col.) — Rotinas para execução em background via mecanismo Schedule → docs/dados_sv_job.md
+- **SV_JOB_HISTORY** (7 col.) — Histórico de execuções de um Job → docs/dados_sv_job_history.md
+- **SV_LICENSE** (5 col.) — Mantém dados de licenciamento do produto instalador. → docs/dados_sv_license.md
+- **SV_LOCALIZATION** (7 col.) — Localização de objetos → docs/dados_sv_localization.md
+- **SV_LOG_EXEC_SQL** (6 col.) — Log de execução de comandos SQL → docs/dados_sv_log_exec_sql.md
+- **SV_MEMBER_OF** (2 col.) — Define a associação entre um Usuário e Perfis de Acesso → docs/dados_sv_member_of.md
+- **SV_MESSAGE** (23 col.) — Mensagens enviadas em resposta a Eventos ou ferramentas de comunicação do sistema. → docs/dados_sv_message.md
+- **SV_MESSAGE_ATTACH** (6 col.) — Arquivo anexado na mensagem para envio. → docs/dados_sv_message_attach.md
+- **SV_MODULE** (10 col.) — Um Módulo define um conjunto de funcionalidades pertencentes a uma aplicação. Para cada Módulo existe um item de menu raiz denominado 'Coman → docs/dados_sv_module.md
+- **SV_PICTURE** (10 col.) — Figura utilizada em diversos outros objetos → docs/dados_sv_picture.md
+- **SV_PROFILE_ITEM** (4 col.) — Profile de Usuário → docs/dados_sv_profile_item.md
+- **SV_PROPERTY** (13 col.) — Propriedades nativas de uma Classe de Negócio. → docs/dados_sv_property.md
+- **SV_PROPERTY_LAYOUT** (16 col.) — Layout de Classes e Propriedades → docs/dados_sv_property_layout.md
+- **SV_QUERY** (6 col.) — Consultas SQL elaboradas pelo usuário do sistema. → docs/dados_sv_query.md
+- **SV_REC_COLUMN** (11 col.) — Campos de registros utilizados em propriedades customizadas do tipo Listagem de registros → docs/dados_sv_rec_column.md
+- **SV_RECIPIENT** (7 col.) — Destinatários de uma mensagem. → docs/dados_sv_recipient.md
+- **SV_REPORT** (10 col.) — Relatório criado pelo usuário utilizando o Editor de Relatórios → docs/dados_sv_report.md
+- **SV_REPORT_PARAM** (5 col.) — Relação de parâmetros do relatório → docs/dados_sv_report_param.md
+- **SV_REPORT_QUERY** (4 col.) — Consulta criada pelo usuário para recuperação dos dados que serão apresentados pelo relatório. No caso de consultas do banco de dados do pro → docs/dados_sv_report_query.md
+- **SV_ROLE** (5 col.) — Conjunto de telas autorizadas para um determinado usuário. Importante: um usuário pode acumular diversos perfis e o menu final é formado pel → docs/dados_sv_role.md
+- **SV_TRANS_ACCESS** (3 col.) — Acesso a Transação realizado por um Usuário do sistema. → docs/dados_sv_trans_access.md
+- **SV_TRANSACTION** (13 col.) — Uma Transação representa o ponto de entrada para uma funcionalidade do sistema (Tela de sistema, Web Services, etc). Para cada Transação é p → docs/dados_sv_transaction.md
+- **SV_USER** (7 col.) — Usuário autorizado a acessar o sistema. → docs/dados_sv_user.md
+- **SV_USER_SESSION** (8 col.) — Mantém informações da sessão de conexão de usuário. → docs/dados_sv_user_session.md
