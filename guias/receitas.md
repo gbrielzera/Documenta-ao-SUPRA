@@ -80,6 +80,7 @@ WHERE CP.MATRICULA = '123456'
 ```
 Em script: `nome = DB.ExecuteScalar("SELECT P.NOME FROM PESSOA P INNER JOIN CP_PESSOA CP ON CP.ID_PESSOA = P.ID_PESSOA WHERE CP.MATRICULA = '" + matricula + "'")`.
 Os fluxos também usam a view do cliente `CAD_FUNCIONARIO_V` (NOME, MATRICULA, DATA_DE_DEMISSAO, STATUS_MATRICULA), fora do modelo oficial.
+O banco real (índices, tamanhos, consultas prontas) está em `guias/sql.md`: `CP_PESSOA` só tem índice na PK, então a busca por matrícula varre a tabela (pequena); não repetir em laço para centenas de linhas.
 
 ## 7. Papel por script: todas as pessoas cujo nome começa com "A"
 [doc] docs/customizado_por_script.md + [fluxo] padrão DataTable → Pessoa.Carrega → Atores.Adiciona

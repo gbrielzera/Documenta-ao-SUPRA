@@ -5,6 +5,7 @@ Fonte: docs/dados_<tabela>.md (colunas, descrição, tipo SQL Server e Oracle, n
 Colunas de todas as tabelas em uma linha cada: `catalogo/schema.txt` (ex.: `grep -i '^OCORRENCIA:' catalogo/schema.txt`).
 Tabelas de campos customizados (CP_*/CPE_*) não estão no modelo oficial: ver `catalogo/tabelas_customizadas.md` e `catalogo/campos.tsv`.
 Tabelas/views realmente usadas nos scripts do cliente: `catalogo/tabelas_usadas_em_sql.md`.
+Estrutura REAL de produção (4 tabelas, 2026-10-08): `catalogo/schema_real.tsv`; regras, índices e consultas: `guias/sql.md`.
 O ambiente dos XMLs é Oracle (TO_CHAR, NVL, SYSDATE, ||).
 
 

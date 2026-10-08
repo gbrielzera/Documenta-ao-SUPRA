@@ -53,5 +53,6 @@ Duas formas de criar a OS filha (decidir com teste):
 - (?) Aprovação individual por técnico (um e-mail por OS ao gerente) ou agrupada por gerente.
 - Limite de linhas por planilha e teste de tempo de execução (10, 50, 200 linhas).
 - Restringir quem abre o lote (clientes autorizados do iniciador).
-- Conferir duplicidade com OS aberta para a mesma matrícula.
+- Conferir duplicidade com OS aberta para a mesma matrícula: consulta 6 de `guias/sql.md` (`CPE_CSC.TE_MATRICULA` existe em produção; o `FAVORECIDO_COBRA` está em `CP_ORDEM_SERVICO`, NVARCHAR2(500), e guarda o ID_PESSOA como texto).
+- Confirmar em produção as colunas das tabelas dos campos de perfil (`CPE_CONTRATOS`, `CPE_CONTRATOS02`, `CPE_BOOTCAMP`): consulta 3 de `guias/consultas_banco.md`. `COMBOBOX` (NVARCHAR2 1800) e `COMBOBOX1` (400) já foram conferidos.
 - Escrever os scripts (leitura/validação, trava, criação) seguindo a regra de script mínimo.

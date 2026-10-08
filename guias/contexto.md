@@ -13,6 +13,7 @@ usuário espera. Tudo aqui foi observado nos 76 fluxos exportados, salvo quando 
 
 ## Ambiente
 - Supravizio 19.1.1 (versão dos XMLs). DLLs do Client analisadas: 18.1.1.
+- O usuário tem só `SELECT` em homologação e produção; não consegue rodar insert/update/delete. Detalhes do banco em `guias/sql.md`.
 - Banco Oracle: usar `TO_CHAR`, `NVL`, `SYSDATE`, `||`, `ROWNUM`. `PESSOA.ATIVO` vale `'Sim'`/`'Nao'`.
 - Scripts em IronPython 2.7: `except Exception as e:` funciona; sem f-string; `print` não se usa.
 - Existem ambientes de Produção e Qualidade; fluxos sobem por exportação/importação de XML.
@@ -48,7 +49,7 @@ na seção "Papéis usados" de um fluxo que o utilize.
 - `CP_PESSOA`: campos customizados de Pessoa (`MATRICULA`, `CPF`, `CARGO_FUNCIONAL`, `FUNCAO_GRATIFICADA`,
   `GESTOR_POSICAO`, `DATA_DE_ADMISSAO`, `PERSON_ID`...), chave `ID_PESSOA`.
 - `CAD_FUNCIONARIO_V`: view de funcionários (`NOME`, `MATRICULA`, `STATUS_MATRICULA`, `DATA_DE_DEMISSAO`).
-- `CP_ORDEM_SERVICO`, `CPE_CSC`, `CPE_CONTRATOS`, `CPE_FINANCEIRO`...: campos customizados da OS. `CP_ORDEM_SERVICO` junta por `ID_OCORRENCIA` (visto em fluxos); nas `CPE_*` a chave não foi conferida.
+- `CP_ORDEM_SERVICO`, `CPE_CSC`, `CPE_CONTRATOS`, `CPE_FINANCEIRO`...: campos customizados da OS. Todas juntam por `ID_OCORRENCIA` (confirmado no schema real); `CP_ORDEM_SERVICO` está no limite de 1000 colunas, por isso os campos novos vão para tabelas `CPE_*`, que só têm linha para as OS que usaram o campo (usar LEFT JOIN).
 - `SERVICES_PARAM` (`FILES_PATH` = pasta dos anexos) e `SV_PARAM`: parâmetros do sistema.
 - `DEPENDENTES_BENEFICIOS_V`, `CIDADE_V`, `ESTADO_V`, `PS_*` (PeopleSoft), `MTL_*`/`ORG_*` (ERP Oracle EBS).
 - Uso real de cada uma: `catalogo/tabelas_usadas_em_sql.md`. Colunas das tabelas oficiais: `catalogo/schema.txt`.
