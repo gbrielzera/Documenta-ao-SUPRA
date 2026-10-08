@@ -1,0 +1,23 @@
+# PerfilCliente (API de script)
+Caminho: Catálogo > API de scripts > Venki.Supravizio.Recurso.Custom > PerfilCliente
+
+class `Venki.Supravizio.Recurso.Custom.PerfilCliente` — supravizio.custom.dll v18.1.1.0
+Herda de **SessionObjectProxy** (ver catalogo/api/SessionObjectProxy.md): os membros da classe base também valem aqui.
+Descrição de cada propriedade: docs/objetos_perfilcliente.md
+
+## Propriedades (4)
+- PerfilCliente PerfilClienteInstance {get;}
+- int DomainId {get;set;}
+- int Id {get;set;}
+- string Descricao {get;set;}
+
+## Métodos (9)
+- static PerfilCliente Load(int id)
+- static PerfilCliente Carrega(int id)
+- static PerfilCliente New()
+- static PerfilCliente Novo()
+- static PerfilCliente Load(string propertyName, object value)
+- static PerfilCliente Carrega(string propertyName, object value)
+- static SessionProxyList CarregaLista(object propertyName, object value)
+- static void Salva(SessionObjectProxy proxy)
+- void Salva()

@@ -5,3 +5,9 @@ raw_falhas.txt
 # índice de busca: recriado com `python -X utf8 tools/indexar.py`
 kb.sqlite
 __pycache__/
+
+# binários proprietários do cliente e help compilado: nunca versionar
+Supravizio Client3/
+*.chm
+_chm/
+raw_somente_chm.txt

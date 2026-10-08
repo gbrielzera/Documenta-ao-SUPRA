@@ -1,0 +1,165 @@
+# Ocorrencia (API de script)
+Caminho: Catálogo > API de scripts > Venki.Supravizio.Processo.Custom > Ocorrencia
+
+class `Venki.Supravizio.Processo.Custom.Ocorrencia` — supravizio.custom.dll v18.1.1.0
+Herda de **SessionObjectProxy** (ver catalogo/api/SessionObjectProxy.md): os membros da classe base também valem aqui.
+Descrição de cada propriedade: docs/objetos_ocorrencia.md
+
+## Propriedades (71)
+- string NumeroSequencial {get;}
+- bool AtendeuANOCorrente {get;}
+- Ocorrencia OcorrenciaInstance {get;}
+- int Id {get;}
+- int DomainId {get;set;}
+- int? AtividadeId {get;set;}
+- int DesenhoProcessoId {get;set;}
+- string Assunto {get;set;}
+- int? OcorrenciaPrincipalId {get;set;}
+- int ClasseSubProcessoId {get;set;}
+- DateTime DataHoraCriacao {get;set;}
+- DateTime DataHoraSolicitacao {get;set;}
+- DateTime? DataHoraInicioPrevisto {get;set;}
+- DateTime? DataHoraFimPrevisto {get;set;}
+- DateTime? DataHoraInicioReal {get;set;}
+- DateTime? DataHoraFimReal {get;set;}
+- DateTime? DataHoraFimPrevistoOriginal {get;set;}
+- int ResponsavelId {get;set;}
+- int ClienteId {get;set;}
+- int GrupoTrabalhoId {get;set;}
+- DateTime DataHoraResponsavel {get;set;}
+- string MotivoCancelamento {get;set;}
+- int? FinalizadorId {get;set;}
+- int ResponsavelInicialId {get;set;}
+- int GrupoTrabalhoInicialId {get;set;}
+- string Numero {get;set;}
+- int? EsforcoEstimado {get;set;}
+- string JustificativaEsforco {get;set;}
+- DateTime? DataHoraInicioPlan {get;set;}
+- DateTime? DataHoraFimPlan {get;set;}
+- int DesenhoProcessoInicialId {get;set;}
+- int ClasseSubProcessoInicialId {get;set;}
+- int? OcorrenciaPaiId {get;}
+- int OrgaoClienteId {get;set;}
+- bool ReferenciaCircular {get;set;}
+- DateTime DataHoraUltimaAtualizacao {get;set;}
+- int? UsuarioAutenticadoId {get;set;}
+- bool PublicaApontamentosAA {get;set;}
+- bool PermiteRetormarResponsabilidade {get;set;}
+- int SubProcessoId {get;set;}
+- string EstadoFormulario {get;set;}
+- string NumeroSistema {get;}
+- int? DiasAvisoReaberturaAgendamento {get;set;}
+- int? SplitGatewayId {get;set;}
+- int? GatewayId {get;set;}
+- string Situacao {get;set;}
+- string ClasseNegocio {get;set;}
+- SessionProxyList Eventos {get;}
+- SessionProxyList Atores {get;}
+- SessionProxyList AtividadesExecutadas {get;}
+- SessionProxyList Assuntos {get;}
+- SessionProxyList ItensAnexados {get;}
+- SessionProxyList AcoesExecutadasEmAcordos {get;}
+- ClasseSubProcesso ClasseSubProcessoInicial {get;set;}
+- ClasseSubProcesso ClasseSubProcesso {get;set;}
+- Atividade Atividade {get;set;}
+- Pessoa Finalizador {get;set;}
+- Pessoa Cliente {get;set;}
+- Pessoa ResponsavelInicial {get;set;}
+- Pessoa Responsavel {get;set;}
+- Pessoa UsuarioAutenticado {get;set;}
+- DesenhoProcesso DesenhoProcesso {get;set;}
+- GrupoTrabalho GrupoTrabalhoInicial {get;set;}
+- GrupoTrabalho GrupoTrabalho {get;set;}
+- SubProcesso SubProcesso {get;set;}
+- DesenhoProcesso DesenhoProcessoInicial {get;set;}
+- Ocorrencia Principal {get;set;}
+- Gateway Gateway {get;set;}
+- Ocorrencia Pai {get;set;}
+- Gateway SplitGateway {get;set;}
+- Orgao OrgaoCliente {get;set;}
+
+## Métodos (84)
+- Ocorrencia IniciaAprovacao()
+- bool ValidaPendencias()
+- bool ValidaPendenciasAprovacao(int idAssuntoAprovacao, int versao)
+- bool ValidaPendenciasAtividadeExecucao()
+- SessionProxyList ObtemDerivadas()
+- Ocorrencia ObtemDerivada(int idClasseSubProcesso)
+- Ocorrencia ObtemPrincipal()
+- SessionProxyList ObtemDerivadas(ClasseSubProcesso classeSubProcesso)
+- SessionProxyList ObtemAssociadasComoAlvo(string nomeAssociacao)
+- SessionProxyList ObtemAssociadasComoFonte(string nomeAssociacao)
+- Ocorrencia Agenda(DateTime dataInicio)
+- Ocorrencia Reabre()
+- void Aponta(string codigoClasseApontamento, string String1, string String2, int? Inteiro1, int? Inteiro2, DateTime? DataHora1, DateTime? DataHora2, decimal? Decimal1, decimal? Decimal2, bool? Booleano1, bool? Booleano2)
+- decimal ObtemHorasApontadas(DateTime dataInicio, DateTime dataFim, bool incluiDerivadas)
+- void CancelaAprovacao(string codigoAtividade)
+- void Reprova(string codigoAtividade, string motivo)
+- void Aprova(string codigoAtividade, string aprovador, string comentario)
+- void Aprova(string codigoAtividade)
+- Ocorrencia Encaminha(Tecnico novoTecnicoResponsavel, string explicaAtor)
+- void AssociaItemConfiguracao(int idItem)
+- bool PossuiAprovacao(string codigoAtividade)
+- string ObtemMotivoReprovacao(string codigoAtividade)
+- Hardware ObtemHardware()
+- Software ObtemSoftware()
+- Artefato ObtemArtefato()
+- DispositivoTelefonico ObtemDispositivoTelefonico()
+- bool PossuiArtefato()
+- bool PossuiHardware()
+- bool PossuiSoftware()
+- bool PossuiDispositivoTelefonico()
+- bool PossuiItem(string siglaClasseConfiguracao)
+- ItemConfiguracao ObtemItem(string siglaClasseConfiguracao)
+- int ContaExecucaoAtividade(string codigoAtividade)
+- int ContaExecucaoGateway(string codigoGateway)
+- int ContaExecucaoGateway(string codigoGateway, string textoAlternativa)
+- Ocorrencia IniciaSubProcesso(Atividade atividade)
+- Conhecimento ObtemConhecimento()
+- SessionProxyList ObtemTodasAssociadas(bool recursivo)
+- void AnexaArquivo(string nomeArquivo, string siglaTipoItem, bool apagarArquivoOriginal)
+- Ocorrencia VoltaAtividade()
+- string ObtemMotivoGateway(string codigoGateway)
+- SessionProxyList ObtemAtoresProcesso(string nome)
+- void GeraAvisoMural(string mensagem, GrupoTrabalho grupoProprietario, List gruposPublicacao, bool incluirSubNiveis, bool visivelPortal, DateTime? dataInicial, DateTime? dataLimite, string mensagemPortal, Conhecimento artigo)
+- Ocorrencia Agenda(DateTime dataInicio, int? diasAvisoReabertura)
+- Ocorrencia IniciaSubProcesso(Atividade atividade, string numero)
+- ArrayList ObtemConteudoArquivoTexto(ItemConfiguracao item)
+- void AnexaExportacaoRelatorio(string nomeRelatorio, string siglaTipoItem, List nomesParametros, List valoresParametros, string formato)
+- bool PossuiAssociacaoFonte(string nomeAssociacao)
+- bool PossuiAssociacaoAlvo(string nomeAssociacao)
+- int ContaAssociacaoFonte(string nomeAssociacao)
+- int ContaAssociacaoAlvo(string nomeAssociacao)
+- decimal ObtemHorasApontandatas(DateTime dataInicio, DateTime dataFim, bool incluiDerivadas)
+- bool PossuiAtividades(string codigoAtividade)
+- object ObtemPropriedade(int idClasseSubProcesso, string nomePropriedade, object valorDefault)
+- TimeSpan ObtemTempoLiquidoAtividade(string codigoAtividade)
+- void ModificaCampoFormularioVisivel(string nomeCampo, bool campoVisivel)
+- void ModificaCampoFormularioHabilitado(string nomeCampo, bool campoHabilitado)
+- void ModificaCampoFormularioMascara(string nomeCampo, string novaMascara, bool incluiLiteral)
+- void AvancaAtividade()
+- bool AtendeuANOAtividade(string codigoAtividade)
+- void AssociaOrdemServico(string numeroAssociadaAlvo, string siglaAssociacao)
+- DataRow AdicionaLinhaRegistro(string nomeCampo, List nomes, List valores)
+- static Ocorrencia Load(int id)
+- static Ocorrencia Carrega(int id)
+- static Ocorrencia New()
+- static Ocorrencia Novo()
+- static Evento NewEvento(Ocorrencia parentOcorrencia)
+- static Ator NewAtor(Ocorrencia parentOcorrencia)
+- static ExecucaoAtividade NewExecucaoAtividade(Ocorrencia parentOcorrencia)
+- static TemposANO NewTemposANO(ExecucaoAtividade parentExecucaoAtividade)
+- static AssuntoAprovacao NewAssuntoAprovacao(Ocorrencia parentOcorrencia)
+- static VersaoAprovacao NewVersaoAprovacao(AssuntoAprovacao parentAssuntoAprovacao)
+- static Aprovacao NewAprovacao(VersaoAprovacao parentVersaoAprovacao)
+- static ItemAprovacao NewItemAprovacao(VersaoAprovacao parentVersaoAprovacao)
+- static ApropriacaoAprovacao NewApropriacaoAprovacao(VersaoAprovacao parentVersaoAprovacao)
+- static ItemOcorrencia NewItemOcorrencia(Ocorrencia parentOcorrencia)
+- static ExecucaoAcaoAcordo NewExecucaoAcaoAcordo(Ocorrencia parentOcorrencia)
+- static Ocorrencia Load(string propertyName, object value)
+- static Ocorrencia Carrega(string propertyName, object value)
+- static SessionProxyList CarregaLista(object propertyName, object value)
+- static void Salva(SessionObjectProxy proxy)
+- void Salva()
+- Ocorrencia Cancela(string motivo)
+- Ocorrencia Reabre(Pessoa autor)

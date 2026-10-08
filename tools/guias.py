@@ -3,6 +3,7 @@
   guias/banco.md             lista de tabelas do modelo de dados oficial, por módulo
   catalogo/schema.txt        uma linha por tabela com todas as colunas (para grep)
   guias/scripts_contexto.md  objetos disponíveis por tipo de script + exemplos reais dos XMLs
+  fluxos/_INDICE.md          uma linha por fluxo resumido
 
 Uso: python tools/guias.py
 """
@@ -149,10 +150,49 @@ def gerar_contexto():
     return sum(total.values())
 
 
+def gerar_indice_fluxos():
+    """fluxos/_INDICE.md: uma linha por fluxo resumido, para escolher qual abrir."""
+    linhas = []
+    for p in sorted((RAIZ / "fluxos").glob("*.md")):
+        if p.name.startswith("_"):
+            continue
+        t = p.read_text(encoding="utf-8")
+        m = re.match(r"# Fluxo: (.+)", t)
+        titulo = m.group(1).strip() if m else p.stem
+        tipos = Counter(re.findall(r"^- \[\d+\] (\w+) ", t, re.M))
+        marcas = []
+        if "DataGrid RecordList" in t:
+            marcas.append("grid")
+        if "Operação PR0002" in t:
+            marcas.append("aprovação")
+        if tipos.get("SubProcesso"):
+            marcas.append("chama subprocesso")
+        if tipos.get("LinkInicial"):
+            marcas.append("link inicial")
+        if "HttpClient" in t:
+            marcas.append("API REST")
+        if "LerXlsx" in t:
+            marcas.append("lê planilha")
+        if tipos.get("EventoIntermediarioTimer"):
+            marcas.append("timer")
+        scripts = t.count("```python")
+        gateways = len(re.findall(r"^- \[G\d+\] Gateway", t, re.M))
+        linhas.append(f"- **{titulo}** — {tipos.get('Tarefa', 0)} tarefas, {gateways} gateways, "
+                      f"{scripts} scripts, {len(t) // 1024} KB"
+                      + (f" — {', '.join(marcas)}" if marcas else "") + f" → fluxos/{p.name}")
+    cabecalho = ("# Índice dos fluxos resumidos\n\n"
+                 "Uma linha por XML resumido: título (sigla) e versão, tamanho e o que o fluxo contém. "
+                 "Gerado por tools/guias.py.\n\n")
+    (RAIZ / "fluxos" / "_INDICE.md").write_text(
+        cabecalho + "\n".join(linhas) + "\n", encoding="utf-8")
+    return len(linhas)
+
+
 def main():
     n = gerar_banco()
     s = gerar_contexto()
-    print(f"guias/banco.md e catalogo/schema.txt: {n} tabelas; guias/scripts_contexto.md: {s} scripts distintos")
+    f = gerar_indice_fluxos()
+    print(f"guias/banco.md e catalogo/schema.txt: {n} tabelas; guias/scripts_contexto.md: {s} scripts distintos; fluxos/_INDICE.md: {f} fluxos")
     return 0
 
 

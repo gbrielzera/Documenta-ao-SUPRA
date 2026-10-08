@@ -6,6 +6,8 @@ preâmbulo (`import clr`, `from System import *`, imports de `Venki.Supravizio..
 e a linha `# INICIO SCRIPT USUARIO`; escreva só o que vem depois dela.
 
 Antes de escrever um script, confira sempre:
+0. `guias/api_scripts.md` — assinaturas reais de OrdemServico, Formulario, Criticas, Atores, Mensagem, DB e Utils
+   (extraídas das DLLs); classe completa em `catalogo/api/<Classe>.md`.
 1. `guias/scripts_contexto.md` — objetos e membros realmente usados em cada tipo de script, com exemplos reais.
 2. Um fluxo parecido em `fluxos/` (`python tools/buscar.py "termo" -t fluxo`).
 3. A página oficial do objeto em `docs/` (tabela abaixo).
@@ -56,10 +58,54 @@ docs/realizando_chamadas_web_servic.md, docs/iniciador_por_mensagem.md.
 - O NOME é o `Name` do campo customizado: procure em `catalogo/campos.tsv` (traz tipo, controle e tabela/coluna física).
 - No formulário aberto use `Formulario["NOME"].Valor`; fora dele, `OrdemServico[...]`.
 
-## Regras ao responder
+## Esqueletos mínimos (regra do usuário: o menor script que funciona)
 
-- Não inventar método ou propriedade. Se não aparece em `docs/` nem em `guias/scripts_contexto.md`
-  nem em algum fluxo, dizer que não foi encontrado e sugerir conferir no autocompletar do Editor de Scripts.
+Sem funções auxiliares, sem imports extras, sem try/except, sem comentários. Exemplos do tamanho esperado:
+
+```python
+# Script Validação
+if String.IsNullOrEmpty(OrdemServico["JUSTIFICATIVA"]):
+    Criticas.AdicionaPendencia("Informe a justificativa")
+```
+```python
+# Script Modificado (mostrar campo conforme outro)
+if Controle.Valor == "Sim":
+    Formulario["DETALHE"].Visivel = True
+else:
+    Formulario["DETALHE"].Visivel = False
+```
+```python
+# Script de recuperação de opções (combo)
+Itens = DB.ExecuteDataTable("SELECT TO_CHAR(ID_PESSOA) ID, NOME FROM PESSOA WHERE ATIVO = 'Sim' ORDER BY NOME")
+```
+```python
+# Script Seleção de Atores
+Atores.Adiciona(OrdemServico.Cliente.Orgao.Gestor, "Gestor do cliente")
+```
+```python
+# Fórmula do gateway (alternativas com Valor comparação True / False)
+OrdemServico.PossuiAprovacao("APROV")
+```
+```python
+# Script Evento (mensagem)
+Mensagem.Complemento1 = OrdemServico["OBSERVACAO"]
+```
+```python
+# Script Início (avança sozinho)
+OrdemServico.SetCustom("STATUS", "Recebido")
+AvancaProximaAtividade = True
+```
+Imports só quando o script usa algo fora do padrão. O cabeçalho que o editor gera varia por tipo de
+script (o de papel já traz `Pessoa` e `Ator`; o de validação só `OrdemServico`). Se o script usar
+`Pessoa`, `Orgao` (`Venki.Supravizio.Recurso.Custom`) ou `Servico` (`Venki.Supravizio.Processo.Custom`)
+e a classe não estiver no cabeçalho, acrescentar uma linha `from ... import Classe`; não foi testado
+em quais tipos isso é necessário. REST pede `clr.AddReference("System.Net.Http")` e os `from` usados, nada além.
+
+## Regras ao responder
+- Script mínimo sempre (ver `CLAUDE.md`): o que for opcional vira uma frase depois do código.
+
+- Não inventar método ou propriedade. Se não aparece em `guias/api_scripts.md`, `docs/`,
+  `guias/scripts_contexto.md` nem em algum fluxo, dizer que não foi encontrado e sugerir conferir no autocompletar do Editor de Scripts.
 - Indentação com 4 espaços; nada de f-string, `print()` como função ou recursos de Python 3.
 - SQL dentro de script: sintaxe Oracle; conferir tabela e coluna em `catalogo/schema.txt` antes de usar.
 - Citar de onde veio cada padrão (arquivo de docs ou fluxo de origem).

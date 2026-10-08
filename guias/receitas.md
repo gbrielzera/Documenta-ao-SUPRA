@@ -3,7 +3,8 @@ Caminho: Guias > Receitas
 
 Respostas curtas e verificadas para as dúvidas mais comuns. Cada receita indica a fonte:
 **[doc]** = documentação oficial; **[fluxo]** = padrão observado nos fluxos reais do cliente
-(não documentado oficialmente). Nomes de campos são exemplos; confira em `catalogo/campos.tsv`.
+(não documentado oficialmente); **[api]** = assinatura confirmada nas DLLs do Client v18.1.1
+(guias/api_scripts.md), sem garantia de comportamento além da assinatura. Nomes de campos são exemplos; confira em `catalogo/campos.tsv`.
 
 ## 1. Importar um fluxo exportado (ex.: de produção) na árvore do Process Explorer
 [doc] docs/importacao.md
@@ -46,8 +47,10 @@ A doc oficial também usa a forma compacta, equivalente ao if/else acima:
 `Formulario["DESPESAS"].Visivel = Formulario["POSSUI_DESPESAS"].Valor == True`.
 Dentro do Script Modificado, `Controle` é o próprio campo (`Controle.Valor`).
 Sem script: propriedades **Visível**/**Habilitado** do campo e a Visualização Condicional (docs/visualizacao_condicional.md).
-[fluxo] Fora do formulário (ex.: Script Início): `OrdemServico.ModificaCampoFormularioVisivel(...)` e
-`ModificaCampoFormularioHabilitado(...)` aparecem em fluxos; conferir a assinatura em um exemplo antes de usar.
+[api] Fora do formulário (ex.: Script Início): `OrdemServico.ModificaCampoFormularioVisivel("CAMPO", True)`,
+`OrdemServico.ModificaCampoFormularioHabilitado("CAMPO", False)` e
+`OrdemServico.ModificaCampoFormularioMascara("CAMPO", "mascara", incluiLiteral)`.
+No formulário também existem `Formulario.ModificaVisibilidadeCampo("CAMPO", bool)` e `ModificaHabilitadoCampo`.
 
 ## 4. Criar um campo customizado
 [doc] docs/criacao_de_campos_customizados_os.md, docs/criando_propriedade_customizada.md, docs/armazenando_dados_de_campos_cu.md
@@ -197,3 +200,53 @@ if OrdemServico.GetCustom("LISTA_NF").Rows.Count == 0:
 Uma pendência basta para impedir o avanço; `Criticas.AdicionaAviso(msg)` só alerta.
 Por padrão o Script Validação roda também na finalização do processo (parâmetro
 "Executar Script de validação na finalização" da tarefa).
+
+## 16. Abrir várias OS a partir de uma planilha (fluxo "em lote")
+[fluxo] padrão repetido nos fluxos do cliente. Referências para copiar:
+`fluxos/Gabriel_Teste_Ativações_Versão_3__LOTE__Pré-Notificação_...IDF.md` (lote) e
+`fluxos/Administração_-_Contratos_Versão_45_Pré-Notificação_...IDF_.md` (filho, só Link Inicial);
+`fluxos/Serviços_Assistência_Técnica_Versão_15_Recebimento_de_Uniforme__Em_Lote.md` (agrupa linhas por matrícula).
+Estrutura:
+1. **Fluxo LOTE**: Evento Inicial com Data Object Associar Itens de Configuração (anexo "Planilha", classe Arquivo)
+   + Entrada de Dados com um CheckBox "Clique aqui para ler a planilha" + um campo DataGrid (RecordList).
+2. `ScriptModificado` do checkbox lê o .xlsx e chama `OrdemServico.AdicionaLinhaRegistro("GRID", [colunas], [valores])`.
+   Caminho do arquivo: `Utils.ExecuteScalar("select FILES_PATH from SERVICES_PARAM")` + `"\\"` + `OrdemServico.ObtemItem("ARQUIVO").Localizacao`.
+   Só .xlsx (leitura via ZipArchive/XML; funções `LerXlsx`, `NomeLocal`, `ElementosPorNome` etc. nos fluxos acima).
+3. Atividade **Subprocesso** (com Associação "Lote -> Individual", ValoresInputs Cliente/Servico) cujo `ScriptInicio` faz,
+   para cada linha: `sub = OrdemServico.IniciaSubProcesso(OrdemServico.Atividade)`; `sub.Assunto = ...`;
+   limpa a grid herdada (`sub.GetCustom("GRID").Rows.Clear()`); `sub.AdicionaLinhaRegistro(...)`; `sub.Salva()`; `sub.AvancaAtividade()`.
+4. **Fluxo filho**: precisa de um **Link Inicial** (TipoAberturaLinkInicial=ApenasChamador) com a mesma Associação (frase inversa).
+   Um fluxo pode ter Evento Inicial e Link Inicial ao mesmo tempo (docs/iniciador_multiplas_formas_subpr.md, docs/iniciador_link_inicial.md).
+5. Pessoa por matrícula na OS filha: `SELECT P.ID_PESSOA FROM PESSOA P INNER JOIN CP_PESSOA CP ON P.ID_PESSOA = CP.ID_PESSOA WHERE CP.MATRICULA = '...'`
+   e `sub.Cliente = Pessoa.Carrega(id)` (padrão do lote de Uniformes).
+Boas práticas observadas: contar criadas/ignoradas/erros e gravar resumo com `OrdemServico.AdicionaComentario(texto, False)`;
+limitar o detalhe do log (20 a 30 linhas); validar linha a linha antes de criar; `Formulario.ExibeMensagem` com o resumo da leitura.
+
+## 17. Complementos às receitas confirmados pela API (DLLs v18.1.1)
+[api] guias/api_scripts.md; assinaturas reais, comportamento a validar em Qualidade.
+- **Consulta parametrizada (receitas 6, 7, 9)**: além de concatenar texto, o `DB` tem sobrecargas com parâmetros:
+  `DB.ExecuteScalar(sql, nomesParametros, valoresParametros)`, idem `ExecuteDataTable` e `ExecuteNonQuery`
+  (listas .NET). Evita aspas e injeção de SQL. A sintaxe do marcador no SQL (ex.: `:nome` no Oracle) não foi testada.
+- **Mensagem (receita 10)**: `Mensagem` é um `TemplateMensagem`: `Destinatarios` (lista), `Assunto`, `Corpo`,
+  `Remetente`, `NomeRemetente`, `Complemento1` a `Complemento5`, `ConteudoHTML`, `DataHoraAgendada` e
+  **`Cancelar`** (`Mensagem.Cancelar = True` impede o envio). `PreencheCorpo(nomeModeloComunicado, OrdemServico)`.
+- **Aprovação (receita 11)**: `PossuiAprovacao(codigoAtividade)`, `ObtemMotivoReprovacao(codigoAtividade)`,
+  `Aprova(codigoAtividade[, aprovador, comentario])`, `Reprova(codigoAtividade, motivo)`, `CancelaAprovacao(codigoAtividade)`.
+  Desvios: `ObtemMotivoGateway(codigoGateway)`, `ContaExecucaoGateway(codigoGateway[, textoAlternativa])`.
+- **Campos (receita 12)**: `GetCustom(nome[, valorPadrao])` e `SetCustom(nome, valor)` vêm de `SessionObjectProxy`,
+  base de TODAS as entidades: valem para OrdemServico, Pessoa, Servico, Orgao etc. e também `objeto["NOME"]`.
+- **Grids (receita 13)**: `AdicionaLinhaRegistro(nomeCampo, nomes, valores)` devolve o `DataRow` criado.
+  `FormularioRegistro.Colunas`, `PossuiColuna(nome)`; cada coluna é um `ControleFormulario`
+  (`Valor`, `Visivel`, `Habilitado`, `Itens`, `Mascara`).
+- **Validação (receita 15)**: `Criticas.AdicionaPendencia(mensagem[, grupo[, campoAssociado]])`,
+  `AdicionaAviso(...)` e `AdicionaInformacao(...)` com as mesmas sobrecargas.
+- **Papéis (receita 7)**: `Atores.Adiciona(pessoa[, comentario])`, `AdicionaLista(arrayList[, comentario])`,
+  `Limpar()`, `Quantidade`.
+- **Lote (receita 16)**: `IniciaSubProcesso(atividade[, numero])` devolve uma `Ocorrencia`, então
+  `sub.SetCustom("CAMPO", valor)` existe para preencher campos simples da OS filha. Alternativa sem Link Inicial:
+  `OrdemServico.Nova(siglaClasseSubProcesso, codigoIniciador, assunto, servico, cliente, responsavel, valoresCustomizados)`
+  abre a OS já com um `Hashtable` de campos customizados (usado em vários fluxos do cliente sem o Hashtable).
+- **Outros úteis**: `AnexaArquivo(nomeArquivo, siglaTipoItem, apagarOriginal)`, `AssociaOrdemServico(numeroAlvo, siglaAssociacao)`,
+  `ObtemAssociadasComoFonte/ComoAlvo(nomeAssociacao)`, `ObtemPrincipal()`, `ObtemDerivadas()`, `Cancela(motivo)`,
+  `VoltaAtividade()`, `AvancaAtividade()`, `Encaminha(tecnico, explicacao)`, `ContaExecucaoAtividade(codigo)`,
+  `AnexaExportacaoRelatorio(...)`, `Utils.NewSequenceValue(sequence)`, `Utils.SendMail(from, to, subject, body)`.
