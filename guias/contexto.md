@@ -35,7 +35,9 @@ Os nomes são genéricos e reaproveitados entre fluxos; o significado vem do ró
 - `CHECKBOX1`: usado como botão ("clique para ler a planilha"). `OBS1`, `DESCRICAO_DETALHADA`, `TEXT`: textos.
 - `CNPJ`, `NOME_FORNECEDOR`, `FORNECEDOR1`, `VALOR`, `DGCO_BB`: fluxos financeiros e de contratos.
 - Grids gravam em tabelas `Z_00143_<NOME_DO_GRID>` (ex.: `Z_00143_GRID_IDF`).
-- Lista completa (4.317 campos, com tipo, controle, tabela e coluna): `catalogo/campos.tsv`.
+- **Mapa oficial da produção** (3.451 campos, com tipo, controle, tabela e coluna física): `catalogo/campos_banco.tsv`.
+  `catalogo/campos.tsv` (4.317, dos XMLs) tem 868 campos que a produção não tem; em divergência, vale o banco
+  (`catalogo/campos_vs_banco.md`). Ex.: `COMBOBOX3` fica em `CPE_BOOTCAMP` na produção.
 
 ## Papéis recorrentes
 `Cliente` (54 fluxos), `Responsável atual` (43), `Favorecido Cobra` (19), `Fila CSC - Contratos`,

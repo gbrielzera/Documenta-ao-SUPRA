@@ -17,7 +17,7 @@ Gerado por tools/guias.py a partir dos scripts distintos de todos os XMLs. Os n�
 - **Criticas**: AdicionaPendencia (27), AdicionaAviso (1)
 - **Controle**: Valor (20)
 - **Orgao**: Carrega (16)
-- **Ocorrencia**: Salva (1), Carrega (1)
+- **Ocorrencia**: Carrega (1), Salva (1)
 
 ## LookupScript — 367 scripts distintos
 Onde: campo customizado (DropDownList/SearchList/DataGrid): script de recuperação de opções; preenche `Itens`
@@ -37,7 +37,7 @@ Itens = DB.ExecuteDataTable("SELECT ED.DESCRICAO FROM PESSOA INNER JOIN TB_CAD_P
 
 ## ScriptModificado — 155 scripts distintos
 Onde: campo de formulário: executa quando o valor do campo muda (formulário dinâmico)
-Identificadores de contexto: Formulario (113), FormularioRegistro (43), OrdemServico (36), Pessoa (29), Utils (26), Controle (16), DB (14), Culture (10), Texto (10), Orgao (9), OleDbConnection (8), OleDbDataAdapter (8), Software (4), LimparCampo (4), LerDocumentoXml (3), File (3), Char (3), PrimeiroFilho (3), GridPossuiDGCO (3), TextoCompleto (3), MemoryStream (3), ZipArchiveMode (3), Inteiro (3), ZipArchive (3), Atributo (3)
+Identificadores de contexto: Formulario (113), FormularioRegistro (43), OrdemServico (36), Pessoa (29), Utils (26), Controle (16), DB (14), Culture (10), Texto (10), Orgao (9), OleDbConnection (8), OleDbDataAdapter (8), Software (4), LimparCampo (4), MemoryStream (3), XDocument (3), GridPossuiDGCO (3), LerDocumentoXml (3), ZipArchiveMode (3), ValorCelula (3), Char (3), Inteiro (3), PrimeiroFilho (3), LerXlsx (3), ZipArchive (3)
 Exemplo (de Administração_-_Contratos_Versão_44_Pré-Notificação_do_Índice_de_Desempenho_de_Fornecedores_(IDF)_):
 ```python
 OrdemServico['FORNECEDOR'] = FormularioRegistro['FORNECEDOR'].Valor
@@ -68,7 +68,7 @@ if Formulario["Valor"].Valor != None:
 
 ## Source — 110 scripts distintos
 Onde: módulo da Biblioteca de Scripts (funções reutilizáveis; fonte em catalogo/biblioteca/)
-Identificadores de contexto: DB (75), OrdemServico (52), Pessoa (44), Servico (43), JsonConvert (40), Utils (30), HttpClient (28), FASE (27), MediaTypeWithQualityHeaderValue (26), Tecnico (24), JArray (23), ITERACAO (22), JValue (22), AuthenticationHeaderValue (22), JObject (18), NUMERO_OC (17), ID_OCORRENCIA (13), File (11), Dictionary (11), StringContent (10), NormalizationForm (8), Erro (7), DATA_PREVISTA_INICIO (6), DATA_PREVISTA_FIM (6), ESFORCO_PREVISTO_INICIO (6)
+Identificadores de contexto: DB (75), OrdemServico (52), Pessoa (44), Servico (43), JsonConvert (40), Utils (30), HttpClient (28), FASE (27), MediaTypeWithQualityHeaderValue (26), Tecnico (24), JArray (23), ITERACAO (22), JValue (22), AuthenticationHeaderValue (22), JObject (18), NUMERO_OC (17), ID_OCORRENCIA (13), Dictionary (11), File (11), StringContent (10), NormalizationForm (8), Erro (7), DATA_PREVISTA_FIM (6), DATA_PREVISTA_INICIO (6), ESFORCO_PREVISTO_INICIO (6)
 Exemplo (de Financeiro_-_Serviços_Gerais_Versão_38_Comprovantes_de_Valores_Pagos_a_Fornecedores Gabriel):
 ```python
 def isHoliday(day):
@@ -109,7 +109,7 @@ def cronograma_dod_realiza_sub(ID_OCORRENCIA, FASE, ITERACAO, ESFORCO_REAL):
 
 ## ScriptFormCarregado — 109 scripts distintos
 Onde: atividade: executa ao carregar o formulário da atividade
-Identificadores de contexto: Formulario (105), OrdemServico (37), Pessoa (14), Texto (9), DB (7), Utils (7), Fornecedor (6), SqlTexto (5), PreencherCampoPessoa (5), Contrato (4), PrecifObtemCronogramaAtividade (4), PreencherCampo (3), DesabilitarCampo (3), DefinirVisibilidade (3), Atividade (2), Servico (2), Empresa (2), ExibirMensagem (2), PreencherCampoTexto (2), DefinirHabilitado (2), Processo (2)
+Identificadores de contexto: Formulario (105), OrdemServico (37), Pessoa (14), Texto (9), DB (7), Utils (7), Fornecedor (6), PreencherCampoPessoa (5), SqlTexto (5), Contrato (4), PrecifObtemCronogramaAtividade (4), PreencherCampo (3), DesabilitarCampo (3), DefinirVisibilidade (3), Atividade (2), Servico (2), Empresa (2), ExibirMensagem (2), DefinirHabilitado (2), PreencherCampoTexto (2), Processo (2)
 Exemplo (de Comunicação_de_Acidente_de_Trabalho_-_CAT_Versão_1_Comunicação_de_Acidente_de_Trabalho_-_CAT):
 ```python
 OrdemServico.ModificaCampoFormularioVisivel('REG_POL1', False)
@@ -152,7 +152,7 @@ OrdemServico.Servico.Sigla == "PAGFORNECSEMDGCO"
 
 ## ScriptInicio — 62 scripts distintos
 Onde: atividade: executa quando a atividade inicia (evento Inicialização)
-Identificadores de contexto: OrdemServico (56), AvancaProximaAtividade (27), DB (17), Pessoa (10), Utils (7), Orgao (4), Formulario (4), Texto (4), MediaTypeWithQualityHeaderValue (4), HttpClient (4), JsonConvert (4), AuthenticationHeaderValue (4), ValorLinha (3), RegistrarLog (3), LimparGridSubprocesso (3), StringContent (3), JObject (3), PrecifObtemCronogramaAtividade (3), Inteiro (2), Fornecedor (2), Thread (2), Servico (2)
+Identificadores de contexto: OrdemServico (56), AvancaProximaAtividade (27), DB (17), Pessoa (10), Utils (7), Orgao (4), Texto (4), Formulario (4), JsonConvert (4), AuthenticationHeaderValue (4), MediaTypeWithQualityHeaderValue (4), HttpClient (4), RegistrarLog (3), LimparGridSubprocesso (3), ValorLinha (3), JObject (3), StringContent (3), PrecifObtemCronogramaAtividade (3), Inteiro (2), Fornecedor (2), Thread (2), Servico (2)
 Exemplo (de Financeiro_-_Faturamento_de_Clientes_Versão_20_Faturamento_de_Clientes_-_Emissão_de_Notas_Fiscais):
 ```python
 OrdemServico.ModificaCampoFormularioVisivel('NUM_DOCU', True)
@@ -296,7 +296,7 @@ Servico.Carrega("Sigla", "CADCONTRATO")
 
 ## ScriptFim — 16 scripts distintos
 Onde: atividade: executa quando a atividade termina
-Identificadores de contexto: OrdemServico (12), DB (3), Pessoa (3), MediaTypeWithQualityHeaderValue (2), StringContent (2), HttpClient (2), JsonConvert (2), AuthenticationHeaderValue (2)
+Identificadores de contexto: OrdemServico (12), DB (3), Pessoa (3), HttpClient (2), JsonConvert (2), AuthenticationHeaderValue (2), StringContent (2), MediaTypeWithQualityHeaderValue (2)
 Exemplo (de Suprimentos_-_Contratos_Versão_27_Registro_de_Notas_Fiscais_de_Fornecedores):
 ```python
 OrdemServico["RESPONSAVEL_ATUAL"] = OrdemServico.ResponsavelId
@@ -314,7 +314,7 @@ Exemplo (de Administração_-_Contratos_Versão_44_Pré-Notificação_do_Índice
 
 ## ScriptConfirmado — 3 scripts distintos
 Onde: campo/registro de formulário: executa ao confirmar a edição
-Identificadores de contexto: Cancela (3), OrdemServico (3), Formulario (3), Utils (2), FormularioRegistro (2)
+Identificadores de contexto: OrdemServico (3), Formulario (3), Cancela (3), Utils (2), FormularioRegistro (2)
 Exemplo (de Administração_-_Bens_Patrimoniais_Versão_38_Transferência_de_Bens_Patrimoniais):
 ```python
 if (OrdemServico.Servico.Sigla == "TRANSFBENFUNCMSMUOR"):

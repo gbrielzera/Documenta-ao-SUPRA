@@ -54,5 +54,6 @@ Duas formas de criar a OS filha (decidir com teste):
 - Limite de linhas por planilha e teste de tempo de execução (10, 50, 200 linhas).
 - Restringir quem abre o lote (clientes autorizados do iniciador).
 - Conferir duplicidade com OS aberta para a mesma matrícula: consulta 6 de `guias/sql.md` (`CPE_CSC.TE_MATRICULA` existe em produção; o `FAVORECIDO_COBRA` está em `CP_ORDEM_SERVICO`, NVARCHAR2(500), e guarda o ID_PESSOA como texto).
-- Confirmar em produção as colunas das tabelas dos campos de perfil (`CPE_CONTRATOS`, `CPE_CONTRATOS02`, `CPE_BOOTCAMP`): consulta 3 de `guias/consultas_banco.md`. `COMBOBOX` (NVARCHAR2 1800) e `COMBOBOX1` (400) já foram conferidos.
+- Campos de perfil conferidos em produção (mapa oficial): `COMBOBOX` (Perfil 1) e `COMBOBOX1` em `CP_ORDEM_SERVICO` (900 e 200 caracteres); `COMBOBOX_BOX1` (Perfil 2) em `CPE_CONTRATOS02`; `COMBOBOX2` e **`COMBOBOX3`** em `CPE_BOOTCAMP` (no XML o COMBOBOX3 aparece em `CPE_CONTRATOS`: em SQL usar a tabela do banco); `COMBOBOX_SIM_NAO` (Perfil 3) em `CPE_CONTRATOS`. `TE_MATRICULA`, `TE_UOR`, `DESCRICAO_DETALHADA` em `CPE_CSC`; `FAVORECIDO_COBRA` em `CP_ORDEM_SERVICO`.
+- Validar a matrícula da planilha em `CP_PESSOA` + `PESSOA.ATIVO`: só 5.648 pessoas têm cadastro no Supravizio, contra 13.873 linhas no RH; uma matrícula do RH pode não ter usuário no Supravizio.
 - Escrever os scripts (leitura/validação, trava, criação) seguindo a regra de script mínimo.

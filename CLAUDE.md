@@ -45,7 +45,7 @@ Nunca abrir `raw/` nem os XMLs crus, e nunca varrer `docs/` inteiro. O caminho �
 | `guias/` | Leitura inicial. `contexto.md` (ambiente e usuário), `sql.md` (banco real: regras, índices, consultas), `consultas_banco.md` (consultas de leitura a pedir ao usuário), `receitas.md` (dúvidas já resolvidas), `scripts.md` (onde cada script roda), `api_scripts.md` (assinaturas reais dos objetos de script), `scripts_contexto.md` (uso real por tipo de script), `banco.md` (tabelas), `xml-fluxo.md` (estrutura do XML), `demanda_*.md` (demandas em andamento) |
 | `docs/` | Documentação oficial em Markdown, 1 arquivo por tópico; `_INDICE.md` é o sumário em árvore |
 | `fluxos/` | Resumo de cada XML de fluxo: grafo, atividades, campos, scripts completos; `_INDICE.md` lista todos |
-| `catalogo/` | `api/<Classe>.md` (assinaturas das 300 classes da API de scripts, DLLs do Client v18.1.1); `biblioteca/*.py` (biblioteca de scripts do cliente); `campos.tsv` (campos customizados); `schema.txt` (colunas das tabelas oficiais, doc de 2018); `schema_real.tsv` (colunas reais de produção); `campos_vs_banco.md`; `tabelas_customizadas.md`; `tabelas_usadas_em_sql.md` |
+| `catalogo/` | `api/<Classe>.md` (assinaturas das 300 classes da API de scripts, DLLs do Client v18.1.1); `biblioteca/*.py` (biblioteca de scripts do cliente); `campos.tsv` (campos customizados); `schema.txt` (colunas das tabelas oficiais, doc de 2018); `schema_real.tsv` (colunas reais de produção); `campos_banco.tsv` (mapa oficial de campos da produção); `campos_vs_banco.md`; `tabelas_customizadas.md`; `tabelas_usadas_em_sql.md` |
 | `tools/` | Scripts de busca e manutenção |
 | `XMLs para teste/`, `raw/`, `Supravizio Client3/`, `Supravizio.chm` | Fontes originais; só existem no PC do usuário e não devem ser lidas direto |
 
@@ -63,7 +63,7 @@ Prefixos úteis em `docs/`: `dados_<tabela>` (modelo de dados), `objetos_<classe
 - **SQL**: ler `guias/sql.md` primeiro (regras de desempenho, tamanhos, índices, valores de domínio e
   consultas prontas). Colunas **reais** de produção: `grep -P "^TABELA	" catalogo/schema_real.tsv`
   (só 4 tabelas por enquanto; as demais seguem a doc de 2018 em `catalogo/schema.txt` e `docs/dados_<tabela>.md`).
-  Campos customizados: `catalogo/campos.tsv` e `catalogo/campos_vs_banco.md`. Sintaxe Oracle.
+  Tabela e coluna física de um campo: `grep -P "\tNOME_DO_CAMPO\t" catalogo/campos_banco.tsv` (mapa oficial da produção; `campos.tsv`, dos XMLs, pode divergir: `catalogo/campos_vs_banco.md`). Sintaxe Oracle.
   Se faltar informação do banco, pedir ao usuário (só tem SELECT) uma consulta de `guias/consultas_banco.md`.
 - **Integração / API / web service**: `docs/web_services.md`, `docs/webservices.md`,
   `docs/iniciador_por_mensagem.md`, tutoriais 13 e 14; exemplos REST reais em `catalogo/biblioteca/api*.py`.
@@ -106,7 +106,8 @@ python -X utf8 tools/fluxo.py catalogo         # XMLs -> catalogo/
 python -X utf8 tools/guias.py                  # guias/banco.md, scripts_contexto.md, schema.txt, fluxos/_INDICE.md
 powershell -ExecutionPolicy Bypass -File tools\extrair_api.ps1   # DLLs do Client -> catalogo/api/_api.json
 python -X utf8 tools/api.py                    # _api.json -> catalogo/api/*.md e guias/api_scripts.md
-python -X utf8 tools/schema_real.py <export>   # export de ALL_TAB_COLUMNS -> catalogo/schema_real.tsv e campos_vs_banco.md
+python -X utf8 tools/schema_real.py <export>   # export de ALL_TAB_COLUMNS -> catalogo/schema_real.tsv
+python -X utf8 tools/campos_banco.py <export>  # export de SV_CUSTOM_PROPERTY -> catalogo/campos_banco.tsv e campos_vs_banco.md
 python -X utf8 tools/mascarar.py               # OBRIGATÓRIO antes de commitar: mascara senhas/tokens
 python -X utf8 tools/indexar.py                # recria kb.sqlite (rodar por último)
 ```

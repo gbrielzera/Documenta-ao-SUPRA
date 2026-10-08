@@ -2,6 +2,7 @@
 Caminho: Catálogo > Banco > Tabelas customizadas
 
 Uma linha por tabela física que guarda campos customizados, com a classe dona e as colunas.
+ATENÇÃO: derivado dos XMLs (provavelmente de Qualidade); a produção tem menos campos e algumas tabelas diferentes. Verdade da produção: `catalogo/campos_banco.tsv`.
 Detalhe de cada campo: `catalogo/campos.tsv` (grep pelo nome).
 
 - **CPE_ASSTECNICA** (OrdemServico, 28 colunas): ASST_CAT (String), ASST_CEP (String), ASST_ENDERECO (String), ASST_HOUVE_REMANEJAMENTO (String), ASST_INFORMAR_EQPT (String), ASST_JUSTIFICATIVA (String), ASST_LAT (String), ASST_MANTENEDO_CORRETO (String), ASST_MATRICULA (String), ASST_NOME_FUNCIONARIO (String), ASST_NUMERO_BEM (String), ASST_NUMERO_CHAMADO (String), ASST_NUMERO_CONTRATO (String), ASST_NUMERO_EQUIPAMENTO (String), ASST_NUMERO_TAREFA (String), ASST_OBSERVACAO (String), ASST_PREFIXO_CORRETO (String), ASST_SAG_CORRETO (String), ASST_SERVICO_ATENDIMENTO (String), ASST_SOLIC_TRANSBORDO (String), ASST_TIPO_EQUIPAMENTO (String), ASST_ZONA_TRABALHO_ANTIGA (String), ASST_ZONA_TRABALHO_ATUAL (String), CATEGORIA_IDENIZACAO (String), CATEGORIA_INDENIZACAO (String), CONTRATO_GERED (String), INFOR (String), TIPO_BASE (String)

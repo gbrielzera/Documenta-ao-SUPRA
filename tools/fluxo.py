@@ -504,6 +504,7 @@ def cmd_catalogo(_args):
 
     md = ["# Tabelas de campos customizados (CPE_*)", "Caminho: Catálogo > Banco > Tabelas customizadas", "",
           "Uma linha por tabela física que guarda campos customizados, com a classe dona e as colunas.",
+          "ATENÇÃO: derivado dos XMLs (provavelmente de Qualidade); a produção tem menos campos e algumas tabelas diferentes. Verdade da produção: `catalogo/campos_banco.tsv`.",
           "Detalhe de cada campo: `catalogo/campos.tsv` (grep pelo nome).", ""]
     for (tab, classe), cols in sorted(por_tabela.items()):
         md.append(f"- **{tab}** ({classe}, {len(cols)} colunas): " + ", ".join(sorted(set(cols))))

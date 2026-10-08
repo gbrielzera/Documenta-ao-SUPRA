@@ -3,7 +3,7 @@ Caminho: Guias > Receitas
 
 Respostas curtas e verificadas para as dúvidas mais comuns. Cada receita indica a fonte:
 **[doc]** = documentação oficial; **[fluxo]** = padrão observado nos fluxos reais do cliente
-(não documentado oficialmente); **[api]** = assinatura confirmada nas DLLs do Client v18.1.1
+(não documentado oficialmente); **[banco]** = conferido em exports da produção (guias/sql.md); **[api]** = assinatura confirmada nas DLLs do Client v18.1.1
 (guias/api_scripts.md), sem garantia de comportamento além da assinatura. Nomes de campos são exemplos; confira em `catalogo/campos.tsv`.
 
 ## 1. Importar um fluxo exportado (ex.: de produção) na árvore do Process Explorer
@@ -201,6 +201,10 @@ if OrdemServico.GetCustom("LISTA_NF").Rows.Count == 0:
 Uma pendência basta para impedir o avanço; `Criticas.AdicionaAviso(msg)` só alerta.
 Por padrão o Script Validação roda também na finalização do processo (parâmetro
 "Executar Script de validação na finalização" da tarefa).
+
+## 16a. Descobrir em que tabela e coluna um campo é gravado (para SQL)
+[banco] `grep -P "\tNOME_DO_CAMPO\t" catalogo/campos_banco.tsv` devolve classe, nome, rótulo, tipo, controle, **tabela**, coluna e tamanho (caracteres) do campo na produção. Não confie na tabela dos resumos de `fluxos/` (vêm dos XMLs): 6 campos já divergem (ex.: `COMBOBOX3` é `CPE_BOOTCAMP`). Em SQL, junte a tabela por `ID_OCORRENCIA` com `LEFT JOIN` (regras em `guias/sql.md`).
+Direto no banco: `SELECT NAME, TEXT, TABLE_NAME, TABLE_COLUMN FROM SV_CUSTOM_PROPERTY WHERE NAME = '...'`.
 
 ## 16. Abrir várias OS a partir de uma planilha (fluxo "em lote")
 [fluxo] padrão repetido nos fluxos do cliente. Referências para copiar:
