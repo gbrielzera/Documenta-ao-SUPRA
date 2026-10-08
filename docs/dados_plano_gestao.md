@@ -20,4 +20,4 @@ Tabelas que dependem de PLANO_GESTAO
 |---|---|
 | [APURACAO_INDICADOR](dados_apuracao_indicador) | \| **APURACAO_INDICADOR** \| **PLANO_GESTAO** \| \|---\|---\| \| ID_PLANO_GESTAO \| ID_PLANO_GESTAO \| |
 | [INDICADOR_PLANO](dados_indicador_plano) | \| **INDICADOR_PLANO** \| **PLANO_GESTAO** \| \|---\|---\| \| ID_PLANO_GESTAO \| ID_PLANO_GESTAO \| |
-| [GRUPO_TRABALHO_AUTORIZADO](dados_grupo_trabalho_autorizado) | \| **GRUPO_TRABALHO_AUTORIZADO** \| **PLANO_GESTAO** \| \|---\|---\| \| ID_PLANO_GESTAO \| ID_PLANO_GESTAO \| |
+| [GRUPO_TRABALHO_AUTORIZADO](dados_grupo_trabalho_autorizado_) | \| **GRUPO_TRABALHO_AUTORIZADO** \| **PLANO_GESTAO** \| \|---\|---\| \| ID_PLANO_GESTAO \| ID_PLANO_GESTAO \| |

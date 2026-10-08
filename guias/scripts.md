@@ -16,7 +16,7 @@ Antes de escrever um script, confira sempre:
 
 | Script (tag no XML) | Onde se configura | Variáveis específicas | Página oficial |
 |---|---|---|---|
-| ScriptInicio | Tarefa: ao iniciar | `OrdemServico`; `AvancaProximaAtividade = True` avança sozinho | docs/tarefas.md |
+| ScriptInicio | Tarefa: ao iniciar | `OrdemServico`; `AvancaProximaAtividade = True` pede o avanço da tarefa (use em tarefa automática; não na entrada de uma tarefa que precisa aguardar aprovação ou ação do usuário; não vale em fórmula de gateway) | docs/tarefas.md |
 | ScriptValidacao | Tarefa: antes de avançar (por padrão roda também na finalização) | `Criticas.AdicionaPendencia(msg)` bloqueia; `Criticas.AdicionaAviso(msg)` | docs/tarefas.md |
 | ScriptFim | Tarefa: ao finalizar (manual ou automático) | `OrdemServico` | docs/tarefas.md |
 | Script Volta | Tarefa: quando o fluxo volta para ela | `OrdemServico` | docs/tarefas.md |
@@ -100,6 +100,24 @@ script (o de papel já traz `Pessoa` e `Ator`; o de validação só `OrdemServic
 `Pessoa`, `Orgao` (`Venki.Supravizio.Recurso.Custom`) ou `Servico` (`Venki.Supravizio.Processo.Custom`)
 e a classe não estiver no cabeçalho, acrescentar uma linha `from ... import Classe`; não foi testado
 em quais tipos isso é necessário. REST pede `clr.AddReference("System.Net.Http")` e os `from` usados, nada além.
+
+## Armadilhas dos scripts do cliente (não copiar)
+Os scripts dos fluxos funcionam em produção, mas vários têm defeitos conhecidos. Ao reaproveitar um trecho, evite:
+- `if dt.Rows.Count != 0 or dt.Rows.Count != None:` — é sempre verdadeiro (a contagem nunca é nula e o `or` basta uma
+  condição); com zero linhas o laço não roda e variáveis definidas dentro dele ficam indefinidas. Usar `if dt.Rows.Count > 0:`.
+  Aparece em 5 fluxos (inclusive no papel de gestor do fluxo Atualizar Perfil/Especialidade) [fluxo].
+- Contador de laço que nunca incrementa (`countLoop` fica em 0), então o limite de profundidade não funciona; visto na
+  seleção de gestor por hierarquia [fluxo]. Use um `for` com limite ou incremente de verdade.
+- `except:` vazio, que engole qualquer erro (27 fluxos): em integração externa, ao menos registrar com `Utils.LogError`.
+- Número sequencial por `MAX(coluna) + 1` seguido de gravação (4 fluxos e 8 módulos da biblioteca): duas OS simultâneas
+  podem receber o mesmo número. Prefira `Utils.NewSequenceValue("SEQUENCIA")` quando houver sequence [api].
+- `or` misturado com `and` sem parênteses nas regras de cargo/órgão: o `and` tem precedência, o resultado costuma não ser o pretendido.
+- Teste de pertinência em texto (`uf in "SP,RJ,MG"`) casa por trecho e aceita string vazia; use lista (`uf in ["SP","RJ","MG"]`).
+- `Criticas.AdicionaAviso(...)` onde a intenção é bloquear: aviso não impede o avanço, só `AdicionaPendencia` impede.
+- Em evento de confirmação de grid, escrever só `Cancela` não faz nada; é preciso `Cancela = True`.
+- Mensagem de erro com limite diferente do usado no `if` (ex.: código exige 150 caracteres, mensagem diz 100).
+Os dois últimos itens e o de `Rows.Count < 0` (condição impossível) vêm das anotações de um colega sobre outros XMLs
+`[não conferido nos nossos 76 XMLs]`; os demais foram achados também nos nossos fluxos.
 
 ## Regras ao responder
 - Script mínimo sempre (ver `CLAUDE.md`): o que for opcional vira uma frase depois do código.

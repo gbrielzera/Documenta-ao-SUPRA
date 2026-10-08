@@ -8,7 +8,7 @@ Propriedades:
 
 | **Nome** | **Descrição** | **Tipo** |
 |---|---|---|
-| **FormatoExportacao** | Formato do arquivo que será gerado pelo relatório e anexado na ocorrência. | [FormatoExportacaoRelatorio](enum_formatoexportacaorelatorio) |
+| **FormatoExportacao** | Formato do arquivo que será gerado pelo relatório e anexado na ocorrência. | [FormatoExportacaoRelatorio](enum_formatoexportacaorelatorio_) |
 | **OperacaoAtividadeId** | Número sequencial gerado automaticamente pelo sistema para Identificar uma OperacaoAtividade | Inteiro |
 | **Parametros** | Parâmetros e respectivos valores que serão utilizados no processamento do relatório. | [Lista de ParamRelatorioOperacao](objetos_paramrelatoriooperacao) |
 | **RotuloLink** | Texto utilizado no link disponível na página de aprovação da aplicação de Autoatendimento. Ao clicar neste link será exibido em uma nova página o conteúdo do relatório. Se não for preenchido então será utilizado o próprio título do relatório. | String |

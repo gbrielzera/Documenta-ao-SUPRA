@@ -27,7 +27,7 @@ Propriedades:
 | **Responsavel** | Pessoa que é responsável pela manutenção de dados do Contrato. | [Pessoa](objetos_pessoa) |
 | **ResponsavelFornecedor** | Nome da pessoa responsavável pelo Contrato pelo Fornecedor contratado. | String |
 | **ResponsavelId** | Identificador da Pessoa associada | Inteiro |
-| **TiposApontamento** | Tipos de Apontamentos previstos no Contrato | [Lista de TipoApontamentoContrato](objetos_tipoapontamentocontrato) |
+| **TiposApontamento** | Tipos de Apontamentos previstos no Contrato | [Lista de TipoApontamentoContrato](objetos_tipoapontamentocontrato_) |
 
 Operações:
 

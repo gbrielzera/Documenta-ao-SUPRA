@@ -244,6 +244,14 @@ def main():
         n += 1
         bytes_in += len(bruto)
         bytes_out += len(md)
+    # alguns tópicos do CHM têm "_" no fim do nome e os links apontam sem ele
+    nomes = {p.stem for p in DOCS.glob("*.md")}
+    for p in DOCS.glob("*.md"):
+        t = p.read_text(encoding="utf-8")
+        novo = re.sub(r"\]\(([a-z0-9_\-]+)\)",
+                      lambda m: f"]({m.group(1)}_)" if m.group(1) not in nomes and m.group(1) + "_" in nomes else m.group(0), t)
+        if novo != t:
+            p.write_text(novo, encoding="utf-8")
     arv = indice()
     (DOCS / "_INDICE.md").write_text(
         "# Sumário da documentação — título (arquivo em docs/, sem .md)\n\n"

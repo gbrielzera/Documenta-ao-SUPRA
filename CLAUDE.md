@@ -42,7 +42,7 @@ Nunca abrir `raw/` nem os XMLs crus, e nunca varrer `docs/` inteiro. O caminho �
 
 | Pasta | Conteúdo |
 |---|---|
-| `guias/` | Leitura inicial. `contexto.md` (ambiente e usuário), `sql.md` (banco real: regras, índices, consultas), `consultas_banco.md` (consultas de leitura a pedir ao usuário), `receitas.md` (dúvidas já resolvidas), `scripts.md` (onde cada script roda), `api_scripts.md` (assinaturas reais dos objetos de script), `scripts_contexto.md` (uso real por tipo de script), `banco.md` (tabelas), `xml-fluxo.md` (estrutura do XML), `demanda_*.md` (demandas em andamento) |
+| `guias/` | Leitura inicial. `contexto.md` (ambiente e usuário), `sql.md` (banco real: regras, índices, consultas), `consultas_banco.md` (consultas de leitura a pedir ao usuário), `receitas.md` (dúvidas já resolvidas), `scripts.md` (onde cada script roda), `api_scripts.md` (assinaturas reais dos objetos de script), `desenho_fluxos.md` (como propor e montar um fluxo; formato da proposta), `scripts_contexto.md` (uso real por tipo de script), `banco.md` (tabelas), `xml-fluxo.md` (estrutura do XML), `demanda_*.md` (demandas em andamento) |
 | `docs/` | Documentação oficial em Markdown, 1 arquivo por tópico; `_INDICE.md` é o sumário em árvore |
 | `fluxos/` | Resumo de cada XML de fluxo: grafo, atividades, campos, scripts completos; `_INDICE.md` lista todos |
 | `catalogo/` | `api/<Classe>.md` (assinaturas das 300 classes da API de scripts, DLLs do Client v18.1.1); `biblioteca/*.py` (biblioteca de scripts do cliente); `campos.tsv` (campos customizados); `schema.txt` (colunas das tabelas oficiais, doc de 2018); `schema_real.tsv` (colunas reais de produção); `campos_banco.tsv` (mapa oficial de campos da produção); `campos_vs_banco.md`; `tabelas_customizadas.md`; `tabelas_usadas_em_sql.md` |
@@ -70,7 +70,7 @@ Prefixos úteis em `docs/`: `dados_<tabela>` (modelo de dados), `objetos_<classe
 - **Entender ou alterar um fluxo (XML)**: ler `fluxos/<nome>.md` (começar pelo `## Grafo do fluxo`);
   estrutura do XML em `guias/xml-fluxo.md`; detalhe de um nó com
   `python -X utf8 tools/fluxo.py bruto "<xml>" <Id|NOME_CAMPO>` (só no PC, exige o XML).
-- **Demanda inteira (novo fluxo ou mudança)**: ler o fluxo original; procurar um fluxo parecido já
+- **Demanda inteira (novo fluxo ou mudança)**: ler `guias/desenho_fluxos.md` (regras e formato da proposta); ler o fluxo original; procurar um fluxo parecido já
   feito (`fluxos/_INDICE.md` marca grid, aprovação, lote, API...); listar as regras de negócio
   extraídas dos scripts; propor o desenho; apontar o que depende de documento ou decisão; registrar
   em `guias/demanda_<nome>.md` se o trabalho continuar depois.

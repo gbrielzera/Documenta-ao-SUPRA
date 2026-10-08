@@ -64,6 +64,23 @@ na seção "Papéis usados" de um fluxo que o utilize.
 - Anexos: classe "Arquivo" (sigla `ARQUIVO`) na maioria; `OrdemServico.PossuiItem("ARQUIVO")` / `ObtemItem("ARQUIVO")`.
 - Log: `Utils.LogError(mensagem, categoria)` e `OrdemServico.AdicionaComentario(texto, False)`.
 
+## Divergências conhecidas da documentação (conferidas nesta base)
+A documentação oficial tem inconsistências. Não use o texto de uma dessas páginas como prova isolada.
+- **Chamada assíncrona** de Subprocesso: `docs/prop_atividade_chamadaassincrona.md` diz que *verdadeiro* impede avançar até o
+  subprocesso terminar; `docs/subprocessos.md` diz o oposto (assíncrona = a OS chamadora avança sem esperar). A contradição existe
+  também no site. Nos lotes do cliente a opção fica no padrão (falso). Testar em Qualidade antes de depender dela.
+- **Tipos de evento inicial**: em `docs/enum_tipoatividade.md`, `EventoInicialRegra` é descrito como temporizador e
+  `EventoInicialTimer` como fórmula, ao contrário do que os nomes sugerem. Conferir na tela/exemplo antes de gerar código.
+- **Enumeração `TipoGateway`** (`docs/enum_tipogateway.md`) só lista as decisões exclusivas, mas Paralelo e Inclusivo existem
+  (docs/paralelo.md, docs/desvio_inclusivo.md).
+- **Introduções trocadas**: `docs/objetos_calendario.md` descreve o Acordo de Nível de Serviço e `docs/objetos_acordonivelservico.md`
+  descreve o Calendário.
+- **Nome de método**: `ObtemHorasApontadas` e a grafia `ObtemHorasApontandatas` existem **as duas** nas DLLs (a grafia estranha
+  é um método real); associadas: o nome real é `ObtemAssociadasComoFonte`/`ObtemAssociadasComoAlvo` (`guias/api_scripts.md`).
+- **Exemplos genéricos** em `prop_<classe>_id.md` atribuem identificadores: não são autorização para alterar IDs.
+- Requisitos de infraestrutura e navegadores da documentação são antigos (2018); não recomendar a partir deles.
+- Links internos quebrados na doc original: 14 páginas do índice dão 404 no site (lista em `raw_falhas.txt`, só no PC).
+
 ## Dados sensíveis
 Credenciais aparecem como `***MASCARADO***`. Nunca reconstituir, pedir ou sugerir valores reais.
 Nomes e e-mails de pessoas que aparecem nos fluxos são dados internos: não citar sem necessidade.

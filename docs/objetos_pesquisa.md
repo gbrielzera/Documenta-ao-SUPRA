@@ -27,7 +27,7 @@ Propriedades:
 | **RespondidaAutoAtendimento** | Indica que a Pesquisa de Satisfação foi respondida pelo Cliente utilizando a aplicação de Autoatendimento. | Booleano |
 | **ResponsavelCancelamento** | Pessoa responsável pelo Cancelamento da Pesquisa de Satisfação | [Pessoa](objetos_pessoa) |
 | **ResponsavelCancelamentoId** | Identificador da Pessoa associada | Inteiro |
-| **Situacao** | Indica a Situação da Pesquisa de Satisfação. | [SituacaoPesquisaSatisfacao](enum_situacaopesquisasatisfacao) |
+| **Situacao** | Indica a Situação da Pesquisa de Satisfação. | [SituacaoPesquisaSatisfacao](enum_situacaopesquisasatisfacao_) |
 
 Operações:
 

@@ -133,7 +133,8 @@ papel destinatário que retorne várias pessoas (inclusive papel Composto). [doc
 - Desvio Exclusivo logo após: Fórmula critério `OrdemServico.PossuiAprovacao("APROV_GESTOR")`.
 - Alternativas com Valor comparação `True` (aprovado) e `False` (reprovado).
 - Ou, sem fórmula: propriedade **Regra de Desvio** do Desvio Exclusivo apontando para a tarefa de aprovação.
-- Motivo da reprovação: `OrdemServico.ObtemMotivoReprovacao("APROV_GESTOR")`.
+- Motivo da reprovação: `OrdemServico.ObtemMotivoReprovacao("APROV_GESTOR")` (devolve texto vazio se a solicitação não foi reprovada).
+- Atenção: `PossuiAprovacao` é verdadeiro só quando a aprovação foi **finalizada como Aprovada** (docs/objetos_ocorrencia.md). `False` **não prova reprovação**: também é o resultado com a aprovação ainda pendente ou com o Código de outra atividade. O argumento é o **Código da tarefa que contém a aprovação**, não o nome do papel, da fila ou do gateway; o gateway deve vir depois da conclusão da aprovação. Reprovar não obriga a cancelar a OS: a rota de reprovação é regra de negócio do fluxo.
 
 ## 12. Ler em um script o valor de campo preenchido em outra tarefa
 [doc] docs/topicos_avancados_campos.md (Exemplo 3)
@@ -255,3 +256,13 @@ limitar o detalhe do log (20 a 30 linhas); validar linha a linha antes de criar;
   `ObtemAssociadasComoFonte/ComoAlvo(nomeAssociacao)`, `ObtemPrincipal()`, `ObtemDerivadas()`, `Cancela(motivo)`,
   `VoltaAtividade()`, `AvancaAtividade()`, `Encaminha(tecnico, explicacao)`, `ContaExecucaoAtividade(codigo)`,
   `AnexaExportacaoRelatorio(...)`, `Utils.NewSequenceValue(sequence)`, `Utils.SendMail(from, to, subject, body)`.
+
+## 18. Texto informativo formatado na tela (Label com HTML)
+[fluxo] Campo de controle **Label** aceita HTML no valor; o padrão dos fluxos do cliente é atribuir uma string de uma linha
+(o mesmo vale para o rótulo do campo na Entrada de Dados, usado em 5 fluxos). Esqueleto mínimo:
+```python
+Formulario["LABEL10"].Valor = '<p style="color: red; font-weight: bold;">Atenção: confira os dados antes de avançar.</p>'
+```
+Use aspas simples por fora e duplas dentro do HTML. A renderização depende do controle e da interface (Web x Windows) e não foi
+testada aqui: validar na tela. Docs: docs/controle_label.md (Label serve só como informativo e aceita valores alfanuméricos, data/hora,
+decimal, inteiro e lógico). Para mostrar/esconder o aviso conforme outro campo, combine com `.Visivel` (receita 3).

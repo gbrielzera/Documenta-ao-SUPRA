@@ -44,8 +44,8 @@ Tabelas que dependem de FIGURA
 
 | **Tabela** | **Colunas de ligação** |
 |---|---|
-| [FIGURA_ATIV_EVENTO_INTERM](dados_figura_ativ_evento_interm) | \| **FIGURA_ATIV_EVENTO_INTERM** \| **FIGURA** \| \|---\|---\| \| ID_FIGURA_EVENTO_INTER \| ID_FIGURA \| |
-| [FIGURA_ATIV_EVENTO_INTERM](dados_figura_ativ_evento_interm) | \| **FIGURA_ATIV_EVENTO_INTERM** \| **FIGURA** \| \|---\|---\| \| ID_FIGURA \| ID_FIGURA \| |
+| [FIGURA_ATIV_EVENTO_INTERM](dados_figura_ativ_evento_interm_) | \| **FIGURA_ATIV_EVENTO_INTERM** \| **FIGURA** \| \|---\|---\| \| ID_FIGURA_EVENTO_INTER \| ID_FIGURA \| |
+| [FIGURA_ATIV_EVENTO_INTERM](dados_figura_ativ_evento_interm_) | \| **FIGURA_ATIV_EVENTO_INTERM** \| **FIGURA** \| \|---\|---\| \| ID_FIGURA \| ID_FIGURA \| |
 
 **Exemplo 1: join com a tabela GATEWAY**
 

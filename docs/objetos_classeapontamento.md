@@ -22,7 +22,7 @@ Propriedades:
 | **DescricaoCampoString2** | Descrição para entrada de dados no Campo String 2. O preenchimento deste descritivo indica que o Campo será habilitado para entrada de dados. | String |
 | **Id** | Número sequencial gerado automaticamente pelo sistema para Identificar um ClasseApontamento | Inteiro |
 | **MotivoObrigatorio** | A informação de um Motivo é obrigatória no instante em que é realizado o Apontamento. | Booleano |
-| **Motivos** | Motivos | [Lista de MotivoClasseApontamento](objetos_motivoclasseapontamento) |
+| **Motivos** | Motivos | [Lista de MotivoClasseApontamento](objetos_motivoclasseapontamento_) |
 | **PermiteMotivoDigitado** | Permite a informação do Motivo do Apontamento por digitação e não por seleção de Item mantido na propriedade Motivos. | Booleano |
 | **PermiteMultiplosApontamentos** | Permite vários apontamentos para uma ocorrência de Processo. | Booleano |
 | **PermiteMultiplosMotivos** | Permite a informação de vários motivos no Apontamento | Booleano |

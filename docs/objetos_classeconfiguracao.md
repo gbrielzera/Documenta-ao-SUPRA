@@ -9,7 +9,7 @@ Propriedades:
 | **Nome** | **Descrição** | **Tipo** |
 |---|---|---|
 | **Acesso** | Define o mecanismo utilizado para acessar o arquivo, que pode ser por Compartilhamento de rede ou pelo mecanismo de Download/upload. No segundo caso o arquivo é transferido para a máquina local e, após modificações, deve ser enviado para atualização no servidor. O valor default deste campo está condicionado a configuração do tipo de acesso default existente na tela de Configurações (grupo Configuração) | [TipoAcesso](enum_tipoacesso) |
-| **AgrupamentoItens** | Define a forma como itens de charge-back apurado são agrupados no relatório apresentado para gestores de áreas clientes. | [AgrupamentoItensChargeBack](enum_agrupamentoitenschargeback) |
+| **AgrupamentoItens** | Define a forma como itens de charge-back apurado são agrupados no relatório apresentado para gestores de áreas clientes. | [AgrupamentoItensChargeBack](enum_agrupamentoitenschargeback_) |
 | **Ativo** | Indica que o Tipo de Item de Configuração está ativo no sistema. | Booleano |
 | **ClassesComponentes** | Tipos de Itens de Configuração que podem ser utilizadas como Componentes. | [Lista de ClasseComponente](objetos_classecomponente) |
 | **ClassesCopia** | Tipos de Itens de Configuração que podem ser utilizadas como redundâncias. | [Lista de ClasseCopia](objetos_classecopia) |

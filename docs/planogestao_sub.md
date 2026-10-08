@@ -25,7 +25,7 @@ Tela de edição do cadastro
 | **Indicadores** | Indicadores associados ao Plano de Gestão. Para cada indicador existe um desdobramento de vários Períodos. Possui também uma Meta geral e redefinições por período. Todos os registros desta coleção de dados são mantidos na tabela [INDICADOR_PLANO](dados_indicador_plano). |
 |---|---|
 
-| **Grupos Autorizados** | Grupos de Trabalho que estão autorizados a visualizar o resultado da apuração de indicadores. Todos os registros desta coleção de dados são mantidos na tabela [GRUPO_TRABALHO_AUTORIZADO](dados_grupo_trabalho_autorizado). |
+| **Grupos Autorizados** | Grupos de Trabalho que estão autorizados a visualizar o resultado da apuração de indicadores. Todos os registros desta coleção de dados são mantidos na tabela [GRUPO_TRABALHO_AUTORIZADO](dados_grupo_trabalho_autorizado_). |
 |---|---|
 
 ## Inserindo registros
