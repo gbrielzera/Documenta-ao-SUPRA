@@ -81,6 +81,19 @@ matrícula que existe no RH pode não existir no Supravizio**. Para achar a pess
   1,04 mi, `CPE_FINANCEIRO` 895 mil, `CPE_PESSOAS` 986 mil, `CPE_NEGOCIOS` 1,05 mi, `CPE_BOOTCAMP` 640 mil).
 - Grids `Z_00143_*`: de 130 mil a 407 mil linhas (`..._LISTA_MEDICAMENTOS` 407 mil, `..._LISTA_NF` 181 mil).
 
+## Dicionário de classes → tabelas (das DLLs, 2222 colunas em 286 tabelas)
+`catalogo/dicionario_dll.tsv`: tabela, classe .NET, coluna, tipo **.NET** (não o tipo Oracle), PK, sequence, e duas
+colunas de conferência: `no_doc_2018` e `no_producao`. Veio de outro chat que leu os metadados das DLLs (fonte confiável
+só para **nomes e mapeamento**; o tipo é .NET). Conferido: as 239 tabelas que também estão na documentação de 2018 batem
+com as colunas (ex.: `OCORRENCIA` tem as colunas da doc, mais `ESTADO_FORMULARIO`, `ID_GATEWAY`, `ID_SPLIT_GATEWAY`,
+`NUMERO_SISTEMA`, `DIAS_AVISO_REAB_AGEND`, que a doc de 2018 não traz). São 49 tabelas que só aparecem no dicionário,
+sobretudo de Portal (`PAGINA`, `PAINEL`, `LAYOUT`, `SKIN`, `PERMISSAO_PAGINA`), de autorização (`AUTORIZA_GRUPO`,
+`AUTORIZA_FILA`, `AUTORIZA_SOL`), de avisos (`AVISO_MURAL`) e de parâmetros (`PROCESSO_PARAM`, `SERVICES_PARAM`).
+Uso: descobrir a tabela de uma classe de script (`Pessoa` → `PESSOA`) e a coluna de um campo nativo.
+Ressalvas: o dicionário é de metadados do cliente de 8.1.2/18.1.1; não confirma que a coluna existe no banco de produção
+(use `schema_real.tsv` para isso). O documento de origem diz "v8.1.2", mas as DLLs são 18.1.1: o `Atualizador.ini`
+ainda traz 8.1.2, então a versão no ini está desatualizada.
+
 ## Objetos do cliente no schema (fora do modelo oficial)
 Só se conhece o **número de colunas** de cada um; as colunas só foram exportadas para as 4 tabelas de `catalogo/schema_real.tsv`. Para outra tabela, pedir ao usuário a consulta 3 de `guias/consultas_banco.md`.
 - **Campos customizados**: ~38 tabelas `CPE_*` (as maiores: `CPE_CSC` 637 colunas, `CPE_CONTRATOS` 304,
