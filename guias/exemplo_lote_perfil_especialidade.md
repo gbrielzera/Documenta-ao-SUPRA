@@ -1,8 +1,10 @@
-# Demanda em andamento: Atualizar Perfil/Especialidade em LOTE
-Caminho: Guias > Demandas > Atualizar Perfil/Especialidade - LOTE
+# Exemplo de análise: Atualizar Perfil/Especialidade em LOTE
+Caminho: Guias > Exemplos > Atualizar Perfil/Especialidade - LOTE
 
-Estado em 2026-10-08: analisada, não implementada. O documento de requisitos ainda não foi lido
-(o usuário ficou de enviar); os pontos marcados com (?) dependem dele.
+**Não é tarefa pendente.** Foi um teste de como analisar uma demanda inteira; o fluxo em lote real já foi feito pelo
+usuário. Serve de **exemplo de método** (ler o fluxo original, extrair as regras dos scripts, achar um padrão parecido nos
+fluxos do cliente, desenhar e listar o que depende de decisão) e de referência dos campos e regras do fluxo original.
+O documento de requisitos nunca foi lido; os pontos com (?) eram dúvidas dessa análise, não decisões.
 
 ## Pedido
 Disponibilizar, no fluxo "Serviços do Programa Valor > Atualizar Perfil/Especialidade", inclusão ou
@@ -29,7 +31,7 @@ Papéis 277, 278 e 1349 dependem de `FAVORECIDO_COBRA`.
 6. Não há perfil 3 sem perfil 2, nem especialidade sem o seu perfil.
 As listas completas estão no `ScriptFormCarregado` do Evento Inicial do fluxo original.
 
-## Plano proposto (o usuário concorda com a ideia geral)
+## Plano analisado (referência de desenho para fluxos em lote)
 Padrão dos lotes existentes (receita 16): fluxo novo "Atualizar Perfil/Especialidade - LOTE".
 1. Evento Inicial: anexo "Planilha" (classe Arquivo) + checkbox "ler planilha" + GRID com colunas
    `MATRICULA`, as dos campos originais, `NOME`, `UOR`, `VALIDACAO`, `OS_GERADA`.
@@ -47,7 +49,7 @@ Duas formas de criar a OS filha (decidir com teste):
 - **B. Sem alterar o original**: `OrdemServico.Nova(sigla, codigoIniciador, assunto, servico, cliente,
   responsavel, valoresCustomizados)` com um Hashtable dos campos. Exige Código no Evento Inicial.
 
-## Pendências
+## Pontos que um fluxo em lote por planilha precisa decidir (referência)
 - (?) Layout da planilha: uma linha por matrícula (6 colunas de perfil/especialidade) ou uma por perfil.
 - (?) "Atualização" exige gravar em alguma tabela, além de gerar a OS?
 - (?) Aprovação individual por técnico (um e-mail por OS ao gerente) ou agrupada por gerente.
@@ -56,4 +58,8 @@ Duas formas de criar a OS filha (decidir com teste):
 - Conferir duplicidade com OS aberta para a mesma matrícula: consulta 6 de `guias/sql.md` (`CPE_CSC.TE_MATRICULA` existe em produção; o `FAVORECIDO_COBRA` está em `CP_ORDEM_SERVICO`, NVARCHAR2(500), e guarda o ID_PESSOA como texto).
 - Campos de perfil conferidos em produção (mapa oficial): `COMBOBOX` (Perfil 1) e `COMBOBOX1` em `CP_ORDEM_SERVICO` (900 e 200 caracteres); `COMBOBOX_BOX1` (Perfil 2) em `CPE_CONTRATOS02`; `COMBOBOX2` e **`COMBOBOX3`** em `CPE_BOOTCAMP` (no XML o COMBOBOX3 aparece em `CPE_CONTRATOS`: em SQL usar a tabela do banco); `COMBOBOX_SIM_NAO` (Perfil 3) em `CPE_CONTRATOS`. `TE_MATRICULA`, `TE_UOR`, `DESCRICAO_DETALHADA` em `CPE_CSC`; `FAVORECIDO_COBRA` em `CP_ORDEM_SERVICO`.
 - Validar a matrícula da planilha em `CP_PESSOA` + `PESSOA.ATIVO`: só 5.648 pessoas têm cadastro no Supravizio, contra 13.873 linhas no RH; uma matrícula do RH pode não ter usuário no Supravizio.
-- Escrever os scripts (leitura/validação, trava, criação) seguindo a regra de script mínimo.
+- Erros oficiais que o desenho do lote pode provocar (`catalogo/erros_supravizio.md`): **PR0014** (subprocesso chamado sem
+  atividade Link Inicial: confirma que o fluxo original precisa de um Link Inicial na opção A), **PR0023** (atividade Subprocesso sem
+  Associação), **PR0020** (papel sem pessoa definida), **PR0025** (não é possível finalizar uma Principal com Derivadas abertas: testar
+  se o lote só termina depois das OS filhas), **PR0011** (a fórmula do desvio não devolve nenhuma das alternativas), **PR0029** (erro
+  em script: aparece com a mensagem do script) e **PR0027** (pendência de configuração de processo).

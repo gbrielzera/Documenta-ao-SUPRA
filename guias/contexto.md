@@ -81,6 +81,16 @@ A documentação oficial tem inconsistências. Não use o texto de uma dessas p�
 - Requisitos de infraestrutura e navegadores da documentação são antigos (2018); não recomendar a partir deles.
 - Links internos quebrados na doc original: 14 páginas do índice dão 404 no site (lista em `raw_falhas.txt`, só no PC).
 
+## Módulos do produto e prefixo dos códigos de erro
+Cinco módulos (`catalogo/modulos_supravizio.tsv`): **SV** Utilitários (administração, configuração, customização),
+**CF** Configuração (Ativos: itens de configuração e CMDB), **RH** Recurso (estrutura organizacional, equipe, contratos/SLA),
+**PR** Processo (processos, serviços, indicadores) e **PT** Portal de Processos. O prefixo de um código de erro (`PR0011`)
+diz o módulo. Os 49 códigos com causa, efeito e ação estão em `catalogo/erros_supravizio.md`: ao receber uma mensagem de erro
+do usuário, buscar o código ou o texto lá antes de supor a causa.
+O número dentro do nome das tabelas de grid (`Z_00143_...`, `Z_00186_...`) coincide com o ID da classe `OrdemServico` (143)
+para 360 grids; os 13 `Z_00186_*` também são campos da OrdemServico, mas 186 é o ID de `ComponenteServico`
+(`catalogo/classes_supravizio.tsv`). A origem exata do prefixo não está explicada: não usar o número para deduzir a classe do campo.
+
 ## Dados sensíveis
 Credenciais aparecem como `***MASCARADO***`. Nunca reconstituir, pedir ou sugerir valores reais.
 Nomes e e-mails de pessoas que aparecem nos fluxos são dados internos: não citar sem necessidade.

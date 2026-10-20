@@ -9,7 +9,8 @@ integrações/APIs, consultas SQL e análise dos fluxos exportados em XML. Respo
 1. Ler `guias/contexto.md`: quem é o usuário, o ambiente, siglas, campos, papéis e tabelas recorrentes.
 2. Ver se `guias/receitas.md` já resolve a pergunta.
 3. Se for sobre um fluxo, achar o arquivo em `fluxos/_INDICE.md`.
-4. Demandas em andamento ficam em `guias/demanda_*.md`: ler a correspondente antes de continuar.
+4. Se o usuário pedir para continuar uma demanda, ela estará em `guias/demanda_*.md` (hoje não há nenhuma em andamento).
+   `guias/exemplo_lote_perfil_especialidade.md` é um exemplo de análise já concluído, não uma tarefa.
 5. Só então buscar (regra abaixo).
 
 ## Regras do usuário (valem sempre)
@@ -42,10 +43,10 @@ Nunca abrir `raw/` nem os XMLs crus, e nunca varrer `docs/` inteiro. O caminho �
 
 | Pasta | Conteúdo |
 |---|---|
-| `guias/` | Leitura inicial. `contexto.md` (ambiente e usuário), `sql.md` (banco real: regras, índices, consultas), `consultas_banco.md` (consultas de leitura a pedir ao usuário), `receitas.md` (dúvidas já resolvidas), `scripts.md` (onde cada script roda), `api_scripts.md` (assinaturas reais dos objetos de script), `desenho_fluxos.md` (como propor e montar um fluxo; formato da proposta), `scripts_contexto.md` (uso real por tipo de script), `banco.md` (tabelas), `xml-fluxo.md` (estrutura do XML), `demanda_*.md` (demandas em andamento) |
+| `guias/` | Leitura inicial. `contexto.md` (ambiente e usuário), `sql.md` (banco real: regras, índices, consultas), `consultas_banco.md` (consultas de leitura a pedir ao usuário), `receitas.md` (dúvidas já resolvidas), `scripts.md` (onde cada script roda), `api_scripts.md` (assinaturas reais dos objetos de script), `desenho_fluxos.md` (como propor e montar um fluxo; formato da proposta), `scripts_contexto.md` (uso real por tipo de script), `banco.md` (tabelas), `xml-fluxo.md` (estrutura do XML), `exemplo_lote_perfil_especialidade.md` (exemplo de análise de demanda), `demanda_*.md` (demandas em andamento, se houver) |
 | `docs/` | Documentação oficial em Markdown, 1 arquivo por tópico; `_INDICE.md` é o sumário em árvore |
 | `fluxos/` | Resumo de cada XML de fluxo: grafo, atividades, campos, scripts completos; `_INDICE.md` lista todos |
-| `catalogo/` | `api/<Classe>.md` (assinaturas das 300 classes da API de scripts, DLLs do Client v18.1.1); `biblioteca/*.py` (biblioteca de scripts do cliente); `campos.tsv` (campos customizados); `schema.txt` (colunas das tabelas oficiais, doc de 2018); `schema_real.tsv` (colunas reais de produção); `campos_banco.tsv` (mapa oficial de campos da produção); `dicionario_dll.tsv` (classe → tabela → coluna, das DLLs; tipo .NET); `campos_vs_banco.md`; `tabelas_customizadas.md`; `tabelas_usadas_em_sql.md` |
+| `catalogo/` | `api/<Classe>.md` (assinaturas das 300 classes da API de scripts, DLLs do Client v18.1.1); `biblioteca/*.py` (biblioteca de scripts do cliente); `campos.tsv` (campos customizados); `schema.txt` (colunas das tabelas oficiais, doc de 2018); `schema_real.tsv` (colunas reais de produção); `campos_banco.tsv` (mapa oficial de campos da produção); `dicionario_dll.tsv` (classe → tabela → coluna, das DLLs; tipo .NET); `erros_supravizio.md` (49 códigos de erro com causa, efeito e ação); `classes_supravizio.tsv` (346 classes com ID e descrição); `modulos_supravizio.tsv`; `campos_vs_banco.md`; `tabelas_customizadas.md`; `tabelas_usadas_em_sql.md` |
 | `tools/` | Scripts de busca e manutenção |
 | `XMLs para teste/`, `raw/`, `Supravizio Client3/`, `Supravizio.chm` | Fontes originais; só existem no PC do usuário e não devem ser lidas direto |
 
@@ -56,6 +57,7 @@ Prefixos úteis em `docs/`: `dados_<tabela>` (modelo de dados), `objetos_<classe
 ## Por tipo de pergunta
 
 - **Como fazer X na tela / conceito**: buscar com `-t doc`.
+- **Mensagem de erro** (ex.: `PR0011`, "Associação não configurada"): `buscar.py "código ou texto" -t catalogo`; `catalogo/erros_supravizio.md`.
 - **Escrever ou revisar script**: aplicar a regra do script mínimo; `guias/scripts.md` diz onde o
   script roda e quais variáveis existem; conferir cada método e a assinatura em `guias/api_scripts.md`
   (ou `catalogo/api/<Classe>.md`); nomes de campo em `catalogo/campos.tsv`; se precisar de prova de uso,
@@ -108,6 +110,7 @@ powershell -ExecutionPolicy Bypass -File tools\extrair_api.ps1   # DLLs do Clien
 python -X utf8 tools/api.py                    # _api.json -> catalogo/api/*.md e guias/api_scripts.md
 python -X utf8 tools/schema_real.py <export>   # export de ALL_TAB_COLUMNS -> catalogo/schema_real.tsv
 python -X utf8 tools/campos_banco.py <export>  # export de SV_CUSTOM_PROPERTY -> catalogo/campos_banco.tsv e campos_vs_banco.md
+python -X utf8 tools/importar_metadados.py <pasta>  # xlsx de erros, classes e módulos -> catalogo/
 python -X utf8 tools/mascarar.py               # OBRIGATÓRIO antes de commitar: mascara senhas/tokens
 python -X utf8 tools/indexar.py                # recria kb.sqlite (rodar por último)
 ```
@@ -115,7 +118,7 @@ python -X utf8 tools/indexar.py                # recria kb.sqlite (rodar por úl
 Novo XML: copiar para `XMLs para teste/`, rodar `fluxo.py resumir "<arquivo>"`, `guias.py`,
 `mascarar.py` e `indexar.py`.
 Escritos à mão: `CLAUDE.md`, `guias/contexto.md`, `receitas.md`, `scripts.md`, `xml-fluxo.md` e
-`demanda_*.md`, `sql.md` e `consultas_banco.md`. Os demais arquivos são gerados e não devem ser editados.
+`demanda_*.md`, `exemplo_*.md`, `sql.md` e `consultas_banco.md`. Os demais arquivos são gerados e não devem ser editados.
 
 ## Ambiente na nuvem / clone do GitHub
 

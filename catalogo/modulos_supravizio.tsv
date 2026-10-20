@@ -1,0 +1,6 @@
+nome	abreviatura	ativo	descricao_resumida	descricao	ambiente	data
+Utilitários	SV	True	Utilitários	Este módulo fornece ferramentas para administração, configuração e customização do sistema.	producao	2026-10-19
+Configuracao	CF	True	Ativos	Este módulo mantém um banco de dados de todos os componentes tais como computadores, roteadores, sistemas etc, e respectivos relacionamentos. Estes ativos são denominados Itens de Configuração e constituem um banco de dados denominado CMDB - Configuration Management Database.	producao	2026-10-19
+Recurso	RH	True	Recurso	Este módulo define os recursos e estrutura da organização. Nele são cadastrados dados relativos a estrutura organizacional, equipe e contratos (SLA).	producao	2026-10-19
+Processo	PR	True	Processo	Este módulo permite a configuração de Processos e Serviços. Para os recursos de Procesos é possível a definição, execução e medição via Indicadores de Desempenho.	producao	2026-10-19
+Portal	PT	True	Portal de Processos	Modelagem do Portal	producao	2026-10-19
