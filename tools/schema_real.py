@@ -28,8 +28,11 @@ CABECALHO = ["tabela", "coluna", "ordem", "tipo", "tamanho", "nulo", "ambiente",
 
 def ler_export(caminho):
     tabelas = defaultdict(list)
-    for linha in Path(caminho).read_text(encoding="utf-8-sig").splitlines():
-        c = [x.strip() for x in linha.split("\t")]
+    texto = Path(caminho).read_text(encoding="utf-8-sig")
+    amostra = texto[:20000]
+    delimitador = max(["\t", ";", ","], key=amostra.count)  # TAB, ponto e vírgula ou vírgula (CSV)
+    for c in csv.reader(texto.splitlines(), delimiter=delimitador):
+        c = [x.strip() for x in c]
         while c and c[0] == "":
             c.pop(0)
         if len(c) < 5 or c[0].upper() == "TABLE_NAME":

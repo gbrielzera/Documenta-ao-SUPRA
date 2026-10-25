@@ -12,6 +12,8 @@ integrações/APIs, consultas SQL e análise dos fluxos exportados em XML. Respo
 4. Se o usuário pedir para continuar uma demanda, ela estará em `guias/demanda_*.md` (hoje não há nenhuma em andamento).
    `guias/exemplo_lote_perfil_especialidade.md` é um exemplo de análise já concluído, não uma tarefa.
 5. Só então buscar (regra abaixo).
+6. Se o usuário mandar um arquivo, consulta ou print, veja em `PLANO.md` a qual item ele corresponde, incorpore e
+   registre a entrega na tabela do fim do plano.
 
 ## Regras do usuário (valem sempre)
 
@@ -43,7 +45,7 @@ Nunca abrir `raw/` nem os XMLs crus, e nunca varrer `docs/` inteiro. O caminho �
 
 | Pasta | Conteúdo |
 |---|---|
-| `guias/` | Leitura inicial. `contexto.md` (ambiente e usuário), `sql.md` (banco real: regras, índices, consultas), `consultas_banco.md` (consultas de leitura a pedir ao usuário), `receitas.md` (dúvidas já resolvidas), `scripts.md` (onde cada script roda), `api_scripts.md` (assinaturas reais dos objetos de script), `desenho_fluxos.md` (como propor e montar um fluxo; formato da proposta), `scripts_contexto.md` (uso real por tipo de script), `banco.md` (tabelas), `xml-fluxo.md` (estrutura do XML), `exemplo_lote_perfil_especialidade.md` (exemplo de análise de demanda), `demanda_*.md` (demandas em andamento, se houver) |
+| `guias/` | Leitura inicial. `contexto.md` (ambiente e usuário), `sql.md` (banco real: regras, índices, consultas), `consultas_banco.md` (consultas de leitura a pedir ao usuário), `testes_qualidade.md` (roteiro de testes em Qualidade e resultados), `receitas.md` (dúvidas já resolvidas), `scripts.md` (onde cada script roda), `api_scripts.md` (assinaturas reais dos objetos de script), `desenho_fluxos.md` (como propor e montar um fluxo; formato da proposta), `scripts_contexto.md` (uso real por tipo de script), `banco.md` (tabelas), `xml-fluxo.md` (estrutura do XML), `exemplo_lote_perfil_especialidade.md` (exemplo de análise de demanda), `demanda_*.md` (demandas em andamento, se houver) |
 | `docs/` | Documentação oficial em Markdown, 1 arquivo por tópico; `_INDICE.md` é o sumário em árvore |
 | `fluxos/` | Resumo de cada XML de fluxo: grafo, atividades, campos, scripts completos; `_INDICE.md` lista todos |
 | `catalogo/` | `api/<Classe>.md` (assinaturas das 300 classes da API de scripts, DLLs do Client v18.1.1); `biblioteca/*.py` (biblioteca de scripts do cliente); `campos.tsv` (campos customizados); `schema.txt` (colunas das tabelas oficiais, doc de 2018); `schema_real.tsv` (colunas reais de produção); `campos_banco.tsv` (mapa oficial de campos da produção); `dicionario_dll.tsv` (classe → tabela → coluna, das DLLs; tipo .NET); `erros_supravizio.md` (49 códigos de erro com causa, efeito e ação); `classes_supravizio.tsv` (346 classes com ID e descrição); `modulos_supravizio.tsv`; `campos_vs_banco.md`; `tabelas_customizadas.md`; `tabelas_usadas_em_sql.md` |
