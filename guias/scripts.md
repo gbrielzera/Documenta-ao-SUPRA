@@ -118,6 +118,23 @@ Os scripts dos fluxos funcionam em produção, mas vários têm defeitos conheci
 - Mensagem de erro com limite diferente do usado no `if` (ex.: código exige 150 caracteres, mensagem diz 100).
 Os dois últimos itens e o de `Rows.Count < 0` (condição impossível) vêm das anotações de um colega sobre outros XMLs
 `[não conferido nos nossos 76 XMLs]`; os demais foram achados também nos nossos fluxos.
+Outros padrões que o estudo estático de 104 XMLs (1.447 scripts) encontrou, para revisar antes de copiar `[colega]`:
+- comparar (`==`) onde se queria atribuir (`=`) a um campo; chamar método sem parênteses (referência sem invocação);
+- `x != "" or x != None` (aceita ausência); dois `if` no mesmo evento que desfazem a visibilidade que o outro definiu;
+- variável ou URL usada com nome diferente do inicializado; contador que soma a si mesmo em vez de incrementar um;
+- ler a primeira linha de um resultado sem conferir se há linhas; acumular linhas ou texto ao reexecutar a atividade;
+- Script Formulário carregado que limpa todos os controles; gravações separadas sem transação; retornar sucesso sem ter agido;
+- token misturado com mensagem de erro JSON; falha de anexo ignorada antes de avançar; ler PDF como texto antes do Base64
+  (altera os bytes); nome de arquivo temporário fixo (colide entre OS);
+- faixa etária por posição de um `split`; decimal sem cultura definida; feriado de fim de semana contado duas vezes.
+Imports que aparecem de fato nos scripts do cliente (33 módulos; 870 `clr.AddReference` para 6 assemblies): `clr`, `System`,
+`System.Data`, `System.Text`, `System.Net.Http`, `System.Net.Http.Headers`, `Newtonsoft.Json`, `Newtonsoft.Json.Linq`, `re`,
+`datetime` e os namespaces `Venki...Custom`. Fora disso, desconfie de um import novo. O cabeçalho que o editor gera não deve ser
+removido.
+Conferências que valem para todo script de entrega: zero linhas, `None`/`DBNull`, múltiplas linhas, reentrada (a OS que volta),
+falha parcial e `Formulario.ExibeMensagem`, que é só um aviso de tela: não é pendência impeditiva (para bloquear use
+`Criticas.AdicionaPendencia`). A exportação de Excel por `OleDb` (`Microsoft.ACE.OLEDB.12.0`) aparece em 2 scripts do cliente;
+nenhum script lê CSV por referência explícita `[colega]`.
 
 ## Regras ao responder
 - Script mínimo sempre (ver `CLAUDE.md`): o que for opcional vira uma frase depois do código.

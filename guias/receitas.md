@@ -18,6 +18,10 @@ Respostas curtas e verificadas para as dúvidas mais comuns. Cada receita indica
 6. Botão direito na versão > **Validar Versão**; sem pendências, **Ativar a versão**.
 Atenção: o importador cria cadastros novos, mas não altera existentes (exceto campos customizados).
 Scripts são copiados como estão: campos, ids e cadastros citados neles podem não existir no destino.
+Pelas aulas: a versão importada entra como versão 1 (o histórico não vem); o papel importado pode ficar **sem pessoa válida**
+(a pessoa da origem não existe no destino: atribua uma); a caixa "Atualizar configuração de papéis" muda papéis do destino; falta
+o grupo envolvido no macroprocesso e outras dependências; e o tipo de subprocesso pode existir sem estar no Process Explorer da
+versão (adicione o existente). Detalhes em `guias/aulas_resumo.md`, seção 3.
 Bibliotecas de script com o mesmo nome são sobrescritas. Revisar papéis, serviços, modelos de
 comunicado, grupos de trabalho e motivos de interrupção de ANS.
 
@@ -266,3 +270,29 @@ Formulario["LABEL10"].Valor = '<p style="color: red; font-weight: bold;">Atenç�
 Use aspas simples por fora e duplas dentro do HTML. A renderização depende do controle e da interface (Web x Windows) e não foi
 testada aqui: validar na tela. Docs: docs/controle_label.md (Label serve só como informativo e aceita valores alfanuméricos, data/hora,
 decimal, inteiro e lógico). Para mostrar/esconder o aviso conforme outro campo, combine com `.Visivel` (receita 3).
+
+## 19. Existe algum item reprovado no grid? (decisão automática)
+[aula, não executado na empresa] No Script Fim da tarefa, marque um campo lógico auxiliar (`REPROVADO`) e use-o no gateway.
+```python
+OrdemServico["REPROVADO"] = False
+for linha in OrdemServico["PRODUTOS"].Rows:
+    if linha["STATUS"] == "Reprovado":
+        OrdemServico["REPROVADO"] = True
+        break
+```
+Fórmula do gateway "Dados ou fórmula": `OrdemServico["REPROVADO"]`, com alternativas de valor de comparação `True` e `False`
+(o texto da seta é só legenda). A primeira linha do script é necessária quando a mesma OS pode **voltar** e mudar os status; sem
+ela o valor antigo permanece. Para **contar** reprovados, percorra tudo sem `break` e some. Confirme os nomes técnicos do grid e
+das colunas e que a tabela nunca é `None`. Fonte: aula 6 (03:41), com a correção de recalcular o booleano.
+
+## 20. Papel que recupera quem concluiu uma tarefa anterior
+[aula + doc] Papel do tipo "Execução de Tarefa do Processo" (Solucionador finalizador da atividade), com o **Código** da tarefa
+e "Somente última execução" ligado. Útil para devolver o trabalho a quem fez a etapa anterior. Papéis são compartilhados na
+base: confira o tipo e os processos que usam um papel existente antes de editá-lo, e prefira criar o seu. Para uma lista por
+consulta use o papel por script (receita 7): `Atores.Adiciona(Pessoa.Carrega("Id", valor))`, com a consulta trazendo o
+identificador usado no `Carrega`.
+
+## 21. Combo alimentado por consulta: o que fica gravado
+[aula + doc] No script de recuperação de opções, `Itens = DB.ExecuteDataTable(...)`. Para campo do tipo **Inteiro**, a 1ª coluna da
+tabela é o identificador gravado e as seguintes são o texto exibido (`SELECT TO_CHAR(ID), NOME ...`). Lista fixa: opções
+separadas por `;` na propriedade do campo. Ao ler o valor depois (`OrdemServico["CAMPO"]`) você recebe o identificador, não o texto.

@@ -67,8 +67,12 @@ na seção "Papéis usados" de um fluxo que o utilize.
 ## Divergências conhecidas da documentação (conferidas nesta base)
 A documentação oficial tem inconsistências. Não use o texto de uma dessas páginas como prova isolada.
 - **Chamada assíncrona** de Subprocesso: `docs/prop_atividade_chamadaassincrona.md` diz que *verdadeiro* impede avançar até o
-  subprocesso terminar; `docs/subprocessos.md` diz o oposto (assíncrona = a OS chamadora avança sem esperar). A contradição existe
-  também no site. Nos lotes do cliente a opção fica no padrão (falso). Testar em Qualidade antes de depender dela.
+  subprocesso terminar; `docs/subprocessos.md` diz o oposto. **Vale o artigo**: nas aulas, com a tela mostrando o valor, `False` faz
+  a principal **esperar** a filha finalizar e `True` deixa a principal seguir (`guias/aulas_resumo.md`, seção 5; instalação de
+  treinamento, a confirmar na 19.1.1: T6 de `guias/testes_qualidade.md`). Nos lotes do cliente a opção fica em `False`: a OS do lote
+  só avança depois que as filhas terminam.
+- **Timer x manual**: nas aulas o Timer gerou OS retroativa no mesmo dia e OS atribuída ao Sistema sem responsável; o manual diz o
+  contrário (só gera para data/hora maior ou igual à corrente; sem responsável o iniciador é ignorado). Não conciliar: testar.
 - **Tipos de evento inicial**: em `docs/enum_tipoatividade.md`, `EventoInicialRegra` é descrito como temporizador e
   `EventoInicialTimer` como fórmula, ao contrário do que os nomes sugerem. Conferir na tela/exemplo antes de gerar código.
 - **Enumeração `TipoGateway`** (`docs/enum_tipogateway.md`) só lista as decisões exclusivas, mas Paralelo e Inclusivo existem

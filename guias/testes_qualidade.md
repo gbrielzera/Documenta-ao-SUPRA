@@ -53,10 +53,13 @@ Mensagem.Cancelar = True
 OrdemServico.AdicionaComentario("T5 script evento executou", False)
 ```
 Observação a anotar: o e-mail chegou? (espere alguns minutos). Para comparar, rode uma segunda OS sem o `Cancelar`.
+(Contexto: uma aula usou `if OrdemServico.ClasseSubProcesso.Sigla != "SIGLA": Mensagem.Cancelar = True` para barrar a mensagem
+de outros subprocessos e a mensagem deixou de ser gerada; falta confirmar o e-mail na caixa e na versão 19.1.1.)
 
 **T6 (opcional) — chamada assíncrona.** Só se já houver um par de fluxos de teste ligados por Link Inicial. Na atividade
 Subprocesso, rode uma OS com `Chamada assíncrona` marcada e outra desmarcada. Anote: a OS chamadora avançou sem esperar a
-filha terminar? (a documentação se contradiz nesse ponto)
+filha terminar? (a documentação se contradiz; as aulas, com a tela à vista, mostram `False` = a principal espera e `True` =
+segue. Falta confirmar na 19.1.1.)
 
 ## Como relatar
 Mande em texto, uma linha por teste, copiando o texto do comentário ou da mensagem de erro:

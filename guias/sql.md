@@ -193,6 +193,14 @@ FROM SV_CUSTOM_PROPERTY P INNER JOIN SV_CLASS C ON C.ID_CLASS = P.ID_CLASS
 WHERE P.NAME = 'COMBOBOX'
 ```
 
+10. Membros ativos de um grupo de trabalho (modelo documentado em `dados_tecnico`; estrutura conferida, consulta não executada):
+```sql
+SELECT T.ID_PESSOA FROM TECNICO T
+WHERE T.ID_GRUPO_TRABALHO = 123 AND T.ATIVO = 'Sim'
+```
+O coordenador do grupo é `GRUPO_TRABALHO.ID_COORDENADOR`. A lotação ativa é uma por solucionador. Não confunda com a consulta de
+coordenadores: ela não lista os participantes.
+
 ## CAD_FUNCIONARIO_V (view do RH, 95 colunas, 13.873 linhas)
 Colunas úteis: `MATRICULA`, `NOME`, `STATUS_MATRICULA`, `TIPO_COLABORADOR`, `DESC_COLABORADOR`, `POSICAO`,
 `GESTOR_POSICAO`, `CARGO`, `CARGO_FUNCIONAL`, `FUNCAO_GRATIFICADA`, `SUPERVISOR`/`SUPERVISOR_ID`, `ORGANIZACAO`,

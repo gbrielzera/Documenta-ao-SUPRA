@@ -6,11 +6,15 @@ Cada regra traz a fonte: `docs/...` (documentação oficial), `[fluxo]` (observa
 `[banco]`/`[api]`. Parte do checklist foi levantada nas anotações de estudo de um colega e **conferida contra
 a documentação desta base** antes de entrar aqui; o que não foi conferido está marcado `[não conferido]`.
 
-## Como entregar uma proposta de desenho
+## Como entregar uma proposta de desenho (resumo)
 Não basta descrever caixas e setas. Entregar, nesta ordem:
 1. **Diagrama em texto**: elementos e ligações (modelo: `## Grafo do fluxo` de qualquer `fluxos/*.md`).
 2. **Tabela por elemento**: tipo, descrição, **Código** (se algo vai consultá-lo em script), **papel responsável**,
-   campos de Entrada de Dados (nome técnico, rótulo, obrigatório), anexos, aprovação, scripts, comunicado.
+   campos de Entrada de Dados, anexos, aprovação, scripts, comunicado. **Tabela de campos**: rótulo, nome técnico, tipo de dado,
+   controle, obrigatório, opções, origem (nativo ou customizado; em combo por consulta, o identificador gravado e o texto
+   exibido), quem pode editar e em que etapa. Copiar a Entrada de Dados para outra atividade mostra o **mesmo** campo da OS; dados
+   independentes pedem campos distintos. Para fila nova, diga cadastro e autorizações necessários sem presumir que já existem.
+   Pergunte só as lacunas que mudam o resultado e declare as suposições.
 3. **Gateways**: tipo, fórmula, alternativas com o valor de comparação.
 4. **Iniciadores**: manual, link inicial, timer, regra, mensagem, e quem pode abrir (clientes autorizados).
 5. **O que depende da instalação** (campos novos, papéis, modelos de comunicado, serviços) e **o que testar** em Qualidade.
@@ -69,8 +73,10 @@ Um desenho tem de mostrar os Data Objects verdadeiros e suas ligações, não s�
   (docs/desvio_inclusivo.md). A enumeração `TipoGateway` só lista os dois exclusivos; isso não prova que os outros não existam.
 
 ## Subprocessos e iniciadores
-- Chamada de subprocesso exige **Associação** (frase e inversa), parâmetros de entrada/saída e a decisão assíncrono/síncrono
-  (docs/subprocessos.md). O destino precisa de um **Link Inicial** com a associação inversa (docs/iniciador_link_inicial.md);
+- Chamada de subprocesso exige **Associação** (frase e inversa), parâmetros de entrada/saída e a decisão de **Chamada
+  assíncrona**: `False` = a principal espera a filha finalizar, `True` = segue sem esperar (docs/subprocessos.md e aulas; a
+  descrição da propriedade na doc está trocada). **Sincronizar cancelamento** propaga o cancelamento entre pai e filha: só quando
+  o requisito pede. Parâmetros de saída ficam no subprocesso invocado. O destino precisa de um **Link Inicial** com a associação inversa (docs/iniciador_link_inicial.md);
   um fluxo pode ter vários iniciadores de origens diferentes (docs/iniciador_multiplas_formas_subpr.md).
 - **Timer**: o campo Responsável é obrigatório; sem ele a máquina de processos ignora o iniciador e não gera OS
   (docs/iniciador_por_temporizador.md). `[não conferido]` fluxo só com timer não abre manualmente no Portal.
@@ -83,6 +89,17 @@ Um desenho tem de mostrar os Data Objects verdadeiros e suas ligações, não s�
 - ANS = compromisso de atendimento (calendário, serviço, interrupções); ANO = prazo de tarefa (minutos, % do ANS ou esforço).
 - Onde roda cada script: `guias/scripts.md`. Importar fluxo copia scripts que dependem de IDs e campos do ambiente de origem
   (docs/importacao.md): revisar depois de importar.
+
+## Mais regras vindas das aulas (detalhe em `guias/aulas_resumo.md`)
+- **Versões**: crie nova versão para mudar fluxo em uso, abra o subprocesso da versão nova e confira o número na aba; ativar não
+  migra as OS existentes; tornar um campo obrigatório pode bloquear OS antigas. Importar traz o papel mas não suas pessoas.
+- **Aprovação**: hierarquia Única (todos), Inicial/Final (sequencial) e `Mínimo aprovadores` (conta pessoas, não papéis);
+  cancelar a versão da aprovação não é reprovar. Eventos de mensagem distintos: Início aprovação, Aprovação, Reprovação.
+- **ANS e ANO**: ANS usa a área do **cliente**, Processos Acordados e vigência; 1.440 minutos são horas contabilizadas, não um dia
+  corrido; ANO em minutos x percentual; pausa de aprovação exige motivo permitido no acordo e na atividade.
+- **Iniciador por Regra**: retorno lógico, DataTable (uma OS por registro) ou lista; precisa de deduplicação. **Timer**: responsável
+  e serviço reais, e fluxo só com Timer não abre manualmente.
+- **Pesquisa de satisfação**: associada ao finalizador; percentual de envio 100 = sempre enviar.
 
 ## Divergências da documentação a lembrar ao desenhar
 Ver `guias/contexto.md` > "Divergências conhecidas da documentação" (chamada assíncrona, tipos de evento inicial, enumeração de gateway).

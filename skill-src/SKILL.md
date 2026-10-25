@@ -51,6 +51,8 @@ em `references/catalogo/` ou `buscar` com o nome.
 - **Desenhar ou montar um fluxo / demanda inteira**: leia `references/guias/desenho_fluxos.md` (formato da proposta e regras);
   procure um fluxo parecido em `references/fluxos/_INDICE.md` (marca grid, aprovação, lote, API, planilha); veja
   `references/guias/exemplo_lote_perfil_especialidade.md` para um exemplo completo de análise.
+- **Dúvida de conceito ou comportamento** (aprovação, ANS/ANO, chamada assíncrona, papéis, importação, mensagens, Timer/Regra,
+  pesquisa de satisfação): `references/guias/aulas_resumo.md`, organizado por tema e com a fonte de cada afirmação.
 - **Entender um XML de fluxo**: o XML cru não está aqui; use o resumo em `fluxos/` e `references/guias/xml-fluxo.md`.
 - **Integração, API, web service**: `references/guias/receitas.md` (receitas de API REST e de lote) e os módulos
   `catalogo/biblioteca/api*.py` via `ler`.

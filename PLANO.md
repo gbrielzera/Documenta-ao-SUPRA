@@ -76,7 +76,7 @@ XMLs: copiar para `XMLs para teste/` e avisar. Depois de cada entrega, o chat at
 - [ ] **10. Padrões internos da equipe**, se existirem por escrito: nomes de campos e papéis, checklist de subida de
   Qualidade para Produção, quem aprova, modelos de comunicado padrão.
 - [ ] **11. Versão confirmada.** No cliente, Ajuda > Sobre: versão do cliente e do servidor (os XMLs dizem 19.1.1, as DLLs 18.1.1).
-- [ ] **12. Combinar com o Felipe.** Pedir autorização para os 28 XMLs a mais e para a revisão dos scripts dele, e dividir
+- [~] **12. Combinar com o Felipe.** (autorização recebida em 2026-10-25 para usar o que for útil; aulas, scripts e prompt já incorporados; falta, se ele quiser dividir: os XMLs a mais — ele tem 104, nós 76 — e a leitura literal dos 464 scripts ainda sem leitura integral) Pedir autorização para os 28 XMLs a mais e para a revisão dos scripts dele, e dividir
   o trabalho (ex.: ele revisa scripts, você levanta banco e prints) para não repetir esforço.
 
 ## O que o chat faz sozinho (sem depender de entrega)
