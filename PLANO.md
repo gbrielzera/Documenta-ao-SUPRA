@@ -8,6 +8,19 @@ pessoas. Resultado de consulta: salvar em `.txt` (separado por TAB) e anexar com
 XMLs: copiar para `XMLs para teste/` e avisar. Depois de cada entrega, o chat atualiza os guias e remonta a skill
 (`tools/montar_skill.py`).
 
+## Atualização de 2026-10-25 (depois do material do Felipe)
+O que mudou na prioridade:
+- **Sobe para o primeiro lugar: item 11 (versão do sistema).** Leva 1 minuto e define quanto das aulas vale: elas são da versão
+  11.1.2 (2020) e o ambiente é 19.1.1. Mande a versão do cliente e do servidor (Ajuda > Sobre) e, se der, a data de instalação.
+- **Item 3 (testes) fica mais enxuto.** Chamada assíncrona (T6) e `Mensagem.Cancelar` (T5) já têm evidência de aula; sobram T1
+  (consulta parametrizada), T2 (import de `Pessoa`), T3 (esconder campo) e T4 (`PossuiAprovacao` pendente) como os que só você resolve.
+- **Itens 1 e 2 continuam os de maior ganho** (schema completo e mapa dos fluxos).
+- **Itens 6 e 12 se juntam:** os XMLs de produção e os 28 XMLs a mais do Felipe (ele tem 104, nós 76) são a mesma entrega.
+  Só valem com a autorização dele e a da empresa; não precisam ser todos.
+- **Item 12 (Felipe): concluído em parte.** Aulas, scripts e padrões já incorporados. Falta a leitura literal dos 464 scripts
+  que ele ainda não leu e, se quiserem dividir, quem revisa o quê.
+- **Novos itens 13 a 15** (abaixo).
+
 ## Prioridade alta (pouco esforço, ganho grande)
 
 - [ ] **1. Schema completo do banco (1 consulta).** Hoje só temos as colunas reais de 4 tabelas; o resto vem da doc de 2018.
@@ -78,6 +91,24 @@ XMLs: copiar para `XMLs para teste/` e avisar. Depois de cada entrega, o chat at
 - [ ] **11. Versão confirmada.** No cliente, Ajuda > Sobre: versão do cliente e do servidor (os XMLs dizem 19.1.1, as DLLs 18.1.1).
 - [~] **12. Combinar com o Felipe.** (autorização recebida em 2026-10-25 para usar o que for útil; aulas, scripts e prompt já incorporados; falta, se ele quiser dividir: os XMLs a mais — ele tem 104, nós 76 — e a leitura literal dos 464 scripts ainda sem leitura integral) Pedir autorização para os 28 XMLs a mais e para a revisão dos scripts dele, e dividir
   o trabalho (ex.: ele revisa scripts, você levanta banco e prints) para não repetir esforço.
+
+## Itens novos
+
+- [ ] **13. Conexões externas cadastradas (só os nomes).** As aulas mostram que `DB.ExecuteDataTable(sql, "NOME_CONEXAO")` consulta
+  outras bases pelo nome cadastrado; saber os nomes evita script errado. **Não** traga a string de conexão (tem senha e servidor).
+  ```sql
+  SELECT SHORT_NAME, TYPE, ENABLED FROM SV_DB_CONNECTION ORDER BY SHORT_NAME;
+  ```
+- [ ] **14. Motivos de interrupção de ANS cadastrados.** Para perguntas de prazo e pausa na aprovação.
+  ```sql
+  SELECT DESCRICAO, COMENTARIO_OBRIGATORIO, TEMPO_MAXIMO FROM MOTIVO_INTER_SLA ORDER BY DESCRICAO;
+  ```
+- [ ] **15. Quatro comportamentos das aulas, confirmados na 19.1.1 (opcional, só se tiver Qualidade à mão).**
+  (a) hierarquia Única com dois aprovadores exige os dois e `Mínimo aprovadores = 1` deixa um bastar;
+  (b) pausa do ANS na etapa de aprovação com o motivo permitido no acordo e na atividade;
+  (c) `Quantidade máxima de execuções = 1` no evento de mensagem evita repetição ao voltar a OS;
+  (d) iniciador por Timer: gera OS retroativa no mesmo dia? e sem responsável?
+  Mande uma linha por item: "funcionou como a aula" ou o que viu de diferente.
 
 ## O que o chat faz sozinho (sem depender de entrega)
 
