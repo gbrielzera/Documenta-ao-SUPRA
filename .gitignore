@@ -14,3 +14,7 @@ raw_somente_chm.txt
 
 # anotações de terceiros: só entram no repositório depois de revisadas e autorizadas por quem as escreveu
 Supravizio-Estudos-Felipe/
+
+# saída da montagem da skill (gerada por tools/montar_skill.py)
+skill-build/
+dist/

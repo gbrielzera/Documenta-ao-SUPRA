@@ -111,6 +111,7 @@ python -X utf8 tools/api.py                    # _api.json -> catalogo/api/*.md 
 python -X utf8 tools/schema_real.py <export>   # export de ALL_TAB_COLUMNS -> catalogo/schema_real.tsv
 python -X utf8 tools/campos_banco.py <export>  # export de SV_CUSTOM_PROPERTY -> catalogo/campos_banco.tsv e campos_vs_banco.md
 python -X utf8 tools/importar_metadados.py <pasta>  # xlsx de erros, classes e módulos -> catalogo/
+python -X utf8 tools/montar_skill.py           # gera dist/supravizio.skill (skill do Claude) a partir do projeto; mascara e-mails e nomes só no pacote
 python -X utf8 tools/mascarar.py               # OBRIGATÓRIO antes de commitar: mascara senhas/tokens
 python -X utf8 tools/indexar.py                # recria kb.sqlite (rodar por último)
 ```
@@ -119,6 +120,12 @@ Novo XML: copiar para `XMLs para teste/`, rodar `fluxo.py resumir "<arquivo>"`, 
 `mascarar.py` e `indexar.py`.
 Escritos à mão: `CLAUDE.md`, `guias/contexto.md`, `receitas.md`, `scripts.md`, `xml-fluxo.md` e
 `demanda_*.md`, `exemplo_*.md`, `sql.md` e `consultas_banco.md`. Os demais arquivos são gerados e não devem ser editados.
+
+## Skill do Claude
+
+`skill-src/` (SKILL.md e scripts/kb.py, versionados) + `tools/montar_skill.py` geram `dist/supravizio.skill` (3 MB), que leva
+todo o conhecimento do projeto num único pacote para o Claude.ai / Claude Code. A skill é só leitura e é uma fotografia: depois
+de atualizar o projeto, rodar a montagem de novo. `skill-build/` e `dist/` não são versionados.
 
 ## Ambiente na nuvem / clone do GitHub
 
