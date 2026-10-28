@@ -6,45 +6,52 @@ Classe do subprocesso: DescricaoCliente=Base de Informações Técnicas; Criteri
 Serviços: Suporte Técnico (SUPORTETECNICO)
 
 ## Grafo do fluxo
-- [370747] Tarefa "Aprovação da Equipe Técnica" {Equipe Técnica} → [G82964] Aprovado?
-- [370748] EventoInicial "" {Cliente} → [370747] Aprovação da Equipe Técnica
+- [370838] EventoIntermediarioMensagem "Reprovado" → [370837] Cancelado
+- [370837] EventoFinal "Cancelado" → (fim)
+- [370839] Tarefa "Aprovação Equipe Técnica" {Equipe Técnica} → [370756] Publicar conteúdo no BIT
+- [370747] Tarefa "Avaliação da Equipe Técnica" {Equipe Técnica} → [G82989] Aprovado?
+- [370748] EventoInicial "" {Cliente} → [370747] Avaliação da Equipe Técnica
 - [370749] Tarefa "Aprovação Administrativa" {Aprovação Final BIT} → [G82965] Aprovado?
 - [370752] EventoFinal "Cancelado" → (fim)
 - [370753] EventoIntermediarioMensagem "Reprovado" → [370752] Cancelado
 - [370754] EventoFinal "" → (fim)
 - [370756] Tarefa "Publicar conteúdo no BIT" {Cliente} → [370749] Aprovação Administrativa
-- [370755] Tarefa "Ajustar solicitação" {Cliente} → [370747] Aprovação da Equipe Técnica
-- [G82964] Gateway "Aprovado?" → «Aprovado» [370756] Publicar conteúdo no BIT | «Reprovado» [370755] Ajustar solicitação
+- [370755] Tarefa "Ajustar solicitação" {Cliente} → [370747] Avaliação da Equipe Técnica
+- [G82989] Gateway "Aprovado?" → «'Reprovar'» [370838] Reprovado | «'Aprovar'» [370839] Aprovação Equipe Técnica | «'Devolver ao cliente'» [370755] Ajustar solicitação
 - [G82965] Gateway "Aprovado?" → «Aprovado» [370754]  | «Reprovado» [370753] Reprovado
 
 ## Gateways
-### [G82964] Aprovado? (DataBasedExclusiveDecision)
-Codigo=TECNICOS
+### [G82989] Aprovado? (DataBasedExclusiveDecision)
 **ExpressaoComparacaoDecision**
 ```python
-OrdemServico.PossuiAprovacao("APROVA")
+OrdemServico['SIM_NAO']
 ```
-- alternativa → [370756] Publicar conteúdo no BIT: OperadorDecision=Equal; ReferenciaDecision=Aprovado; SequenciaAvaliacao=0
+- alternativa → [370838] Reprovado: SequenciaAvaliacao=0; ReferenciaDecision='Reprovar'; OperadorDecision=Equal
 **ValorComparacaoDecision**
 ```python
 True
 ```
-- alternativa → [370755] Ajustar solicitação: OperadorDecision=Equal; ReferenciaDecision=Reprovado; SequenciaAvaliacao=1
+- alternativa → [370839] Aprovação Equipe Técnica: SequenciaAvaliacao=1; ReferenciaDecision='Aprovar'; OperadorDecision=Equal
 **ValorComparacaoDecision**
 ```python
-False
+True
+```
+- alternativa → [370755] Ajustar solicitação: SequenciaAvaliacao=2; ReferenciaDecision='Devolver ao cliente'; OperadorDecision=Equal
+**ValorComparacaoDecision**
+```python
+True
 ```
 ### [G82965] Aprovado? (DataBasedExclusiveDecision)
 **ExpressaoComparacaoDecision**
 ```python
 OrdemServico.PossuiAprovacao("APROVACAO")
 ```
-- alternativa → [370754] : OperadorDecision=Equal; ReferenciaDecision=Aprovado; SequenciaAvaliacao=0
+- alternativa → [370754] : SequenciaAvaliacao=0; ReferenciaDecision=Aprovado; OperadorDecision=Equal
 **ValorComparacaoDecision**
 ```python
 True
 ```
-- alternativa → [370753] Reprovado: OperadorDecision=Equal; ReferenciaDecision=Reprovado; SequenciaAvaliacao=1
+- alternativa → [370753] Reprovado: SequenciaAvaliacao=1; ReferenciaDecision=Reprovado; OperadorDecision=Equal
 **ValorComparacaoDecision**
 ```python
 False
@@ -52,13 +59,36 @@ False
 
 ## Atividades
 
-### [370747] Tarefa "Aprovação da Equipe Técnica"
+### [370838] EventoIntermediarioMensagem "Reprovado"
+Destinatário: Cliente (papel 18)
+ModeloComunicado: Aviso de reprovação de chamados
+Corpo do comunicado: Prezado(a) OrdemServico.Cliente.Nome ,
+A Ordem de Serviço nº OrdemServico.Numero - OrdemServico.Assunto não foi aprovada.
+ Complemento1 
+Para obter mais detalhes sobre a solicitação e a reprovação, CLIQUE no link =>> Link.Consulta 
+Central de Serviços
+
+### [370837] EventoFinal "Cancelado"
+
+### [370839] Tarefa "Aprovação Equipe Técnica"
 Responsável: Equipe Técnica (papel 1425)
-Config: Codigo=APROVA
 - Operação PR0002 Aprovar: MinimoAprovadores=1; ReprovarImediato=true
-  - (aprovação) SIM_NAO_100 "Equipe Aprova?" [DropDownList String(500) → CPE_CONTRATOS02.SIM_NAO_100]
+  - (aprovação) FAVORECIDO_TODOS "Favorecido" [DropDownList String → CP_ORDEM_SERVICO.FAVORECIDO_TODOS]
+  - (aprovação) COMBOBOX "Combo Box" [DropDownList String(900) → CP_ORDEM_SERVICO.COMBOBOX]
+  - (aprovação) COMBOBOX__1 "COMBOBOX__1" [DropDownList String → CPE_CSC.COMBOBOX__1]
+  - (aprovação) COMBOBOX_II "COMBOBOX_II" [DropDownList String → CPE_BOOTCAMP.COMBOBOX_II]
   - item para aprovação "Anexar Contrato"
   - aprovador: Equipe Técnica (Unico)
+
+### [370747] Tarefa "Avaliação da Equipe Técnica"
+Responsável: Equipe Técnica (papel 1425)
+Config: Codigo=APROVA
+**ScriptFormCarregado**
+```python
+Formulario['SIM_NAO'].Itens = 'Aprovar;Reprovar;Devolver ao Cliente'
+```
+- Operação PR0001 Preencher Campos
+  - SIM_NAO "Decisão" [DropDownList String(50) → CP_ORDEM_SERVICO.SIM_NAO] obrigatório
 
 ### [370748] EventoInicial ""
 Responsável: Cliente (papel 18)
@@ -138,16 +168,23 @@ Responsável: Cliente (papel 18)
 Responsável: Cliente (papel 18)
 **ScriptFormCarregado**
 ```python
-Formulario['DESCRICAO_DETALHADA'].Valor = OrdemServico.ObtemMotivoGateway('TECNICOS').ToString()
-
 Formulario['COMBOBOX'].Itens = "Infográficos: vídeos curtos, cards ou orientações;Infográficos: boletins técnicos e documentos gerais;FAQ's e fluxograma;Video tutorial; Manual"
 
 Formulario['COMBOBOX__1'].Itens = "Baixa;Média;Alta"
 
 Formulario['COMBOBOX_II'].Itens = "Novo;Atualização"
 
+excecao = ['DESCRICAO_DETALHADA']
+
 for controle in Formulario.Controles.Keys:
-    Formulario[controle].Habilitado = True
+    if controle not in excecao:
+        Formulario[controle].Habilitado = True
+```
+**ScriptInicio**
+```python
+OrdemServico.AdicionaComentario(OrdemServico.ObtemMotivoReprovacao('APROVA').ToString(), False)
+OrdemServico['DESCRICAO_DETALHADA'] = OrdemServico.ObtemMotivoReprovacao('APROVA').ToString()
+OrdemServico.ModificaCampoFormularioHabilitado('DESCRICAO_DETALHADA', False)
 ```
 - Operação PR0001 Preencher Campos
   - DESCRICAO_DETALHADA "Observações da equipe técnica" [Memo String(2000) → CPE_CSC.DESCRICAO_DETALHADA]
@@ -188,8 +225,6 @@ for controle in Formulario.Controles.Keys:
   - anexo "Anexar Contrato" classes: Anexo — RequeridoInicial=true; IncluirPaginaAssinatura=true
 
 ## Papéis usados
-### papel 1425: Equipe Técnica
-Tipo=RelacaoPessoas | pessoas: EMERSON SILVA SANTOS, RAFAEL DA SILVA VIAL
 ### papel 18: Cliente
 Tipo=PessoaOrdemServico; NomeCampoOcorrencia=Nativo.OrdemServico.Cliente
 **ScriptSelecaoAtores**
@@ -198,18 +233,12 @@ from Venki.Supravizio.Recurso.Custom import Pessoa
 from Venki.Supravizio.Processo.Custom import Ator
 Atores.Adiciona(OrdemServico.Cliente, "Pessoa informada como Cliente na Ordem de Serviço")
 ```
+### papel 1425: Equipe Técnica
+Tipo=RelacaoPessoas | pessoas: EMERSON SILVA SANTOS, RAFAEL DA SILVA VIAL
 ### papel 1426: Aprovação Final BIT
 Tipo=RelacaoPessoas | pessoas: ELIANE MACHAJEVSKI
 
 ## Campos customizados usados (definição global)
-
-### SIM_NAO_100 — Sim ou Não
-DropDownList String(500) → CPE_CONTRATOS02.SIM_NAO_100
-Itens: Sim;Não
-
-### COMBOBOX — Combo Box
-DropDownList String(900) → CP_ORDEM_SERVICO.COMBOBOX
-Itens: Órtese;Órtese Dentária; Prótese;Recurso para Saúde
 
 ### FAVORECIDO_TODOS — Favorecido
 DropDownList String → CP_ORDEM_SERVICO.FAVORECIDO_TODOS
@@ -218,12 +247,21 @@ DropDownList String → CP_ORDEM_SERVICO.FAVORECIDO_TODOS
 Itens = DB.ExecuteDataTable("SELECT DISTINCT to_char(p.id_pessoa) as  id_pessoa,  p.nome ||  ' (' || p.usuario_rede || ') - '||f.status_matricula as nomemat FROM CAD_FUNCIONARIO_V F inner join cp_pessoa cp on f.matricula = CP.matricula inner join PESSOA P on cp.id_pessoa = p.id_pessoa order by nomemat")
 ```
 
+### COMBOBOX — Combo Box
+DropDownList String(900) → CP_ORDEM_SERVICO.COMBOBOX
+Itens: Órtese;Órtese Dentária; Prótese;Recurso para Saúde
+
 ### COMBOBOX__1 — COMBOBOX__1
 DropDownList String → CPE_CSC.COMBOBOX__1
 Itens: IPTU;Alvará Funcionamento;Vigilância Sanitária;AVCB/Bombeiros;Taxa Municipal;Taxa Estadual;Taxa Federal;Outros
 
 ### COMBOBOX_II — COMBOBOX_II
 DropDownList String → CPE_BOOTCAMP.COMBOBOX_II
+
+### SIM_NAO — Sim ou Nao
+DropDownList String(50) → CP_ORDEM_SERVICO.SIM_NAO
+Descrição: Selecione uma das opções.
+Itens: Sim;Não
 
 ### SIM_NAO3 — Sim ou Não
 DropDownList String → CPE_CSC.SIM_NAO3
