@@ -1,0 +1,815 @@
+sigla	descricao	ativo	os_12_meses	tem_resumo
+CSCREEMBOLSO	Reembolso	Sim	25646	sim
+DESLOCAMENTO0	Deslocamento a Serviço	Sim	23150	nao
+PRESDESLOC	Prestação de Contas - Deslocamento	Sim	22312	nao
+SOLVALETRANSPDIA	Solicitação de Vale Transporte Mensal	Sim	9367	nao
+INDENAGUARD	Indenização por Guarda e Zelo do Veículo Locado	Sim	9245	nao
+AUXILIOHOMEOFFICE	Auxílio Home Office	Sim	6816	nao
+IDENIZACAOBASE	Indenização Por Lotação em Base Destacada	Sim	5910	nao
+CODETICA2324	Ciência do Código de Ética 2025/2026	Sim	3515	nao
+FALARGEPES	Fale com a Gepes	Sim	3392	sim
+CADEQUIPAMENTOTOA	Cadastro de Equipamento TOA	Sim	3233	nao
+ACEITEPOL900	Aceite POL900 - Política de Compliance	Sim	3144	nao
+AVALIFORNECEDORES	Avaliação de Fornecedores	Sim	3039	nao
+INSERIRDOCSGESCON	Inserir Documentos Contratuais no Sisccon	Sim	2824	sim
+GPESSOASTEMPORARIO	Gestão de Pessoas - Trabalhador Temporário	Sim	2512	nao
+ANONIMIZACAO	Anonimização de Dados Pessoais	Sim	2325	nao
+EMISEXTMENSAL	Emissão de Extrato Mensal	Sim	2245	nao
+CSCGDP	Avaliação de Desempenho	Sim	2230	nao
+CONTASPAGAR	Financeiro - Contas a Pagar	Sim	2187	nao
+INDICPV	Indicadores - Programa Valor	Sim	2080	sim
+TERMODEDESIGNACAO	Termo de Designação de Interveniente	Sim	1857	nao
+POSTOLOCOMOCOES	Locomoção a Serviço	Sim	1852	nao
+ACEITECARTPREVACIDEN	Aceite da Cartilha de Saúde, orientação e prevenção de acidentes	Sim	1651	nao
+ATTPERFILESPEC	Atualizar Perfil/Especialidade	Sim	1628	sim
+CONFISCOTRIBUTARIA	Consulta Fisco - Tributária (Estadual, Municipal ou Federal) do processo Gestão Fiscal	Sim	1575	nao
+FINANCEIROREVERSAORI	Liberação ou Reversão de RI	Sim	1493	nao
+TRANSBENSPATRIMONIAIS	Transferência de Bem Patrimonial	Sim	1486	sim
+CADASTROFORNECEDOR	Cadastro de Fornecedor	Sim	1469	nao
+SOLICITRESERVDG	Solicitar reserva de DGCO	Sim	1430	sim
+GESTAOQUALIDADEEVOLUA	Gestão da Qualidade	Sim	1429	nao
+FALEPV	Fale com o Programa Valor	Sim	1347	nao
+CARTILHA	Cartilha De Combate e Prevenção à Violência Contra as Mulheres	Sim	1329	sim
+CONJUR	Consultas Jurídicas	Sim	1303	nao
+COMPROVPAGOSFORNECEDORES	Comprovantes de Valores Pagos a Fornecedores	Sim	1236	sim
+DADOSBANCARIOS	Atualização de dados bancários	Sim	1233	nao
+NFLANCRI	Geração automática de OS para lancamento de notas fiscais no RI	Sim	1189	nao
+FOLHAPONTOUOR	Envio de Folha de Ponto	Nao	1188	nao
+PENFRI	Lançamento de nota fiscal no RI sem gerar pagamento	Sim	1186	nao
+FEEDBACKCOJUR	Feedback de Atendimento	Sim	1115	nao
+FALEV360	Fale com a V360	Sim	1111	sim
+FISCALADMV360	Fiscalização Administrativa V360	Sim	1082	nao
+PROVISAOVERBA	Provisionar - SGPS	Sim	1073	nao
+ANUIDADEORDEMCLASSE	Anuidade de Ordem de Classe	Sim	1063	nao
+REGNFFISFORV3601	Registro de Nota Fiscal de Fornecedores V360	Nao	1043	nao
+NFV360	Notas Fiscais	Nao	1043	nao
+ORDEMDECOMRAS	Ordem de Compras	Sim	992	nao
+FATCLIEMISNF	Faturamento de Clientes - Emissão de Notas Fiscais	Sim	983	sim
+CREDITOROTATIVO	Crédito Rotativo	Sim	932	nao
+DESIGNACAODEINTERVENIENTES	Designação de Intervenientes do Contrato	Sim	881	nao
+AHP	Ajuste de Hierarquia no Peoplesoft	Nao	873	nao
+OUTROSSERVICOS	Serviços de Postagens de Objetos (Malote e/ou Correio), Externo e Reprográfico	Sim	863	nao
+REGORGC	Regularidade Órgão de Classe - Comprovante CRT (Uso Exclusivo da Gered)	Sim	813	nao
+RECUNIFORME	Recebimento de Uniforme	Sim	803	sim
+COMUNICACAOINTERNA	Comunicação Interna	Sim	778	nao
+FALEDIAPA	Fale com a Diage	Sim	752	nao
+HABILITACHIPM2M	Habilitar Chip M2M - Telemetria	Sim	749	nao
+IUVPAVULSA	Pagamento de IUVP Avulsa Assistência Técnica	Sim	734	nao
+PGTORCC	Executar pagamento por RCC	Sim	716	nao
+GERARNOTAFISCALPREFEITURA	Gerar Nota Fiscal na Prefeitura	Sim	702	nao
+BAIXANFCANCELADAS	Baixa de Notas Fiscais Canceladas/Controladas com RI	Sim	689	nao
+IFPPGTO	Informações para Folha de Pagamento	Sim	687	nao
+CSCVALETRANSPORTE	Vale-Transporte	Sim	679	nao
+SUBST	Substituição Temporária	Sim	677	nao
+CONTACONTABIL	Solicitar Conta Contábil	Sim	654	nao
+RESSARCIMULTAS	Ressarcimento de Multas	Sim	622	nao
+CHATBOTCRIAROS	Chatbot - Criação de Ordens de Serviços	Sim	615	nao
+DESLOCAMENTOALTERACAOCANCELA	Deslocamento a Serviço - Alteração/Cancelamento - Novo Fluxo	Sim	609	nao
+APOIOPSICOLOGICO	Apoio Psicológico	Nao	600	sim
+RCC	Pagamento por RCC	Sim	599	nao
+PREORC	Precificação e Orçamento	Sim	577	sim
+GPMATERIAL	Confecção de Crachá	Sim	569	nao
+ENVIATAS	Envio de ATAS	Sim	568	nao
+PUBLICARDOU	Publicação no DOU	Sim	538	sim
+SINDICAL	Cota negocial ACT 2024/2026	Sim	524	nao
+PINCOMEMORA	Pin Comemorativo	Sim	523	nao
+VALEREFEICAOTIQUETE	Vale Refeição - Solicitação de Tiquete Adicional	Sim	510	nao
+PROGRAMAECOA	Programa Ecoa	Sim	495	nao
+RECEBIMENTONF1	Registro de Notas Fiscais de Fornecedores	Sim	489	sim
+PLANILHADOCAIXAFIN	Fluxo do Caixa - Financeiro	Sim	481	nao
+CSCGENERICO	Outros Serviços - Comercial, Gestão de Pessoas, Jurídico e Suprimentos	Sim	473	nao
+SOLICITARPAGAMENTOSJUDICIAIS	Solicitar Pagamentos Judiciais	Sim	471	nao
+ATUALIZARDADOSERP	Atualizar dados manualmente no ERP	Sim	471	nao
+REEMBPROTESOL	Reembolso de protetor solar	Sim	470	nao
+INDVEICULOFROTALOTE	Indenização por Guarda e zelo do veículo da frota (Lote)	Sim	462	nao
+RECEBIMENTOEPI	Recebimento de EPI ou EPC	Sim	460	sim
+LCPSBBTS	Editais de Licitações - Publicação site BBTS	Sim	456	nao
+SEGPATRIMONIAL	Serviço de Segurança Patrimonial  - Controle de Acesso	Sim	453	nao
+REEMBOLSOCOFFEEBREAK	Coffee Break	Sim	419	nao
+REQUIMANUPREVENTVA	Requisição de Manutenção Preventiva	Sim	412	nao
+RECLASSIFICACOES	Reclassificações Contabeis	Sim	408	nao
+CARTACESBRA	Cartão de Acesso - Matriz Brasília	Sim	405	nao
+SUBPROCESSOS	Criação/Alteração de Subprocessos e Relatórios na Central de Serviços	Sim	405	sim
+VALETRANSPORTECEDIDOSBBTS	Vale Transporte - Cedidos BBTS	Sim	403	nao
+ATUALIZACAOCADASTRAL	Gestão de Pessoas - Atualização Cadastral	Nao	399	nao
+REVISAOOC	Solicitar Revisão de Ordem de Compras	Sim	391	nao
+TRANSCOBRA	Transferência de Funcionário BBTS	Sim	391	nao
+HOF100	Flexibilização do home office	Sim	380	nao
+BASEDESTACADALOTE	Indenização por Lotação em base Destacada (Abertura em Lote)	Sim	375	nao
+LICICONTPUBLIEXTRDOU	Licitações e Contratos - Publicação Extrato DOU no site BBTS	Sim	375	nao
+VALIDDESIGN	Validação Colaborador Movimentado	Sim	374	nao
+CADASTROITENS	Cadastro de Itens	Sim	372	nao
+NOTFNUTRIPSICO	Notificação de Consulta Nutricional e Psicologica	Sim	365	nao
+CLOC	CheckList Ordem de Compra	Sim	355	nao
+SIASG	Publicar Documentos no SIASG - Sistema Integrado de Administração de Serviços Gerais	Sim	352	nao
+CADUSUTOA	Manutenção de Usuários TOA	Sim	347	nao
+PRESTACAOAPORTE	Prestação de Contas - Aporte	Sim	346	nao
+EDCR	Educação Continuada - Reembolso	Sim	340	nao
+REVACINA	Reembolso Vacina	Nao	338	nao
+PBEE	Projeto Básico Simplificado Eletrônico	Sim	337	nao
+PAGFOPAG	Solicitação de Pagamentos FOPAG	Sim	333	nao
+KITCELULAR	Reembolso para Kit de Proteção de Celular Corporativo	Sim	333	nao
+SUBRESSARCIMENTO	Subprocesso - Parcelamento de Multas	Sim	327	nao
+PDPEP	PDPEP - Pequenas Despesas de Pronta Entrega e Pagamento	Sim	325	nao
+TERMOINVEN2026	Termo de Responsabilidade - Inventário 2026	Sim	319	nao
+CONSULTALINHACHIP	Consultar linha/Chip junto a operadora	Sim	319	nao
+CALJUDICIAIS	Cálculos Judiciais	Sim	313	nao
+CONCILIACAOSGPS	Conciliação SGPS	Sim	313	nao
+REEMBPLANOSAUDE	Reembolso Mensalidade Plano de Saúde	Sim	307	nao
+COMPRASDIRETAS	Compras Diretas	Sim	304	nao
+SERVTERCEIRIZADOS	Serviços Prediais	Sim	303	nao
+GESTAODE	Lançamento de IPTU/Taxas	Sim	293	nao
+REMANORC	Remanejamento Orçamentário	Sim	292	nao
+TEREEMBOLSO	Treinamento Externo por Reembolso e Reembolso de Certificação	Sim	289	nao
+BANCODEHORASADESAO	Banco de horas - adesão	Sim	283	nao
+ACEITETENCOS	Termo de Aceite da Prorrogação do Adicional de Remuneração	Sim	279	sim
+ADITAMENTOSOL	Solicitação de Aditamento	Sim	276	nao
+NUMDOC	Numeração para documentos	Sim	254	nao
+NOVOAPARELHOELINHA	Nova Linha Corporativa ou Aparelho Celular	Sim	249	nao
+BIT	Base de Informações Técnicas	Sim	248	sim
+INCLUSAOBEMPATRIMONIAL	Inclusão de Bem Patrimonial	Sim	247	nao
+PORTALNEG	Portal de Estruturação de Negócios	Sim	246	sim
+1752	Numeração para Documentos	Sim	240	nao
+SOLREVISAODEPONTUACAO	Recurso - Programa Valor	Sim	238	nao
+LIBERACAORECURSOSPAG	Liberação de Recursos da Conta de Provisionamento - Pagamento	Sim	238	nao
+PEDDESLOCCAT	Pedido de Deslocamento CAT	Sim	236	nao
+NOMEACAO	Nomeação	Sim	236	nao
+DFA1	Reatribuição de OS (Desligamento / Férias / Afastamento)	Sim	235	nao
+CONSULTAFERIAS	Consulta de Férias	Sim	234	nao
+LISTREI	Lista de Treinamento	Sim	224	sim
+MOVIMENTACAO1	Movimentação no Plano de Saúde	Nao	223	nao
+CONSULTCONTRDISCIP	Consulta Controle Disciplinar	Sim	223	nao
+FISCADM	Fiscalização Administrativa (Uso exclusivo do Cesec)	Sim	216	nao
+ENCERRAMENTODECONTRATO	Encerramento de contrato	Sim	211	nao
+TIMEDEVCSC	Esteira de Processos - Time Desenvolvimento e Automação da Gesap	Sim	207	sim
+AJUSTESPESQUISACESEC	Ajustes em Pesquisa de satisfação - Cesec	Sim	203	nao
+APOIONUTRICIONAL	Apoio Nutricional	Nao	202	nao
+QUALIFICACAOFORNECEDORES	Qualificação Econômico-Financeira de Fornecedores	Sim	200	nao
+NNAPROV	Aprovação Go /no Go (Abrir somente uma OS)	Sim	193	nao
+COMUNICACAOEXTERNA	Comunicação Externa e Marketing	Sim	175	nao
+PENFNFE	PENF - Pedido de Emissão de Nota Fiscal	Sim	174	nao
+NFEMISSAO	Emissão de Nota Fiscal	Sim	174	nao
+TRANSFBENS	Transferência de Bens Ativos	Sim	168	nao
+APROVCONSOLIDACAO	Aprovação Consolidação Técnica (Abrir somente uma OS)	Sim	167	nao
+ADPERICULOSIDADE	Adicional de Periculosidade - Pedido exclusivo do Gerente	Sim	165	nao
+PROCUNIFCONT	Aditamento de contrato com clientes	Sim	156	nao
+PATJR	Designação de Preposto - Pauta de Audiência Trabalhista (Área exclusiva do Cesec)	Sim	155	nao
+FQ707	Incluir FQ707-001	Sim	155	nao
+CADCONTRATOSGPS	Cadastros de novos contratos SGPS	Sim	152	nao
+SOLICITAEMPCONCUR	Solicitar Novo Empregado - Fila Concurso	Sim	150	nao
+CONVOCACONCUR	Convocar Concursado	Sim	150	nao
+ENVCURSOCIPA	Envio de Certificado de Curso CIPA	Sim	149	nao
+TRT	Termo de Responsabilidade Técnica	Sim	147	nao
+DESIGNACTRCLIENTE	Designar Contrato Cliente	Sim	147	nao
+PRESTACAODECONTASANTCERTTREIN	Prestação de contas - Antecipação de valores para certificação e treinamento	Sim	146	nao
+AUTDEBITOCONTRATUAIS	Autorização de Débitos Contratuais	Sim	143	nao
+GERADOROSPAUTADEAUDIENCIA	Gerador de OS - Pauta de Audiência	Sim	137	nao
+ONBOARD	OnBoard	Sim	135	nao
+DEVAPAR	Devolução de Aparelho	Sim	135	nao
+ATENDINCEXCPROGVALOR	Atendimento Inclusão/Exclusão Programa Valor	Sim	132	nao
+PROSDFA1	Processo de Reatribuição de OS (Desligamento / Férias / Afastamento)	Sim	132	nao
+TROCAAPARELHO	Troca de Aparelho	Sim	131	nao
+ADESAODIARIASAVULSAS	Adesão a diárias avulsas sem comprovação documental	Sim	128	nao
+CALCULOFOLHAPAG	Cálculos da Folha de Pagamento	Sim	125	nao
+APORTE	Aporte em conta de colaborador	Sim	124	nao
+REPAROESPECATIVO	Reparo Especial e Ativo	Nao	124	nao
+ACIONAPOSTOSERV	Acionamento Posto de Serviço	Sim	122	nao
+EXTRATOBANCPOSTOSERV	Extrato Bancário de Postos de Serviço	Sim	121	nao
+M2MTEL	Solicitação de chip M2M - Telemetria	Sim	121	nao
+SOLCONFIGFLUXO	Solicitações de Ajuste em Fluxo - (Exclusivo demanda Cesec)	Sim	121	nao
+SOLICDOCCOLABAFASTA	Solicitação de Documentos e Informações sobre Colaboradores Afastados	Sim	119	nao
+APURACAODOISSRETIDO	Apuração do Iss Retido - Envio de NFs aos escritórios	Sim	118	nao
+SEGVIDA	Seguro de Vida	Sim	118	nao
+ANAGARANCONT	Análise de Garantia Contratual	Sim	117	nao
+PESQUISAMERCADO	Pesquisa de Mercado	Sim	113	nao
+AUXPCD	Auxílio Órtese, Prótese e Recursos para Saúde	Sim	111	nao
+SLCPAGDIFAL	Solicitação de Pagamento DIFAL - Diferencial de Alíquota (partilha/ICMS)	Sim	111	nao
+COMPLEMENTACAOSAL	Complementação Salarial	Sim	108	nao
+CRONOS	Cronos	Sim	107	nao
+NOTIFICACOESFORNECEDOR	Notificar Fornecedor	Sim	107	nao
+LIBCTAVINCBB	Liberação de Conta Vinculada com Ofício ao Banco do Brasil	Sim	104	nao
+TERMOCONTRATOCLIENT	Termo de Designação Contrato Cliente	Sim	103	nao
+NOVOCHIP	Solicitação de Novo CHIP	Sim	101	nao
+OCCD	OC de Compra Direta	Sim	101	nao
+ARQGERAL	Arquivo Geral	Sim	93	nao
+SOLICDECL	Solicitação de Declarações	Sim	92	sim
+CRIACAODERELATORIOOUTROS	Criação de Relatórios	Sim	92	nao
+FLUXOAUXILIOFUNERAL	Auxílio Funeral	Sim	86	nao
+PREMIACOES	Pagamentos a colaboradores -  Programa de Bonificação	Sim	81	nao
+ALMOVIRTUAL	Almoxarifado Virtual	Sim	80	nao
+RECEBVEIC	Recebimento - Veículo Locado	Sim	77	nao
+RTRP	Registro de Teste/Reparo em Peça	Sim	77	nao
+PGTOTRIBUTOS	Pagamento de Tributos e Contribuições - Trabalhistas e Previdenciárias (Uso exclusivo da Gepes)	Sim	75	nao
+IUVPEMLOTE	Pagamento de IUVP em Lote	Sim	74	nao
+DESVINCULARVEICULO	Descadastrar Veículo	Sim	70	nao
+CSCCOTACOESLICITACOESE	Cotações Licitações-e	Sim	69	nao
+APROVARPB	Aprovar Projeto Básico	Sim	69	nao
+CSCSGPROC	Serviços Cartorários	Sim	66	nao
+1654	Substituição do Portador do Cartão de Credito Rotativo	Sim	65	nao
+ESTACIONAMENTO	Estacionamento	Sim	65	nao
+PROCESSOELEITORALCIPA	Processo Eleitoral e Designação - CIPA	Sim	62	nao
+MELHORIADISEC	Melhoria de Processos	Sim	61	sim
+SOLICITACAOHOSPEDAGEM	Solicitação de Hospedagem em Pecúnia	Sim	57	nao
+AUTORIZARALTDADOSBANC	Autorização para alteração de Dados Bancários de Fornecedores	Sim	57	nao
+DESL	Movimentação no Plano de Saúde - Desligados	Sim	55	nao
+AUXILIOADAPTACAO	Auxílio/Incentivo Adaptação	Sim	55	nao
+ADZAOTLTRBLHO	Adesão ao Teletrabalho	Sim	54	nao
+SENSORDIABETES	Sensor de Diabetes	Sim	53	nao
+AUXMUDANCAPECUNIA	Auxílio/Incentivo Mudança em Pecúnia	Sim	53	nao
+ABERTURAAVALIFORNECEDORES	Avaliação Fornecedores	Sim	53	nao
+SISVPCEPD	SISLOC - Verificar Prestações de Contas de Empregado em Processo de Desligamento	Sim	53	nao
+GIFTDISTCREDI	Distribuição de Créditos - Outras solicitações	Sim	53	nao
+CADCONTRAOKS	Cadastrar contratos no OKS	Sim	51	nao
+SIP3D	Solicitação de Impressão de Peça 3D	Sim	49	nao
+SOLICITVEIC	Solicitação veículo locado	Sim	48	nao
+ESTUDOFINANCEIRO	Estudo Financeiro e/ou Hedge cambial	Sim	47	nao
+REI	Reparo Especial Interno	Sim	47	nao
+DIAR	Devolução de itens após rescisão	Sim	47	nao
+CONTRAESTAG	Contratação de Estagiário	Sim	46	sim
+POSSECESEC	Comunicar Admissão	Sim	46	nao
+REEMBOLSOWELLHUB	Reembolso Wellhub (PMI)	Sim	46	nao
+PROCDISC	Apuração de Processos Disciplinares	Sim	45	nao
+CADVEICBB	Cadastro de veículos BBTS	Sim	44	nao
+ASSINATURACONTRATOSADITIVOS	Assinatura de Novos Contratos e Aditivos com Clientes - (Uso exclusivo da GEREL)	Sim	44	sim
+CANCELARNFCLIENTES	Cancelar Notas Fiscais de Clientes	Sim	44	nao
+GRUPOSSERVICOSGESAP	Relacionar Serviço ao Grupo de Trabalho	Sim	44	nao
+PGTOJUDICIALSPGS	Solicitar Pagamentos Judiciais - Acordos a débito da conta vinculada do fornecedor	Sim	44	nao
+PROVIVALOPAG	Provisionamento de Valores para Pagamento	Sim	43	nao
+ATESTADOCAPACIDADE	Atestado de Capacidade Tecnica Clientes	Sim	41	nao
+RESSMULTAABERTURAEMLOTE	Ressarcimento de Multas - Abertura em Lote	Sim	39	nao
+PARECERLGPD	Parecer da LGPD	Sim	39	sim
+CADASTROCLIENTE	Cadastro de Cliente do processo Comercial	Sim	39	nao
+CHECKUPEXECUTIVO	Checkup Executivo	Sim	39	nao
+GRF	Lançar RI das guias do FGTS (GRF)	Sim	38	nao
+PARECERCIBER	Parecer Cibernético	Sim	38	sim
+ANTEVCOFFBREAKPRESTAC	Antecipação de Valores Coffee Break - Prestação de Contas	Sim	38	nao
+CIPAENVIOATA	Solicitação de Envio de ATA - CIPA	Sim	37	nao
+ADIANTAMENTOSALARIAL	Adiantamento Salarial (40%)	Sim	37	nao
+PGTOREMPLASAU	Pagamento de Remessa - Reembolso Mensalidade Plano de Saúde	Sim	36	nao
+PARECERDERISCO	Parecer Conformidade	Sim	35	sim
+ATESTADOCAPTECFORNECEDOR	Emissão de Atestado de Capacidade Técnica de Fornecedores	Sim	35	nao
+FINANSOLDIVERSAS	Financeiro - Solicitações Diversas	Sim	33	nao
+CEACIPA	Consulta a elegibilidade para abonos - CIPA	Sim	32	nao
+DISTRATOERESCISAO	Distrato e Rescisão	Sim	32	nao
+ACAOCORRETIVA	Ação Corretiva	Sim	31	nao
+COMUNICALICENCAPREV	Comunicação de Licença - Afastamento Previdenciario	Nao	31	nao
+ABVCONEST	Abertura de vaga para Contratação de Estagiário	Sim	31	nao
+IAREEMBOLSOOTICO	Reembolso Ótico - Iniciativa IA	Sim	30	nao
+CONFECCAOMATERIAIS	Confecção de Materiais	Sim	30	nao
+EXONERACAO	Destituição	Sim	30	nao
+RESCISAO	Rescisão a pedido do Colaborador	Nao	30	nao
+EDUCONTINUA	Educação Continuada - Finalização	Sim	29	nao
+330	Numeração para Documentos de Controles Internos	Sim	29	nao
+ALTERACAODEPROCESSOSEPOP	Alteração de Processos do Cesec e Edição de POP	Sim	29	nao
+VALIDAATESTADOAFASTPREV	Validação de Atestado - Afastamento Previdenciário	Sim	29	nao
+AFASTPREVIDENCIARIO	Afastamento Previdenciário	Nao	28	nao
+ANTECIPAPAG1	Financeiro - Antecipação de Pagamento	Sim	28	nao
+AVALEIXOPEDAGRES	Validar eixo pedagógico e demais insumos	Sim	27	sim
+LANCRICOMPL	Lançamento de RI para pagamentos de guias (Uso exclusivo da Contabilidade)	Sim	27	nao
+PLANEJATIC	Planejamento de Contratação de TIC	Sim	25	nao
+PAGCONSELHEIROS	Pagamento para Conselheiros	Sim	25	nao
+VLOCADOPARAPS	Ressarcimento por guarda e zelo do veículo da frota (Lote) ao Fornecedor	Sim	25	nao
+PROCESSOSELETIVO	Solicitar Processo Seletivo	Sim	24	nao
+TAXONE	TaxOne	Sim	23	nao
+EMBOLETOFQGIFT	Distribuição de Créditos - Emissão de Boletos	Sim	23	nao
+INDICEPVCUSOC	Índice de Proposição e Validação de Casos de Uso para o SOC	Sim	22	nao
+SUBGESTOR	Substituição Gerencial	Nao	22	nao
+ADESAOPREVIDENCIA	01. Adesão, alteração ou cancelamento - Plano de Previdência - BBTS PREV	Nao	22	nao
+COTACAOPASSAGENS	Cotação de Passagens Aéreas	Sim	22	nao
+SISDP	Dúvidas Sobre Deslocamento	Sim	22	nao
+MATERIALEXPEDIENTE	Material de Expediente	Sim	21	nao
+SIC	SIC - Serviço de Informação ao Cidadão	Sim	21	nao
+RESCISAOEMP	Rescisão a pedido da Empresa	Nao	21	nao
+AVISOENCERRACONT	Aviso Encerramento Contratual	Nao	21	nao
+PFT	Fluxo de Pontuação de Força-Tarefa	Sim	21	nao
+SICRS	SIC - Reposta da Solicitação	Sim	21	nao
+AVALIACAONEUROPSICOLOGICA	Avaliação Neuropsicológica	Sim	20	nao
+NORUBRICAS	Criação de Novas Rubricas Contábeis	Sim	20	nao
+BLOQTEL	Bloqueio	Sim	20	nao
+ROAMINGINTERNACIONAL	Roaming Internacional	Sim	20	nao
+DEPENDENTEPCD	Redução Temporária de Jornada - Dependente PcD	Sim	20	nao
+1261	Envio de documentos CIPA	Sim	19	nao
+BAIXABENSPATRIMONIAIS	Baixa de Bem Patrimonial	Sim	19	nao
+INCREEMBOLSOPLANODESAUDE	Inclusão Reembolso Plano de Saúde	Sim	18	nao
+1068	Devolução - Veículo Locado	Sim	18	nao
+REGREPARODEATIVOS	Registro de Reparo de Ativos	Sim	18	nao
+PORTABILIDADEEMLOT	Portabilidade	Sim	18	nao
+BASETR	Mudanças na Base TR	Sim	18	nao
+PFAMAABTEL	Pré-faturamento mensal - ABR Telecom	Sim	17	nao
+ACESSICAF	Acesso ao SICAF	Sim	17	nao
+SOLINCEXCPROGVALOR	Solicitação Inclusão/Exclusão Programa Valor	Sim	17	nao
+BORDEROO	Borderô	Sim	16	nao
+ENDOCESEC	Absorção, expansão e descontinuidade de Serviços Operacionais - CESEC	Sim	16	nao
+GPESSOASTEMPORARIOCG	Gestão de Pessoas - Trabalhador Temporário Postos de Serviço(carga)	Nao	16	nao
+KITMONITORAMENTOGLICEMIA	Kit Monitoramento de Glicemia	Sim	16	nao
+TELTROCADETITULARIDADE	Troca de Titularidade	Sim	15	nao
+GRUPOSDETRABALHOGESAP	Grupos de Trabalho Gesap	Sim	15	nao
+CESSAOBB	Cessão de Funcionário BB	Sim	15	nao
+PERICULOSIDADEEMLOTE	Adicional de Periculosidade - LOTE	Sim	14	nao
+AJUSTESTAXONE	Ajustes Taxone	Sim	14	nao
+BAPGNFABRT	Baixa de Pagamento de NFS- ABR Telecom	Sim	14	nao
+PROVSGPSABERTULOTE	Provisionar - SGPS - Abertura em Lote	Sim	14	nao
+APGDP	Admissão PeopleSoft - GDP	Sim	14	nao
+BOLETOPREVPRIVADA	Boleto Previdência Privada	Sim	13	nao
+ACESSOSYSAID	Acessos	Sim	13	nao
+EXCLUREEMBPLANOSAUDE	Exclusão de Reembolso Plano de Saúde	Sim	13	nao
+CONCILIACAOFATPLANSAUDE	Conciliação de Faturamento Plano de Saúde	Nao	12	nao
+ANAPROJBASIC	Análise Projeto Básico	Nao	12	nao
+NFBB	Nomeação de Funcionário BB	Sim	12	nao
+ASSINATURACONSIG	Assinatura de Novo Contrato de Cessão de Direito de uso de Software Consig.TS	Sim	12	nao
+PROVISIONARVALORES	Provisionamento de valores acima de 200 mil	Sim	11	nao
+ALTERJORNADETRABALHO	Alteração de Jornada de Trabalho	Sim	11	nao
+CHECARCREDITOSINADIMPLOS	Créditos Inadimplidos	Sim	10	nao
+VERIFDADOSORCAM	Verificação de Dados Orçamentários	Sim	10	nao
+AUXPCDRBS	Auxílio Órtese, Prótese e Recursos para Saúde - Reembolso	Sim	10	sim
+ADPCCS	Adesão	Sim	10	nao
+CARTAOACESSO	Cartão de Acesso - Sede Rio	Sim	10	nao
+PJXPF	Migração de linha PJxPF	Sim	9	nao
+CONTRADAS	Contratação de Livre Provimento (CCLP)	Sim	9	nao
+SOLICDRISS	Solicitação de Driss	Sim	9	nao
+RETORFUNCAFASTAINSS	Retorno de Funcionário Afastado pelo INSS	Nao	9	nao
+SOLGUIASPAGSESISENAI	Solicitação de Pagamento de Guias SESI/SENAI	Sim	9	nao
+PAGAMENTOFOLHACOMP	Pagamento de folha complementar	Sim	9	nao
+CONTRACON	Contratação de Concursado	Sim	8	nao
+PRECIFICACCAO	Solicitação Precificação de Item	Sim	8	sim
+PROCESSADM	Processo Administrativo	Sim	8	nao
+INCLUDEINVENTARIO	Inclusão de Inventário	Sim	7	sim
+BBEMINUTIL	Informar Bem Patrimonial para Inutilização	Sim	7	nao
+CIDADECLASSIFICACAO	Cidades e Classificações	Sim	7	nao
+REEMBOLSOINICIATIVAIA	Reembolso - Iniciativa IA	Sim	7	nao
+LICENCAOINTERESSE	Licença Interesse	Nao	7	nao
+CRITPECAS	Criticidade de Peças	Sim	7	sim
+NFCARTACORRECAO	Criação de Carta de Correção	Sim	6	nao
+ESOCIAL	e-Social	Nao	6	nao
+SHPCBB	Solicitação de Hospedagem em Pecúnia Cedidos BB	Sim	6	nao
+CONFLITOPARECERJURIDICO	Conflito de Interesse - Parecer Jurídico	Sim	6	nao
+ADIANTAMENTOSALARIAL70	Adiantamento Salarial Previdenciário (70%)	Sim	6	nao
+SOVAS	Solicitação de Emissão de OV para Acerto Sistêmico	Sim	6	nao
+BBP	Baixa de Bem Patrimonial	Sim	6	nao
+AINADAPCEDBB	Auxilio/Incentivo Adaptação Cedidos BB	Sim	6	nao
+CONFLITOINTERESSE	Conflito de Interesse	Sim	6	nao
+CONJURDF	Repactuação	Sim	6	nao
+GDPEXPERIENCIA	Avaliação Período Experiência - GDP	Sim	6	nao
+INFORMARCAOCONTA	Informação Contábil	Sim	5	nao
+LICENCAMATERNIDADE	Licença Maternidade	Nao	5	nao
+NFCANCELA	Cancelamento de Notas Fiscais	Sim	5	nao
+NOTIFICASMSNF	Notificação de SMS para empresas que não enviaram Nota Fiscal	Sim	5	nao
+GDNX	Gestão Documental (DocNix)	Sim	5	nao
+SISPCED	SISLOC - Fechamento de Prestação de Contas de Empregado Desligado	Nao	5	nao
+INDISPONIBILIDADESFE	Indisponibilidades, Falhas ou Erros	Nao	4	nao
+CESSAOORGAOS	Auxílio/Incentivo Adaptação:ID552	Nao	4	nao
+REQJUDIC	Requisições Judiciais	Sim	4	nao
+LANCRICOMPATENDI	Lançamento de RI complementar - Atendimento	Sim	4	nao
+INATIVACAOCADFORNECEDOR	Inativação de Cadastro de Fornecedor (Exclusivo Gesuc)	Sim	4	nao
+PONTO	Registro Eletrônico de Ponto BBTS	Sim	4	nao
+ERD	Envio de Relatórios do Designado	Sim	4	nao
+RAC	Registro de Atividades Críticas	Sim	4	nao
+MUDPECCEDBB	Auxílio/Incentivo Mudança em Pecúnia Cedidos BB	Sim	3	nao
+DECLARACAOFUNCAOPUBLICA	Declaração de Função Publica	Sim	3	nao
+REGISTERNDADOCS	Guarda de NDAs e Documentos Relacionados	Sim	3	nao
+PAGAMENTODETERCEIROS	Pagamento a Terceiros Autorizado por Nota Técnica	Sim	3	nao
+MIGRACAOPJPJ	Migração de linha PJxPJ	Sim	3	nao
+RECEBIMDECHIPSDAOPERADORA	Recebimento de Chips da Operadora	Nao	3	nao
+DISTRCLIENTES	Distrato e Encerramento de Contratos Clientes	Sim	3	nao
+ACIONAATAASSINA	Assinatura de Novos Contratos - Acionamento de Ata	Sim	3	nao
+TERMORESPONSABILIDADE2025	Termo de Responsabilidade - Inventário 2025	Nao	2	nao
+ANALISERISCOCLIENTE	Análise de Risco do Cliente	Sim	2	nao
+PARECERORCAMETARIO	Parecer Orçamentário	Sim	2	sim
+1749	Encerramento de Conta Vinculada	Sim	2	sim
+REEMBOLSOSAUDE1	Reembolso Junto a Operadora	Sim	2	nao
+CADASTROITENSSOL	Cadastro de Itens - Em lote	Nao	2	nao
+ECCOMERCE	E - Commerce	Sim	2	nao
+APROVINTEGRA	Aprovação e Processamento de Pagamento	Sim	2	nao
+CACELAMENTOPEC	Educação Continuada - Cancelamento	Sim	2	nao
+SISRPS	SISLOC - Relatar Problema em Solicitação	Nao	2	nao
+RESACORDO	Rescisão em Comum Acordo	Nao	2	nao
+TERMVISTBENSBB	Termo de Vistoria de Bens da BBTS	Sim	2	nao
+RECEBEFERRAMENTA	Recebimento de Ferramentas	Nao	2	sim
+ACIONALICENTER	Acionamento do Licenter	Sim	2	nao
+RETNOTAFISCAL	Retenção de pagamento de Nota Fiscal	Sim	1	nao
+REGISTRARSISCCONNDA	Aprovação e registro de NDA ( Fornecedor/cliente)	Sim	1	nao
+DISPONIBILIDABENS	Disponibilidade de Bem Patrimonial	Sim	1	nao
+NDA	Termo de Confidencialidade - NDA	Sim	1	nao
+AVALESTRATEGICO	Avaliação Estratégica	Sim	1	nao
+EMISSPARECFISCTRIBUT	Emissão de Parecer Fisco Tributário	Sim	1	nao
+ITENSPATRICONTROL	Controle de Itens Patrimoniáveis Etiquetados	Sim	1	sim
+LIBERACAOVERBA	Liberação de Recursos da Conta de Provisionamento	Sim	1	nao
+REGISNDASISC	Registro de NDA no Sisccon	Nao	1	nao
+VIABNEG	Estudo de Viabilidade de Negócio	Sim	1	nao
+RCM	Relatório de Conferência Medicamentos	Sim	1	nao
+PECR	Educação Continuada - Reembolso	Nao	1	nao
+REEMBOLSOPUBLICO	Reembolso Relacionamento Público Social	Sim	1	nao
+PORTEMLOT	Portabilidade em Lote	Nao	1	nao
+REQUISICAODECOMPRAS	Requisição de Compras	Sim	1	nao
+CFBB	Cessão de Funcionário do BB	Nao	1	nao
+CRIACAOCONTA	Criação de Conta Vinculada	Sim	1	nao
+CREDENEXECSERVENG	Solicitação para utilização de Credenciamento e Execução de Serviços de Engenharia	Sim	1	nao
+ASO	Avaliação de Atestado de saúde ocupacional (ASO)	Sim	1	nao
+CONTRACONSE	Contratação de Conselheiro	Sim	1	nao
+PREVALIDASGPS	Pré Validação de Faturamento - SGPS	Sim	1	nao
+CAT	Comunicação de Acidente de Trabalho - CAT	Sim	1	sim
+BSALARIOFAMILIA	Salário Família	Sim	1	nao
+CRIACAOPEOPLE	Criação de Elemento no Peoplesoft	Sim	1	nao
+PRSTARPS	Prestação de Contas para Reembolso Publico Social	Nao	1	nao
+AGETAREFA	Agendamento de tarefa ESS	Sim	0	nao
+FERIASFORAPRAZO	Férias	Nao	0	nao
+CLUBEDESCONTOGEPES	Novas parcerias - Clube de Desconto Gepes	Sim	0	nao
+MANUCOBENS	Controle de Manutenção Corretiva em Bens Móveis	Sim	0	nao
+ANEXARSHAREPOINT	Anexar no sharepoint documentação do processo de apuração fiscal	Sim	0	nao
+CONTRATACAOTERCEIRIZADO	Contratação de Terceirizado (AFF)	Sim	0	nao
+CFO	Cessão de Funcionários para Outros Órgãos	Nao	0	nao
+CONT200DIAS	Contrato 200 dias	Sim	0	nao
+AVALIADOD	Avaliação do DOD	Sim	0	nao
+630	inserir	Sim	0	nao
+PDPEPLINKREGNF	PDPEP - LINK ASSOCIAÇÃO REGISTRO DE NF	Sim	0	nao
+ALCONTRAB	Alteração de Contrato de Trabalho  (Uso exclusivo do Ceman - Curitiba)	Sim	0	nao
+PLANONEGOCIOS	Portal de Estruturação de Negócios (Plano de Negócio)	Sim	0	nao
+REGBASEARP	Registro em Base de Dados ARP	Sim	0	nao
+ALTERARDADOSBANCARIOS1	*Autorização para alteração de Dados Bancários de Fornecedores	Sim	0	nao
+AVALIACAOAPIABERT	Avaliação de Fornecedores - Trimestral API	Sim	0	nao
+VERIFICADOCECOM	E - Commerce - Verificação de Documentação	Sim	0	nao
+CACELAMENTODEACESSO	Cancelamento de Acesso	Sim	0	nao
+DNSCRIACAO	Redes - Criação de DNS	Nao	0	nao
+DIRETA	Processo de Compras	Nao	0	nao
+SICPINS	SIC - Recurso de Primeira Instância_old	Sim	0	nao
+REPRA	Reprogramação de Prazo de Ações	Sim	0	nao
+BLOQFERIAS	Privilégios de Acesso - Bloqueio - Férias	Nao	0	nao
+SEVICOSTELEFONIAMOVEL	Serviços de Telefonia Móvel	Nao	0	nao
+APROV	Aprovação Genérica	Sim	0	nao
+PDCI2019	PDCI 2019	Sim	0	nao
+ARQCOMPLEMENSALARIAL	Arquivar Informações de Complementação Salarial	Sim	0	nao
+ADITIVOSCLIENTES	Negociação de Aditivos	Sim	0	nao
+SOLSERV	Solicitação de Serviços	Nao	0	nao
+EMPRESTIMOCONSIGNADO1	Empréstimo Consignado	Nao	0	nao
+DESATIVARDGCO	Solicitar desativação de DGCO	Sim	0	nao
+RPT1	Relatórios	Sim	0	nao
+CONSFISCCADCLI	Consulta Fiscal - Cadastro de Clientes	Sim	0	nao
+COTACOESLICITACOESE	Cotações Licitações-e	Nao	0	nao
+AVALFORNECEDOR	Avaliação de Fornecedor	Nao	0	nao
+TERMORESPINV	Termo de Responsabilidade - Inventário (Posse em Função Gerencial)	Nao	0	nao
+GER	Grande exposição e/ou Risco - Gejur	Sim	0	nao
+SDESTAB	Serviços Despachantes - Estabelecimento	Nao	0	nao
+548	seguros	Sim	0	nao
+ADITDICOF	Prorrogação	Sim	0	nao
+SSEG	seguros	Sim	0	nao
+ININININ	inserir docum	Sim	0	nao
+RESSARCIMULTASDESATIVAD	Ressarcimento de Multas	Nao	0	nao
+SOLICITARPGOPOSTOS	Solicitar Pagamentos Judiciais - Acordos com Postos de Serviços	Sim	0	nao
+CALCFOLHAPAG	Cálculos da Folha de Pagamento	Sim	0	nao
+CADASTROSUBSTABELECIDO	Cadastro de Substabelecido	Sim	0	nao
+DFDFDFDF	designacao	Sim	0	nao
+632	fisco	Sim	0	nao
+BBTS50COMPLEMENTO	Programa Digital BBTS 50 anos - Complemento	Nao	0	nao
+CONTRATACAO2	Contratação - Novas demandas para Contratação	Sim	0	nao
+LICENCAMETERNIDADE	Licença Maternidade	Sim	0	nao
+NOTIFPORTABICHIP	Notificação de Portabilidade de chips	Sim	0	nao
+ACOMPTDEVPIX	E - Commerce - Acompanhar a devolução do Pix	Sim	0	nao
+SDP3D	Envio de sugestão de desenvolvimento de peças 3D	Sim	0	nao
+RESTBACKUP1	Restauração de Backup	Nao	0	nao
+TELEFONIAIP	Telefonia	Nao	0	nao
+GERCONFNOVOPROJ	Gerência de Configuração - Cadastrar / Alterar Projeto	Nao	0	nao
+CIPARISCO	Encaminhamento de sugestões e situações de risco	Nao	0	nao
+INCPATRI	Inclusão de Bens Patrimoniais Por Aquisição	Sim	0	nao
+INCLUPATRI	Inclusão de Bem Patrimonial Por Inventário	Sim	0	nao
+REEMBOLSO	Reembolso	Nao	0	nao
+NOVAESTA	Instalação de novas estações	Sim	0	nao
+DISPATRI	Disponibilidade de Bens Patrimoniais	Sim	0	nao
+ALTCADASTROSAUDE	Alteração de Cadastro	Nao	0	nao
+VALETRANSPORTE	Vale-Transporte	Nao	0	nao
+CONTRASERV	Contratação de Prestador de Serviço	Nao	0	nao
+TESTE	teste	Sim	0	nao
+NOMEACAOT	Nomeação com Transferência	Sim	0	nao
+AUXREFALI	Alteração Auxílio Refeição / Alimentação	Nao	0	nao
+TRANSREEST	Transferência entre UOR´s de Funcionários BBTS por Reestruturação	Sim	0	nao
+SOLMAT	Solicitação de Material	Sim	0	nao
+GOLIVE	Go Live / ERP	Nao	0	nao
+MANUESTABELECIMENTO	Acionamento de Ata	Nao	0	nao
+WORKAPROV	Aprovações Processo TI	Sim	0	nao
+GAP	GAP's (PGE)	Nao	0	nao
+ATIVTIEMAIL	Atividades Eventuais de TI por Email	Sim	0	nao
+MANUESTALBELECIMENTO	Cadastro de Estabelecimentos	Sim	0	nao
+DEMANDAINFRA	Demanda Interna de Infraestrutura de TI e Telecomunicações	Sim	0	nao
+VALIDARNFSERV	Validar NF de Serviços	Nao	0	nao
+PAQ2019	PAQ2019	Sim	0	nao
+COMPLEMENTACAOSALARIAL	Complementação Salarial	Sim	0	nao
+DESIGNACAO	Designação dos Intervenientes do Contrato	Nao	0	nao
+MANUTORA	Suporte ao ERP	Sim	0	nao
+ALTERAACESSO	Privilégios de acesso - Alteração	Nao	0	nao
+PROBLEMAGNP	Problema em sistemas da Assistência Técnica	Nao	0	nao
+GERCONFPREPAMB	Gerência de Configuração - Preparar Ambiente	Nao	0	nao
+IDVISUAL	Identidade Visual - Inclusão/Exclusão	Nao	0	nao
+SOLEIBEM	Solicitação de Enquadramento de Projetos na Lei de Inovação Tecnológica (Lei do Bem)	Nao	0	nao
+TARBD	Execução de Tarefas de Banco de Dados	Nao	0	nao
+CULTURAINC	Vale Cultura	Nao	0	nao
+SICSINST	SIC - Recurso de Segunda Instância_old	Sim	0	nao
+TESTEIMPORT	Teste_import	Sim	0	nao
+DISPONIBILIDADEOUTROSBENSPATRIMONIAIS	Disponibilidade de Outros Bens Patrimoniais	Nao	0	nao
+INCBEMPATRSEMETIQ	Inclusão de Bem patrimonial por Inventário Sem Etiqueta	Nao	0	nao
+NUMCAT	Numeração de documentos CAT	Sim	0	nao
+CADASTRARBEMPATRIMONIAL	Cadastrar Bem Patrimonial	Nao	0	nao
+APROVDOC	Assinatura Digital de Documentos	Sim	0	nao
+REPAC	Contratos em Repactuação	Sim	0	nao
+PAQGERED	PAQ2019	Nao	0	nao
+MANUTMOV	Manutenção de Bens Móveis	Sim	0	nao
+SERVDESPACHANTES	Serviços Despachantes	Nao	0	sim
+ALTERAACESSOTERCEIRO	Privilégios de acesso - Alteração Terceiro	Nao	0	nao
+SERVCOM	Serviços de Comunicação	Sim	0	nao
+PECR2	Educação Continuada - Reembolso	Nao	0	nao
+TRANCPEC1	Educação Continuada - Trancamento	Nao	0	nao
+TERMRESPINVENTARIO	Termo de Responsabilidade - Inventário 2024	Nao	0	nao
+EXOBRIGADA	Exoneração Brigada Voluntária	Sim	0	nao
+FECHAMENTOAPURACAO	Fechamento de Apuração Fiscal Mensal	Sim	0	nao
+SDA	Serviços Despachantes - Arquivamento de documento	Nao	0	nao
+SDC	Serviços Despachantes - Certidões	Nao	0	nao
+ARP	Acionamento de Ata de Registro de Preço da Gestão da Gesap	Sim	0	nao
+GDP3	GDP	Nao	0	nao
+DEPSUSEG	Suseg - Definição de equipe de planejamento	Sim	0	nao
+639	fisco	Sim	0	nao
+AVALIAFISCASERVICOOO	Avaliação Fornecedor	Nao	0	nao
+HOSPEDAASSISTENCIAL	Solicitação de Hospedagem em Pecúnia - Apoio Assistencial	Nao	0	nao
+ACUMULOFUNCAOPARECER	Acúmulo de função pública - Parecer Jurídico	Sim	0	nao
+SUP	Adquirir Suprimentos	Nao	0	nao
+TM	Teste Medicamento (AFF)	Nao	0	nao
+FISCALIZADESIGNACOMISS	Designação dos Intervenientes do Contrato Fiscalizado por Comissão	Sim	0	nao
+TBENSATIVOSOUTSOUR	Transferência de Bens Ativos para a Unidade do Cliente Externo - (Contrato Outsourcing)	Nao	0	nao
+148	Nomeação	Sim	0	nao
+REDUCAOJORNADAFILHOPCD	Redução da Jornada de Trabalho por Filho PCD	Nao	0	nao
+DD	dod	Sim	0	nao
+GARANTIACONTRAT	Garantia Contratual	Sim	0	nao
+TROCATITULARIDADE	Troca de Titularidade	Sim	0	nao
+1719	Aditivação de Contrato	Sim	0	sim
+ECOMMERCENF	E - Commerce - Anexar NF	Sim	0	nao
+GERARNOTAFISCALNAPREFEITURA	Gerar Nota Fiscal na Prefeitura	Sim	0	nao
+ACESSREDE	Acesso a Recursos de Rede	Nao	0	nao
+ACESSISTEMA	Servidor de arquivos - Acesso a Pastas	Sim	0	nao
+MANBD	Banco de dados - Requisição de Mudança (RDM)	Nao	0	nao
+TROCSENHA	Troca de Senhas no ambiente GSI	Sim	0	nao
+ATIVACAO	Ativação de um novo servidor	Sim	0	nao
+ACESTELE	Telefonia - Criação / Alteração de Acesso	Sim	0	nao
+BDMUDANCA	Mudança em Banco de Dados Oracle	Nao	0	nao
+DOTA	Revisão de Dotação	Nao	0	nao
+CARINCENDIO	Troca de extintor de incêndio	Sim	0	nao
+DESENV	Manutenção em sistemas	Sim	0	nao
+ALTUSERBASA	Alteração de Acesso - Jacarezinho	Sim	0	nao
+CONTRAJOVEM	Contratação de Jovem Aprendiz	Nao	0	nao
+INSCEDUCON	Educação Continuada - Inscrição	Sim	0	nao
+RECLAMACAOSAUDE	Dúvidas e/ou Críticas	Nao	0	nao
+EXCLPATRI	Exclusão de bem por Sinistro	Sim	0	nao
+PUBLICDECOM	Serviços de Comunicação	Nao	0	nao
+DEMPREDIAL	Serviços de Demanda Predial	Sim	0	nao
+GERADORDEOSCONCILIACAOSGPS	Gerador de OS - Conciliação SGPS	Sim	0	nao
+ATENDCREDENSERV	Atendimento - Credenciamento e Execução de Serviços de Engenharia	Sim	0	nao
+GIRED	Gestão de Itens sem Reparador Externo Disponível	Sim	0	nao
+PEDIDODEVOLUECOMER	E - Commerce - Realizar Pedido de Devolução	Sim	0	nao
+ECOMECERRI	E - Commerce - Geração do RI	Sim	0	nao
+1718	Assinatura de Contrato	Sim	0	sim
+PUBLIDOC	Publicação, Exclusão e Atualização de DOC na Intranet	Sim	0	nao
+REMOCAOACESSO	Privilégios de acesso - Bloqueio	Nao	0	nao
+INCIDENTE	Incidente	Nao	0	nao
+SERVICOSCHAMA	Outras Solicitações	Nao	0	nao
+SOLEQUIP	Solicitação de novo Equipamento	Sim	0	nao
+MANUTAPOIO	Consultas aos sistemas internos	Sim	0	nao
+CRIACD	Privilégios de acesso - Caixa Departamental	Nao	0	nao
+CADOCORR	Cadastramento de Ocorrência	Sim	0	nao
+BLOQPROXY	Bloqueio de Acesso - Proxy	Sim	0	nao
+ATESTARSERV	Registrar Nota Fiscal de Serviço	Nao	0	nao
+POSSE	Comunicar Admissão	Nao	0	nao
+TRANSFPATRI	Transferência de Bens Patrimoniais	Sim	0	nao
+EMPRESTIMOCONSIGNADO	Empréstimo Consignado	Nao	0	nao
+PROMOCOBRA	Promoção para Funcionário BBTS	Nao	0	nao
+PROMOPRESTA	Promoção para Prestador de Serviço	Nao	0	nao
+ATIVEVENTUAL	Atividades Eventuais de TI	Sim	0	nao
+RUBRICA	Novas Rubricas Contábeis	Nao	0	nao
+INCISISTE	Incidente Sistemas Internos	Nao	0	nao
+NNEGOCIO	Novo Portal de Negócios	Nao	0	nao
+ANTECIPAPAG	Antecipação de Pagamento	Nao	0	nao
+CSCPM	Pesquisa de Mercado	Nao	0	nao
+TRANS	Transição	Nao	0	nao
+PASSAGEMAEREAHOSPED	Passagens Aéreas, Hospedagens e Locações de Carro	Nao	0	nao
+ARQUIVAMENTO	Arquivamento	Sim	0	nao
+SICSEG	SIC - Recurso de Segunda Instância	Sim	0	nao
+PAHALTCANC	Passagens Aéreas e Hospedagens - Alterações e Cancelamentos	Nao	0	nao
+OPERACINFRAESTRUTTIC	Operação de Infraestrutura de TIC - Prestação de Serviços	Nao	0	nao
+RDM	Gerência de Configuração - Mudança Infraestrutura	Sim	0	nao
+DOSAATIV	Projeto DOSA - ATIV	Sim	0	nao
+RESPSERV	Responder ao Solicitante/Executar atividades  - Gestão de Pessoas	Nao	0	nao
+SOLAVAL	Avaliação de Desempenho - Dúvidas/Solicitações	Nao	0	nao
+TERMCONSENTIMENTOGYMPASS	Termo de Consentimento Gympass	Sim	0	nao
+RECEBIMENTONF	Recebimento de Notas Fiscais de Fornecedores	Nao	0	nao
+CIPAINFOESTABILIDADE0	CIPA - Informação de Estabilidade	Nao	0	nao
+GRAGERIC	Grau de Risco Geric	Sim	0	nao
+SOLICITACAOFOPAG	Solicitação de Pagamentos FOPAG	Sim	0	nao
+SDR	Serviços Despachantes - Renovação	Nao	0	nao
+SUBRESSARCIMENTOS	Subprocesso	Nao	0	nao
+REEMBOLSOASSIST	Reembolso Medicamento Assistencial	Nao	0	nao
+SCO	s Ordem de Compras	Sim	0	nao
+REMODELAGEMFLUXO	Remodelagem de Fluxo	Nao	0	nao
+MUDANCAAPOIO	Auxílio/Incentivo Mudança em Pecúnia - Apoio Assistencial	Nao	0	nao
+PID2025	Programa de Inclusão Digital - BBTS 50 ANOS	Nao	0	nao
+ENVIODEINFOPARAAGEPES	Afastamento - Envio de Relatório para a Gepes	Sim	0	nao
+SOLAUDITORIAINTERNAEXTERNA	Solicitações de Auditoria interna e/ou externa	Sim	0	nao
+DOCFUNCCEDIBBTS	Documentação dos Funcionários Cedidos da BBTS	Nao	0	nao
+HIVEPLACE	Hive Place	Sim	0	sim
+CONTRATACAOMSBR	Contratação pela Plataforma Contrata + Brasil	Sim	0	nao
+RCIR	Relatório Conciliação ISS Retido	Sim	0	nao
+INSTSOFT	Estação de trabalho - Instalação de software	Sim	0	nao
+MUDANCA	Mudança	Nao	0	nao
+QUOTA	Servidor de arquivos - Alteração de Cota do Usuário	Sim	0	nao
+ESMATERIAL	Entrada/Saída de Materiais - Área 2	Sim	0	nao
+ACESSOSERVID	Privilégios de Acesso - Inclusão / Exclusão no Servid	Sim	0	nao
+MPLS	Redes - Teste de Contingência	Nao	0	nao
+INCIDENTEGNP	Incidente em sistemas da Assistência Técnica	Nao	0	nao
+REDESDIV	Redes - Serviços Diversos	Sim	0	nao
+INCIDENTEARS	Incidente no CHAMA-ARS	Nao	0	nao
+PDPEPTESTE2	PDPEP - Pequenas Despesas	Sim	0	nao
+GRAGEJUR	Grau de Risco Gejur	Sim	0	nao
+CANCELARGDP	Cancelar GDP (AFF)	Sim	0	nao
+VALIDACAOCDA	Recebimentos de faturamentos - Conciliação via CDA	Sim	0	nao
+TRIAGEMCSC	Triagem de Requisição de Compras	Sim	0	nao
+SPM	s Pesquisa de Mercado	Sim	0	nao
+561	ss.Pesquisa	Sim	0	nao
+704	Acúmulo de função pública	Sim	0	nao
+TESTEAPI	Teste API	Sim	0	nao
+ACIONAMENTOPOSTOSERVICO	Acionamento Posto de Serviço	Sim	0	nao
+PAGIUVP	Pagamento da IUVP Avulsa Gestão de Pessoas - Serviços Gerais	Sim	0	nao
+INDICADORGESAP	Relacionar Serviço ao Grupo de Trabalho	Nao	0	nao
+ESCRITURAECCOMERCE	E - Commerce - Escrituração contábil	Sim	0	nao
+GERANOTAFISCALNAPREFEITURA	Gerar Nota Fiscal na Prefeitura	Sim	0	nao
+FATCLIEMNF	Faturamento de Clientes - Emissao de NF	Sim	0	nao
+OUTRASSOLIC	Outras Solicitações da Segurança da Operação	Nao	0	nao
+CRIACAOUSUARIO	Privilégios de acesso - Criação para novo colaborador	Nao	0	nao
+SENHACORP	Alteração de senha - Sistemas Corporativos	Nao	0	nao
+DESBLOQMON	Desbloqueio de conta	Nao	0	nao
+DESBLOQUEIOWEB	Privilégios de acesso - Desbloqueio de página WEB, USB e Outros	Nao	0	nao
+SERVBD	Banco de dados - Suporte	Nao	0	nao
+COMPAST	Estação de trabalho - Compartilhamento de Pastas Locais	Sim	0	nao
+REPROG	Reprogramação de Prazos	Sim	0	nao
+DEMANDADITEC	Registro de novas necessidades	Nao	0	nao
+RESTBACKUP	Restauração de Backup	Nao	0	nao
+MOVIMENTACAO	Movimentação no Plano de Saúde	Nao	0	nao
+RENOVESTAG	Renovação de Estágio	Sim	0	nao
+AFASPREV	Afastamento Previdenciário	Nao	0	nao
+CADAUXREFALI	Cadastro Auxílio Refeição / Alimentação	Nao	0	nao
+CONTASSERVCONCESSIONARIOS	Contas de Serviços Concessionários para Pagamento	Nao	0	nao
+AUXILIOFUNERAL	Auxílio Funeral	Nao	0	nao
+EXCLUSAOBEMPATRIMONIALSINISTRO	Exclusão de Bem Patrimonial por Sinistro	Nao	0	nao
+313	Contratos em Reajuste	Sim	0	nao
+DISPONIBILIDADEBENSPATRIMONIAISTI	Disponibilidade de Bens Patrimoniais de TI	Nao	0	nao
+LEVREQ	Levantar requisitos	Nao	0	nao
+SICPRI	SIC - Recurso de Primeira Instância	Sim	0	nao
+OPERACAOINFRAESTTIC	Operação de Infraestrutura de TIC - Prestação de Serviços	Sim	0	nao
+RECONHECER	Reconhecer e Agradecer	Nao	0	nao
+SICCGU	SIC - Reposta à CGU	Sim	0	nao
+NEGOCIOS	Formalização de Negócios com Clientes	Sim	0	nao
+CSCAUTOGESTAO	Autogestão	Nao	0	nao
+CSCAUTOGESTMULTI	Lançamento multiplo autogestão	Nao	0	nao
+AVALEVANT	Avaliação da Demanda e levantamento de custos	Sim	0	nao
+AGENDAESTACAOTRAB	Agendamento de Estação de Trabalho	Sim	0	nao
+LICENELEIT	Licença Eleitoral	Nao	0	nao
+CONSULTSALDO	Consultar saldo negativo	Nao	0	nao
+SLCLOCIMOVEL	Solicitação de Locação de Imóvel	Sim	0	nao
+SISDA	SISLOC - Delegação de Autorização	Nao	0	nao
+CONCIGUIA	Conciliação de pagamento entre guia e pagamento no painel tributário	Sim	0	nao
+YOU	Grande exposição e/ou Risco - Geric	Sim	0	nao
+DIO	Pesquisa De Pessoa Politicamente Exposta	Sim	0	nao
+DEPGESUCDILIC	Gesuc/Dilic - Definição de equipe de planejamento	Sim	0	nao
+NOTIFICACLIENTEADITAMENTO	Notificar Cliente Aditamento	Sim	0	nao
+DESIGNASISCCON2	Designação de Intervenientes do Contrato	Sim	0	nao
+DOCVEICLOT	Documentação de veículo locado	Nao	0	nao
+ROTINAAVALI11	Rotina Avaliação	Nao	0	nao
+ACIONARCECAP	Acionar Cecap	Sim	0	nao
+DEPGETICDETIC	Getic/Detic - Definição de equipe de planejamento	Sim	0	nao
+AVALIROTINAA	Avaliação Rotina	Sim	0	nao
+PENALIMENTICIA	Pensão Alimentícia	Sim	0	nao
+PBSE	Projeto Básico Simplificado Eletrônico	Sim	0	nao
+NOMEACOES	Nomeação	Sim	0	nao
+ECOMMERCEPAGAR	E - Commerce - Efetuar o Pagamento	Sim	0	nao
+RESSARCIMENTOCOMBUSTIVEL	Ressarcimento de Combustível ao Fornecedor	Sim	0	nao
+SOLQUAPES	Solicitar quadro de pessoal - (Uso exclusivo da GEFIC)	Sim	0	nao
+ALTDADO	Solicitações de Alteração de Dados	Sim	0	nao
+TRANCPEC	Educação Continuada - Trancamento	Sim	0	nao
+CACELAMENTOPEC1	Educação Continuada - Cancelamento	Nao	0	nao
+INSCEDUCON1	Educação Continuada - Inscrição	Nao	0	nao
+GINLAB	Ginástica Laboral	Nao	0	nao
+MSGSYSAID	Mensagem SysAid	Sim	0	nao
+TERMOBRIGAVO	Termo De Posse de Brigadista Voluntário	Sim	0	nao
+VALIDADECLPAINTRI	Validação de declarações no painel tributário	Sim	0	nao
+CIPAINFOESTABILIDADE	Informação de Estabilidade - CIPA	Sim	0	nao
+SDEST	Serviços Despachantes - Estabelecimento	Sim	0	nao
+DJAP	Desligamento de Jovem Aprendiz	Nao	0	nao
+RETORNODECESS	Retorno de Cessão	Nao	0	nao
+DFGSD	fdsdfgfd	Sim	0	nao
+ACUMULODEFUNCAO	Acúmulo de função pública	Sim	0	nao
+ANTRIBUT	Consulta Fisco - Análise Tributária	Sim	0	nao
+1106	Grau de Risco Cliente	Sim	0	nao
+GDPGEPES	Gestão de Desempenho	Sim	0	nao
+PBGESUC	Projeto Básico	Sim	0	nao
+INDENAGUARD1	Indenização por Guarda e Zelo do Veículo Locado	Nao	0	nao
+ANL	ANALISE_AUDIT	Sim	0	nao
+LISTATREINO	Lista de Treinamento-antigo	Nao	0	nao
+DEPGEAPESUPOT	Geape/Supot -Definição de equipe de planejamento	Sim	0	nao
+DISTRATOENCERRAMENTOCLIENTES	Distrato e Encerramento de Contratos de Clientes	Sim	0	nao
+COMPVALORRESSARCBBTS	Comprovante de Valores Ressarcidos a BBTS	Sim	0	nao
+RECEBIMENTOUNIFORME	Recebimento de Uniforme	Sim	0	nao
+VRPSCC	Verba RPS Cartão de Crédito	Nao	0	nao
+TERMACEITEORDSERVSAUDESEGTRAB	Termo de Aceite da Ordem de Serviço de Saúde e Segurança do Trabalho conforme NR-1	Sim	0	nao
+SOLICITACAOUNIFORME	Solicitação de Uniforme	Nao	0	nao
+SIASGALT	Publicar Documentos no SIASG - Sistema Integrado de Administração de Serviços Gerais	Sim	0	nao
+PLANOACAOCLIENTE	Ciência do Risco e Plano de Ação	Sim	0	nao
+COMPRASDIRETAS2	Compras Diretas	Sim	0	nao
+AUXHOSPESTENDIDA	Auxilio Hospedagem Estendida	Sim	0	nao
+RECEBIMENTOEPILOTE	Recebimento de EPI ou EPC (Abertura em Lote)	Sim	0	sim
+RADI	Registrar apuração de indicador	Sim	0	nao
+PERFILLOTE	Atualizar Perfil/Especialidade Em Lote	Sim	0	nao
+UNIFORMELOTE	Recebimento de Uniforme (Em Lote)	Sim	0	sim
+IDFINDIVIDUAL	Pré-Notificação do Índice de Desempenho de Fornecedores (IDF)	Sim	0	sim
+IDF	[LOTE] Pré-Notificação do Índice de Desempenho de Fornecedores (IDF) - (exclusivo Cesec)	Sim	0	sim
+SERVDESK	Estação de trabalho - Configuração e serviços	Sim	0	nao
+PROJETO	Gerenciamento de Projetos	Nao	0	nao
+ATUALIZACAO	Liberação	Sim	0	nao
+BACKDIA	Backup máquinas Windows	Sim	0	nao
+ATUALSOFT	Atualização de versão de Software	Sim	0	nao
+LINK	Redes - Link	Sim	0	nao
+NTSERVICO	Atestar Nota Fiscal de Serviço	Nao	0	nao
+DESBLOQACESSO	Privilégios de acesso - Desbloqueio - Férias	Nao	0	nao
+MANUTCHAMA	Melhorias e Novas Funcionalidades em Sistemas CHAMA-ARS, Adm Materiais, GAC-Mobile, Monitor VIP	Nao	0	nao
+GERCONFPLAN	Gerência de Configuração - Planejar Ambiente	Nao	0	nao
+REEMBOLSOSAUDE	Reembolso	Nao	0	nao
+SOLICOJUR	Solicitação de documentos - COJUR	Sim	0	nao
+RENOVACONTRATO	Aditamento Contratual	Nao	0	nao
+GUIAPAG	Guias de pagamento	Sim	0	nao
+INCBEMPATRCOMETIQUETA	Inclusão de Bem Patrimonial por Inventário Com Etiqueta de Patrimônio	Nao	0	nao
+APROVDOCGER	Aprovação de Documentos	Sim	0	nao
+CLASSIFPDCI2019	Classificação PDCI 2019	Nao	0	nao
+SINDICAL1	cota negocial	Nao	0	nao
+DISTRATO	Distrato de Contratos de Clientes	Sim	0	nao
+DGCO	Solicitar reserva de DGCO	Nao	0	nao
+CONJOV	Contratação de Jovem Aprendiz	Sim	0	sim
+RECURSOEFISEC	Recurso Efisec	Nao	0	nao
+PUBLICDECOMCESEC	Serviços de Comunicação- Cesec	Nao	0	nao
+DISTRATOERESCI	Distrato e Rescisão	Nao	0	nao
+FATURAMENTOCLIENTES	Faturamento de Clientes - Emissão de Notas Fiscais	Nao	0	nao
+SERVMEN	Execução de tarefas Mensais - Notes	Sim	0	nao
+TELALTPINS	Telefonia - Instalação / Alteração de Ponto	Sim	0	nao
+ANTISPAM	Anti-Spam	Nao	0	nao
+SUPARS	Suporte ao Sistema EBS-FieldServices, CHAMA-ARS, REDE-MAN, SAC, GAC-Mobile e TOA	Sim	0	nao
+PLANGERCONF	Gerência de Configuração - Planejar Ambiente	Nao	0	nao
+SENHATELEF	Telefonia - Alteração de senha	Sim	0	nao
+ALTCOTANOTES	Correio Lotus Notes - Alteração de Cota de Usuário	Sim	0	nao
+REQPATRI	Requisição de Bens Patrimoniais (exceto ítens de TI)	Sim	0	nao
+TRANSERVICO	Transferência de Prestador de Serviço	Nao	0	nao
+CAIXACOM	Caixa de Comunicação	Nao	0	nao
+MANUTPREV	Melhorias	Nao	0	nao
+CONTDEM	Controle de deliberações	Sim	0	nao
+PROVDOC	Providências para documento externo	Sim	0	nao
+CONTDGCO	Controle de faturamento de DGCO	Nao	0	nao
+NOMEDOCNIX	Alteração de nome de documento - DocNix	Sim	0	nao
+REENQ	Reenquadramento de Função de Funcionário BBTS	Nao	0	nao
+TELEMOVEL	Serviços de Telefonia Móvel	Sim	0	nao
+BLOQFERIASAUTO	Privilégios de Acesso - Bloqueio Automático	Nao	0	nao
+CSCREVACINA	Reembolso Vacina	Sim	0	nao
+ARQGERALDIGITAL	Arquivo Geral e Digitalização	Sim	0	nao
+SOLINFRA	Nova Solução e Manutenção de Infraestrutura	Sim	0	nao
+REQBENSPATRIMONIAIS	Requisição de Bens Patrimoniais	Nao	0	nao
+CONSTSOL	Construir Solução	Nao	0	nao
+VALECULTURA	Vale Cultura	Sim	0	nao
+EXEDEMA	Execução da demanda orçada	Sim	0	nao
+ORCADITES	Controle Orçamentário Dites	Sim	0	nao
+CADASTRODEFORNECEDOR	Cadastro de Fornecedor	Sim	0	nao
+INSSESTABILIDADE	Afastamento Previdenciário - Informações de Estabilidade	Sim	0	nao
+GFAJUSTELIVRO	Ajustes do Livro Fiscal	Sim	0	nao
+GUIAPAGICMS	Guias de pagamento diário de ICMS complementar - Conferência e Validação	Sim	0	nao
+TESTEADIR1	Teste	Nao	0	nao
+DUEDILIGENCE	Apuração de Risco de Fornecedor - Due Diligence/Background Check	Sim	0	nao
+PEDIDODEPAUTA	Pedido de Pauta	Nao	0	nao
+ENENENEN	encerramento	Sim	0	nao
+631	publicaçoes	Sim	0	nao
+TERMOINTERVCONTRAT	Termo Designação de Interveniente	Sim	0	nao
+33	pbe	Sim	0	nao
+SOLICITAAVALIACAOFISCAL	Solicitar Avaliação Fiscal	Sim	0	nao
+PESQUISAMERCADOS	Pesquisa de Mercado(Adir)	Sim	0	nao
+CONTRATATIC	Planejamento de Contratação de TIC	Sim	0	nao
+CALCUJUDICI	Cálculos Judiciais	Sim	0	nao
+ECOMMERCECOMPRAR	E - Commerce - Realizar a Compra	Sim	0	nao
+PARTE1	parte1	Sim	0	nao
+APLICARESGATEFIN	Aplicação ou Resgate Financeiro	Sim	0	nao
+INSTIMP	Estação de trabalho - Instalar ou configurar Impressora	Sim	0	nao
+BACKUP	Operação de Backup	Nao	0	nao
+PROBLEMA	Problema	Sim	0	nao
+EVENTUAL	Execução de tarefas eventuais	Sim	0	nao
+GRUPONOTES	Privilégios de acesso - Grupo de email/distribuição	Nao	0	nao
+PONTOACESSO	Redes - Ponto de Acesso	Sim	0	nao
+GERCONFALTAMB	Gerência de Configuração - Mudança no Ambiente	Nao	0	nao
+SCR	Ativação/Exclusão/Alteração de UOR	Nao	0	nao
+SUPGNP	Suporte aos Sistemas	Sim	0	nao
+INCIDENTESEG	Incidente de Segurança	Nao	0	nao
+CREDENCIAMENTOSAUDE	Credenciamento	Nao	0	nao
+OUVIDINT	Manifestações - Ouvidoria	Nao	0	nao
+CADFORN	Cadastro de Fornecedores	Nao	0	nao
+PID	Programa de Inclusão Digital - BBTS 40 ANOS	Sim	0	nao
+NOTFIS	Notas Fiscais	Nao	0	nao
+ATA	Acionamento de Ata	Nao	0	nao
+DEMANDA	Demanda	Sim	0	nao
+AFASTAMENTOPREVIDENCIARIO	Gestão de Pessoas - Afastamento Previdenciário	Nao	0	nao
+SOLTE	Treinamento Externo	Nao	0	nao
+CONTRATACAO	Contratação	Nao	0	nao

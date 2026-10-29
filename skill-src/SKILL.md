@@ -46,8 +46,8 @@ em `references/catalogo/` ou `buscar` com o nome.
   confira cada método em `references/guias/api_scripts.md`; ache o nome do campo e sua tabela com
   `grep -P "\tNOME\t" references/catalogo/campos_banco.tsv`; se precisar de prova de uso real, `buscar ... -t fluxo,catalogo`.
 - **SQL**: leia `references/guias/sql.md` antes (regras de desempenho, índices, valores de domínio, consultas prontas).
-  Colunas reais de produção: `grep -P "^TABELA\t" references/catalogo/schema_real.tsv` (só 4 tabelas); para as demais use
-  `references/catalogo/dicionario_dll.tsv` (nomes) e `docs/dados_<tabela>.md`. Sintaxe Oracle.
+  Colunas reais de produção: `grep -P "^TABELA\t" references/catalogo/schema_real.tsv` (776 tabelas, 2026-10-26); `dicionario_dll.tsv` e
+  `docs/dados_<tabela>.md` ajudam a entender o significado. Sintaxe Oracle.
 - **Desenhar ou montar um fluxo / demanda inteira**: leia `references/guias/desenho_fluxos.md` (formato da proposta e regras);
   procure um fluxo parecido em `references/fluxos/_INDICE.md` (marca grid, aprovação, lote, API, planilha); veja
   `references/guias/exemplo_lote_perfil_especialidade.md` para um exemplo completo de análise.
@@ -76,7 +76,7 @@ em `references/catalogo/` ou `buscar` com o nome.
   prova isolada. Os XMLs analisados parecem vir de Qualidade e trazem campos que a produção não tem; o mapa
   `campos_banco.tsv` (produção) é a verdade para tabela e coluna.
 - Não invente método, propriedade, tabela, coluna ou campo. Se a busca não achar, diga que não encontrou. O schema real
-  de produção existe só para `CP_PESSOA`, `CP_ORDEM_SERVICO`, `CPE_CSC` e `CAD_FUNCIONARIO_V`.
+  de produção está em `schema_real.tsv`.
 - O usuário normalmente não consegue testar na hora: diga o que ficou sem teste.
 
 ## Dados sensíveis

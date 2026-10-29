@@ -12,7 +12,8 @@ usuário espera. Tudo aqui foi observado nos 76 fluxos exportados, salvo quando 
 - Ele valida as respostas na prática. Se ele corrigir algo, atualizar `guias/receitas.md`.
 
 ## Ambiente
-- Supravizio 19.1.1 (versão dos XMLs). DLLs do Client analisadas: 18.1.1.
+- Supravizio 19.1.1 (versão dos XMLs; confirmada pela tela Sobre do Client). DLLs do Client analisadas: 18.1.1, ou seja, mais antigas que o instalado: `catalogo/api_19_object_browser.md` traz o que o Object Browser da 19.1.1 mostrou.
+- Volume real: 813 fluxos em produção, 225 mil OS em 12 meses; os 49 fluxos com resumo cobrem 21,6% (`catalogo/fluxos_producao.md`).
 - O usuário tem só `SELECT` em homologação e produção; não consegue rodar insert/update/delete. Detalhes do banco em `guias/sql.md`.
 - Banco Oracle: usar `TO_CHAR`, `NVL`, `SYSDATE`, `||`, `ROWNUM`. `PESSOA.ATIVO` vale `'Sim'`/`'Nao'`.
 - Scripts em IronPython 2.7: `except Exception as e:` funciona; sem f-string; `print` não se usa.

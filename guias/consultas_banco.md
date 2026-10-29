@@ -10,7 +10,7 @@ resultados grandes na conversa é pesado e já fez um resultado sumir. Depois de
 (mapa de campos), ou editar `guias/sql.md` para o resto, e registrar abaixo a data.
 
 ## Já feitas (produção, 2026-10-08)
-- Colunas de `CP_PESSOA`, `CP_ORDEM_SERVICO`, `CPE_CSC`, `CAD_FUNCIONARIO_V` → `catalogo/schema_real.tsv`.
+- Colunas de qualquer tabela (776 em produção) → `catalogo/schema_real.tsv`.
 - Mapa oficial de campos customizados (`SV_CUSTOM_PROPERTY`, 3.451 campos) → `catalogo/campos_banco.tsv`.
 - Lista de tabelas e views do schema com nº de colunas → resumida em `guias/sql.md`.
 - Tabelas com mais de 100 mil linhas, índices de `CP_PESSOA`, `PESSOA`, `OCORRENCIA`, `CP_ORDEM_SERVICO`, `CPE_CSC`,

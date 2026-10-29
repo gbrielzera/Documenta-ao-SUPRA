@@ -260,3 +260,4 @@ ajusta o passo a passo.
 | Data | Item | O que foi incorporado |
 |---|---|---|
 | 2026-10-25 | 12 (parcial) | Material do Felipe: aulas por tema, padrões de erro de script, imports, regras de aprovação e ANS/ANO |
+| 2026-10-28 | 1, 2, 11, 14, 4 (parcial) | Schema completo de produção (776 tabelas); mapa de fluxos por volume (`catalogo/fluxos_producao.*`); versão 19.1.1; motivos de interrupção do ANS; prints do Object Browser (OrdemServico, Utils, QueryString, PowerShell, WebService, Formulario) em `catalogo/api_19_object_browser.md` |

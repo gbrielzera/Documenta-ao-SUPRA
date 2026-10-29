@@ -95,7 +95,7 @@ Ressalvas: o dicionário é de metadados do cliente de 8.1.2/18.1.1; não confir
 ainda traz 8.1.2, então a versão no ini está desatualizada.
 
 ## Objetos do cliente no schema (fora do modelo oficial)
-Só se conhece o **número de colunas** de cada um; as colunas só foram exportadas para as 4 tabelas de `catalogo/schema_real.tsv`. Para outra tabela, pedir ao usuário a consulta 3 de `guias/consultas_banco.md`.
+Só se conhece o **número de colunas** de cada um; as colunas de todas as 776 tabelas de produção estão em `catalogo/schema_real.tsv` (2026-10-26). Volume por fluxo: `catalogo/fluxos_producao.tsv`; motivos de interrupção do ANS: `catalogo/motivos_interrupcao_ans.md`.
 - **Campos customizados**: ~38 tabelas `CPE_*` (as maiores: `CPE_CSC` 637 colunas, `CPE_CONTRATOS` 304,
   `CPE_PESSOAS` 172, `CPE_PRJ_BB` 160, `CPE_CONTRATOS02` 136, `CPE_PDCI2019` 99, `CPE_DESLOCAMENTO` 68,
   `CPE_ORDEM_SERVICO` 62, `CPE_BOOTCAMP` 54, `CPE_NEGOCIOS` 50); `CP_ORDEM_SERVICO` (1000), `CP_PESSOA` (12), `CP_SERVICO` (4).

@@ -66,7 +66,7 @@ Prefixos úteis em `docs/`: `dados_<tabela>` (modelo de dados), `objetos_<classe
   `buscar.py ... -t fluxo,catalogo`.
 - **SQL**: ler `guias/sql.md` primeiro (regras de desempenho, tamanhos, índices, valores de domínio e
   consultas prontas). Colunas **reais** de produção: `grep -P "^TABELA	" catalogo/schema_real.tsv`
-  (só 4 tabelas por enquanto; as demais seguem a doc de 2018 em `catalogo/schema.txt` e `docs/dados_<tabela>.md`).
+  (schema completo de produção: 776 tabelas, 12.716 colunas, 2026-10-26; `catalogo/schema.txt` e `docs/dados_<tabela>.md` são a doc de 2018 e podem divergir).
   Tabela e coluna física de um campo: `grep -P "\tNOME_DO_CAMPO\t" catalogo/campos_banco.tsv` (mapa oficial da produção; `campos.tsv`, dos XMLs, pode divergir: `catalogo/campos_vs_banco.md`). Sintaxe Oracle.
   Se faltar informação do banco, pedir ao usuário (só tem SELECT) uma consulta de `guias/consultas_banco.md`.
 - **Integração / API / web service**: `docs/web_services.md`, `docs/webservices.md`,
@@ -89,8 +89,7 @@ Prefixos úteis em `docs/`: `dados_<tabela>` (modelo de dados), `objetos_<classe
 - A lista de variáveis disponíveis em cada tipo de script não está nas DLLs de forma legível
   (código ofuscado, não descompilar); usar `guias/scripts.md` e `guias/scripts_contexto.md`.
 - Não inventar função, propriedade, tabela ou coluna. Se a busca não achar, dizer isso.
-- O schema real de produção foi extraído só para `CP_PESSOA`, `CP_ORDEM_SERVICO`, `CPE_CSC` e
-  `CAD_FUNCIONARIO_V`; para as demais tabelas o modelo vem da documentação de 2018 e pode divergir.
+- O schema real de produção (776 tabelas) está em `catalogo/schema_real.tsv`; a doc de 2018 pode divergir dele.
 
 ## Aprender com o uso
 
