@@ -1,6 +1,6 @@
 # cronograma_dod_previsto
 # Caminho: Catálogo > Biblioteca de scripts > cronograma_dod_previsto
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (2 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (2 variantes entre os XMLs; esta é a mais recente)
 
 def cronograma_dod_previsto(NUMERO_OC, FASE, ITERACAO, DATA_PREVISTA_INICIO, DATA_PREVISTA_FIM, ESFORCO_PREVISTO_INICIO):
 

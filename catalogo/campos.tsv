@@ -155,6 +155,7 @@ OrdemServico	AUDIT	Alçada AUDIT	Boolean	CheckBox	CP_ORDEM_SERVICO	AUDIT1
 OrdemServico	AUTOR	Autor	String	TextBox	CP_ORDEM_SERVICO	AUTOR			
 OrdemServico	AVALIACAO_FORNECEDOR	Avaliação do Fornecedor	RecordList	DataGrid	Z_00143_AVALIACAO_FORNECEDOR	AVALIACAO_FORNECEDOR			
 OrdemServico	AVALIACAO_PRAZO	Quanto ao prazo do atendimento?	String	DropDownList	CPE_CJUR	AVALIACAO_PRAZO			Péssimo;Ruim;Regular;Bom;Excelente;
+OrdemServico	AVARIA	Avaria	RecordList	DataGrid	Z_00143_AVARIA	AVARIA			
 OrdemServico	AVISO	Aviso	String	Label	CP_ORDEM_SERVICO	AVISO	1500		
 OrdemServico	AVISO_DE_RESTRICAO_DE_CAMPO	<font color="red"><b>Observação: </b>Inclua até 10 nomes de colaboradores que irão mudar de hierarquia para cada chamado. Não cole lista de nomes no campo <u>"Detalhamento da solicitação"</u></font>	String	Label	CPE_BOOTCAMP	AVISO_DE_RESTRICAO_DE_CAMPO			
 OrdemServico	AVISO_NOVO_CHIP	Aviso novo chip	String	Label	CPE_CSC	AVISO_NOVO_CHIP	1500		
@@ -172,6 +173,7 @@ OrdemServico	BANCO	Banco	String	TextBox	CP_ORDEM_SERVICO	BANCO
 OrdemServico	BANCO_NOME	Nome do Banco	String	DropDownList	CPE_CSC	BANCO_NOME			Banco do Brasil;Banco Inter;Bradesco;Caixa Econômica Federal;Itaú Unibanco;Nubank;Santander Brasil;Outro
 OrdemServico	BASE	Base	String	TextBox	CP_ORDEM_SERVICO	BASE			
 OrdemServico	BASE_DESTACADA_LOTE	Base Destacada Lote	RecordList	DataGrid	Z_00143_BASE_DESTACADA_LOTE	BASE_DESTACADA_LOTE			
+OrdemServico	BASE_DE_CALCULO	BASE_DE_CALCULO	RecordList	DataGrid	Z_00143_BASE_DE_CALCULO	BASE_DE_CALCULO			
 OrdemServico	BASE_TR	Base TR	String	DropDownList	CPE_HOMOLOGACAO	BASE_TR			
 OrdemServico	BBTS	BBTS	String	TextBox	CPE_CONTRATOS	BBTS			
 OrdemServico	BEMDETI	Existe Bem Patrimonial de TI?	String	DropDownList	CPE_CSC	BEMDETI			Sim;Não
@@ -225,6 +227,7 @@ OrdemServico	CARGOS_EDITAL	Cargos	String	DropDownList	CP_ORDEM_SERVICO	CARGOS_ED
 OrdemServico	CARGO_ATUAL	Cargo	String	TextBox	CP_ORDEM_SERVICO	CARGO_ATUAL			
 OrdemServico	CARGO_DESLOCAMENTO	Cargo	String	TextBox	CPE_DESLOCAMENTO	CARGO_DESLOCAMENTO			
 OrdemServico	CARGO_DOTA	Cargo	String	TextBox	CP_ORDEM_SERVICO	CARGO_DOTA			
+OrdemServico	CARGO_FAVORECIDOLISTA	Cargo	String	DropDownList	CPE_ORDEM_SERVICO	CARGO_FAVORECIDOLISTA			Técnico;Analista;Técnico Administrativo;Analista Administrativo;Técnico de Operações;Analista de Operações;CCLP;Estagiár
 OrdemServico	CARGO_MOV	Cargo	String	DropDownList	CP_ORDEM_SERVICO	CARGO_MOV			Técnico Administrativo;Analista Administrativo;Técnico de Operações;Analista de Operações
 OrdemServico	CARGO_MOVIM	Cargo	String	DropDownList	CPE_ORDEM_SERVICO	CARGO_MOVIM			Técnico;Analista
 OrdemServico	CARGO_PDCI	Cargo	String	TextBox	CPE_PDCI2019	CARGO_PDCI			
@@ -332,6 +335,7 @@ OrdemServico	CNPJESCOLHIDO	CNPJ	String	TextBox	CPE_CONTRATOS02	CNPJESCOLHIDO
 OrdemServico	CNPJ_CPE_CSC	CNPJ	String	TextBox	CPE_CSC	CNPJ_CPE_CSC			
 OrdemServico	CNPJ_DE_FATURAMENTO	CNPJ	String	TextBox	CPE_ECOMERCE	CNPJ_DE_FATURAMENTO	1999		
 OrdemServico	CNPJ_E	CNPJ	String	TextBox	CPE_ECOMERCE	CNPJ_E			
+OrdemServico	CNPJ_FATURAMENTO	CNPJ de Faturamento	RecordList	DataGrid	Z_00143_CNPJ_FATURAMENTO	CNPJ_FATURAMENTO			
 OrdemServico	CNPJ_FORNECEDOR	CNPJ	String	TextBox	CP_ORDEM_SERVICO	CNPJ_FORNECEDOR			
 OrdemServico	CNPJ_FORN_QUALIF	CNPJ do Fornecedor - Qualificação Financeira	String	TextBox	CPE_FINANCEIRO	CNPJ_FORN_QUALIF			
 OrdemServico	CNPJ_REEMBOLSO	CNPJ	String	TextBox	CPE_CSC	CNPJ_REEMBOLSO			
@@ -366,7 +370,7 @@ OrdemServico	COLABORADOR2	Colaborador	String	TextBox	CPE_CONTRATOS02	COLABORADOR
 OrdemServico	COLABORADOR_BBTS	Colaborador BBTS	Integer	DropDownList	CPE_CSC	COLABORADOR_BBTS		S	
 OrdemServico	COLAB_BASA	Colaborador Basa?	String	DropDownList	CP_ORDEM_SERVICO	COLAB_BASA			Sim;Não
 OrdemServico	COMARCA	Comarca	String	TextBox	CP_ORDEM_SERVICO	COMARCA			
-OrdemServico	COMBOBOX	Combo Box	String	DropDownList	CP_ORDEM_SERVICO	COMBOBOX	900		
+OrdemServico	COMBOBOX	Combo Box	String	DropDownList	CP_ORDEM_SERVICO	COMBOBOX	900		Órtese;Órtese Dentária; Prótese;Recurso para Saúde
 OrdemServico	COMBOBOX001	COMBOBOX001	String	DropDownList	CPE_CONTRATOS02	COMBOBOX001			Banco do Brasil
 OrdemServico	COMBOBOX1	Chamado Aberto?	String	DropDownList	CP_ORDEM_SERVICO	COMBOBOX1	200		
 OrdemServico	COMBOBOX10	Combo Box	String	DropDownList	CPE_HOMOLOGACAO	COMBOBOX10	900		Custo;Investimento;Despesa;Inventário
@@ -838,6 +842,7 @@ OrdemServico	DDD	Área (DDD)	String	TextBox	CP_ORDEM_SERVICO	DDD	10
 OrdemServico	DD_PATRIMONIAL	Dados do Bem Patrimonial	RecordList	DataGrid	Z_00143_DD_PATRIMONIAL	DD_PATRIMONIAL			
 OrdemServico	DEACLARACAO_CANCELAMENTO_PEC	Declaro ainda que estou ciente das implicações de meu desligamento do Programa e sujeito-me às sanções disciplinares, penalidades e ressarcimento à BBTS, dos valores à mim reembolsados até a data, devidamente atualizados, conforme previsto na NI 126	Boolean	CheckBox	CPE_PESSOAS	DEACLARACAO_CANCELAMENTO_PEC			
 OrdemServico	DEBITO_PID	Está ciente e concorda com descontos em folha de pagamento.	Boolean	CheckBox	CP_ORDEM_SERVICO	DEBITO_PID			
+OrdemServico	DECISAO	Aprovar, reprovar ou retornar.	String	DropDownList	CPE_CSC	DECISAO		S	
 OrdemServico	DECLARACAO	declaração	Boolean	CheckBox	CPE_CONTRATOS	DECLARACAO			
 OrdemServico	DECLARACAO_LICENCA	declaração licenca	Boolean	CheckBox	CPE_PESSOAS	DECLARACAO_LICENCA			
 OrdemServico	DECLARA_MATERNIDADE	Declaração da maternidade cidadã	Boolean	CheckBox	CP_ORDEM_SERVICO	DECLARA_MATERNIDADE			
@@ -870,6 +875,7 @@ OrdemServico	DESCRICAO_DA_ORGANIZACAO	Descrição da Organização	String	Memo	C
 OrdemServico	DESCRICAO_DESPESAS	Descrição de outras despesas	String	TextBox	CPE_DESLOCAMENTO	DESCRICAO_DESPESAS	1000		
 OrdemServico	DESCRICAO_DESPESAS_GERED	Descrição de outras despesas	String	TextBox	CPE_DESLOCAMENTO	DESCRICAO_DESPESAS_GERED			
 OrdemServico	DESCRICAO_DETALHADA	Descrição detalhada	String	Memo	CPE_CSC	DESCRICAO_DETALHADA	2000		
+OrdemServico	DESCRICAO_DETALHADA2	Descrição detalhada	String	Memo	CPE_CSC	DESCRICAO_DETALHADA2	2000		
 OrdemServico	DESCRICAO_DOCUMENTO	Descrição do documento	String	Memo	CP_ORDEM_SERVICO	DESCRICAO_DOCUMENTO	2000		
 OrdemServico	DESCRICAO_DOIS	Descrições gerais	String	Memo	CPE_CSC	DESCRICAO_DOIS	2000		
 OrdemServico	DESCRICAO_HIERARQUIA	Descrição Hierarquia Supravizio	String	TextBox	CPE_CSC	DESCRICAO_HIERARQUIA			
@@ -1019,11 +1025,12 @@ OrdemServico	ENVIO_EMAIL_TODOSCOLABORADORES	Envio de Email para os colaboradores
 OrdemServico	EQUIL_ECONOMICO	Tipo Reequilíbrio Econômico	String	DropDownList	CP_ORDEM_SERVICO	EQUIL_ECONOMICO			Repactuação de Contratos;Renovação de Contratos;Reajuste de Contratos; Revisão de Contratos;Prorrogação de Contratos
 OrdemServico	EQUIPAMENTOS	Equipamentos	RecordList	DataGrid	Z_00143_EQUIPAMENTOS	EQUIPAMENTOS			
 OrdemServico	EQUIPE	EQUIPE	String	TextBox	CPE_CJUR	EQUIPE			
-OrdemServico	EQUIP_EPI	Equipamentos EPI	RecordList	DataGrid	Z_00143_EQUIP_EPI	EQUIP_EPI			
+OrdemServico	EQUIP_EPI	Equipamentos EPI e/ou EPC	RecordList	DataGrid	Z_00143_EQUIP_EPI	EQUIP_EPI			
 OrdemServico	EQUIP_EPI_LOTE	Equipamentos EPI Lote	RecordList	DataGrid	Z_00143_EQUIP_EPI_LOTE	EQUIP_EPI_LOTE			
 OrdemServico	ERAT	Erro ERAT ?	String	DropDownList	CP_ORDEM_SERVICO	ERAT			Sim;Não
 OrdemServico	ERP	Acesso ERP	Boolean	CheckBox	CPE_ORDEM_SERVICO	ERP			
 OrdemServico	ESCOLARIDADE	Escolaridade	String	DropDownList	CP_ORDEM_SERVICO	ESCOLARIDADE			Nível Médio;Nível Superior
+OrdemServico	ESCOLHER_EQUIPE	Escolher equipe	String	DropDownList	CPE_CONTRATOS02	ESCOLHER_EQUIPE	50		Equipe Cesec;Equipe Desenvolvimento;Nenhuma
 OrdemServico	ESFORCO_DIAS	Qual o esforço de TI estimado em dias úteis?	Integer	TextBox	CP_ORDEM_SERVICO	ESFORCO_DIAS	6		
 OrdemServico	ESFORCO_DIAS_REQUISITOS	Qual o esforço de TI estimado em dias úteis para o levantamento de requisitos?	Integer	TextBox	CP_ORDEM_SERVICO	ESFORCO_DIAS_REQUISITOS	3		
 OrdemServico	ESFORCO_DIAS_VISAO	Qual o esforço de TI estimado em dias úteis para a análise da solicitação?	Integer	TextBox	CP_ORDEM_SERVICO	ESFORCO_DIAS_VISAO	6		
@@ -1441,7 +1448,7 @@ OrdemServico	FUNCIONARIOS_CONFECCAO	Grupo de funcionários da BBTS	RecordList	Da
 OrdemServico	FUNCIONARIO_ATIVO	Funcionário Ativo	RecordList	DataGrid	Z_00143_FUNCIONARIO_ATIVO	FUNCIONARIO_ATIVO			
 OrdemServico	FUNCIONARIO_INATIVO	Funcionario Inativo, Pensionista, Outros.	RecordList	DataGrid	Z_00143_FUNCIONARIO_INATIVO	FUNCIONARIO_INATIVO			
 OrdemServico	FUNC_EMITENTE_NME_MATRICULA	Nome e Matrícula do Funcionário Emitente	RecordList	DataGrid	Z_00143_FUNC_EMITENTE_NME_MATRICULA	FUNC_EMITENTE_NME_MATRICULA			
-OrdemServico	FUNDAMENTACAO	Fundamentação Legal	String	DropDownList	CPE_CSC	FUNDAMENTACAO			Aditivo;Apostilamento;Ata de Registro de Preço;Contrato;Convênio
+OrdemServico	FUNDAMENTACAO	Fundamentação Legal	String	DropDownList	CPE_CSC	FUNDAMENTACAO			
 OrdemServico	FUNDAMENTACAO_LEGAL	Fundamentação Legal	String	DropDownList	CP_ORDEM_SERVICO	FUNDAMENTACAO_LEGAL			Art.57.Inciso II - Lei 8.666/93;Art.57.Inciso IV - Lei 8.666/93;Art.24.Inciso IV - Lei 8.666/93;Fornecimento de Bens
 OrdemServico	FUNDAMENTO_LEGAL	FUNDAMENTO_LEGAL	String	TextBox	CPE_CONTRATOS02	FUNDAMENTO_LEGAL			
 OrdemServico	GCI	Alçada Geric	Boolean	CheckBox	CP_ORDEM_SERVICO	GCI			
@@ -1541,6 +1548,7 @@ OrdemServico	GRID_IDF	GRID_IDF	RecordList	DataGrid	Z_00143_GRID_IDF	GRID_IDF
 OrdemServico	GRID_NF	Grid de Emissão de notas Fiscais	RecordList	DataGrid	Z_00143_GRID_NF	GRID_NF			
 OrdemServico	GRID_OC	OC para aprovação	RecordList	DataGrid	Z_00143_GRID_OC	GRID_OC			
 OrdemServico	GRID_OC2	OC para aprovação	RecordList	DataGrid	Z_00143_GRID_OC2	GRID_OC2			
+OrdemServico	GRID_PE	GRID perfil e especialidades	RecordList	DataGrid	Z_00143_GRID_PE	GRID_PE			
 OrdemServico	GRID_PESSOAS	Grid Pessoas	RecordList	DataGrid	Z_00143_GRID_PESSOAS	GRID_PESSOAS			
 OrdemServico	GRID_PV	Grid PV	RecordList	DataGrid	Z_00143_GRID_PV	GRID_PV			
 OrdemServico	GRID_SERVICOS	Serviços	RecordList	DataGrid	Z_00143_GRID_SERVICOS	GRID_SERVICOS			
@@ -1920,7 +1928,7 @@ OrdemServico	LABEL107	LABEL107	String	Label	CPE_CONTRATOS	LABEL107	1000
 OrdemServico	LABEL108	LABEL108	String	Label	CPE_CONTRATOS	LABEL108	500		
 OrdemServico	LABEL109	LABEL109	String	Label	CPE_CONTRATOS	LABEL109	1000		
 OrdemServico	LABEL11	LABEL11	String	Label	CPE_PDCI2019	LABEL11	700		
-OrdemServico	LABEL110	LABEL110	String	Label	CPE_CONTRATOS	LABEL110			
+OrdemServico	LABEL110	LABEL110	String	Label	CPE_CONTRATOS	LABEL110	2000		
 OrdemServico	LABEL111	Texto Informativo	String	Label	CPE_CONTRATOS	LABEL111	2000		
 OrdemServico	LABEL112	LABEL112	String	Label	CPE_CONTRATOS	LABEL112	500		
 OrdemServico	LABEL113	LABEL113	String	Label	CPE_CONTRATOS02	LABEL113	1000		
@@ -1994,7 +2002,7 @@ OrdemServico	LABEL71	LABEL71	String	Label	CPE_CONTRATOS	LABEL71
 OrdemServico	LABEL72	LABEL72	String	Label	CPE_CONTRATOS	LABEL72			
 OrdemServico	LABEL73	LABEL73	String	Label	CPE_CONTRATOS	LABEL73			
 OrdemServico	LABEL74	LABEL74	String	Label	CPE_CONTRATOS	LABEL74			
-OrdemServico	LABEL75	LABEL75	String	Label	CPE_CONTRATOS	LABEL75			
+OrdemServico	LABEL75	LABEL75	String	Label	CPE_CONTRATOS	LABEL75	2000		
 OrdemServico	LABEL76	LABEL76	String	Label	CPE_CONTRATOS	LABEL76			
 OrdemServico	LABEL77	LABEL77	String	Label	CPE_CONTRATOS	LABEL77			
 OrdemServico	LABEL78	LABEL78	String	Label	CPE_CONTRATOS	LABEL78			
@@ -2128,7 +2136,7 @@ OrdemServico	LISTA_DE_ANOS	Lista de Anos	String	DropDownList	CPE_CONTRATOS	LISTA
 OrdemServico	LISTA_DE_CIDADES	Lista de cidades	RecordList	DataGrid	Z_00143_LISTA_DE_CIDADES	LISTA_DE_CIDADES			
 OrdemServico	LISTA_DE_OS_ALTCANC_DESLOCAMENTO	OS's de Alteração e Cancelamento	RecordList	DataGrid	Z_00143_LISTA_DE_OS_ALTCANC_DESLOCAMENTO	LISTA_DE_OS_ALTCANC_DESLOCAMENTO			
 OrdemServico	LISTA_DE_PESSOAS	Lista de Favorecidos	RecordList	DataGrid	Z_00143_LISTA_DE_PESSOAS	LISTA_DE_PESSOAS			
-OrdemServico	LISTA_DE_SELECAO	Lista de seleção genérica	String	DropDownList	CP_ORDEM_SERVICO	LISTA_DE_SELECAO			Adiantamento;Reembolso
+OrdemServico	LISTA_DE_SELECAO	Lista de seleção genérica	String	DropDownList	CP_ORDEM_SERVICO	LISTA_DE_SELECAO			Linha com Chip;Linha com E-Sim;Aparelho;Aparelho + Linha Chip;Aparelho + Linha E-Sim
 OrdemServico	LISTA_DE_SELECAO_BLOQUEIO_DE_APARELHO	Lista de seleção bloqueio de aparelho	String	DropDownList	CPE_CSC	LISTA_DE_SELECAO_BLOQUEIO_DE_APARELHO			Aparelho Celular;Número da Linha; Aparelho Celular e Número da Linha
 OrdemServico	LISTA_DE_SELECAO_BLOQUEIO_DE_APARELHO_	Lista de seleção bloqueio de aparelho_	String	DropDownList	CPE_CSC	LISTA_DE_SELECAO_BLOQUEIO_DE_APARELHO_			Bloqueio por Perda Furto/Roubo
 OrdemServico	LISTA_DE_SELECAO_TROCA_DE_APARELHO	Local de devolução	String	DropDownList	CPE_CSC	LISTA_DE_SELECAO_TROCA_DE_APARELHO			Superintendência;Centro de Serviços Compartilhados Brasília;CAT
@@ -2325,6 +2333,20 @@ OrdemServico	MES_COMPETENCIA	Mês de competência	String	DropDownList	CPE_CONTRA
 OrdemServico	MES_DE_REF	Mês de referência	String	DropDownList	CPE_PEC	MES_DE_REF			01;02;03;04;05;06;07;08;09;10;11;12
 OrdemServico	MES_REFERENCIA	Mês referência	String	DropDownList	CPE_CSC	MES_REFERENCIA	2		01;02;03;04;05;06;07;08;09;10;11;12
 OrdemServico	META_EFISEC	Meta Efisec (Minutos - Exemplo: 360)	String	TextBox	CPE_CSC	META_EFISEC			
+OrdemServico	MLT_CONF_RECEB	Recebimento confirmado	String	DropDownList	CPE_MALOTE	MLT_CONF_RECEB	250		Sim;Não
+OrdemServico	MLT_DATA_RECEB	Data de recebimento	DateTime	DatePicker	CPE_MALOTE	MLT_DATA_RECEB			
+OrdemServico	MLT_DATA_SAIDA	Data de saída	DateTime	DatePicker	CPE_MALOTE	MLT_DATA_SAIDA			
+OrdemServico	MLT_INTEGRIDADE	Integridade da documentação/material	String	DropDownList	CPE_MALOTE	MLT_INTEGRIDADE	250		Íntegro;Com avaria/divergência
+OrdemServico	MLT_LOCAL_ORIGEM	Localidade de origem	String	TextBox	CPE_MALOTE	MLT_LOCAL_ORIGEM	250		
+OrdemServico	MLT_NUMERO	Número do malote	String	TextBox	CPE_MALOTE	MLT_NUMERO	250		
+OrdemServico	MLT_NUMERO_APLICAVEL	O malote possui número?	String	DropDownList	CPE_MALOTE	MLT_NUMERO_APLICAVEL	250		Sim;Não
+OrdemServico	MLT_OBS_INTEGRIDADE	Descrição da avaria/divergência	String	TextBox	CPE_MALOTE	MLT_OBS_INTEGRIDADE	250		
+OrdemServico	MLT_OBS_TRANSPORTE	Observações do transporte	String	TextBox	CPE_MALOTE	MLT_OBS_TRANSPORTE	250		
+OrdemServico	MLT_RESP_ENVIO	Responsável pelo envio (nome e matrícula)	String	TextBox	CPE_MALOTE	MLT_RESP_ENVIO	250		
+OrdemServico	MLT_RESP_RECEB	Responsável pelo recebimento (nome e matrícula)	String	TextBox	CPE_MALOTE	MLT_RESP_RECEB	250		
+OrdemServico	MLT_TRANSPORTE	Situação do transporte	String	DropDownList	CPE_MALOTE	MLT_TRANSPORTE	250		Em transporte;Entregue na unidade de destino
+OrdemServico	MLT_UNIDADE_DESTINO	Unidade de destino	String	DropDownList	CPE_MALOTE	MLT_UNIDADE_DESTINO	250		GYN;Brasília;CSC
+OrdemServico	MLT_UNIDADE_ORIGEM	Unidade de origem	String	DropDownList	CPE_MALOTE	MLT_UNIDADE_ORIGEM	250		GYN;Brasília;CSC
 OrdemServico	MODALIDADE_CONTRATACAO	Modalidade de Contratação	String	DropDownList	CP_ORDEM_SERVICO	MODALIDADE_CONTRATACAO			Processo Licitatório;Dispensa de Licitação;Inexigibilidade de Licitação - Acórdão TCU Plenário 1705 ;Inexigibilidade de 
 OrdemServico	MODALIDADE_DE_CONTRATACAO	Modalidade de Contratação	String	DropDownList	CPE_CONTRATOS	MODALIDADE_DE_CONTRATACAO			CARONA EM ATA DE REGISTRO DE PREÇOS;CREDENCIAMENTO;CONCORRÊNCIA;CONTRATO DE PATROCÍNIO;CONVÊNIO;CONVITE;DISPENSA DE LICI
 OrdemServico	MODALIDADE_LICITACAO	Modalidade de Licitação	String	TextBox	CP_ORDEM_SERVICO	MODALIDADE_LICITACAO			
@@ -2334,6 +2356,22 @@ OrdemServico	MODELO_CONTRATACAO	Modalidade de Contratação	String	DropDownList	
 OrdemServico	MODELO_TIPO	Modelo/Tipo	String	TextBox	CPE_HOMOLOGACAO	MODELO_TIPO			
 OrdemServico	MODULO_DOCNIX	Módulo DocNix	String	DropDownList	CP_ORDEM_SERVICO	MODULO_DOCNIX			MaxDoc; DocAction; DocAudit; Acttive Plan; Indicadores
 OrdemServico	MODULO_SISBB	Módulo utilizado no SISBB	String	Memo	CP_ORDEM_SERVICO	MODULO_SISBB			
+OrdemServico	MOEDA1	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA1			
+OrdemServico	MOEDA10	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA10			
+OrdemServico	MOEDA11	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA11			
+OrdemServico	MOEDA12	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA12			
+OrdemServico	MOEDA13	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA13			
+OrdemServico	MOEDA14	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA14			
+OrdemServico	MOEDA15	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA15			
+OrdemServico	MOEDA16	moeda	String	TextBox	CPE_TIP_SOL01	MOEDA16			
+OrdemServico	MOEDA17	moeda17	String	TextBox	CPE_TIP_SOL01	MOEDA17			
+OrdemServico	MOEDA2	Moeda	String	TextBox	CPE_TIP_SOL01	MOEDA2			
+OrdemServico	MOEDA3	Moeda	String	TextBox	CPE_TIP_SOL01	MOEDA3			
+OrdemServico	MOEDA4	Moeda	String	TextBox	CPE_TIP_SOL01	MOEDA4			
+OrdemServico	MOEDA5	Moeda	String	TextBox	CPE_TIP_SOL01	MOEDA5			
+OrdemServico	MOEDA6	Moeda	String	TextBox	CPE_TIP_SOL01	MOEDA6			
+OrdemServico	MOEDA7	Moeda	String	TextBox	CPE_TIP_SOL01	MOEDA7			
+OrdemServico	MOEDA8	Moeda	String	TextBox	CPE_TIP_SOL01	MOEDA8			
 OrdemServico	MOSCOW_LIST	Moscow List	String	TextBox	CP_ORDEM_SERVICO	MOSCOW_LIST			
 OrdemServico	MOTIVACAO_DOD	A motivação é de ordem legal?	String	DropDownList	CP_ORDEM_SERVICO	MOTIVACAO_DOD			Não;Sim
 OrdemServico	MOTIVACAO_DOD_V2	A motivação é de ordem legal (Lei, Decreto, TCU, etc)?	String	DropDownList	CP_ORDEM_SERVICO	MOTIVACAO_DOD_V2		S	
@@ -2394,6 +2432,7 @@ OrdemServico	MP_USUARIO_REDE_SUBSTITUTO	Usuário de rede Substituto	String	TextB
 OrdemServico	MUDANCA_DE_CARGA_HORA	Mudança de carga horária	String	DropDownList	CPE_CONTRATOS	MUDANCA_DE_CARGA_HORA			Sim;Não
 OrdemServico	MUDANCA_ESTABELECIMENTO	Mudança de Estabelecimento	String	DropDownList	CP_ORDEM_SERVICO	MUDANCA_ESTABELECIMENTO			Sim;Não
 OrdemServico	MULTA	Multa	String	TextBox	CP_ORDEM_SERVICO	MULTA	200		
+OrdemServico	MULTAS	Multas	RecordList	DataGrid	Z_00143_MULTAS	MULTAS			
 OrdemServico	MULTA_PARCELADA	Multa Parcelada	String	DropDownList	CPE_CSC	MULTA_PARCELADA			
 OrdemServico	MULTIDATA_DOCNIX	Demanda	String	Memo	CP_ORDEM_SERVICO	MULTIDATA_DOCNIX	2000		
 OrdemServico	MULTIPLICADOR	Multiplicador	RecordList	DataGrid	Z_00143_MULTIPLICADOR	MULTIPLICADOR			
@@ -2588,6 +2627,19 @@ OrdemServico	NUMERO	Número da Caixa	RecordList	DataGrid	Z_00143_NUMERO	NUMERO
 OrdemServico	NUMERO DA LICITACAO	Número da Licitação	String	Memo	CPE_CONTRATOS	NUMERO_DA_LICITACAO			
 OrdemServico	NUMERO DA OV CHAMADO	Número da OV	Integer	TextBox	CP_ORDEM_SERVICO	NUMERO_DA_OV_CHAMADO	6		
 OrdemServico	NUMERO DO DGCO	Número do DGCO	String	Memo	CPE_CONTRATOS	NUMERO_DO_DGCO			
+OrdemServico	NUMERO1	numero	String	TextBox	CPE_TIP_SOL01	NUMERO1			
+OrdemServico	NUMERO10	numero	String	TextBox	CPE_TIP_SOL01	NUMERO10			
+OrdemServico	NUMERO11	NUMERO11	String	TextBox	CPE_TIP_SOL01	NUMERO11			
+OrdemServico	NUMERO13	NUMERO13	String	TextBox	CPE_TIP_SOL01	NUMERO13			
+OrdemServico	NUMERO14	NUMERO14	String	TextBox	CPE_TIP_SOL01	NUMERO14			
+OrdemServico	NUMERO2	numero	String	TextBox	CPE_TIP_SOL01	NUMERO2			
+OrdemServico	NUMERO3	numero	String	TextBox	CPE_TIP_SOL01	NUMERO3			
+OrdemServico	NUMERO4	numero	String	TextBox	CPE_TIP_SOL01	NUMERO4			
+OrdemServico	NUMERO5	numero	String	TextBox	CPE_TIP_SOL01	NUMERO5			
+OrdemServico	NUMERO6	numero	String	TextBox	CPE_TIP_SOL01	NUMERO6			
+OrdemServico	NUMERO7	numero	String	TextBox	CPE_TIP_SOL01	NUMERO7			
+OrdemServico	NUMERO8	numero	String	TextBox	CPE_TIP_SOL01	NUMERO8			
+OrdemServico	NUMERO9	numero	String	TextBox	CPE_TIP_SOL01	NUMERO9			
 OrdemServico	NUMEROCONTROLEDISCIPLINAR	Número do Controle Disciplinar	Integer	TextBox	CPE_CSC	NUMEROCONTROLEDISCIPLINAR			
 OrdemServico	NUMERODEPATRIMONIOESERIE	Cadastrar Número de Patrimônio e Série	RecordList	DataGrid	Z_00143_NUMERODEPATRIMONIOESERIE	NUMERODEPATRIMONIOESERIE			
 OrdemServico	NUMEROEDITAL	Nº do Edital	String	TextBox	CPE_BOOTCAMP	NUMEROEDITAL			
@@ -2925,23 +2977,39 @@ OrdemServico	PEC_BOLSA	Formação	String	DropDownList	CP_ORDEM_SERVICO	PEC_BOLSA
 OrdemServico	PEC_CARGO	Cargo	String	DropDownList	CP_ORDEM_SERVICO	PEC_CARGO		S	
 OrdemServico	PEC_CARGO_MBA	Cargo	String	DropDownList	CP_ORDEM_SERVICO	PEC_CARGO_MBA		S	
 OrdemServico	PEC_CAR_FUN	Cargo e exercício de função gratificada	String	DropDownList	CPE_ORDEM_SERVICO	PEC_CAR_FUN		S	
+OrdemServico	PEC_COMPETENCIA_NA_VIGENCIA	Competência dentro da vigência	String	TextBox	CPE_CSC	PEC_COMPETENCIA_NA_VIGENCIA			
 OrdemServico	PEC_CURSO	Tipo de curso	String	TextBox	CP_ORDEM_SERVICO	PEC_CURSO			
 OrdemServico	PEC_CURSO_EXT	Curso Extensão	String	DropDownList	CPE_PEC	PEC_CURSO_EXT		S	
 OrdemServico	PEC_DATA_DIVULGA_APROVA	Divulgação Aprovados PEC	DateTime	DatePicker	CPE_ORDEM_SERVICO	PEC_DATA_DIVULGA_APROVA			
+OrdemServico	PEC_DATA_FIM_BOLSA	Data fim da bolsa	DateTime	DatePicker	CPE_CSC	PEC_DATA_FIM_BOLSA			
+OrdemServico	PEC_DATA_INICIO_BOLSA	Data de início da bolsa	DateTime	DatePicker	CPE_CSC	PEC_DATA_INICIO_BOLSA			
 OrdemServico	PEC_DATA_MATRICULA	Data da matrícula	DateTime	DatePicker	CP_ORDEM_SERVICO	PEC_DATA_MATRICULA			
 OrdemServico	PEC_DECLARACAO	Declaro estar ciente das regras descritas no edital.	Boolean	CheckBox	CP_ORDEM_SERVICO	PEC_DECLARACAO			
+OrdemServico	PEC_DIAGNOSTICO	Diagnóstico da bolsa	String	Memo	CPE_CSC	PEC_DIAGNOSTICO	2000		
+OrdemServico	PEC_DIAGNOSTICO_CALCULO	Diagnóstico do cálculo	String	Memo	CPE_CSC	PEC_DIAGNOSTICO_CALCULO	2000		
+OrdemServico	PEC_DIAGNOSTICO_COMPETENCIA	Diagnóstico da competência e vigência	String	Memo	CPE_CSC	PEC_DIAGNOSTICO_COMPETENCIA	2000		
+OrdemServico	PEC_DIAGNOSTICO_ERP	Diagnóstico do ERP	String	Memo	CPE_CSC	PEC_DIAGNOSTICO_ERP	2000		
+OrdemServico	PEC_DIAGNOSTICO_SALDO	Diagnóstico do saldo	String	Memo	CPE_CSC	PEC_DIAGNOSTICO_SALDO	2000		
+OrdemServico	PEC_DIAGNOSTICO_TRATAMENTO	Diagnóstico Final	String	Memo	CPE_CSC	PEC_DIAGNOSTICO_TRATAMENTO	2000		
+OrdemServico	PEC_DIAS_COMPETENCIA	Dias desde a competência	Integer	TextBox	CPE_CSC	PEC_DIAS_COMPETENCIA			
 OrdemServico	PEC_EDITAL	Edital	String	DropDownList	CP_ORDEM_SERVICO	PEC_EDITAL		S	
 OrdemServico	PEC_EDITAL_ID	Id Edital	String	TextBox	CPE_ORDEM_SERVICO	PEC_EDITAL_ID			
 OrdemServico	PEC_EDITAL_V9	Edital	String	DropDownList	CP_ORDEM_SERVICO	PEC_EDITAL_V9		S	
 OrdemServico	PEC_ESPECIALIZACOES	Pós-Graduação	String	DropDownList	CP_ORDEM_SERVICO	PEC_ESPECIALIZACOES		S	
 OrdemServico	PEC_EXTRA	Pontuação Extra PEC	String	TextBox	CPE_PEC	PEC_EXTRA			
+OrdemServico	PEC_FIM_VIGENCIA	Fim previsto da vigência	DateTime	DatePicker	CPE_CSC	PEC_FIM_VIGENCIA			
 OrdemServico	PEC_FORMACAO	Formação graduação	String	DropDownList	CPE_PEC	PEC_FORMACAO		S	
 OrdemServico	PEC_FUNCAO_GRATIFICADA	Função Gratificada	String	DropDownList	CP_ORDEM_SERVICO	PEC_FUNCAO_GRATIFICADA		S	
 OrdemServico	PEC_FUNCAO_MBA	Função Gratificada	String	DropDownList	CP_ORDEM_SERVICO	PEC_FUNCAO_MBA		S	
+OrdemServico	PEC_INCONSISTENCIAS_HISTORICO	Inconsistências históricas encontradas	Integer	TextBox	CPE_CSC	PEC_INCONSISTENCIAS_HISTORICO			
+OrdemServico	PEC_INICIO_VIGENCIA	Início da vigência	DateTime	DatePicker	CPE_CSC	PEC_INICIO_VIGENCIA			
 OrdemServico	PEC_INSTITUICAO	Instituição	String	TextBox	CP_ORDEM_SERVICO	PEC_INSTITUICAO			
 OrdemServico	PEC_INST_ENSINO	Instituição de Ensino	String	DropDownList	CPE_PEC	PEC_INST_ENSINO		S	
 OrdemServico	PEC_JUSTIFICATICA_RH	Justificativa do RH	String	Memo	CP_ORDEM_SERVICO	PEC_JUSTIFICATICA_RH			
 OrdemServico	PEC_JUSTIFICATIVA	Justificativa	String	Memo	CP_ORDEM_SERVICO	PEC_JUSTIFICATIVA	2000		
+OrdemServico	PEC_LIMITE_PARCELAS	Limite de parcelas	Integer	TextBox	CPE_CSC	PEC_LIMITE_PARCELAS			
+OrdemServico	PEC_LIMITE_REEMBOLSO	Limite configurado	Decimal	TextBox	CPE_CSC	PEC_LIMITE_REEMBOLSO			
+OrdemServico	PEC_LIMITE_TOTAL_APROVADO	Limite total estimado da bolsa	Decimal	TextBox	CPE_CSC	PEC_LIMITE_TOTAL_APROVADO			
 OrdemServico	PEC_LOCALIDADE	Localidade	String	DropDownList	CP_ORDEM_SERVICO	PEC_LOCALIDADE			Brasília;Rio de Janeiro
 OrdemServico	PEC_MENSALIDADE	Valor do boleto	Decimal	TextBox	CP_ORDEM_SERVICO	PEC_MENSALIDADE			
 OrdemServico	PEC_MESES_TOTAL	Quantidade de meses no PEC	String	TextBox	CP_ORDEM_SERVICO	PEC_MESES_TOTAL			
@@ -2950,20 +3018,46 @@ OrdemServico	PEC_NOME_CURSO	Nome do curso	String	TextBox	CP_ORDEM_SERVICO	PEC_NO
 OrdemServico	PEC_NOTA1_GDP	Primeira Nota da Avaliação de Desempenho (GDP)	String	TextBox	CPE_PESSOAS	PEC_NOTA1_GDP			
 OrdemServico	PEC_NOTA2_GDP	Segunda Nota da Avaliação de Desempenho (GDP)	String	TextBox	CPE_PESSOAS	PEC_NOTA2_GDP			
 OrdemServico	PEC_NOTA_GDP	Nota da Avaliação de Desempenho (GDP)	String	TextBox	CPE_PESSOAS	PEC_NOTA_GDP			
+OrdemServico	PEC_NUMERO_INSCRICAO	Número da inscrição PEC	String	TextBox	CPE_CONTRATOS02	PEC_NUMERO_INSCRICAO			
+OrdemServico	PEC_NUMERO_PARCELA	Número de Parcelas	Integer	TextBox	CPE_CSC	PEC_NUMERO_PARCELA			
+OrdemServico	PEC_ORIGEM_PARCELAS	Origem da quantidade de parcelas	String	TextBox	CPE_CSC	PEC_ORIGEM_PARCELAS			
+OrdemServico	PEC_PARCELAS_APROVADAS	Quantidade de parcelas aprovadas	Integer	TextBox	CPE_CSC	PEC_PARCELAS_APROVADAS			
+OrdemServico	PEC_PARCELAS_EM_ANDAMENTO	Parcelas em solicitações em andamento	Integer	TextBox	CPE_CSC	PEC_PARCELAS_EM_ANDAMENTO			
+OrdemServico	PEC_PARCELAS_UTILIZADAS	Parcelas utilizadas	Integer	TextBox	CPE_CSC	PEC_PARCELAS_UTILIZADAS			
 OrdemServico	PEC_PCD	Pessoa com Deficiência	String	TextBox	CPE_PEC	PEC_PCD			
+OrdemServico	PEC_PERCENTUAL_REEMBOLSO	Percentual reembolso	Decimal	TextBox	CPE_CSC	PEC_PERCENTUAL_REEMBOLSO			
+OrdemServico	PEC_PERCENTUAL_UTILIZADO	Percentual utilizado	Decimal	TextBox	CPE_CSC	PEC_PERCENTUAL_UTILIZADO			
 OrdemServico	PEC_PERIODO	Período já cursado	String	DropDownList	CP_ORDEM_SERVICO	PEC_PERIODO		S	
+OrdemServico	PEC_PERIODO_REEMBOLSO	Período configurado	Integer	TextBox	CPE_CSC	PEC_PERIODO_REEMBOLSO			
 OrdemServico	PEC_PONTUACAO_TOTAL	Pontuação total	Integer	TextBox	CP_ORDEM_SERVICO	PEC_PONTUACAO_TOTAL			
 OrdemServico	PEC_PPP	Me identifico como  Pessoa Preta ou Parda (A autodeclaração de raça é um ato importante que deve ser feito com consciência e responsabilidade)	Boolean	CheckBox	CPE_PEC	PEC_PPP			
 OrdemServico	PEC_PRESTACAO_TOTAL	Total de prestações do curso	Integer	TextBox	CP_ORDEM_SERVICO	PEC_PRESTACAO_TOTAL			
 OrdemServico	PEC_PRESTACAO_VENCER	Total de prestações a vencer	Integer	TextBox	CP_ORDEM_SERVICO	PEC_PRESTACAO_VENCER			
 OrdemServico	PEC_PREVISAO_CONCLUSAO	Previsão de conclusão	DateTime	TextBox	CP_ORDEM_SERVICO	PEC_PREVISAO_CONCLUSAO			
+OrdemServico	PEC_PROGRAMA	Programa aprovado	String	TextBox	CPE_CSC	PEC_PROGRAMA			
+OrdemServico	PEC_QTD_COMPETENCIA_ANDAMENTO	Solicitações em andamento na mesma competência	Integer	TextBox	CPE_CSC	PEC_QTD_COMPETENCIA_ANDAMENTO			
+OrdemServico	PEC_QTD_COMPETENCIA_CONCLUIDA	Reembolsos concluídos na mesma competência	Integer	TextBox	CPE_CSC	PEC_QTD_COMPETENCIA_CONCLUIDA			
+OrdemServico	PEC_QTD_MESMA_COMPETENCIA	Solicitações da mesma competência	Integer	TextBox	CPE_CSC	PEC_QTD_MESMA_COMPETENCIA			
+OrdemServico	PEC_REEMBOLSOS_CONCLUIDOS	Reembolsos concluídos	Integer	TextBox	CPE_CSC	PEC_REEMBOLSOS_CONCLUIDOS			
 OrdemServico	PEC_REGIAO	Região	String	DropDownList	CP_ORDEM_SERVICO	PEC_REGIAO			Sul;Sudeste;Norte;Nordeste;Centro-Oeste
+OrdemServico	PEC_SALDO_ATUAL	Saldo atual	Decimal	TextBox	CPE_CSC	PEC_SALDO_ATUAL			
+OrdemServico	PEC_SALDO_DISPONIVEL	Saldo disponível estimado	Decimal	TextBox	CPE_CSC	PEC_SALDO_DISPONIVEL			
 OrdemServico	PEC_SEXO	Sexo	String	TextBox	CPE_PEC	PEC_SEXO	20		
+OrdemServico	PEC_STATUS_COMPETENCIA	Situação da competência	String	TextBox	CPE_CSC	PEC_STATUS_COMPETENCIA			
+OrdemServico	PEC_STATUS_SALDO	Situação do saldo	String	TextBox	CPE_CSC	PEC_STATUS_SALDO			
+OrdemServico	PEC_TETO_PARCELA	Teto calculado por parcela	Decimal	TextBox	CPE_CSC	PEC_TETO_PARCELA			
+OrdemServico	PEC_TETO_SOLICITACAO	Teto por solicitação	Decimal	TextBox	CPE_CSC	PEC_TETO_SOLICITACAO			
 OrdemServico	PEC_TIPO	Tipo de curso	String	DropDownList	CP_ORDEM_SERVICO	PEC_TIPO		S	
+OrdemServico	PEC_TIPO_BOLSA	Tipo de Bolsa	String	DropDownList	CPE_CSC	PEC_TIPO_BOLSA			
 OrdemServico	PEC_TIPO_REEMBOLSO	Tipo de reembolso	String	DropDownList	CP_ORDEM_SERVICO	PEC_TIPO_REEMBOLSO			Matrícula;Mensalidade;Manutenção de bolsa (documentos)
 OrdemServico	PEC_TIPO_REEMBOLSO_1	Tipo de reembolso	String	DropDownList	CP_ORDEM_SERVICO	PEC_TIPO_REEMBOLSO_1			Reembolso de Matrícula;Reembolso de Mensalidade;Envio de documentos Manutenção de bolsa
+OrdemServico	PEC_VALOR_APROVADO	Valor Aprovado	Decimal	TextBox	CPE_CSC	PEC_VALOR_APROVADO			
+OrdemServico	PEC_VALOR_COMPROMETIDO	Valor aprovado aguardando conclusão	Decimal	TextBox	CPE_CSC	PEC_VALOR_COMPROMETIDO			
 OrdemServico	PEC_VALOR_CURSO	Valor total do curso	Decimal	TextBox	CP_ORDEM_SERVICO	PEC_VALOR_CURSO			
-OrdemServico	PEC_VALOR_REEMBOLSO	Valor do reembolso mensal	Decimal	TextBox	CP_ORDEM_SERVICO	PEC_VALOR_REEMBOLSO			
+OrdemServico	PEC_VALOR_JA_REEMBOLSADO	Valor já reembolsado	Decimal	TextBox	CPE_CSC	PEC_VALOR_JA_REEMBOLSADO			
+OrdemServico	PEC_VALOR_PAGO	Valor pago	Decimal	TextBox	CPE_CSC	PEC_VALOR_PAGO			
+OrdemServico	PEC_VALOR_PERCENTUAL	Valor calculado pelo percentual	Decimal	TextBox	CPE_CSC	PEC_VALOR_PERCENTUAL			
+OrdemServico	PEC_VALOR_REEMBOLSO	Valor final do reembolso	Decimal	TextBox	CP_ORDEM_SERVICO	PEC_VALOR_REEMBOLSO			
 OrdemServico	PEC_VENCIMENTO_MENSAL	Vencimento	DateTime	DatePicker	CP_ORDEM_SERVICO	PEC_VENCIMENTO_MENSAL			
 OrdemServico	PEDIDO_ORDEM_DE_CLASSE	Tipo de pedido	String	DropDownList	CPE_CSC	PEDIDO_ORDEM_DE_CLASSE			Outros;Registro CFT/CRT
 OrdemServico	PED_EMP_CLIENTE	Empresa Cliente	String	DropDownList	CPE_PENF	PED_EMP_CLIENTE		S	
@@ -3057,7 +3151,7 @@ OrdemServico	PLANO_RETORNO	Plano de Retorno	String	TextBox	CP_ORDEM_SERVICO	PLAN
 OrdemServico	PLANO_SAUDE	Plano de Saúde	String	TextBox	CPE_PDCI2019	PLANO_SAUDE			
 OrdemServico	PLANO_SPED	Plano Referencial SPED	String	DropDownList	CP_ORDEM_SERVICO	PLANO_SPED	1000	S	
 OrdemServico	PMI	PMI	String	TextBox	CPE_CSC	PMI			
-OrdemServico	PNE_HSS	Seleção Hard.Soft ou Serv	String	DropDownList	CPE_CONTRATOS02	PNE_HSS			Equipamentos – Hardware, Licenças – Software e Suporte - Serviços; Equipamentos – Hardware; Licenças – Software; Suporte
+OrdemServico	PNE_HSS	Seleção Hard.Soft ou Serv	String	DropDownList	CPE_CONTRATOS02	PNE_HSS			Equipamentos ¿ Hardware, Licenças ¿ Software e Suporte - Serviços; Equipamentos ¿ Hardware; Licenças ¿ Software; Suporte
 OrdemServico	POLITICA_SEGURANCA	Termo da Política de Segurança	String	Memo	CP_ORDEM_SERVICO	POLITICA_SEGURANCA	900		
 OrdemServico	PONTUACAO_1	Regularidade fiscal e trabalhista	String	DropDownList	CPE_CONTRATOS	PONTUACAO_1	50		1;2;3;0
 OrdemServico	PONTUACAO_2	Apresentação de documentos exigidos no contrato	String	DropDownList	CPE_CONTRATOS	PONTUACAO_2	50		1;2;3;0
@@ -3679,6 +3773,7 @@ OrdemServico	ROTEIROS_MALOTES	Roteiros Malotes	String	DropDownList	CPE_CSC	ROTEI
 OrdemServico	RUBRICA	Rubrica	String	TextBox	CP_ORDEM_SERVICO	RUBRICA			
 OrdemServico	RUBRICA_CONTABIL	Rúbrica Contábil	String	DropDownList	CPE_CJUR	RUBRICA_CONTABIL		S	
 OrdemServico	RUBR_VINCU	Rubrica é para Contabilizar Valores Relativos à Lei nº 12.973/2014 e/ou Normativos?	String	DropDownList	CP_ORDEM_SERVICO	RUBR_VINCU			Sim;Não
+OrdemServico	RVA_IMPACTO_SOCIAL	Impacto Social Positivo	RecordList	DataGrid	Z_00143_RVA_IMPACTO_SOCIAL	RVA_IMPACTO_SOCIAL			
 OrdemServico	RZ_ALIENACAO	Razão Alienação	String	DropDownList	CPE_CSC	RZ_ALIENACAO			Contaminação por agentes patológicos, sem possibilidade de recuperação por assepsia; Infestação por insetos nocivos, com
 OrdemServico	SAC	Número do SAC	String	TextBox	CP_ORDEM_SERVICO	SAC	14		
 OrdemServico	SAIDA	Saída dia	DateTime	DatePicker	CPE_DESLOCAMENTO	SAIDA			
@@ -3822,10 +3917,11 @@ OrdemServico	SIM_NAO_INFRA	Confirma envolvimento de sua área?	String	DropDownLi
 OrdemServico	SIM_NAO_NAOSEAPLICA	Sim ou Não ou Não se Aplica	String	DropDownList	CPE_CONTRATOS	SIM_NAO_NAOSEAPLICA			Sim; Não;Não se aplica
 OrdemServico	SIM_NAO_PROC	Confirma envolvimento de sua área?	String	DropDownList	CPE_ORDEM_SERVICO	SIM_NAO_PROC			Sim;Não
 OrdemServico	SIM_NAO_REFEICAO	Sim ou Não Refeição	String	DropDownList	CPE_DESLOCAMENTO	SIM_NAO_REFEICAO			Sim;Não
-OrdemServico	SIM_NAO_REFEICAO_GERED	Sim ou Não Refeição	String	DropDownList	CPE_DESLOCAMENTO	SIM_NAO_REFEICAO_GERED			Sim;Não
+OrdemServico	SIM_NAO_REFEICAO_GERED	Sim ou Não Refeição gered	String	DropDownList	CPE_DESLOCAMENTO	SIM_NAO_REFEICAO_GERED			Sim;Não
 OrdemServico	SIM_NAO_SW	Confirma envolvimento de sua área?	String	DropDownList	CPE_ORDEM_SERVICO	SIM_NAO_SW			Sim;Não
 OrdemServico	SIM_OU_NAO_NF	Sim ou Nao	String	DropDownList	CPE_CSC	SIM_OU_NAO_NF	50		Sim;Não
 OrdemServico	SINDICATO	SINDICATO	String	DropDownList	CP_ORDEM_SERVICO	SINDICATO		S	
+OrdemServico	SINTESE_DA_ANALISE	SINTESE_DA_ANALISE	RecordList	DataGrid	Z_00143_SINTESE_DA_ANALISE	SINTESE_DA_ANALISE			
 OrdemServico	SISBB	Acesso SISBB	Boolean	CheckBox	CP_ORDEM_SERVICO	SISBB			
 OrdemServico	SISLOC_PAGAR	SISLOC A PAGAR?	String	DropDownList	CPE_ORDEM_SERVICO	SISLOC_PAGAR			SIM; NÃO;
 OrdemServico	SISTEMA	Sistema	String	DropDownList	CP_ORDEM_SERVICO	SISTEMA			ARS;Revolution;ERP;SISPRO;Mastersaf;Sisloc;Supravizio;Outros
@@ -3836,6 +3932,7 @@ OrdemServico	SISTEMA_OPERACIONAL	Sistema Operacional	String	DropDownList	CP_ORDE
 OrdemServico	SITE	Centros de Serviços Compartilhados	String	DropDownList	CPE_CSC	SITE			CESEC-BSB;CESEC-GYN;CESEC-RIO;CESEC-EM COMUM
 OrdemServico	SITUACAO_COBRANCA	Situação da cobrança	String	DropDownList	CPE_PESSOAS	SITUACAO_COBRANCA			Pagamento realizado;Pagamento não realizado
 OrdemServico	SITUACAO_CONTA	Situação	String	TextBox	CPE_CSC	SITUACAO_CONTA			
+OrdemServico	SITUACAO_DA_ANALISE	SITUACAO_DA_ANALISE	RecordList	DataGrid	Z_00143_SITUACAO_DA_ANALISE	SITUACAO_DA_ANALISE			
 OrdemServico	SITUACAO_SERVICO	Situação do Serviço	String	DropDownList	CPE_CSC	SITUACAO_SERVICO			Ativo;Inativo
 OrdemServico	SITUACAO_SERVIDOR	Situação do servidor	String	DropDownList	CP_ORDEM_SERVICO	SITUACAO_SERVIDOR			Produção;Desenvolvimento;Homologação;Outros
 OrdemServico	SOFTWARE	Nome do software	String	TextBox	CP_ORDEM_SERVICO	SOFTWARE			
@@ -3845,6 +3942,7 @@ OrdemServico	SOLICITACAO_E_JUSTIFICATIVA	Solicitação e Justificativa	RecordLis
 OrdemServico	SOLICITAR_ACESSO	Solicitar Acesso?	String	DropDownList	CP_ORDEM_SERVICO	SOLICITAR_ACESSO			Sim;Não
 OrdemServico	SOLIC_A_DICOF	Tipo de Solicitação	String	DropDownList	CPE_CSC	SOLIC_A_DICOF			Notificação
 OrdemServico	SOLUCAO	Quanto à solução apresentada pelo atendimento em relação ao problema?	String	DropDownList	CPE_CJUR	SOLUCAO			Péssimo;Ruim;Regular;Bom;Excelente;
+OrdemServico	SOLUCAO_CJUR	Quanto à solução apresentada pelo atendimento em relação ao problema?	String	DropDownList	CPE_CJUR	SOLUCAO_CJUR			Péssimo;Ruim;Regular;Bom;Excelente;
 OrdemServico	SOLUCAO_DOD	Solução desejada	String	Memo	CP_ORDEM_SERVICO	SOLUCAO_DOD	2000		
 OrdemServico	SOLUC_IMOVEL	Solução para Locação do Imovel	String	Memo	CPE_CSC	SOLUC_IMOVEL	1000		
 OrdemServico	SOLUC_SUPRAVIZIO	Solucionador Supravizio	RecordList	DataGrid	Z_00143_SOLUC_SUPRAVIZIO	SOLUC_SUPRAVIZIO			
@@ -3881,6 +3979,8 @@ OrdemServico	TABELA_VALORES_PLANO	Tabela de Valores Vigentes	RecordList	DataGrid
 OrdemServico	TAMANHO	Tamanho	String	Memo	CPE_CSC	TAMANHO			
 OrdemServico	TAMANHO_COTA_EMAIL	Tamanho da caixa postal de e-mail	String	TextBox	CP_ORDEM_SERVICO	TAMANHO_COTA_EMAIL			
 OrdemServico	TECNICO RESIDENTE	Técnico Residente ?	Boolean	CheckBox	CP_ORDEM_SERVICO	TECNICO_RESIDENTE			
+OrdemServico	TECNICO_LISTA	Técnico	String	DropDownList	CPE_PESSOAS	TECNICO_LISTA		S	
+OrdemServico	TECNICO_NOME	Técnico	String	TextBox	CPE_PESSOAS	TECNICO_NOME	100		
 OrdemServico	TELEFONE	Telefone	String	TextBox	CP_ORDEM_SERVICO	TELEFONE			
 OrdemServico	TELEFONE_ATUALIZADO	Telefone2	String	TextBox	CPE_CSC	TELEFONE_ATUALIZADO			
 OrdemServico	TELEFONE_CLIENTE	Ramal do Cliente	String	TextBox	CP_ORDEM_SERVICO	TELEFONE_CLIENTE	300		
@@ -4030,7 +4130,7 @@ OrdemServico	TIPO_DE_SERVICO	Tipo de Serviço	String	DropDownList	CP_ORDEM_SERVI
 OrdemServico	TIPO_DE_SERVICO_CONTA	Tipo de Serviço	String	TextBox	CPE_CSC	TIPO_DE_SERVICO_CONTA			
 OrdemServico	TIPO_DE_SOLICIT_COMP_SALARIAL	Combobox Listando os Serviços	String	DropDownList	CPE_CONTRATOS02	TIPO_DE_SOLICIT_COMP_SALARIAL			Solicitação de Complementação Salarial;Prorrogação de Complementação Salarial
 OrdemServico	TIPO_DE_VALOR_DE_REFERENCIA	Tipo de Valor de Referência	String	DropDownList	CPE_CONTRATOS02	TIPO_DE_VALOR_DE_REFERENCIA	50		Média;Mediana;Menor Preço;Não se aplica;Maior Preço;Outros:
-OrdemServico	TIPO_DOCUMENTO	Tipo de documento	String	DropDownList	CP_ORDEM_SERVICO	TIPO_DOCUMENTO			Aditivo;Apostilamento;Ata de Registro de Preço;Contrato;Convênio
+OrdemServico	TIPO_DOCUMENTO	Tipo de documento	String	DropDownList	CP_ORDEM_SERVICO	TIPO_DOCUMENTO			Contrato;Aditivo;Ata de Registro de Preço; Apostilamento; Convênio
 OrdemServico	TIPO_DOCUMENTO_CI	Tipo de documento	String	DropDownList	CPE_ORDEM_SERVICO	TIPO_DOCUMENTO_CI			Relatório;RTC
 OrdemServico	TIPO_DOCUMENTO_DGOV	Tipo de documento	String	DropDownList	CP_ORDEM_SERVICO	TIPO_DOCUMENTO_DGOV			Ato de diretoria;Ato de nomeação;Comunicação suplementar;Delegação de competência;Expediente;Nota técnica;Ofício;Portari
 OrdemServico	TIPO_DOCUMENTO_DGOV1	Tipo de documento	String	DropDownList	CPE_ORDEM_SERVICO	TIPO_DOCUMENTO_DGOV1			Ato de diretoria;Ato de nomeação;Comunicação suplementar;Delegação de competência;Expediente;Ofício;Portaria;VOTO (coleg

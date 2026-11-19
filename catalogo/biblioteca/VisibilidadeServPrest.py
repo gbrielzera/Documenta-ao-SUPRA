@@ -1,6 +1,6 @@
 # VisibilidadeServPrest
 # Caminho: Catálogo > Biblioteca de scripts > VisibilidadeServPrest
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 def VisibilidadeServPrest():
     if Controle.Valor == "Cadastrar":

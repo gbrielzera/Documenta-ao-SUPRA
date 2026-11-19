@@ -1,6 +1,6 @@
 # obtemSiglaDaOS
 # Caminho: Catálogo > Biblioteca de scripts > obtemSiglaDaOS
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 def obtemSiglaDaOS(numero):
 # recebe como parâmetro o numero da OS 

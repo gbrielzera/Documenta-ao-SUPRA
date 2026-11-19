@@ -1,6 +1,6 @@
 # apiServiceNow
 # Caminho: Catálogo > Biblioteca de scripts > apiServiceNow
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 # Importa bibliotecas essenciais do ambiente .NET e do Supravizio
 import clr

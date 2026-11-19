@@ -1,6 +1,6 @@
 # ValidaItensAdm
 # Caminho: Catálogo > Biblioteca de scripts > ValidaItensAdm
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 def ValidaItensAdm():
     if OrdemServico["PRJ_TIPO_SOLICITACAO"] == "Cadastrar" and String.IsNullOrEmpty(OrdemServico["PRJ_DESC_ITEM"]):

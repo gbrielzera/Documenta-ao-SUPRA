@@ -10,4 +10,4 @@ AdicionaComentario, AdicionaLinhaRegistro(nomeCampo, nomes, valores), Agenda, An
 
 ## Diferenças e pendências
 - `Utils` no browser da 19.1.1 não mostrou `ExecuteDataTable`/`ExecuteScalar`, embora 69 scripts de fluxos os usem (o `DB` é que os tem; confirmar de qual script o print saiu).
-- Falta: comparar membro a membro com `catalogo/api/OrdemServico.md` e registrar o que é novo na 19.1.1.
+- Comparação com a API 18.1.1 (2026-11-19): dos 188 membros de `OrdemServico` vistos na 19.1.1, 182 estão em `catalogo/api/OrdemServico.md` ou `Ocorrencia.md`; `IsNew`, `Modified`, `ReadOnly`, `GetCustom` e `SetCustom` vêm da classe base `SessionObjectProxy.md`. Único membro **novo na 19.1.1**: `PermiteRetornarResponsabilidade` (sem assinatura nem uso em fluxos; tipo provável booleano, a confirmar). Conclusão: para `OrdemServico`, `catalogo/api/` continua válido na 19.1.1.

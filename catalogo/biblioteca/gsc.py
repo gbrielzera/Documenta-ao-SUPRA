@@ -1,6 +1,6 @@
 # gsc
 # Caminho: Catálogo > Biblioteca de scripts > gsc
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (2 variantes entre os XMLs; esta é a mais recente)
 
 import clr
 import System
@@ -38,3 +38,9 @@ def enviaDadosItens():
         # Serializar a lista de pessoas para JSON
     except Exception as e:
         return "Erro ao executar a consulta: " + str(e)
+        
+        
+        
+        
+def useToken():
+    return "TESTE_JEFF_999999"

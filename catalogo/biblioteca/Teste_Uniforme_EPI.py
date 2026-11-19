@@ -1,6 +1,6 @@
 # Teste_Uniforme_EPI
 # Caminho: Catálogo > Biblioteca de scripts > Teste_Uniforme_EPI
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 if FormularioRegistro["CODIGO"].Valor == "UNIF-000017":
     FormularioRegistro["DESCRICAO"].Valor = "T-50 CAMISA TIPO POLO MASCULINA PIQUET AZUL MARINHO PANTONE 2758C (CMYK100/83/0/47) COM BOLSO NO LADO ESQUERDO DE QUEM VESTE E LOGOMARCA BBTS(8,5CM CONFORME IDENTIDADE VISUAL BBTS) BORDADA A 1CM ACIMA DO BOLSO (MASCULINA)"

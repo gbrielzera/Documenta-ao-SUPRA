@@ -1,6 +1,6 @@
 # dcf
 # Caminho: Catálogo > Biblioteca de scripts > dcf
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (5 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (7 variantes entre os XMLs; esta é a mais recente)
 
 import clr
 import System
@@ -13,12 +13,12 @@ from System.Web import *
 
 from Newtonsoft.Json import JsonConvert
 from Newtonsoft.Json.Linq import JArray, JValue
-
+from System import String
 from Venki.Supravizio.Processo.Custom import OrdemServico
 from Venki.Supravizio.Processo.Custom import Servico
 from Venki.Supravizio.Recurso.Custom import Pessoa
 from System import Convert
-        
+from System import DBNull
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # NEW STUFFS
@@ -464,7 +464,6 @@ def enviaDadosCad():
         # ExecuteReader retorna um conjunto de resultados
         result_table2 = DB.ExecuteDataTable("Select F.status_matricula As STATUS_MATRICULA, F.nome As NOME, F.matricula As MATRICULA, F.gestor_posicao As GESTOR_POSICAO, F.cargo_funcional As CARGO_FUNCIONAL, F.CARGO,  F.funcao_gratificada As FUNCAO_GRATIFICADA,F.supervisor As SUPERVISOR, F.organizacao As ORGANIZACAO, F.unidade_negocio As UNIDADE_NEGOCIO, F.local_cidade As LOCAL_CIDADE,F.local_estado As LOCAL_ESTADO, F.numero_subcr_nivel1 As UOR_DIVISAO, F.descricao_subcr_nivel1 As DESCRICAO_DIVISAO, F.numero_subcr_nivel2 As UOR_GERENCIA,F.descricao_subcr_nivel2 As DESCRICAO_GERENCIA, F.numero_subcr_nivel3 As UOR_DIRETORIA, F.descricao_subcr_nivel3 As DESCRICAO_DIRETORIA, cp.DATA_NASCIMENTO As NASCIMENTO, cp.DATA_DE_ADMISSAO As ADMISSAO, P.EMAIL As EMAIL, P.USUARIO_REDE As USUARIO, P.BLOQUEADO As BLOQUEADO, c.scr_sigla As SIGLA_DIVISAO, c2.scr_sigla As SIGLA_GERENCIA, c3.scr_sigla As SIGLA_DIRETORIA From CAD_FUNCIONARIO_V F Inner Join cp_pessoa cp On F.matricula = cp.matricula Inner Join PESSOA P On cp.ID_PESSOA = P.id_pessoa Inner Join cob_gl_centro c On c.scr = F.numero_subcr_nivel1 Inner Join cob_gl_centro c2 On c2.scr = F.numero_subcr_nivel2 Inner Join cob_gl_centro c3 On c3.scr = F.numero_subcr_nivel3 Where f.CARGO_FUNCIONAL not in ('PRESTADOR DE SERVICO') And f.CARGO_FUNCIONAL IS NOT NULL Order By f.nome")
         
-        
             
         
         json_data = JsonConvert.SerializeObject(result_table2)
@@ -473,8 +472,6 @@ def enviaDadosCad():
     # Serializar a lista de pessoas para JSON
     except Exception as e:
         return "Erro ao executar a consulta: " + str(e)
-        
-        
         
 def enviaDadosCadCompleto():
     try:
@@ -494,7 +491,7 @@ def enviaDadosCadCompleto():
 def enviaDadosCadCompletao():
     try:
         # ExecuteReader retorna um conjunto de resultados
-        result_table2 = DB.ExecuteDataTable("SELECT f.*, p.* FROM CAD_FUNCIONARIO_V f LEFT JOIN cp_pessoa cp ON f.matricula = cp.matricula LEFT JOIN pessoa p ON cp.id_pessoa = p.id_pessoa ORDER BY f.nome")
+        result_table2 = DB.ExecuteDataTable("SELECT f.*, p.* , c.scr_sigla As SIGLA_DIVISAO, c.scr As UOR_DIVISAO, c2.scr_sigla As SIGLA_GERENCIA, c2.scr As UOR_GERENCIA, c3.scr_sigla As SIGLA_DIRETORIA, c3.scr As UOR_DIRETORIA FROM CAD_FUNCIONARIO_V f LEFT JOIN cp_pessoa cp ON f.matricula = cp.matricula LEFT JOIN pessoa p ON cp.id_pessoa = p.id_pessoa LEFT JOIN cob_gl_centro c On c.scr = f.numero_subcr_nivel1 LEFT JOIN cob_gl_centro c2 On c2.scr = f.numero_subcr_nivel2 LEFT JOIN cob_gl_centro c3 On c3.scr = f.numero_subcr_nivel3 ORDER BY f.nome")
         
         
         json_data = JsonConvert.SerializeObject(result_table2)
@@ -503,7 +500,6 @@ def enviaDadosCadCompletao():
     # Serializar a lista de pessoas para JSON
     except Exception as e:
         return "Erro ao executar a consulta: " + str(e)
-
 
 
 def enviaDadosDiv():
@@ -627,7 +623,6 @@ def enviaDadosColaborador():
         return "Erro ao executar a consulta: " + str(e)
         
         
-
         
 def validarOrdemServico(numeroOs):
     try:
@@ -671,8 +666,6 @@ def alterarSituacao(situacao, os, motivo):
         return "Erro ao executar a consulta: " + str(e)
         
         
-
-        
 def buscarDadosOsGeral(numeroOs):
     try:
         result_table2 = DB.ExecuteDataTable("Select RESP.NOME As RESPONSAVEL, OCORRENCIA.ASSUNTO, OCORRENCIA.ID_CLIENTE, OCORRENCIA.ID_RESPONSAVEL, OCORRENCIA.NUMERO, OCORRENCIA.SITUACAO, COSTUMER.NOME As CLIENTE From OCORRENCIA Left Join PESSOA RESP On OCORRENCIA.ID_RESPONSAVEL = RESP.ID_PESSOA Left Join PESSOA COSTUMER On OCORRENCIA.ID_CLIENTE = COSTUMER.ID_PESSOA Where OCORRENCIA.NUMERO = '"+numeroOs+"'")
@@ -681,45 +674,9 @@ def buscarDadosOsGeral(numeroOs):
         return json_data
     except Exception as e:
         return "Erro ao executar a consulta: " + str(e)
-        
-        
-
-        
-        
-        
-def atualizarAtividade(comando, os):
-    try:
-        
-
-        lista = Utils.ExecuteDataTable("Select OCORRENCIA.ID_OCORRENCIA, ORDEM_SERVICO.ID_OCORRENCIA, OCORRENCIA.NUMERO From OCORRENCIA Inner Join ORDEM_SERVICO On ORDEM_SERVICO.ID_OCORRENCIA = OCORRENCIA.ID_OCORRENCIA Where OCORRENCIA.NUMERO ='" + os + "'")
-
-        idOcorrencia = 0
-        for linha in lista.Rows:
-            idOcorrencia = linha["ID_OCORRENCIA"]
-               
-        chamado = OrdemServico.Carrega(Convert.ToInt32(idOcorrencia))
 
 
-        if comando == "Avanca":
-            chamado.AvancaAtividade()
-        elif situacao == "Voltar":
-            chamado.VoltaAtividade()
-        else:
-            raise Exception("Situação inválida.")
 
-        chamado.Salva()
-        
-        
-        return JsonConvert.SerializeObject(True)
-    except Exception as e:
-        return "Erro ao executar a consulta: " + str(e)
-        
-        
-        
-
-        
-        
-        
 def apiPrimeiraDesignacao(dgco, razao_social, obj, comissao, matricula_gestor, uorGestor):
     try:
         
@@ -773,10 +730,9 @@ def apiPrimeiraDesignacao(dgco, razao_social, obj, comissao, matricula_gestor, u
     except Exception as e:
         return e.ToString()
         
-
-    
-    
-
+        
+        
+      
 def apiPrimeiraDesignacaoAdministrativo(dgco, razao_social, obj):
     try:
         
@@ -837,3 +793,117 @@ def apiPrimeiraDesignacaoAdministrativo(dgco, razao_social, obj):
 
     except Exception as e:
         return e.ToString()
+
+
+
+def abrirEncerramentoContratual(dgco, fornecedor, dt_fim_vigencia, fisc_comissao, objeto, matricula_gestor, matricula_fisc_adm, matricula_fisc_serv, matricula_responsavel):
+    try:
+        if (String.IsNullOrWhiteSpace(dgco)):
+            return "O campo 'dgco' é obrigatório!"
+
+        if (String.IsNullOrWhiteSpace(fornecedor)):
+            return "O campo 'fornecedor' é obrigatório!"
+
+        if (String.IsNullOrWhiteSpace(fisc_comissao)):
+            return "O campo 'fisc_comissao' é obrigatório!"
+
+        if (String.IsNullOrWhiteSpace(objeto)):
+            return "O campo 'objeto' é obrigatório!"
+
+        if (String.IsNullOrWhiteSpace(matricula_gestor)):
+            return "O campo 'matricula_gestor' é obrigatório!"
+
+        if (String.IsNullOrWhiteSpace(matricula_fisc_adm)):
+            return "O campo 'matricula_fisc_adm' é obrigatório!"
+
+        if (String.IsNullOrWhiteSpace(matricula_fisc_serv)):
+            return "O campo 'matricula_fisc_serv' é obrigatório!"
+
+        if (String.IsNullOrWhiteSpace(dt_fim_vigencia)):
+            return "O campo 'dt_fim_vigencia' é obrigatório!"
+
+
+        gestorTitular = DB.ExecuteDataTable("Select PESSOA.ID_PESSOA, PESSOA.NOME, CP_PESSOA.MATRICULA From PESSOA Inner Join CP_PESSOA On PESSOA.ID_PESSOA = CP_PESSOA.ID_PESSOA Where CP_PESSOA.MATRICULA = '" + matricula_gestor.ToString()+"'")
+
+        for row in gestorTitular.Rows:
+            idGestorTitular = row["ID_PESSOA"]
+
+        fiscalAdmTitular = DB.ExecuteDataTable("Select PESSOA.ID_PESSOA, PESSOA.NOME, CP_PESSOA.MATRICULA From PESSOA Inner Join CP_PESSOA On PESSOA.ID_PESSOA = CP_PESSOA.ID_PESSOA Where CP_PESSOA.MATRICULA = '" + matricula_fisc_adm.ToString()+"'")
+
+        for row in fiscalAdmTitular.Rows:
+            idFiscalAdm = row["ID_PESSOA"]
+
+        fiscalServTitular = DB.ExecuteDataTable("Select PESSOA.ID_PESSOA, PESSOA.NOME, CP_PESSOA.MATRICULA From PESSOA Inner Join CP_PESSOA On PESSOA.ID_PESSOA = CP_PESSOA.ID_PESSOA Where CP_PESSOA.MATRICULA = '" + matricula_fisc_serv.ToString()+"'")
+
+        for row in fiscalServTitular.Rows:
+            idFiscalServ = row["ID_PESSOA"]
+
+        responsavel = DB.ExecuteDataTable("Select PESSOA.ID_PESSOA, PESSOA.NOME, CP_PESSOA.MATRICULA From PESSOA Inner Join CP_PESSOA On PESSOA.ID_PESSOA = CP_PESSOA.ID_PESSOA Where CP_PESSOA.MATRICULA = '" + matricula_responsavel.ToString()+"'")
+
+        for row in responsavel.Rows:
+            idResponsavel = row["ID_PESSOA"]
+
+        novaOS = OrdemServico.Nova(OrdemServico.Carrega('Numero', 327), "ENCERRAMENTODECONTRATO", "INICIARENCERRAMENTO", "Encerramento de Contrato (abertura automática - Sisccon)", Servico.Carrega(986), Pessoa.Carrega(Convert.ToInt32(idResponsavel)), Pessoa.Carrega(Convert.ToInt32(idResponsavel)))
+
+        novaOS.SetCustom('CSC_DGCO', str(dgco))
+        novaOS.SetCustom('NOME_FORNECEDOR', str(fornecedor))
+        novaOS.SetCustom('OBSERVACAO', 'Aberto Através do Sisccon')
+        novaOS.SetCustom('FISCAL_ADM_DO_CONTRATO', str(idFiscalAdm))
+        novaOS.SetCustom('FISCAL_DE_SERVICO', str(idFiscalServ))
+        novaOS.SetCustom('GESTOR_DO_CONTRATO', str(idGestorTitular))
+        novaOS.SetCustom('SIM_NAO1', fisc_comissao.ToString())
+        novaOS.SetCustom('OBJETO_CONTRATO', objeto.ToString())
+        novaOS.SetCustom('CSC_DATA_FIM' ,str(dt_fim_vigencia))
+
+        novaOS.Salva()
+        novaOS.AvancaAtividade()
+        #novaOS.AvancaProximaAtividade = True
+        
+        json_data = JsonConvert.SerializeObject([str(novaOS.Numero)])        
+        return json_data
+        
+        #return novaOS.Numero.ToString()
+
+    except Exception as e:
+        return e.ToString()
+        
+
+def buscarLinkAprovacao(os):
+    def to_text(v):
+        try:
+            return "" if (v is None or v == DBNull.Value) else v.ToString()
+        except:
+            try:
+                return unicode(v)
+            except:
+                return ""
+
+        
+    idAprovacao = ""
+    versaoAprov = ""
+    try:
+        q  = "Select OCORRENCIA.NUMERO, OCORRENCIA.SITUACAO, OCORRENCIA.ASSUNTO, OCORRENCIA.DATA_HORA_CRIACAO, "
+        q += "VERSAO_APROVACAO.VERSAO, APROVACAO.ID_ASSUNTO_APROVACAO, APROVACAO.SITUACAO, VERSAO_APROVACAO.SITUACAO, "
+        q += "APROVACAO.MOTIVO, VERSAO_APROVACAO.DATA_HORA_CRIACAO "
+        q += "From ORDEM_SERVICO "
+        q += "Left Join OCORRENCIA On ORDEM_SERVICO.ID_OCORRENCIA = OCORRENCIA.ID_OCORRENCIA "
+        q += "Left Join ASSUNTO_APROVACAO On OCORRENCIA.ID_OCORRENCIA = ASSUNTO_APROVACAO.ID_OCORRENCIA "
+        q += "Left Join APROVACAO On APROVACAO.ID_ASSUNTO_APROVACAO = ASSUNTO_APROVACAO.ID_ASSUNTO_APROVACAO "
+        q += "Left Join VERSAO_APROVACAO On VERSAO_APROVACAO.ID_ASSUNTO_APROVACAO = ASSUNTO_APROVACAO.ID_ASSUNTO_APROVACAO "
+        q += "Where OCORRENCIA.NUMERO = '" + os + "' And VERSAO_APROVACAO.SITUACAO = 'Pendente'"
+        aprovacao = Utils.ExecuteDataTable(q)
+        for row in aprovacao.Rows:
+            idAprovacao = to_text(row['ID_ASSUNTO_APROVACAO'])
+            versaoAprov = to_text(row['VERSAO'])
+            break
+    except:
+        pass
+
+
+    linkAprovacao = ""
+    if idAprovacao and versaoAprov:
+        linkAprovacao = "https://santacruz.bbts.com.br/Supravizio/Portal/Classico/Aprovacao.aspx?ASID=" + idAprovacao + "&VERSAO=" + versaoAprov
+
+
+    json_data = JsonConvert.SerializeObject(linkAprovacao.ToString())
+    return json_data

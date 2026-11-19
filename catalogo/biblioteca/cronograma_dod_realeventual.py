@@ -1,6 +1,6 @@
 # cronograma_dod_realeventual
 # Caminho: Catálogo > Biblioteca de scripts > cronograma_dod_realeventual
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (2 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (2 variantes entre os XMLs; esta é a mais recente)
 
 def cronograma_dod_realeventual(NUMERO_OC, FASE, ITERACAO, ESFORCO_REAL, DATA_FIM_REAL):
 

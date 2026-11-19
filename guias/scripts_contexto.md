@@ -4,71 +4,132 @@ Caminho: Guias > Scripts > Contexto por tipo
 Gerado por tools/guias.py a partir dos scripts distintos de todos os XMLs. Os números são a quantidade de scripts distintos que usam o identificador: é evidência de uso real, não a API completa. A documentação oficial cobre pouco destes objetos; quando houver página, ela está indicada em guias/scripts.md.
 
 ## Membros mais usados por objeto
-- **OrdemServico**: GetCustom (119), Servico (76), Numero (37), Carrega (30), SetCustom (28), Cliente (25), Nova (25), Id (22), PossuiAprovacao (22), PossuiItem (19), Salva (16), Atividade (16), AdicionaComentario (15), ClienteId (14), ObtemItem (14), AdicionaLinhaRegistro (13), ResponsavelId (12), Favorecido (11), ModificaCampoFormularioHabilitado (10), ObtemMotivoReprovacao (9), Responsavel (8), ModificaCampoFormularioVisivel (7), IniciaSubProcesso (6), DataHoraCriacao (6), Justificativa (5), DescricaoDetalhada (5), ObtemMotivoGateway (5), MotivoCancelamento (4), Assunto (3), ItensAnexados (2), OcorrenciaPrincipalId (2), NumeroSistema (2), ServicoId (2), AvancaAtividade (1), FinalizadorId (1), SubProcesso (1), CancelaAprovacao (1), ObtemAtoresProcesso (1), Cancela (1)
-- **Formulario["CAMPO"]**: Valor (158), Visivel (130), Habilitado (119), Itens (65)
-- **DB**: ExecuteDataTable (375), ExecuteScalar (54), ExecuteNonQuery (33)
-- **Utils**: ExecuteDataTable (51), LogError (20), ExecuteScalar (18), LogInformation (13), LogInfo (3), IF (1)
-- **Pessoa**: Carrega (95)
-- **FormularioRegistro["COLUNA"]**: Valor (44), Habilitado (22), Itens (9), Visivel (6), Valoragencias (1)
-- **Servico**: Carrega (46)
-- **Formulario**: ExibeMensagem (42), Controles (2)
-- **Atores**: Adiciona (35), Add (1)
-- **Mensagem**: Complemento (14), Assunto (8), Corpo (4), Destinatarios (4), Remetente (2)
-- **Criticas**: AdicionaPendencia (27), AdicionaAviso (1)
-- **Controle**: Valor (20)
-- **Orgao**: Carrega (16)
+- **OrdemServico**: GetCustom (176), Numero (175), ResponsavelId (105), Servico (91), Salva (62), SetCustom (49), Id (44), AdicionaComentario (36), Cliente (34), Carrega (34), PossuiAprovacao (32), ClienteId (29), Nova (28), Favorecido (27), PossuiItem (22), Atividade (18), ObtemItem (15), AdicionaLinhaRegistro (14), ObtemMotivoReprovacao (14), ModificaCampoFormularioVisivel (14), ObtemMotivoGateway (11), ModificaCampoFormularioHabilitado (10), Assunto (9), Responsavel (8), IniciaSubProcesso (7), DataHoraCriacao (7), Justificativa (5), DescricaoDetalhada (5), ServicoId (5), CancelaAprovacao (4), NumeroSistema (4), MotivoCancelamento (4), ItensAnexados (3), ObtemAssociadasComoAlvo (2), DesenhoProcesso (2), OcorrenciaPrincipalId (2), AvancaAtividade (1), FinalizadorId (1), FavorecidoId (1), IniciaAprovacao (1)
+- **Formulario["CAMPO"]**: Valor (269), Visivel (232), Habilitado (229), Itens (83)
+- **DB**: ExecuteDataTable (522), ExecuteScalar (66), ExecuteNonQuery (36)
+- **Pessoa**: Carrega (147)
+- **Utils**: ExecuteDataTable (81), LogError (23), ExecuteScalar (21), LogInformation (18), LogInfo (3), IF (1)
+- **FormularioRegistro["COLUNA"]**: Valor (51), Habilitado (32), Itens (16), Visivel (13), Valoragencias (1)
+- **Formulario**: ExibeMensagem (68), Controles (12)
+- **Mensagem**: Complemento (35), Assunto (19), Destinatarios (17), Corpo (4), Remetente (2)
+- **Servico**: Carrega (52)
+- **Atores**: Adiciona (44), Add (1)
+- **Criticas**: AdicionaPendencia (41), AdicionaAviso (1)
+- **Controle**: Valor (25), Visivel (2), Habilitado (2)
+- **Orgao**: Carrega (24)
 - **Ocorrencia**: Salva (1), Carrega (1)
 
-## LookupScript — 367 scripts distintos
+## LookupScript — 378 scripts distintos
 Onde: campo customizado (DropDownList/SearchList/DataGrid): script de recuperação de opções; preenche `Itens`
-Identificadores de contexto: Itens (345), DB (302), OrdemServico (41), Pessoa (13)
+Identificadores de contexto: Itens (355), DB (307), OrdemServico (41), Pessoa (13)
 Exemplo (de Administração_-_Alteração_e_Criação_de_Subprocessos_e_Relatórios_Versão_14_Criação-Alteração_de_Subprocessos_-_Novo_Fluxo):
 ```python
 Itens = DB.ExecuteDataTable("SELECT ID_CIDADE FROM CIDADE_V")
 ```
 Exemplo (de Administração_-_Alteração_e_Criação_de_Subprocessos_e_Relatórios_Versão_14_Criação-Alteração_de_Subprocessos_-_Novo_Fluxo):
 ```python
-Itens = DB.ExecuteDataTable(" SELECT to_char(pr.id_criterio) as id_criterio, pr.item_mensurado FROM tb_priorizacao_v2 pr where pr.categoria = 'PRAZO_ORCADO' ")
+Itens = DB.ExecuteDataTable("SELECT to_char(pr.id_criterio) as id_criterio, pr.item, pr.pontuacao, pr.peso FROM tb_priorizacao pr where pr.descricao = 'IMAGEM'")
 ```
 Exemplo (de Administração_-_Alteração_e_Criação_de_Subprocessos_e_Relatórios_Versão_14_Criação-Alteração_de_Subprocessos_-_Novo_Fluxo):
 ```python
-Itens = DB.ExecuteDataTable("SELECT ED.DESCRICAO FROM PESSOA INNER JOIN TB_CAD_PEC_APROVADO AP ON (PESSOA.ID_PESSOA = AP.ID_PESSOA) INNER JOIN TB_CUSTOM_EDITAL_PEC ED ON (ED.ID_EDITAL_PEC = AP.ID_EDITAL_PEC) WHERE PESSOA.ID_PESSOA = '" + OrdemServico.ClienteId.ToString() + "' ")
+Itens = DB.ExecuteDataTable("SELECT DISTINCT(STATE) as UF FROM ps_BBTS_ETAPA_CON2") #where BBTS_VAGA = '" + FormularioRegistro["CARGO"].Valor + "'")
+
+#Itens = DB.ExecuteDataTable("select ID_ESTADO, DESCRICAO from ESTADO_V where ID_PAIS = 'BRA'")
+#FormularioRegistro["NUM_NOTA_FISCAL"].Itens
 ```
 
-## ScriptModificado — 155 scripts distintos
+## ScriptModificado — 296 scripts distintos
 Onde: campo de formulário: executa quando o valor do campo muda (formulário dinâmico)
-Identificadores de contexto: Formulario (113), FormularioRegistro (43), OrdemServico (36), Pessoa (29), Utils (26), Controle (16), DB (14), Texto (10), Culture (10), Orgao (9), OleDbConnection (8), OleDbDataAdapter (8), Software (4), LimparCampo (4), ValorCelula (3), NormalizarDGCO (3), LerLinhasAba (3), GridPossuiDGCO (3), PrimeiroFilho (3), ElementosPorNome (3), ZipArchiveMode (3), LerXlsx (3), XDocument (3), Inteiro (3), Atributo (3)
-Exemplo (de Administração_-_Contratos_Versão_44_Pré-Notificação_do_Índice_de_Desempenho_de_Fornecedores_(IDF)_):
+Identificadores de contexto: Formulario (207), OrdemServico (62), FormularioRegistro (56), Pessoa (45), Utils (35), DB (29), Controle (21), Orgao (11), Culture (10), Texto (10), OleDbDataAdapter (9), OleDbConnection (9), DayOfWeek (9)
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Deslocamento_a_Serviço):
 ```python
-OrdemServico['FORNECEDOR'] = FormularioRegistro['FORNECEDOR'].Valor
+#OrdemServico.SetCustom("SCR", Formulario["SCR_PRESTADOR"].Valor)
 ```
-Exemplo (de Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso):
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Deslocamento_a_Serviço):
 ```python
-dt = OrdemServico.GetCustom("LISTA_NF")
-if (dt.Rows.Count>=3):
-    FormularioRegistro["CNPJ"].Habilitado=False
-    FormularioRegistro["NUMERO_NF"].Habilitado=False
-    Formulario["LISTA_MEDICAMENTOS"].Habilitado = True
-    Formulario["LISTA_MEDICAMENTOS"].Visivel = True
+import System
+
+
+Formulario["VALOR_DISTANCIA"].Habilitado = False
+
+valorTotal = 0
+
+distancia = Formulario["PREVISAO_DISTANCIA_KM"].Valor
+valorTotal = distancia * 1.30 
+
+
+Formulario["VALOR_DISTANCIA"].Valor = valorTotal
+#OrdemServico["VALOR_DISTANCIA"] = valorTotal
+#
 ```
-Exemplo (de Gestão_de_Pessoas_-_Benefícios_Versão_88_Auxílio_Órtese,_Prótese_e_Recursos_para_Saúde_-_Reembolso):
+Exemplo (de Nova_Estruturação_de_Negócios_Versão_30_Portal_de_Estruturação_de_Negócios):
 ```python
-if Formulario["SIM_NAO"].Valor != None:
-    Formulario["COMBOBOX"].Habilitado = True
-    
-if Formulario["Valor"].Valor != None:
-    if Formulario["VALOR"].Valor >= 20000:
-        Formulario["VALOR_TOTAL"].Valor = 20000
-    elif Formulario["SIM_NAO"].Valor == "Sim":
-        Formulario["VALOR_TOTAL"].Valor = 0.9 * Formulario["VALOR"].Valor
-    else:
-        Formulario["VALOR_TOTAL"].Valor = Formulario["VALOR"].Valor
-    Formulario["VALOR_AUTORIZADO"].Valor = 0.01 * Formulario["VALOR_TOTAL"].Valor
+if Formulario["NN_CANCELA"].Valor == 'Sim':
+    Formulario["NN_MOTIVO_CANCELAMENTO"].Visivel = True
+    Formulario["NN_MOTIVO_CANCELAMENTO"].Valor = None
+    Formulario["Justificativa"].Visivel = True
+    Formulario["Justificativa"].Valor = None
+else:
+    Formulario["NN_MOTIVO_CANCELAMENTO"].Valor = None
+    Formulario["NN_MOTIVO_CANCELAMENTO"].Visivel = False
+    Formulario["Justificativa"].Valor = None
+    Formulario["Justificativa"].Visivel = False
+
+#OrdemServico.Salva()
 ```
 
-## Source — 110 scripts distintos
+## ScriptFormCarregado — 155 scripts distintos
+Onde: atividade: executa ao carregar o formulário da atividade
+Identificadores de contexto: Formulario (147), OrdemServico (63), Pessoa (24), Utils (13), DB (12), Texto (9), Fornecedor (6), Contrato (5), PreencherCampoPessoa (5), SqlTexto (5), Servico (5), PrecifObtemCronogramaAtividade (4), DesabilitarCampo (3), PreencherCampo (3), Empresa (3), DefinirVisibilidade (3)
+Exemplo (de Comunicação_de_Acidente_de_Trabalho_-_CAT_Versão_1_Comunicação_de_Acidente_de_Trabalho_-_CAT):
+```python
+OrdemServico.ModificaCampoFormularioVisivel('REG_POL1', False)
+```
+Exemplo (de Administração_-_Contratos_Versão_44_Solicitar_reserva_de_DGCOs):
+```python
+from Venki.Supravizio.Recurso.Custom import Fornecedor
+from Venki.Supravizio.Recurso.Custom import Pessoa
+Formulario['COMBOBOX1'].Itens = 'Fornecedor;Cliente'
+Formulario['JURIDICA_FISICA'].Valor = 'Pessoa Jurídica'
+```
+Exemplo (de Administração_-_Contratos_Versão_48_Projeto_Básico_Simplificado_Eletrônico_PBEE):
+```python
+Formulario["VALOR_REFERENCIAL"].Habilitado = False
+Formulario["PARECER_QUALIF"].Habilitado = False
+Formulario["CONTA_ORCAMENTARIA"].Habilitado = False
+Formulario["CODIGO_ITEM"].Habilitado = False
+Formulario["SIM_NAO14"].Visivel = False
+#Formulario["CODIGO_ITEM"].Visivel = False
+#Formulario["VALOR_REFERENCIAL"].Visivel = False
+Formulario['CSC_ESCOLARIDADE'].Visivel = True
+Formulario['UOR'].Visivel = True
+Formulario['UOR'].Habilitado = True
+```
+
+## ScriptInicio — 129 scripts distintos
+Onde: atividade: executa quando a atividade inicia (evento Inicialização)
+Identificadores de contexto: OrdemServico (122), DB (76), HttpClient (57), MediaTypeWithQualityHeaderValue (57), AuthenticationHeaderValue (57), JsonConvert (57), StringContent (56), ServicePointManager (53), SecurityProtocolType (53), AvancaProximaAtividade (48), Query (40), Pessoa (18), Utils (13), Orgao (8), Contrato (8), URL_OS_SALVAR (7), Processo (6), Formulario (5), Fornecedor (5), Texto (4), LimparGridSubprocesso (3), ValorLinha (3), RegistrarLog (3), Pesquisa (3), JObject (3)
+Exemplo (de Financeiro_-_Faturamento_de_Clientes_Versão_20_Faturamento_de_Clientes_-_Emissão_de_Notas_Fiscais):
+```python
+OrdemServico.ModificaCampoFormularioVisivel('NUM_DOCU', True)
+```
+Exemplo (de Administração_-_Contratos_Versão_44_Inserir_Documentos_Contratuais_no_Sisccon):
+```python
+correcoes = OrdemServico.ObtemMotivoReprovacao('VERIFICAROC').ToString()
+OrdemServico.SetCustom('OBS4', correcoes)
+AvancaProximaAtividade = True
+```
+Exemplo (de Serviços_Assistência_Técnica_Versão_12_Recebimento_de_EPI):
+```python
+campos = ["CODIGO", "DESCRICAO_DETALHADA", "NUM_ITEM", "QUANTIDADE_ESTIMADA", "TE_CARGO", "TE_MATRICULA", "TE_NOME_EMPREGADO", "TE_UOR", "TEXT", "TEXT_1", "TEXT2"]
+
+for i in campos:
+    OrdemServico.ModificaCampoFormularioHabilitado(i, False)
+```
+
+## Source — 121 scripts distintos
 Onde: módulo da Biblioteca de Scripts (funções reutilizáveis; fonte em catalogo/biblioteca/)
-Identificadores de contexto: DB (75), OrdemServico (52), Pessoa (44), Servico (43), JsonConvert (40), Utils (30), HttpClient (28), FASE (27), MediaTypeWithQualityHeaderValue (26), Tecnico (24), JArray (23), ITERACAO (22), JValue (22), AuthenticationHeaderValue (22), JObject (18), NUMERO_OC (17), ID_OCORRENCIA (13), Dictionary (11), File (11), StringContent (10), NormalizationForm (8), Erro (7), ESFORCO_PREVISTO_INICIO (6), DATA_PREVISTA_FIM (6), DATA_PREVISTA_INICIO (6)
+Identificadores de contexto: DB (84), OrdemServico (60), Pessoa (52), Servico (51), JsonConvert (49), Utils (36), HttpClient (32), MediaTypeWithQualityHeaderValue (30), JArray (28), FASE (27), JValue (27), Tecnico (27), AuthenticationHeaderValue (25), ITERACAO (22), JObject (20), NUMERO_OC (17), ID_OCORRENCIA (13), StringContent (12), File (12), Dictionary (12), NormalizationForm (9), Erro (7), DATA_PREVISTA_FIM (6), DATA_PREVISTA_INICIO (6), ESFORCO_PREVISTO_INICIO (6)
 Exemplo (de Financeiro_-_Serviços_Gerais_Versão_38_Comprovantes_de_Valores_Pagos_a_Fornecedores Gabriel):
 ```python
 def isHoliday(day):
@@ -107,74 +168,71 @@ def cronograma_dod_realiza_sub(ID_OCORRENCIA, FASE, ITERACAO, ESFORCO_REAL):
     DB.ExecuteNonQuery(persistencia)
 ```
 
-## ScriptFormCarregado — 109 scripts distintos
-Onde: atividade: executa ao carregar o formulário da atividade
-Identificadores de contexto: Formulario (105), OrdemServico (37), Pessoa (14), Texto (9), DB (7), Utils (7), Fornecedor (6), PreencherCampoPessoa (5), SqlTexto (5), Contrato (4), PrecifObtemCronogramaAtividade (4), PreencherCampo (3), DesabilitarCampo (3), DefinirVisibilidade (3), Atividade (2), Servico (2), Empresa (2), ExibirMensagem (2), DefinirHabilitado (2), PreencherCampoTexto (2), Processo (2)
-Exemplo (de Comunicação_de_Acidente_de_Trabalho_-_CAT_Versão_1_Comunicação_de_Acidente_de_Trabalho_-_CAT):
-```python
-OrdemServico.ModificaCampoFormularioVisivel('REG_POL1', False)
-```
-Exemplo (de Base_de_Informações_Técnicas_Versão_4_Solicitação_Precificação_de_Item):
-```python
-Formulario['COMBOBOX__1'].Habilitado = False
-Formulario['TEXT'].Habilitado = False
-#Formulario['TEXT2'].Visivel = False
-
-#Formulario['COMBOBOX'].Itens = 'BBTS MANUTENÇÃO;BBTS ATIVOS;BBTS FIEL DEPOSITÁRIO;Outro'
-```
-Exemplo (de Administração_-_Contratos_Versão_44_Pré-Notificação_do_Índice_de_Desempenho_de_Fornecedores_(IDF)_):
-```python
-Formulario['COMBOBOX_V'].Itens = '1- Não atendimento às exigências contratuais;2- Atendimento parcial às exigências contratuais;3- Pleno atendimento às exigências contratuais'
-
-Formulario['COMBOBOX_XX'].Itens = '1- Não atendimento às exigências contratuais;2- Atendimento parcial às exigências contratuais;3- Pleno atendimento às exigências contratuais'
-
-Formulario['TEXT'].Habilitado = False
-```
-
-## ExpressaoComparacaoDecision — 65 scripts distintos
+## ExpressaoComparacaoDecision — 91 scripts distintos
 Onde: gateway: expressão cujo resultado é comparado com cada alternativa
-Identificadores de contexto: OrdemServico (65)
-Exemplo (de Administração_-_Alteração_e_Criação_de_Subprocessos_e_Relatórios_Versão_14_Criação-Alteração_de_Subprocessos_-_Novo_Fluxo):
+Identificadores de contexto: OrdemServico (89)
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Deslocamento_a_Serviço):
 ```python
-OrdemServico["SIM_NAO_100"] == 'Mandar para o time de Desenvolvimento'
+OrdemServico["SAIDA"].Date.AddDays(-29) <= DateTime.Now.Date
 ```
 Exemplo (de Administração_-_Contratos_Versão_44_Inserir_Documentos_Contratuais_no_Sisccon):
 ```python
 from Venki.Supravizio.Processo.Custom import Atividade
 OrdemServico["TIPO_ATIVIDADE"] == "Atividade Fim"
 ```
-Exemplo (de Suprimentos_-_Contratos_Versão_27_Registro_de_Notas_Fiscais_de_Fornecedores):
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Deslocamento_a_Serviço):
 ```python
-OrdemServico.Servico.Sigla == "PAGFORNECSEMDGCO"
-    #Formulario["Outros"].Visivel = True
-    #Formulario["Outros"].Habilitado = True
+OrdemServico['TIPO_DESLOCAMENTO'] == "Viagem - Assistência Técnica" or OrdemServico['TIPO_DESLOCAMENTO'] == "Treinamento - Assistência Técnica"
 ```
 
-## ScriptInicio — 62 scripts distintos
-Onde: atividade: executa quando a atividade inicia (evento Inicialização)
-Identificadores de contexto: OrdemServico (56), AvancaProximaAtividade (27), DB (17), Pessoa (10), Utils (7), Orgao (4), Formulario (4), Texto (4), AuthenticationHeaderValue (4), MediaTypeWithQualityHeaderValue (4), JsonConvert (4), HttpClient (4), LimparGridSubprocesso (3), ValorLinha (3), RegistrarLog (3), JObject (3), StringContent (3), PrecifObtemCronogramaAtividade (3), Inteiro (2), Fornecedor (2), Thread (2), Servico (2)
+## ScriptEvento — 68 scripts distintos
+Onde: evento intermediário de mensagem: ajusta a `Mensagem` antes do envio
+Identificadores de contexto: OrdemServico (65), Mensagem (50), HttpClient (27), MediaTypeWithQualityHeaderValue (27), JsonConvert (27), URL_ALERTA (27), AuthenticationHeaderValue (27), ServicePointManager (27), StringContent (27), SecurityProtocolType (27), Solicitante (11), Pessoa (11), DB (9), MM (8), TipoSolicitacao (7), Reembolso (7), DataMesReferencia (5), DATA_PAGAMENTOdd (5), ValorInformado (5), DEP_FAVORECIDO_COBRA (5), Dependente (5), Fornecedor (4), Utils (4), Items_solicitados (3), Contrato (2)
+Exemplo (de Suprimentos_-_Contratos_Versão_27_Registro_de_Notas_Fiscais_de_Fornecedores):
+```python
+Mensagem.Complemento1 = OrdemServico.ObtemMotivoGateway("INSBAS")
+```
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Deslocamento_a_Serviço):
+```python
+Mensagem.Complemento1 = OrdemServico.ObtemMotivoGateway("RESERVANAOREALIZADA")
+```
+Exemplo (de Gestão_de_Pessoas_-_Benefícios_Versão_84_Apoio_Psicológico):
+```python
+#consultaLista = DB.ExecuteDataTable("select agendamento.DATA, agendamento.HORA from Z_00143_AGENDAMENTO_DATA_HORA_PSICO agendamento where ID_OCORRENCIA ='"+OrdemServico.Id.ToString()+"'")
+#
+#respostaVerificacao = ""
+#
+#for agendamento in consultaLista.Rows:
+#    respostaVerificacao = respostaVerificacao+"<tr><td>"+agendamento["DATA"].ToString("dd/MM/yyyy")+"</td>"+"<td>"+agendamento["HORA"].ToString()+"</td></tr>"
+#    
+#    
+#Mensagem.Complemento1 = "<table><tr><th>Data</th><th>Hora</th></tr>"+respostaVerificacao+"</table>"
+```
+
+## ScriptFim — 67 scripts distintos
+Onde: atividade: executa quando a atividade termina
+Identificadores de contexto: OrdemServico (62), DB (50), HttpClient (48), MediaTypeWithQualityHeaderValue (48), JsonConvert (48), AuthenticationHeaderValue (48), StringContent (48), ServicePointManager (46), SecurityProtocolType (46), Processo (6), Pessoa (4), Pesquisa (3), Fornecedor (2)
+Exemplo (de Gestão_de_Pessoas_-_Serviços_Gerais_Versão_68_Indenização_por_Lotação_em_Base_Destacada):
+```python
+OrdemServico.Servico.Sigla = 'IDENIZACAO'
+OrdemServico.Salva()
+```
 Exemplo (de Financeiro_-_Faturamento_de_Clientes_Versão_20_Faturamento_de_Clientes_-_Emissão_de_Notas_Fiscais):
 ```python
-OrdemServico.ModificaCampoFormularioVisivel('NUM_DOCU', True)
+linhas = OrdemServico.GetCustom('GRID_NF').Rows.Count
+OrdemServico.SetCustom('NUM_DOCU', linhas.ToString())
 ```
 Exemplo (de Contrato_com_Clientes_Versão_30_Assinatura_de_Novos_Contratos_e_Aditivos_com_Clientes -_(Uso_exclusivo_da_GEREL)''):
 ```python
-OrdemServico.SetCustom('CSC_NUMERO', OrdemServico.GetCustom('NUM_CONTRATO'))
-#OrdemServico.SetCustom('OBJETO_CONTRATACAO', 'PRJ_OBJETO')
-```
-Exemplo (de Ascensão_Profissional_e_Movimentação_de_Pessoas_Versão_69_Contratação_de_Estagiário):
-```python
-from Venki.Supravizio.Recurso.Custom import Orgao
-#orgao = Orgao.Carrega("Id", OrdemServico.GetCustom("SCR_MOVI"));
-#if (orgao != None):
-#	OrdemServico.SetCustom("DESCRICAO_ORGAO",orgao.ToString())
-#else:
-#	OrdemServico.SetCustom("DESCRICAO_ORGAO","ORGAO NAO ENCONTRADO")
+OrdemServico.ModificaCampoFormularioHabilitado('RAZAO_SOCIAL_CLIENTE', False)
+OrdemServico.ModificaCampoFormularioHabilitado('JURIDICA_FISICA', False)
+OrdemServico.ModificaCampoFormularioHabilitado('CSC_CPF', False)
+OrdemServico.ModificaCampoFormularioHabilitado('CNPJ', False)
 ```
 
-## ScriptSelecaoAtores — 36 scripts distintos
+## ScriptSelecaoAtores — 45 scripts distintos
 Onde: papel customizado por script: adiciona pessoas em `Atores`
-Identificadores de contexto: Atores (36), Ator (36), OrdemServico (34), Pessoa (30), DB (11), Utils (4), Orgao (3)
+Identificadores de contexto: Ator (45), Atores (45), OrdemServico (42), Pessoa (38), DB (14), Utils (6), Orgao (5)
 Exemplo (de Comunicação_de_Acidente_de_Trabalho_-_CAT_Versão_1_Comunicação_de_Acidente_de_Trabalho_-_CAT):
 ```python
 from Venki.Supravizio.Processo.Custom import Ator
@@ -184,8 +242,8 @@ Exemplo (de Administração_-_Contratos_Versão_44_Inserir_Documentos_Contratuai
 ```python
 from Venki.Supravizio.Recurso.Custom import Pessoa
 from Venki.Supravizio.Processo.Custom import Ator
-if OrdemServico.GetCustom("FAVORECIDO_TODOS"):
-    favorecido = Pessoa.Carrega(Convert.ToInt32(OrdemServico.GetCustom("FAVORECIDO_TODOS")))
+if OrdemServico.GetCustom("RESPONSAVEL_PROCESSO"):
+    favorecido = Pessoa.Carrega(Convert.ToInt32(OrdemServico.GetCustom("RESPONSAVEL_PROCESSO")))
 
     if favorecido != None:
         Atores.Adiciona(favorecido, "Favorecido")
@@ -203,81 +261,51 @@ if gestor.Id == 4458 or gestor.Id == 4459 or gestor.Id == 4460 or gestor.Id == 4
 Atores.Adiciona(gestor, "Superior imediato de " + OrdemServico.Responsavel.ToString())
 ```
 
-## ScriptEvento — 28 scripts distintos
-Onde: evento intermediário de mensagem: ajusta a `Mensagem` antes do envio
-Identificadores de contexto: OrdemServico (25), Mensagem (23), Fornecedor (4), DB (3), Contrato (2)
-Exemplo (de Suprimentos_-_Contratos_Versão_27_Registro_de_Notas_Fiscais_de_Fornecedores):
-```python
-Mensagem.Complemento1 = OrdemServico.ObtemMotivoGateway("INSBAS")
-```
-Exemplo (de Nova_Estruturação_de_Negócios_Versão_32_Parecer_Cibernético):
-```python
-#OrdemServico.AdicionaComentario("Notificação 1 enviada com sucesso", False)
-```
-Exemplo (de Administração_-_Contratos_Versão_44_Pré-Notificação_do_Índice_de_Desempenho_de_Fornecedores_(IDF)_):
-```python
-if OrdemServico["PENF_EMAIL"] != None:        
-    lista = OrdemServico["PENF_EMAIL"].Split(";")      
-    for email in lista:                
-        Mensagem.Destinatarios.Add(email)
-    
-remetente = (OrdemServico.Responsavel).ToString()
-Mensagem.Remetente = remetente
-#OrdemServico.AdicionaComentario(Mensagem.Remetente, False)
-result = "".join(Mensagem.Destinatarios)
-#OrdemServico.AdicionaComentario(result, False)
-```
-
-## ValorComparacaoDecision — 27 scripts distintos
+## ValorComparacaoDecision — 42 scripts distintos
 Onde: alternativa do gateway: valor comparado com a expressão do gateway
-Exemplo (de Administração_-_Serviços_Gerais_Versão_26_Atividade_02_Gabriel):
+Exemplo (de Administração_-_Contratos_Versão_48_Projeto_Básico_Simplificado_Eletrônico_PBEE):
 ```python
-1
+3
 ```
-Exemplo (de Administração_-_Alteração_e_Criação_de_Subprocessos_e_Relatórios_Versão_14_Criação-Alteração_de_Subprocessos_-_Novo_Fluxo):
+Exemplo (de Gestão_de_Pessoas_-_Benefícios_Versão_84_Apoio_Psicológico):
 ```python
-False
+"Não"
 ```
-Exemplo (de Administração_-_Serviços_Gerais_Versão_26_Atividade_02_Gabriel):
+Exemplo (de Gestão_de_Pessoas_-_Benefícios_Versão_84_Apoio_Psicológico):
 ```python
-'DESPARQUIVAMENTO'
+"AGENDAMENTOPSICO"
 ```
 
-## ScriptValidacao — 26 scripts distintos
+## ScriptValidacao — 42 scripts distintos
 Onde: atividade: valida antes de avançar; pendências impedem a transição
-Identificadores de contexto: OrdemServico (23), Criticas (21), Pessoa (4), DB (4), Utils (3), Atividade (3), Evento (2)
+Identificadores de contexto: OrdemServico (39), Criticas (35), DB (11), Utils (6), Pessoa (6), Atividade (3), Evento (2)
 Exemplo (de Ascensão_Profissional_e_Movimentação_de_Pessoas_Versão_69_Contratação_de_Estagiário):
 ```python
 if OrdemServico.GetCustom("ENTREGA_DOCUMENTO") == "Parcial" :
     Criticas.AdicionaPendencia("Entrega de documentação parcial !")
 ```
-Exemplo (de Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso):
+Exemplo (de Administração_-_Contratos_Versão_44_Solicitar_reserva_de_DGCOs):
 ```python
-from Venki.Supravizio.Recurso.Custom import Pessoa
-if String.IsNullOrEmpty(OrdemServico["MATRICULA"].ToString()):
-   pessoa = Pessoa.Carrega(Convert.ToInt32(OrdemServico["FAVORECIDO_COBRA"]))
-   OrdemServico["MATRICULA"] = pessoa["MATRICULA"]
-   OrdemServico.Salva()
+sql = "select count(1) from bbts_gescon_funcionario P where p.matricula = '"+OrdemServico.Cliente["MATRICULA"].ToString()+"'"
+resultado = DB.ExecuteScalar(sql)
+if resultado.ToString() == '0':
+    Criticas.AdicionaPendencia('O Solicitante não está devidamente cadastrado no Gescon!')
 ```
-Exemplo (de Lista_de_Treinamento_Versão_5_Lista_de_Treinamento):
+Exemplo (de Contrato_com_Clientes_Versão_30_Assinatura_de_Novos_Contratos_e_Aditivos_com_Clientes -_(Uso_exclusivo_da_GEREL)''):
 ```python
-grid = OrdemServico.GetCustom('LISTA_PARTICIPANTES')
+matriculaCondTitu = str(OrdemServico.GetCustom("MATRICULA_CONDUT_TITU"))
+matriculaCondSup = str(OrdemServico.GetCustom("MATRICULA_CONDUT_SUP"))
 
-if grid.Rows.Count == 0:
-    Criticas.AdicionaPendencia('Não foi registrado nenhum participante.')
+if matriculaCondTitu == matriculaCondSup:
+    Criticas.AdicionaPendencia('O assessor escolhido não pode assumir dois papeis no contrato!')
     
-grid2 = OrdemServico.GetCustom('LISTA_TREINAMENTO2')
-
-if grid2.Rows.Count == 0:
-    Criticas.AdicionaPendencia('Não foi registrado nenhum treinamento.')
-    
-if grid2.Rows.Count > 1:
-    Criticas.AdicionaPendencia('Você só deve cadastrar um treinamento por vez.')
+elif (matriculaCondTitu == '0' or matriculaCondTitu == 0) or (matriculaCondSup == '0' or matriculaCondSup == 0):
+    Criticas.AdicionaPendencia('O assessor escolhido não pode assumir dois papeis no contrato!')
 ```
 
-## ExpressaoValor — 22 scripts distintos
+## ExpressaoValor — 25 scripts distintos
 Onde: ValorInput de atividade (ex.: chamada de subprocesso/iniciador): expressão do valor
-Identificadores de contexto: Servico (18), OrdemServico (4)
+Identificadores de contexto: Servico (21), OrdemServico (4)
 Exemplo (de Nova_Estruturação_de_Negócios_Versão_30_Assinatura_de_Contrato):
 ```python
 from Venki.Supravizio.Processo.Custom import Servico
@@ -286,35 +314,27 @@ Servico.Carrega(189)
 Exemplo (de Administração_-_Serviços_Gerais_Versão_26_Atividade_02_Gabriel):
 ```python
 from Venki.Supravizio.Processo.Custom import Servico
-Servico.Carrega('Sigla','NUMDOC')
+Servico.Carrega('Sigla','REQCAT')
 ```
 Exemplo (de Contrato_com_Clientes_Versão_30_Assinatura_de_Novos_Contratos_e_Aditivos_com_Clientes -_(Uso_exclusivo_da_GEREL)''):
 ```python
 from Venki.Supravizio.Processo.Custom import Servico
-Servico.Carrega("Sigla", "CADCONTRATO")
+Servico.Carrega("Sigla", "CNTFATERPAR")
 ```
 
-## ScriptFim — 16 scripts distintos
-Onde: atividade: executa quando a atividade termina
-Identificadores de contexto: OrdemServico (12), DB (3), Pessoa (3), AuthenticationHeaderValue (2), StringContent (2), MediaTypeWithQualityHeaderValue (2), JsonConvert (2), HttpClient (2)
-Exemplo (de Suprimentos_-_Contratos_Versão_27_Registro_de_Notas_Fiscais_de_Fornecedores):
-```python
-OrdemServico["RESPONSAVEL_ATUAL"] = OrdemServico.ResponsavelId
-```
-Exemplo (de Financeiro_-_Faturamento_de_Clientes_Versão_20_Faturamento_de_Clientes_-_Emissão_de_Notas_Fiscais):
-```python
-linhas = OrdemServico.GetCustom('GRID_NF').Rows.Count
-OrdemServico.SetCustom('NUM_DOCU', linhas.ToString())
-```
-Exemplo (de Administração_-_Contratos_Versão_44_Pré-Notificação_do_Índice_de_Desempenho_de_Fornecedores_(IDF)_):
-```python
-#OrdemServico.AdicionaComentario((OrdemServico.GetCustom('FISCAL_ADM_SGPS') == '').ToString(), False)
-#OrdemServico.AdicionaComentario(OrdemServico.GetCustom('FISCAL_ADM_SGPS'), False)
-```
-
-## ScriptConfirmado — 3 scripts distintos
+## ScriptConfirmado — 6 scripts distintos
 Onde: campo/registro de formulário: executa ao confirmar a edição
-Identificadores de contexto: Formulario (3), OrdemServico (3), Cancela (3), FormularioRegistro (2), Utils (2)
+Identificadores de contexto: Formulario (5), OrdemServico (4), Cancela (4), Utils (3), FormularioRegistro (3), Registro (2)
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Deslocamento_a_Serviço):
+```python
+if Registro["DATA_HORA_DEVOLUCAO"] < Registro["DATA_HORA_RETIRADA"]:
+   Formulario.ExibeMensagem("ATENÇÃO: Data/Hora da Devolução não pode ser menor que Data/Hora da Retirada!")
+```
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Prestação_de_Contas_-_Deslocamento):
+```python
+#if Registro["DATA_HORA_DEVOLUCAO"] < Registro["DATA_HORA_RETIRADA"]:
+#   Formulario.ExibeMensagem("ATENÇÃO: Data/Hora da Devolução não pode ser menor que Data/Hora da Retirada!")
+```
 Exemplo (de Administração_-_Bens_Patrimoniais_Versão_38_Transferência_de_Bens_Patrimoniais):
 ```python
 if (OrdemServico.Servico.Sigla == "TRANSFBENFUNCMSMUOR"):
@@ -323,15 +343,22 @@ if (OrdemServico.Servico.Sigla == "TRANSFBENFUNCMSMUOR"):
         Cancela = True
 ```
 
-## Regra — 2 scripts distintos
+## Regra — 6 scripts distintos
 Onde: iniciador por regra/temporizador: fórmula que decide a geração de ocorrências
-Exemplo (de Administração_-_Serviços_Gerais_Versão_26_Atividade_02_Gabriel):
+Identificadores de contexto: OrdemServico (4), DB (2)
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Prestação_de_Contas_-_Deslocamento):
 ```python
-1<>2
+OrdemServico["FUNCAO_DESLOCAMENTO"] != "GERENTE EXECUTIVO" and OrdemServico["RETORNO_DIA"] <= DateTime.Now
 ```
-Exemplo (de Suprimentos_-_Contratos_Versão_27_Registro_de_Notas_Fiscais_de_Fornecedores):
+Exemplo (de Administração_-_Passagens_Aéreas_e_ou_Hospedagem_Versão_39_Deslocamento_a_Serviço):
 ```python
-2880
+DateTime.Now.Date.AddDays(5) >= OrdemServico["SAIDA"]
+#DateTime.Now.Date <= OrdemServico["SAIDA"].Date.AddDays(-6)
+#DateTime.Now() > OrdemServico.DataHoraSolicitacao.AddDays(27)
+```
+Exemplo (de Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA):
+```python
+DB.ExecuteDataTable("SELECT M.STATUS FROM SV_MESSAGE M INNER JOIN OCORRENCIA O ON O.ID_OCORRENCIA = M.ID_OBJECT WHERE O.ID_OCORRENCIA = '" + OrdemServico.Id.ToString() + "'").Rows.Count > 2
 ```
 
 ## ExpressaoCalculo — 1 scripts distintos

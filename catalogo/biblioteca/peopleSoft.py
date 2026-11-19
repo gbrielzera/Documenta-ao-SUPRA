@@ -1,6 +1,6 @@
 # peopleSoft
 # Caminho: Catálogo > Biblioteca de scripts > peopleSoft
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (3 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (4 variantes entre os XMLs; esta é a mais recente)
 
 import clr
 import time
@@ -24,7 +24,7 @@ from System import *
 from System.Data import DataSet
 from System.Text import * 
 import re
-# URL da API
+# URL da API 
 url = ''
 sql="select name from sv_domain where enabled = 'Sim'"
 dom = DB.ExecuteScalar(sql)
@@ -33,11 +33,15 @@ if dom == 'HOMOLOGAÇÃO':
     url = 'http://apis.bbts.com.br:8000/func_pmi/'
     urlPS = 'http://apis1.bbts.com.br:8000/psft/'
     urlORDS = 'https://ords1.bbts.com.br/bbts/intass/psft/v1/'
+    urlBase = "https://apis.bbts.com.br/sysaid/ausencia"
+    TOKEN = "***MASCARADO***"
     tokenPS='***MASCARADO***'
 
 if dom == 'PRODUÇÃO':
     url = 'http://apis.bbts.com.br:8000/func_pmi/'
     urlPS = 'http://apis.bbts.com.br:8000/psft/'
+    urlBase = "https://apis.bbts.com.br/sysaid/ausencia"
+    TOKEN = "***MASCARADO***"
     tokenPS='***MASCARADO***'
     
 #A chamada retorna os seguintes campos:
@@ -155,6 +159,63 @@ def consultaFuncionarios(status, matricula):
         return ("{\"isSuccess\": false,\"errors\": Erro ao autenticar: " + e.Message.ToString() + ",\"data\": 0}")    
     
     
+def consultaAusenciasFerias(idFuncionario, dataInicial, dataFinal):
+
+    try:
+
+        c = HttpClient()
+
+        c.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue(
+            "Bearer",
+            TOKEN
+        )
+
+        c.Timeout = TimeSpan(0,0,15,0,0)
+
+        c.DefaultRequestHeaders.Accept.Clear()
+        c.DefaultRequestHeaders.Accept.Add(
+            MediaTypeWithQualityHeaderValue("application/json")
+        )
+
+        urlBase = "https://apis.bbts.com.br/sysaid/ausencia"
+
+        resultadoFinal = []
+
+        for tipo in ["A", "F"]:
+
+            url = (
+                urlBase +
+                "?dt_inicio=" + dataInicial +
+                "&dt_final=" + dataFinal +
+                "&tipo=" + tipo +
+                "&id_funcionario=" + idFuncionario
+            )
+
+            response = c.GetAsync(url)
+            response.Wait()
+
+            resultAsync = response.Result.Content.ReadAsStringAsync()
+            resultAsync.Wait()
+
+            result = resultAsync.Result
+
+            jsonResult = JObject.Parse(result)
+
+            if jsonResult["items"] != None:
+
+                for item in jsonResult["items"]:
+
+                    resultadoFinal.Add(item)
+
+        return resultadoFinal
+
+    except Exception as e:
+
+        return (
+            "{\"isSuccess\": false,\"errors\": \""
+            + e.Message.ToString()
+            + "\",\"data\": 0}"
+        )    
     
         
 def consultaPMI(matricula): 

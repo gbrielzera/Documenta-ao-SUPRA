@@ -1,6 +1,6 @@
 # apisLG
 # Caminho: Catálogo > Biblioteca de scripts > apisLG
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (4 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (5 variantes entre os XMLs; esta é a mais recente)
 
 import clr
 import time
@@ -149,3 +149,54 @@ def consultaMargemConsignavel(p_matricula, p_ano_folha, p_mes_folha):
     except Exception as e:
         Utils.LogError("Erro ao realizar a consulta na API LG: "+ e.Message+" Consulta realizada na url: "+chamadaAPI.ToString(), "Erro " + OrdemServico.Numero.ToString())
         return ("{\"success\": false,\"errors\": Erro ao realizar a consulta na API LG: " + e.Message.ToString() + ",\"data\": 0}")
+        
+def consultaValoresCheckupExec(p_sexo, p_idade): 
+    
+    try:
+
+        c = HttpClient()
+        token=tokenLG
+        c.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue("Bearer", token)
+        c.Timeout = TimeSpan(0,0,15,0,0)
+        c.DefaultRequestHeaders.Accept.Clear()
+        c.DefaultRequestHeaders.Accept.Add(MediaTypeWithQualityHeaderValue("application/json"))
+        response =  c.GetAsync(urlLG+"valor_checkup_exec/v1?p_empresa=001&p_codigo=59")
+        if (p_sexo=='F'):
+            response =  c.GetAsync(urlLG+"valor_checkup_exec/v1?p_empresa=001&p_codigo=58")
+        response.Wait()
+        resultAsync =  response.Result.Content.ReadAsStringAsync()
+        resultAsync.Wait()
+        result = resultAsync.Result
+        obj  = JsonConvert.DeserializeObject(result);
+        msg = 'Erro verificar no LOG do Supravizio'
+
+        if obj.success == True:
+            msg = "Lista de valores do Plano retornada com Sucesso."
+            if obj.data.ToString() == 'Null':
+                msg = msg+" Lista de valores da API retornada vazia."
+            else:
+                plano=''
+                idadeAux=''
+                for linha in obj.data:
+                    idadeI=linha.ValorInicial.ToString().Split('.');
+                    if idadeI[0].ToString() == '':
+                        idadeI[0]= '0'
+                    idadeI=Convert.ToDecimal(idadeI[0].ToString())
+                    idadeF=linha.ValorFinal.ToString().Split('.');
+                    if idadeF[0].ToString() == '99':
+                        idadeF[0] = '200'
+                    if idadeF[0].ToString() == '':
+                        idadeF[0] = '0'
+                    idadeF=Convert.ToDecimal(idadeF[0].ToString())
+                    
+                    p_idade2=Convert.ToDecimal(p_idade.ToString())
+
+                    if (p_idade2 >= idadeI and p_idade2 <= idadeF):
+                        return("{\"success\": true, \"data\": "+linha.Deducao.ToString()+"}")
+                    else:
+                        msg=' Não foram encontrados valores dentro dos parâmetros passados.'           
+        return("{\"success\": false,\"errors\": " + msg.ToString() + ",\"data\": 0}")
+
+    except Exception as e:
+        Utils.LogError("Erro ao autenticar no LG: "+ e.Message + " URL: " + urlORDS.ToString(), "Erro " + OrdemServico.Numero.ToString());
+        return ("{\"success\": false,\"errors\": Erro ao autenticar no LG: " + e.Message.ToString() + ",\"data\": 0}")

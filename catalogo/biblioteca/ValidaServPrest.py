@@ -1,6 +1,6 @@
 # ValidaServPrest
 # Caminho: Catálogo > Biblioteca de scripts > ValidaServPrest
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 def ValidaServPrest():
     if OrdemServico["PRJ_TIPO_SOLICITACAO"] == "Cadastrar":

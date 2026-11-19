@@ -1,6 +1,6 @@
 # IncluirNoEscopo
 # Caminho: Catálogo > Biblioteca de scripts > IncluirNoEscopo
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 # Observação: ainda não foi utilizado em produção. Falta verificar se existe permissão para gravar na tabela 'SV_CUSTOM_PROPERTY_SCOPE'
 # ATENÇÃO: Este script deve ser chamado no "Script Início" do  "evento inicial" para cadastrar todos os escopos utilizados no fluxo

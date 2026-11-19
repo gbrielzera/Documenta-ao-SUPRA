@@ -1,6 +1,6 @@
 # apiCadFornecedor
 # Caminho: Catálogo > Biblioteca de scripts > apiCadFornecedor
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (3 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (3 variantes entre os XMLs; esta é a mais recente)
 
 # Importa bibliotecas essenciais do ambiente .NET e do Supravizio
 import clr

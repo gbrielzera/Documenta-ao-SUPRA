@@ -1,6 +1,6 @@
 # TipoSolicitacaoEstacionamento
 # Caminho: Catálogo > Biblioteca de scripts > TipoSolicitacaoEstacionamento
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (2 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (2 variantes entre os XMLs; esta é a mais recente)
 
 def VerificaTipo(opcao):
     if opcao == "Inclusão na Fila de Espera do Estacionamento" or opcao == "Solicitar Posição na Fila de Espera":

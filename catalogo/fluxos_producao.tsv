@@ -1,14 +1,14 @@
 sigla	descricao	ativo	os_12_meses	tem_resumo
 CSCREEMBOLSO	Reembolso	Sim	25646	sim
-DESLOCAMENTO0	Deslocamento a Serviço	Sim	23150	nao
-PRESDESLOC	Prestação de Contas - Deslocamento	Sim	22312	nao
-SOLVALETRANSPDIA	Solicitação de Vale Transporte Mensal	Sim	9367	nao
+DESLOCAMENTO0	Deslocamento a Serviço	Sim	23150	sim
+PRESDESLOC	Prestação de Contas - Deslocamento	Sim	22312	sim
+SOLVALETRANSPDIA	Solicitação de Vale Transporte Mensal	Sim	9367	sim
 INDENAGUARD	Indenização por Guarda e Zelo do Veículo Locado	Sim	9245	nao
-AUXILIOHOMEOFFICE	Auxílio Home Office	Sim	6816	nao
-IDENIZACAOBASE	Indenização Por Lotação em Base Destacada	Sim	5910	nao
+AUXILIOHOMEOFFICE	Auxílio Home Office	Sim	6816	sim
+IDENIZACAOBASE	Indenização Por Lotação em Base Destacada	Sim	5910	sim
 CODETICA2324	Ciência do Código de Ética 2025/2026	Sim	3515	nao
 FALARGEPES	Fale com a Gepes	Sim	3392	sim
-CADEQUIPAMENTOTOA	Cadastro de Equipamento TOA	Sim	3233	nao
+CADEQUIPAMENTOTOA	Cadastro de Equipamento TOA	Sim	3233	sim
 ACEITEPOL900	Aceite POL900 - Política de Compliance	Sim	3144	nao
 AVALIFORNECEDORES	Avaliação de Fornecedores	Sim	3039	nao
 INSERIRDOCSGESCON	Inserir Documentos Contratuais no Sisccon	Sim	2824	sim
@@ -95,7 +95,7 @@ ATUALIZACAOCADASTRAL	Gestão de Pessoas - Atualização Cadastral	Nao	399	nao
 REVISAOOC	Solicitar Revisão de Ordem de Compras	Sim	391	nao
 TRANSCOBRA	Transferência de Funcionário BBTS	Sim	391	nao
 HOF100	Flexibilização do home office	Sim	380	nao
-BASEDESTACADALOTE	Indenização por Lotação em base Destacada (Abertura em Lote)	Sim	375	nao
+BASEDESTACADALOTE	Indenização por Lotação em base Destacada (Abertura em Lote)	Sim	375	sim
 LICICONTPUBLIEXTRDOU	Licitações e Contratos - Publicação Extrato DOU no site BBTS	Sim	375	nao
 VALIDDESIGN	Validação Colaborador Movimentado	Sim	374	nao
 CADASTROITENS	Cadastro de Itens	Sim	372	nao
@@ -106,7 +106,7 @@ CADUSUTOA	Manutenção de Usuários TOA	Sim	347	nao
 PRESTACAOAPORTE	Prestação de Contas - Aporte	Sim	346	nao
 EDCR	Educação Continuada - Reembolso	Sim	340	nao
 REVACINA	Reembolso Vacina	Nao	338	nao
-PBEE	Projeto Básico Simplificado Eletrônico	Sim	337	nao
+PBEE	Projeto Básico Simplificado Eletrônico	Sim	337	sim
 PAGFOPAG	Solicitação de Pagamentos FOPAG	Sim	333	nao
 KITCELULAR	Reembolso para Kit de Proteção de Celular Corporativo	Sim	333	nao
 SUBRESSARCIMENTO	Subprocesso - Parcelamento de Multas	Sim	327	nao
@@ -336,7 +336,7 @@ PROCESSADM	Processo Administrativo	Sim	8	nao
 INCLUDEINVENTARIO	Inclusão de Inventário	Sim	7	sim
 BBEMINUTIL	Informar Bem Patrimonial para Inutilização	Sim	7	nao
 CIDADECLASSIFICACAO	Cidades e Classificações	Sim	7	nao
-REEMBOLSOINICIATIVAIA	Reembolso - Iniciativa IA	Sim	7	nao
+REEMBOLSOINICIATIVAIA	Reembolso - Iniciativa IA	Sim	7	sim
 LICENCAOINTERESSE	Licença Interesse	Nao	7	nao
 CRITPECAS	Criticidade de Peças	Sim	7	sim
 NFCARTACORRECAO	Criação de Carta de Correção	Sim	6	nao

@@ -1,6 +1,6 @@
 # estacao_de_trabalho_webservice
 # Caminho: Catálogo > Biblioteca de scripts > estacao_de_trabalho_webservice
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 def listaDeAgendamentos():
     

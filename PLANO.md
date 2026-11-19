@@ -4,22 +4,22 @@ Lista do que o usuário pode levantar e mandar para o chat incorporar ao projeto
 **como fazer**, **como enviar** e **o que o chat faz depois**. Marque `[x]` ao entregar; o chat registra a data e o que
 foi incorporado na tabela do fim.
 
-Atualizado em 2026-10-25, depois de incorporar o material do Felipe. Para um chat novo: ao receber um arquivo, consulta,
-print ou texto do usuário, ache aqui a que item corresponde, incorpore (ferramentas em `CLAUDE.md`) e registre a entrega.
+Atualizado em 2026-11-19, depois da entrega de 2026-10-28 (schema, mapa de fluxos, versão, motivos de ANS e prints do
+Formulário carregado). Para um chat novo: ao receber um arquivo, consulta, print ou texto do usuário, ache aqui a que item
+corresponde, incorpore (ferramentas em `CLAUDE.md`) e registre a entrega.
 
 ## Ordem sugerida
-Comece por 11, 1 e 2 (menos de 15 minutos no total e o maior ganho). Depois 3 e 4. O resto, quando der.
+Já entregues: 1, 2, 11 e 14 (e o 4 em parte). A ordem abaixo põe primeiro o que mais aumenta o acerto da IA.
 
-| Ordem | Item | Tempo | O que é |
-|---|---|---|---|
-| 1 | 11 | 1 min | versão do sistema (texto) |
-| 2 | 1 | 5 min | schema completo do banco (1 consulta) |
-| 3 | 2 | 5 min | mapa dos fluxos com volume (1 consulta) |
-| 4 | 3 | 15 min + testes | testes em Qualidade (texto) |
-| 5 | 4 | 20 min | prints do Editor de Scripts (imagens) |
-| 6 | 5, 13, 14 | 10 min | cadastros de apoio (7 consultas curtas) |
-| 7 | 6 e 12 | depende | XMLs de produção e do Felipe |
-| 8 | 7, 8, 15, 9, 10 | quando der | diário, prints de propriedades, comportamentos das aulas, pendências |
+| Ordem | Item | Tempo | O que é | Ganho |
+|---|---|---|---|---|
+| 1 | 6 | 20 min | XMLs dos próximos 10 maiores fluxos sem resumo | cobertura das OS de 53,4% para ~68% |
+| 2 | 4 | 20 min | prints do Editor de Scripts dos tipos que faltam | variáveis certas em cada tipo de script |
+| 3 | 16 | 2 min | reexportar o mapa de campos | nomes e colunas de campos novos (ex.: `PEC_*`) |
+| 4 | 3 | 15 min + testes | testes T1–T4 em Qualidade | receitas centrais viram `[testado]` |
+| 5 | 7 | contínuo | diário de perguntas reais | mostra onde a skill erra |
+| 6 | 5, 13 | 10 min | cadastros de apoio e conexões externas | propostas reaproveitam o que existe |
+| 7 | 8, 15, 12, 9, 10 | quando der | prints de propriedades, comportamentos das aulas, Felipe, pendências | |
 
 ## Como obter e enviar: guia geral
 
@@ -82,7 +82,7 @@ ajusta o passo a passo.
 ## Prioridade alta
 
 ### 11. Versão do sistema (1 minuto)
-- [ ] **Por que:** as aulas que o projeto usa são da versão 11.1.2 (2020), os XMLs dizem 19.1.1 e as DLLs 18.1.1. Saber a versão
+- [x] **Entregue em 2026-10-28.** **Por que:** as aulas que o projeto usa são da versão 11.1.2 (2020), os XMLs dizem 19.1.1 e as DLLs 18.1.1. Saber a versão
   real diz quanto do que aprendemos vale e o que deve ser conferido.
 - **Como fazer:** no cliente do Supravizio, menu **Ajuda > Sobre**. Anote a versão do cliente. Se houver tela com a versão do
   servidor ou da base (em Utilitários ou no Gerenciamento de Ambiente), anote também. Se não achar o menu, tire um print da
@@ -91,7 +91,7 @@ ajusta o passo a passo.
 - **O chat faz:** atualiza `guias/contexto.md` e marca quais regras das aulas precisam de teste.
 
 ### 1. Schema completo do banco
-- [ ] **Por que:** hoje só temos as colunas reais de 4 tabelas; o resto vem da documentação de 2018. Com o schema completo,
+- [x] **Entregue em 2026-10-28.** **Por que:** antes só havia as colunas reais de 4 tabelas; agora são 776 (`catalogo/schema_real.tsv`). Com o schema completo,
   as respostas de SQL deixam de depender de suposição e aparecem as tabelas do cliente (`TB_*`, `VW_*`, `SV_*`).
 - **Como fazer:** execute no ambiente de **produção** (guia geral, "Consulta de banco"). Dá cerca de 30 mil linhas, então carregue
   todas ou use a exportação:
@@ -104,7 +104,7 @@ ajusta o passo a passo.
 - **Cuidado:** só estrutura; esta consulta não traz dados de pessoas.
 
 ### 2. Mapa dos fluxos em produção, com volume
-- [ ] **Por que:** mostra quais fluxos existem, quais estão ativos e quais são usados de verdade (OS nos últimos 12 meses).
+- [x] **Entregue em 2026-10-28.** **Por que:** mostra quais fluxos existem, quais estão ativos e quais são usados de verdade (OS nos últimos 12 meses).
   Orienta em quais fluxos o conhecimento do projeto deve ser mais fiel e quais XMLs vale a pena exportar.
 - **Como fazer:** execute em **produção**:
   ```sql
@@ -137,7 +137,10 @@ ajusta o passo a passo.
 - **Mais enxuto agora:** T5 (`Mensagem.Cancelar`) e T6 (assíncrono) já têm evidência de aula; entram só se sobrar tempo.
 
 ### 4. Prints do Editor de Scripts
-- [ ] **Por que:** é a maior lacuna: as variáveis disponíveis em cada tipo de script estão no código ofuscado das DLLs e não
+- [~] **Recebido em 2026-10-28:** Object Browser e autocompletar do script **Formulário carregado** (`catalogo/api_19_object_browser.md`).
+  **Faltam:** Validação, Início, Fim, Seleção de Atores, Fórmula do desvio, Modificado de campo, Modificado de coluna de grid, Evento
+  de mensagem e recuperação de opções. Em cada um, olhe também se `Utils` tem `ExecuteDataTable` (no Formulário carregado não tinha).
+- **Por que:** é a maior lacuna: as variáveis disponíveis em cada tipo de script estão no código ofuscado das DLLs e não
   dá para extrair. O editor mostra isso na árvore à direita e no autocompletar.
 - **Como fazer:** para cada tipo de script, abra a tarefa (ou o campo) e o Editor de Scripts:
   1. Expanda a **árvore à direita** (objetos e variáveis) e tire um print.
@@ -180,7 +183,7 @@ ajusta o passo a passo.
 - **Cuidado:** **não** traga a coluna `CONNECTION_STRING` (tem servidor e senha). A consulta acima já a omite.
 
 ### 14. Motivos de interrupção de ANS
-- [ ] **Por que:** responde perguntas de prazo e de pausa na aprovação.
+- [x] **Entregue em 2026-10-28.** **Por que:** responde perguntas de prazo e de pausa na aprovação.
 - **Como fazer:** em produção:
   ```sql
   SELECT DESCRICAO, COMENTARIO_OBRIGATORIO, TEMPO_MAXIMO FROM MOTIVO_INTER_SLA ORDER BY DESCRICAO;
@@ -191,7 +194,12 @@ ajusta o passo a passo.
 ### 6. XMLs exportados de produção
 - [ ] **Por que:** os 76 XMLs atuais parecem vir de **Qualidade** (trazem 868 campos que a produção não tem). XMLs da produção
   deixam os resumos fiéis ao que roda de verdade.
-- **Como fazer:** use a lista do item 2 e exporte da **produção** os fluxos que você mais mexe (guia geral, "XMLs"). Poucos já ajudam.
+- [~] **Recebido em 2026-11-19:** 11 XMLs (Deslocamento, Prestação de Contas, Vale Transporte, Home Office, Base Destacada e o
+  lote dela, Equipamento TOA, Reembolso v93, Reembolso IA, PBEE, Faturamento). A cobertura das OS passou de 21,6% para **53,4%**.
+- **Próximo alvo** (`catalogo/fluxos_producao.md`), leva a cobertura a ~68%: INDENAGUARD, CODETICA2324, ACEITEPOL900,
+  AVALIFORNECEDORES, GPESSOASTEMPORARIO, ANONIMIZACAO, EMISEXTMENSAL, CSCGDP, CONTASPAGAR, TERMODEDESIGNACAO.
+- **Cuidado com o nome do arquivo:** se o título tiver nome de pessoa (ex.: "(Fulana)"), o chat tira antes de resumir.
+- **Como fazer:** exporte da **produção** os fluxos acima (guia geral, "XMLs"). Mesmo poucos já ajudam.
 - **Como enviar:** copie os `.xml` para `XMLs para teste` e avise os nomes.
 - **O chat faz:** `tools/fluxo.py resumir`, `guias.py`, `mascarar.py`, reindexa e remonta a skill.
 - **Cuidado:** XML contém dados da empresa e credenciais na biblioteca de scripts; só o resumo mascarado vai para o projeto
@@ -235,6 +243,19 @@ ajusta o passo a passo.
 - **Como enviar:** texto, uma linha por ponto: "funcionou como a aula" ou o que viu de diferente.
 - **O chat faz:** corrige `guias/aulas_resumo.md` e `guias/contexto.md`.
 
+### 16. Reexportar o mapa de campos (2 minutos)
+- [ ] **Por que:** `catalogo/campos_banco.tsv` é de 2026-10-08, e o schema de 2026-10-26 já tem 31 colunas a mais em `CPE_CSC`
+  (ex.: `PEC_*`). Campo novo sem mapa = script com nome ou coluna errada.
+- **Como fazer:** em produção, a mesma consulta de antes (exporte todas as linhas):
+  ```sql
+  SELECT P.NAME, P.TEXT, P.TYPE, P.CONTROL, P.TABLE_NAME, P.TABLE_COLUMN, P.LENGTH, P.INVALID, C.NAME AS CLASSE
+  FROM SV_CUSTOM_PROPERTY P INNER JOIN SV_CLASS C ON C.ID_CLASS = P.ID_CLASS
+  ORDER BY C.NAME, P.TABLE_NAME, P.NAME;
+  ```
+- **Como enviar:** arquivo `campos.txt` na pasta `Envios`.
+- **O chat faz:** `tools/campos_banco.py` atualiza `catalogo/campos_banco.tsv` e `catalogo/campos_vs_banco.md`.
+- **Cuidado:** só metadados de campo; não traz dados de pessoas.
+
 ---
 
 ## Quando der
@@ -261,3 +282,4 @@ ajusta o passo a passo.
 |---|---|---|
 | 2026-10-25 | 12 (parcial) | Material do Felipe: aulas por tema, padrões de erro de script, imports, regras de aprovação e ANS/ANO |
 | 2026-10-28 | 1, 2, 11, 14, 4 (parcial) | Schema completo de produção (776 tabelas); mapa de fluxos por volume (`catalogo/fluxos_producao.*`); versão 19.1.1; motivos de interrupção do ANS; prints do Object Browser (OrdemServico, Utils, QueryString, PowerShell, WebService, Formulario) em `catalogo/api_19_object_browser.md` |
+| 2026-11-19 | 6 (parcial) | 11 XMLs de produção resumidos em `fluxos/` (87 fluxos no total); cobertura das OS de 21,6% para 53,4%; nomes de pessoas tirados dos títulos |

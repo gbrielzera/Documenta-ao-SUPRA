@@ -20,4 +20,4 @@ skill-build/
 dist/
 
 # Envios do usuário (prints e consultas com dados internos; não publicar)
-Envios/
+Envios*/

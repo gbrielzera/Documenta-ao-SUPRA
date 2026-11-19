@@ -1,6 +1,6 @@
 # validarTamCampo
 # Caminho: Catálogo > Biblioteca de scripts > validarTamCampo
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml (2 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (2 variantes entre os XMLs; esta é a mais recente)
 
 def validarTamCampo(valor, tam, int, dec):
 

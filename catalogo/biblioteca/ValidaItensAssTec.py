@@ -1,6 +1,6 @@
 # ValidaItensAssTec
 # Caminho: Catálogo > Biblioteca de scripts > ValidaItensAssTec
-# Fonte: Gestão_de_Pessoas_-_Benefícios_Versão_90_Reembolso.xml
+# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
 
 def ValidaItensAssTec():
     if OrdemServico["PRJ_TIPO_SOLICITACAO"] == "Cadastrar":

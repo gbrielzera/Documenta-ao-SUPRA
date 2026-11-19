@@ -1,21 +1,16 @@
 # Fluxos em produção (OS dos últimos 12 meses)
 
-Fonte: consulta do usuário em produção, 2026-10-28 (`catalogo/fluxos_producao.tsv`: sigla, descrição, ativo, OS em 12 meses, se há resumo em `fluxos/`). [banco]
+Fonte: consulta do usuário em produção. 2026-10-28 (`catalogo/fluxos_producao.tsv`: sigla. descrição. ativo. OS em 12 meses. se há resumo em `fluxos/`). [banco]
 
-- 813 fluxos listados (205 inativos, 402 sem nenhuma OS em 12 meses); 225.056 OS no total.
-- Há resumo em `fluxos/` de 49 siglas, que somam 48.643 OS = 21,6% do volume. O fluxo CSCREEMBOLSO (25.646 OS) sozinho já é 11,4%.
-- Os 25 fluxos de maior volume **sem** resumo (candidatos a pedir o XML, item 3 do PLANO):
+- 813 fluxos listados (205 inativos. 402 sem nenhuma OS em 12 meses); 225.056 OS no total.
+- Há resumo em `fluxos/` de 58 siglas. que somam 120.150 OS = **53.4%** do volume (era 21.6% antes dos XMLs de 2026-11-19).
+- Com os 10 primeiros da tabela abaixo a cobertura iria a ~68%.
+- Os 25 fluxos de maior volume **sem** resumo (candidatos a pedir o XML. item 6 do PLANO):
 
 | Sigla | Descrição | OS em 12 meses |
 |---|---|---|
-| DESLOCAMENTO0 | Deslocamento a Serviço | 23150 |
-| PRESDESLOC | Prestação de Contas - Deslocamento | 22312 |
-| SOLVALETRANSPDIA | Solicitação de Vale Transporte Mensal | 9367 |
 | INDENAGUARD | Indenização por Guarda e Zelo do Veículo Locado | 9245 |
-| AUXILIOHOMEOFFICE | Auxílio Home Office | 6816 |
-| IDENIZACAOBASE | Indenização Por Lotação em Base Destacada | 5910 |
 | CODETICA2324 | Ciência do Código de Ética 2025/2026 | 3515 |
-| CADEQUIPAMENTOTOA | Cadastro de Equipamento TOA | 3233 |
 | ACEITEPOL900 | Aceite POL900 - Política de Compliance | 3144 |
 | AVALIFORNECEDORES | Avaliação de Fornecedores | 3039 |
 | GPESSOASTEMPORARIO | Gestão de Pessoas - Trabalhador Temporário | 2512 |
@@ -33,5 +28,11 @@ Fonte: consulta do usuário em produção, 2026-10-28 (`catalogo/fluxos_producao
 | FALEPV | Fale com o Programa Valor | 1347 |
 | CONJUR | Consultas Jurídicas | 1303 |
 | DADOSBANCARIOS | Atualização de dados bancários | 1233 |
+| NFLANCRI | Geração automática de OS para lancamento de notas fiscais no RI | 1189 |
+| FOLHAPONTOUOR | Envio de Folha de Ponto | 1188 |
+| PENFRI | Lançamento de nota fiscal no RI sem gerar pagamento | 1186 |
+| FEEDBACKCOJUR | Feedback de Atendimento | 1115 |
+| FISCALADMV360 | Fiscalização Administrativa V360 | 1082 |
+| PROVISAOVERBA | Provisionar - SGPS | 1073 |
 
 Use o volume para priorizar: pergunta sobre fluxo grande tende a ser mais comum.
