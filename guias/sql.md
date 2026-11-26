@@ -7,6 +7,9 @@ Fontes: exports de **produção** feitos pelo usuário em 2026-10-08 (`catalogo/
 homologação e produção (sem insert/update/delete). Banco **Oracle**. Onde o repositório e o banco
 divergirem, vale o banco.
 
+**Servidor [testado 2026-11-26]:** Oracle 19c (aceita `LISTAGG` e `FETCH FIRST n ROWS ONLY`). Em script, a sessão usa
+`NLS_DATE_FORMAT` `DD-MON-RR` e decimal com ponto: converta datas sempre com `TO_DATE`/`TO_CHAR` e máscara explícita.
+
 ## Regras de ouro
 1. **Parta da OCORRENCIA filtrada.** Ela tem 1,6 milhão de linhas; filtre por `ID_CLASSE_SUB_PROC`
    (fluxo), `SITUACAO`, `ID_CLIENTE`, `ID_RESPONSAVEL`, `DATA_HORA_CRIACAO` ou `(ID_DOMAIN, NUMERO)`,

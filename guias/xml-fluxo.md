@@ -64,3 +64,12 @@ Cabeçalho (sigla, versão, ids, dono, serviços) → `## Grafo do fluxo` (uma l
 e destinos) → `## Gateways` → `## Atividades` (config fora do padrão, operações, campos, scripts
 inteiros) → `## Papéis usados` → `## Campos customizados usados` → biblioteca referenciada.
 Valores padrão e `false` são omitidos; se precisar do detalhe completo de um nó, usar `bruto`.
+
+## Editar um XML e importar (testado em Qualidade, 2026-11-26)
+Só em fluxo de teste, numa cópia do arquivo, preservando BOM e quebras de linha.
+- A mesma atividade, gateway ou campo aparece repetido no XML (figura do diagrama e lista do subprocesso): altere todas as cópias.
+- Todo script precisa de conteúdo depois de `# INICIO SCRIPT USUARIO`. Para esvaziar, escreva `pass`. Só com o cabeçalho, a
+  importação falhou com "startIndex não pode ser maior que o comprimento de cadeia de caracteres"; com `pass`, importou.
+- Desvio paralelo virou exclusivo trocando `Tipo` para `DataBasedExclusiveDecision`, com `ExpressaoComparacaoDecision` no
+  gateway e `ValorComparacaoDecision` em cada `Emissor`; importou e a expressão executou.
+- Campos customizados, papéis e bibliotecas que vêm no XML são compartilhados: não os altere.

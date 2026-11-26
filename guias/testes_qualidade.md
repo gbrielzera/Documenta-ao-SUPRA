@@ -75,3 +75,8 @@ Nunca cole nomes reais: troque por "(nome)". Se der erro com código (ex.: PR002
 ## Resultados
 | Teste | Data | Resultado | Conclusão incorporada |
 |---|---|---|---|
+| T8: diagnóstico completo (XML rodada 3) | 2026-11-26 | 18 seções completas; ao avançar, `ORA-00001 PK_EVENTO_OCORR` por excesso de comentários | `catalogo/runtime_19.md`, `guias/scripts.md` e `guias/sql.md` |
+| T7c: variáveis no Volta e na fórmula do desvio (XML rodada 2) | 2026-11-26 | OK nos dois; XML importado depois de dar conteúdo aos scripts vazios | `guias/scripts.md` e `guias/xml-fluxo.md` |
+| T7b: nomes e tipos das variáveis (XML ajustado) | 2026-11-26 | OK em Início, Fim, Validação, Formulário carregado e Modificado de campo | `guias/scripts.md`: tabela de variáveis por tipo |
+| Comentário só com espaço no Script Início | 2026-11-26 | ERRO: Preenchimento obrigatório para o campo 'Mensagem' | `guias/scripts.md`: nunca gravar comentário vazio |
+| T7: `dir()` e `dir(Utils)` por tipo de script | 2026-11-26 | Rodou em Início, Validação, Fim, Formulário carregado e Modificado; comentário cortado em 1.000 caracteres | `guias/scripts.md`: variáveis até a letra C e `Utils` completo; falta o restante dos nomes |

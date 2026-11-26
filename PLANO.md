@@ -14,7 +14,7 @@ Já entregues: 1, 2, 11 e 14 (e o 4 em parte). A ordem abaixo põe primeiro o qu
 | Ordem | Item | Tempo | O que é | Ganho |
 |---|---|---|---|---|
 | 1 | 6 | 20 min | XMLs dos próximos 10 maiores fluxos sem resumo | cobertura das OS de 53,4% para ~68% |
-| 2 | 4 | 20 min | prints do Editor de Scripts dos tipos que faltam | variáveis certas em cada tipo de script |
+| 2 | 4 | 10 min | variáveis dos tipos de script que faltam (4) | variáveis certas em cada tipo de script |
 | 3 | 16 | 2 min | reexportar o mapa de campos | nomes e colunas de campos novos (ex.: `PEC_*`) |
 | 4 | 3 | 15 min + testes | testes T1–T4 em Qualidade | receitas centrais viram `[testado]` |
 | 5 | 7 | contínuo | diário de perguntas reais | mostra onde a skill erra |
@@ -137,9 +137,9 @@ ajusta o passo a passo.
 - **Mais enxuto agora:** T5 (`Mensagem.Cancelar`) e T6 (assíncrono) já têm evidência de aula; entram só se sobrar tempo.
 
 ### 4. Prints do Editor de Scripts
-- [~] **Recebido em 2026-10-28:** Object Browser e autocompletar do script **Formulário carregado** (`catalogo/api_19_object_browser.md`).
-  **Faltam:** Validação, Início, Fim, Seleção de Atores, Fórmula do desvio, Modificado de campo, Modificado de coluna de grid, Evento
-  de mensagem e recuperação de opções. Em cada um, olhe também se `Utils` tem `ExecuteDataTable` (no Formulário carregado não tinha).
+- [~] **Quase concluído (2026-11-26):** variáveis confirmadas por teste em Início, Fim, Validação, Formulário carregado,
+  Modificado de campo, Volta e Fórmula do desvio (`guias/scripts.md`). Os prints desses tipos não são mais necessários.
+  **Faltam:** Modificado de coluna de grid, Seleção de Atores, Evento de mensagem e recuperação de opções.
 - **Por que:** é a maior lacuna: as variáveis disponíveis em cada tipo de script estão no código ofuscado das DLLs e não
   dá para extrair. O editor mostra isso na árvore à direita e no autocompletar.
 - **Como fazer:** para cada tipo de script, abra a tarefa (ou o campo) e o Editor de Scripts:
@@ -283,3 +283,7 @@ ajusta o passo a passo.
 | 2026-10-25 | 12 (parcial) | Material do Felipe: aulas por tema, padrões de erro de script, imports, regras de aprovação e ANS/ANO |
 | 2026-10-28 | 1, 2, 11, 14, 4 (parcial) | Schema completo de produção (776 tabelas); mapa de fluxos por volume (`catalogo/fluxos_producao.*`); versão 19.1.1; motivos de interrupção do ANS; prints do Object Browser (OrdemServico, Utils, QueryString, PowerShell, WebService, Formulario) em `catalogo/api_19_object_browser.md` |
 | 2026-11-19 | 6 (parcial) | 11 XMLs de produção resumidos em `fluxos/` (87 fluxos no total); cobertura das OS de 21,6% para 53,4%; nomes de pessoas tirados dos títulos |
+| 2026-11-26 | 4 (parcial) | Teste `dir()` em 5 tipos de script: `Utils` completo confirmado; variáveis até a letra C (`Atividade` em Início e Fim; `AvancaProximaAtividade` só em Início); comentário corta em 1.000 caracteres |
+| 2026-11-26 | 4 | Variáveis e tipos de 5 tipos de script confirmados por teste em Qualidade (`guias/scripts.md`) |
+| 2026-11-26 | 4 | Variáveis do Volta e da Fórmula do desvio; edição de XML importada com sucesso |
+| 2026-11-26 | 3 e 4 (parcial) | Diagnóstico do ambiente de scripts: módulos Python, referências .NET, bibliotecas, membros em tempo de execução, versão do Oracle (`catalogo/runtime_19.md`) |

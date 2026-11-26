@@ -193,7 +193,7 @@ except Exception as e:
     Utils.LogError("API colaboradores: " + str(e), "Integração")
 ```
 GET: `client.GetAsync(url).Result`. Token/URL: buscar de parâmetro (ex.: tabelas `SV_PARAM`/`SERVICES_PARAM`
-usadas nos fluxos), não fixar no script. SOAP: `Webservices.LoadWebService` (docs/loadwebservice.md).
+usadas nos fluxos), não fixar no script. SOAP: `Utils.LoadWebService` (listado por `dir(Utils)` na 19.1.1; existe também a variável `WebService`; ver docs/loadwebservice.md; chamada não testada).
 
 ## 15. Travas no Script Validação
 [doc] docs/tarefas.md + [fluxo] `Criticas`

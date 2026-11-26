@@ -33,14 +33,57 @@ Antes de escrever um script, confira sempre:
 | ValorComparacaoDecision | Alternativa do gateway | literal/expressão comparada (OperadorDecision) | docs/objetos_emissor.md |
 | Source | Biblioteca de Scripts (só `def`s) | importada pelo menu "Importar bibliotecas de scripts" | docs/biblioteca_de_scripts.md |
 
+### Variáveis por tipo de script — [testado] na 19.1.1 (Qualidade, portal web, 2026-11-26)
+
+Em **todos** os sete tipos abaixo: `OrdemServico`, `DB`, `Utils`, `AD`, `OpenLDAP`, `PowerShell`, `WebService`.
+
+| Script | Variáveis a mais | Tipo |
+|---|---|---|
+| Início | `Atividade`, `AvancaProximaAtividade` | `Atividade`, `bool` |
+| Fim | `Atividade` | `Atividade` |
+| Validação | `Criticas` | `CriticaValidacaoList` |
+| Volta | `Atividade` | `Atividade` |
+| Fórmula do desvio | nenhuma (sem `Atividade` e sem `AvancaProximaAtividade`) | |
+| Formulário carregado | `Formulario`, `QueryString` | `FormularioTarefa`, `NameValueCollection` |
+| Modificado de campo | `Formulario`, `Controle`, `QueryString` | `FormularioTarefa`, `ControleFormularioWeb`, `NameValueCollection` |
+
+Portanto: `Criticas` só existe na Validação; `Formulario` só nos scripts de formulário; `Atividade` só em Início, Fim e Volta.
+Não testados: Modificado de coluna de grid, Seleção de Atores, Evento e recuperação de opções.
+A fórmula do desvio é uma expressão única; nela `AdicionaComentario` funcionou (retorna `None`), útil para depurar:
+`OrdemServico.AdicionaComentario("texto", False) is None`.
+
+A Validação pode rodar mais de uma vez: por padrão ela também é executada no fim do processo (parâmetro **Executar Script
+de validação na finalização**, docs/tarefas.md; ligado no fluxo de teste). No teste de uma tarefa ela gravou 2 comentários
+seguidos antes de finalizar; parte das repetições pode ter sido o usuário refazendo a tarefa para testar o Volta. Não
+coloque na Validação nada que não possa repetir.
+
+- `dir(Utils)` é igual nos cinco tipos e inclui `ExecuteDataTable`, `ExecuteScalar`, `ExecuteNonQuery`, `ExecuteStoredProc` e `SendMail`.
+- O comentário gravado por `AdicionaComentario` apareceu cortado em 1.000 caracteres: divida textos longos.
+- `AdicionaComentario(" ", False)` (texto vazio ou só espaço) derruba a operação com "Preenchimento obrigatório para o
+  campo 'Mensagem'" (`Evento.ModelValidateState`); visto ao abrir a OS, com o script no Início da tarefa.
+
+### Ambiente de execução — [testado] 2026-11-26 (detalhes em `catalogo/runtime_19.md`)
+- **A biblioteca padrão do Python quase não existe.** `re`, `datetime`, `time`, `math`, `itertools` e `unicodedata` importam;
+  `json`, `csv`, `base64`, `hashlib`, `urllib2`, `os`, `io`, `random`, `uuid`, `collections`, `zipfile` e `xml` **não**. Use .NET
+  (`Newtonsoft.Json`, `Convert`, `System.IO`, `HttpClient`, `Guid`...).
+- Carregam por `clr.AddReference`: `System.Net.Http`, `System.Xml.Linq`, `System.Web.Extensions`, `System.IO.Compression.FileSystem`,
+  `Newtonsoft.Json`, `ICSharpCode.SharpZipLib`. Não há EPPlus, ClosedXML, NPOI, OpenXml, iTextSharp nem Aspose.
+- DevExpress (planilha, documento, PDF) está carregado, mas é comercial: confirme a licença antes de usar em script.
+- No portal web, `Controle` e `Formulario["CAMPO"]` são `ControleFormularioWeb`. `Formulario` expõe `Controles` (dicionário),
+  `PossuiControle`, `PermiteExecutarScriptModificado`, `ModificaMascaraCampo`.
+- **Muitos comentários derrubam a operação.** Cada `AdicionaComentario` da mesma execução recebeu um horário 1 s à frente
+  (cerca de 60 comentários ocuparam 74 s). Comentários gravados depois, dentro desse intervalo, deram
+  `ORA-00001 ... PK_EVENTO_OCORR` ao avançar (causa provável: horário repetido). Grave poucos comentários e nunca em laço longo.
+  O limite de 1.000 caracteres corresponde à coluna `EVENTO_OCORR.MENSAGEM` (`NVARCHAR2` de 2.000 bytes).
+
 ## Objetos globais (Recursos Avançados)
 
 | Objeto | Para quê | Página |
 |---|---|---|
 | `DB` | `ExecuteDataTable(sql[, database])`, `ExecuteScalar`, `ExecuteNonQuery`, `ExecuteStoredProc`, `NewDBInputParam`... | docs/objeto_db.md e docs/db_*.md |
 | `Utils` | `LogError`, `LogInformation`, `LogWarning`, `SendMail`, `IF`; nos fluxos reais também `Utils.ExecuteDataTable/ExecuteScalar` | docs/utils.md |
-| `AD` / `LDAP` | Active Directory e OpenLDAP (criar usuário, grupos, propriedades) | docs/objeto_ad.md, docs/objeto_ldap.md |
-| `Webservices` | `LoadWebService` (SOAP) | docs/webservices.md, docs/loadwebservice.md |
+| `AD` / `OpenLDAP` | Active Directory e OpenLDAP (criar usuário, grupos, propriedades) | docs/objeto_ad.md, docs/objeto_ldap.md |
+| `WebService` | `LoadWebService` (SOAP) | docs/webservices.md, docs/loadwebservice.md |
 | PowerShell | `PSExecuteCmdlet` | docs/objeto_powershell.md |
 | Jobs | scripts agendados | docs/recursos_avancados_jobs_customizados.md |
 
