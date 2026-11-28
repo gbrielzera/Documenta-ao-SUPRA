@@ -1,6 +1,6 @@
 # apiProJurid
 # Caminho: Catálogo > Biblioteca de scripts > apiProJurid
-# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml (3 variantes entre os XMLs; esta é a mais recente)
+# Fonte: Utilização_de_veículo_locado_Versão_10_Indenização_por_Guarda_e_zelo_do_veículo_da_frota_(Lote).xml (4 variantes entre os XMLs; esta é a mais recente)
 
 import clr
 clr.AddReference("Newtonsoft.Json")
@@ -77,11 +77,11 @@ def autenticaProjurid():
         #Criando o cliente HTTP
         client = HttpClient()
         
-        #Utils.LogError(" client " + client.ToString() + " URL: " + urlPost.ToString() , "Debug " + OrdemServico.Numero.ToString())
+        Utils.LogError(" client " + client.ToString() + " URL: " + urlPost.ToString() , "Debug " + OrdemServico.Numero.ToString())
         #Definindo o conteúdo da requisição como x-www-form-urlencoded
         content = FormUrlEncodedContent(params)
         
-        #Utils.LogError(" content " + content.ToString() + " URL: " + urlPost.ToString() , "Debug " + OrdemServico.Numero.ToString())
+        Utils.LogError(" content " + content.ToString() + " URL: " + urlPost.ToString() , "Debug " + OrdemServico.Numero.ToString())
         
         Utils.LogError("Realizando requisição POST para " + urlPost.ToString() , "Debug " + OrdemServico.Numero.ToString())
         
@@ -299,7 +299,7 @@ def IncluiDeposito():
         contaJudicial = OrdemServico.GetCustom("CCMEMORANDO")
         
         if not observacao or not abrevBanco or not contaJudicial:
-            Utils.LogError("Dados essenciais do processo estão faltando " , "Erro " + OrdemServico.Numero.ToString())
+            Utils.LogError("Dados essenciais do processo estão faltando2 " , "Erro " + OrdemServico.Numero.ToString())
             return ("{\"isSuccess\": false,\"errors\": Dados essenciais do processo estão faltando: Observação, Nome do Banco ou Conta Judicial,\"data\": 0}")
         
         # Limitando a 512 caracteres 
@@ -330,7 +330,7 @@ def IncluiDeposito():
         
         #Utils.LogError("Passa Json1" + json1.ToString() , "Debug " + OrdemServico.Numero.ToString())
         
-        #Utils.LogError("Passa Json" , "Debug " + OrdemServico.Numero.ToString())
+        Utils.LogError("Passa Json" , "Debug " + OrdemServico.Numero.ToString())
         
         #OrdemServico.AdicionaComentario(json.ToString(), False)
         #OrdemServico.Justificativa = json.ToString()
@@ -338,6 +338,7 @@ def IncluiDeposito():
         
         # Autenticação e envio da requisição
         token = autenticaProjurid()
+        Utils.LogInformation(token.ToString(),'DEBUG')
         
         if token is None:
             Utils.LogError("Erro ao obter token de autenticação. ", "Erro " + OrdemServico.Numero.ToString())
@@ -354,10 +355,12 @@ def IncluiDeposito():
         if response.IsSuccessStatusCode:
             #return response.Content.ReadAsStringAsync().Result
             result = response.Content.ReadAsStringAsync().Result
+            Utils.LogError("Resposta com status sucesso: " + result.ToString() , "Debug " + OrdemServico.Numero.ToString())
             return result
         else: 
             Utils.LogError("Json " + json.ToString() , "Debug " + OrdemServico.Numero.ToString())
-            
+            result = response.Content.ReadAsStringAsync().Result
+            Utils.LogError("Resposta com status erro: " + result.ToString() , "Debug " + OrdemServico.Numero.ToString())
             Utils.LogError("Erro na API 1: " + response.StatusCode.ToString() + " Detalhes: " + response.Content.ReadAsStringAsync().Result.ToString(), "Erro " + OrdemServico.Numero.ToString())        
         return result
     

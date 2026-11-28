@@ -68,7 +68,10 @@ Prefixos úteis em `docs/`: `dados_<tabela>` (modelo de dados), `objetos_<classe
   consultas prontas). Colunas **reais** de produção: `grep -P "^TABELA	" catalogo/schema_real.tsv`
   (schema completo de produção: 776 tabelas, 12.716 colunas, 2026-10-26; `catalogo/schema.txt` e `docs/dados_<tabela>.md` são a doc de 2018 e podem divergir).
   Tabela e coluna física de um campo: `grep -P "\tNOME_DO_CAMPO\t" catalogo/campos_banco.tsv` (mapa oficial da produção; `campos.tsv`, dos XMLs, pode divergir: `catalogo/campos_vs_banco.md`). Sintaxe Oracle.
+  Para **homologação** (difere da produção): `campos_homolog.tsv`, `schema_homolog.tsv`, `homolog_vs_producao.md`.
   Se faltar informação do banco, pedir ao usuário (só tem SELECT) uma consulta de `guias/consultas_banco.md`.
+- **Papel / aprovadores**: `catalogo/cadastros_apoio.md` (papéis, grupos e serviços existentes) e
+  `catalogo/papeis_scripts.md` (código dos papéis por script).
 - **Integração / API / web service**: `docs/web_services.md`, `docs/webservices.md`,
   `docs/iniciador_por_mensagem.md`, tutoriais 13 e 14; exemplos REST reais em `catalogo/biblioteca/api*.py`.
 - **Entender ou alterar um fluxo (XML)**: ler `fluxos/<nome>.md` (começar pelo `## Grafo do fluxo`);

@@ -1,6 +1,6 @@
 ---
 name: supravizio
-description: Base de conhecimento do Supravizio (BPMS da Venki) no ambiente da empresa do usuário, com a documentação oficial, resumos de 76 fluxos reais, a API de scripts IronPython, o schema Oracle real e os códigos de erro. Use SEMPRE que o usuário falar de Supravizio, Ordem de Serviço (OS), fluxo ou processo no Editor de Processos, papel, gateway/desvio, Entrada de Dados, campo customizado, grid, aprovação, subprocesso, Link Inicial, importação de fluxo ou XML exportado, scripts (Início, Validação, Fim, Modificado, Formulário carregado, Seleção de Atores, Evento) usando Formulario, OrdemServico, DB, Utils, Criticas, Atores ou Mensagem, consultas SQL em tabelas como OCORRENCIA, CP_ORDEM_SERVICO, CPE_*, CP_PESSOA ou CAD_FUNCIONARIO_V, ou mensagens de erro com código SV/PR/RH/CF/PT, mesmo que a palavra Supravizio não apareça. Cobre escrever scripts mínimos, montar SQL, desenhar fluxos, entender XMLs, chamar APIs e explicar erros.
+description: Base de conhecimento do Supravizio (BPMS da Venki) no ambiente da empresa do usuário, com a documentação oficial, resumos de 98 fluxos reais, a API de scripts IronPython, o schema Oracle real e os códigos de erro. Use SEMPRE que o usuário falar de Supravizio, Ordem de Serviço (OS), fluxo ou processo no Editor de Processos, papel, gateway/desvio, Entrada de Dados, campo customizado, grid, aprovação, subprocesso, Link Inicial, importação de fluxo ou XML exportado, scripts (Início, Validação, Fim, Modificado, Formulário carregado, Seleção de Atores, Evento) usando Formulario, OrdemServico, DB, Utils, Criticas, Atores ou Mensagem, consultas SQL em tabelas como OCORRENCIA, CP_ORDEM_SERVICO, CPE_*, CP_PESSOA ou CAD_FUNCIONARIO_V, ou mensagens de erro com código SV/PR/RH/CF/PT, mesmo que a palavra Supravizio não apareça. Cobre escrever scripts mínimos, montar SQL, desenhar fluxos, entender XMLs, chamar APIs e explicar erros.
 ---
 
 # Supravizio
@@ -45,6 +45,9 @@ em `references/catalogo/` ou `buscar` com o nome.
 - **Escrever ou revisar script**: leia `references/guias/scripts.md` (onde cada script roda e as variáveis disponíveis);
   confira cada método em `references/guias/api_scripts.md`; ache o nome do campo e sua tabela com
   `grep -P "\tNOME\t" references/catalogo/campos_banco.tsv`; se precisar de prova de uso real, `buscar ... -t fluxo,catalogo`.
+- **Papel ou aprovador**: `references/catalogo/papeis_scripts.md` (scripts de Seleção de Atores) e
+  `references/catalogo/cadastros_apoio.md` (papéis, grupos e serviços; dados de homologação).
+- **Homologação**: o banco dela difere do de produção; use `campos_homolog.tsv`, `schema_homolog.tsv` e `homolog_vs_producao.md`.
 - **SQL**: leia `references/guias/sql.md` antes (regras de desempenho, índices, valores de domínio, consultas prontas).
   Colunas reais de produção: `grep -P "^TABELA\t" references/catalogo/schema_real.tsv` (776 tabelas, 2026-10-26); `dicionario_dll.tsv` e
   `docs/dados_<tabela>.md` ajudam a entender o significado. Sintaxe Oracle.

@@ -1,6 +1,6 @@
 # ValidaServPrest
 # Caminho: Catálogo > Biblioteca de scripts > ValidaServPrest
-# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
+# Fonte: Utilização_de_veículo_locado_Versão_10_Indenização_por_Guarda_e_zelo_do_veículo_da_frota_(Lote).xml
 
 def ValidaServPrest():
     if OrdemServico["PRJ_TIPO_SOLICITACAO"] == "Cadastrar":

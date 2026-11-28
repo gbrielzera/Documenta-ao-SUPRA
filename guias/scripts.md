@@ -49,6 +49,9 @@ Em **todos** os sete tipos abaixo: `OrdemServico`, `DB`, `Utils`, `AD`, `OpenLDA
 
 Portanto: `Criticas` só existe na Validação; `Formulario` só nos scripts de formulário; `Atividade` só em Início, Fim e Volta.
 Não testados: Modificado de coluna de grid, Seleção de Atores, Evento e recuperação de opções.
+Seleção de Atores, por uso nos 268 scripts de papéis de homologação [banco]: `Atores`, `OrdemServico`, `DB`, `Utils`;
+`Atores.Adiciona(pessoa, "motivo")`, `Pessoa.Carrega(id)`, `OrdemServico.Favorecido.ObtemChefia(True)`.
+Código completo em `catalogo/papeis_scripts.md`.
 A fórmula do desvio é uma expressão única; nela `AdicionaComentario` funcionou (retorna `None`), útil para depurar:
 `OrdemServico.AdicionaComentario("texto", False) is None`.
 

@@ -25,7 +25,9 @@ SAIDA = RAIZ / "skill-build" / "supravizio"
 DIST = RAIZ / "dist"
 CATALOGO = ["campos_banco.tsv", "campos.tsv", "schema_real.tsv", "schema.txt", "dicionario_dll.tsv",
             "classes_supravizio.tsv", "modulos_supravizio.tsv", "tabelas_customizadas.md",
-            "tabelas_usadas_em_sql.md", "campos_vs_banco.md", "erros_supravizio.md"]
+            "tabelas_usadas_em_sql.md", "campos_vs_banco.md", "erros_supravizio.md", "campos_homolog.tsv",
+            "schema_homolog.tsv", "homolog_vs_producao.md", "cadastros_apoio.md", "papeis_scripts.md",
+            "relacoes_centrais.tsv", "fluxos_producao.md", "motivos_interrupcao_ans.md", "runtime_19.md"]
 
 
 def adaptar(texto):

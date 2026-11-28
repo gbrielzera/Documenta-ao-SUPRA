@@ -22,6 +22,11 @@ resultados grandes na conversa é pesado e já fez um resultado sumir. Depois de
   contra o mapa de campos; os tipos delas ainda não estão em `schema_real.tsv`.
 - `all_views` para `CAD_FUNCIONARIO_V`: vazio (o objeto é de outro schema, ver abaixo).
 
+## Já feitas (homologação, 2026-11-27)
+Schema, mapa de campos, mapa de fluxos, motivos de ANS, consultas 1, 2, 3, 4 e 6 abaixo, cadastros de apoio (papéis,
+serviços, grupos, modelos, jobs) e scripts dos papéis. Resultados em `catalogo/*homolog*`, `catalogo/relacoes_centrais.tsv`,
+`catalogo/cadastros_apoio.md`, `catalogo/papeis_scripts.md` e `guias/sql.md`. **Falta repetir em produção.**
+
 ## Pendentes, por prioridade
 
 ### 1. Valores de código de PESSOA (a consulta rodou sem resultado colado)

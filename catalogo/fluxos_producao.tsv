@@ -3,22 +3,22 @@ CSCREEMBOLSO	Reembolso	Sim	25646	sim
 DESLOCAMENTO0	Deslocamento a Serviço	Sim	23150	sim
 PRESDESLOC	Prestação de Contas - Deslocamento	Sim	22312	sim
 SOLVALETRANSPDIA	Solicitação de Vale Transporte Mensal	Sim	9367	sim
-INDENAGUARD	Indenização por Guarda e Zelo do Veículo Locado	Sim	9245	nao
+INDENAGUARD	Indenização por Guarda e Zelo do Veículo Locado	Sim	9245	sim
 AUXILIOHOMEOFFICE	Auxílio Home Office	Sim	6816	sim
 IDENIZACAOBASE	Indenização Por Lotação em Base Destacada	Sim	5910	sim
-CODETICA2324	Ciência do Código de Ética 2025/2026	Sim	3515	nao
+CODETICA2324	Ciência do Código de Ética 2025/2026	Sim	3515	sim
 FALARGEPES	Fale com a Gepes	Sim	3392	sim
 CADEQUIPAMENTOTOA	Cadastro de Equipamento TOA	Sim	3233	sim
-ACEITEPOL900	Aceite POL900 - Política de Compliance	Sim	3144	nao
+ACEITEPOL900	Aceite POL900 - Política de Compliance	Sim	3144	sim
 AVALIFORNECEDORES	Avaliação de Fornecedores	Sim	3039	nao
 INSERIRDOCSGESCON	Inserir Documentos Contratuais no Sisccon	Sim	2824	sim
-GPESSOASTEMPORARIO	Gestão de Pessoas - Trabalhador Temporário	Sim	2512	nao
-ANONIMIZACAO	Anonimização de Dados Pessoais	Sim	2325	nao
-EMISEXTMENSAL	Emissão de Extrato Mensal	Sim	2245	nao
+GPESSOASTEMPORARIO	Gestão de Pessoas - Trabalhador Temporário	Sim	2512	sim
+ANONIMIZACAO	Anonimização de Dados Pessoais	Sim	2325	sim
+EMISEXTMENSAL	Emissão de Extrato Mensal	Sim	2245	sim
 CSCGDP	Avaliação de Desempenho	Sim	2230	nao
-CONTASPAGAR	Financeiro - Contas a Pagar	Sim	2187	nao
+CONTASPAGAR	Financeiro - Contas a Pagar	Sim	2187	sim
 INDICPV	Indicadores - Programa Valor	Sim	2080	sim
-TERMODEDESIGNACAO	Termo de Designação de Interveniente	Sim	1857	nao
+TERMODEDESIGNACAO	Termo de Designação de Interveniente	Sim	1857	sim
 POSTOLOCOMOCOES	Locomoção a Serviço	Sim	1852	nao
 ACEITECARTPREVACIDEN	Aceite da Cartilha de Saúde, orientação e prevenção de acidentes	Sim	1651	nao
 ATTPERFILESPEC	Atualizar Perfil/Especialidade	Sim	1628	sim
@@ -81,7 +81,7 @@ CSCGENERICO	Outros Serviços - Comercial, Gestão de Pessoas, Jurídico e Suprim
 SOLICITARPAGAMENTOSJUDICIAIS	Solicitar Pagamentos Judiciais	Sim	471	nao
 ATUALIZARDADOSERP	Atualizar dados manualmente no ERP	Sim	471	nao
 REEMBPROTESOL	Reembolso de protetor solar	Sim	470	nao
-INDVEICULOFROTALOTE	Indenização por Guarda e zelo do veículo da frota (Lote)	Sim	462	nao
+INDVEICULOFROTALOTE	Indenização por Guarda e zelo do veículo da frota (Lote)	Sim	462	sim
 RECEBIMENTOEPI	Recebimento de EPI ou EPC	Sim	460	sim
 LCPSBBTS	Editais de Licitações - Publicação site BBTS	Sim	456	nao
 SEGPATRIMONIAL	Serviço de Segurança Patrimonial  - Controle de Acesso	Sim	453	nao
@@ -349,7 +349,7 @@ BBP	Baixa de Bem Patrimonial	Sim	6	nao
 AINADAPCEDBB	Auxilio/Incentivo Adaptação Cedidos BB	Sim	6	nao
 CONFLITOINTERESSE	Conflito de Interesse	Sim	6	nao
 CONJURDF	Repactuação	Sim	6	nao
-GDPEXPERIENCIA	Avaliação Período Experiência - GDP	Sim	6	nao
+GDPEXPERIENCIA	Avaliação Período Experiência - GDP	Sim	6	sim
 INFORMARCAOCONTA	Informação Contábil	Sim	5	nao
 LICENCAMATERNIDADE	Licença Maternidade	Nao	5	nao
 NFCANCELA	Cancelamento de Notas Fiscais	Sim	5	nao
@@ -445,7 +445,7 @@ DESATIVARDGCO	Solicitar desativação de DGCO	Sim	0	nao
 RPT1	Relatórios	Sim	0	nao
 CONSFISCCADCLI	Consulta Fiscal - Cadastro de Clientes	Sim	0	nao
 COTACOESLICITACOESE	Cotações Licitações-e	Nao	0	nao
-AVALFORNECEDOR	Avaliação de Fornecedor	Nao	0	nao
+AVALFORNECEDOR	Avaliação de Fornecedor	Nao	0	sim
 TERMORESPINV	Termo de Responsabilidade - Inventário (Posse em Função Gerencial)	Nao	0	nao
 GER	Grande exposição e/ou Risco - Gejur	Sim	0	nao
 SDESTAB	Serviços Despachantes - Estabelecimento	Nao	0	nao

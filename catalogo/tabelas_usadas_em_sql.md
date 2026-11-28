@@ -4,87 +4,102 @@ Caminho: Catálogo > Banco > Tabelas usadas em SQL
 Extraído de todos os scripts dos XMLs (FROM/JOIN/UPDATE/INTO). Número = scripts distintos que a citam.
 Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabelas do cliente.
 
-- PESSOA: 314 — docs/dados_pessoa.md
-- CP_PESSOA: 154
-- CAD_FUNCIONARIO_V: 120
-- ORGAO: 102 — docs/dados_orgao.md
-- OCORRENCIA: 101 — docs/dados_ocorrencia.md
-- CPE_CSC: 46
-- CP_ORDEM_SERVICO: 42
-- ORDEM_SERVICO: 39 — docs/dados_ordem_servico.md
-- CLASSE_SUB_PROCESSO: 37 — docs/dados_classe_sub_processo.md
-- SV_DOMAIN: 28 — docs/dados_sv_domain.md
+- PESSOA: 344 — docs/dados_pessoa.md
+- CP_PESSOA: 176
+- CAD_FUNCIONARIO_V: 137
+- ORGAO: 121 — docs/dados_orgao.md
+- OCORRENCIA: 116 — docs/dados_ocorrencia.md
+- CPE_CSC: 60
+- CP_ORDEM_SERVICO: 48
+- ORDEM_SERVICO: 43 — docs/dados_ordem_servico.md
+- CLASSE_SUB_PROCESSO: 39 — docs/dados_classe_sub_processo.md
+- SV_DOMAIN: 36 — docs/dados_sv_domain.md
 - CRONOGRAMA_DOD: 26
-- VERSAO_APROVACAO: 24 — docs/dados_versao_aprovacao.md
-- APROVACAO: 24 — docs/dados_aprovacao.md
-- ASSUNTO_APROVACAO: 24 — docs/dados_assunto_aprovacao.md
+- ASSUNTO_APROVACAO: 25 — docs/dados_assunto_aprovacao.md
+- VERSAO_APROVACAO: 25 — docs/dados_versao_aprovacao.md
+- APROVACAO: 25 — docs/dados_aprovacao.md
 - SV_PARAM: 22
+- SERVICES_PARAM: 22
 - SERVICO: 21 — docs/dados_servico.md
-- CPE_CONTRATOS: 20
+- CPE_CONTRATOS: 21
+- PS_ESTAB_TBL: 20
 - CPE_FINANCEIRO: 20
 - DEPENDENTES_BENEFICIOS_V: 19
-- SERVICES_PARAM: 18
+- VW_SV_CAD_SCR_COB_GL_CENTRO: 18
 - CIDADE_V: 17
 - FERIADO: 17 — docs/dados_feriado.md
 - TB_CUSTOM_PONTUACAO_PEC: 16
 - CALENDARIO: 16 — docs/dados_calendario.md
 - TB_PRIORIZACAO_V2: 15
-- CPE_DESLOCAMENTO: 15
+- CPE_HOMOLOGACAO: 15
 - CPE_CONTRATOS02: 15
+- CPE_DESLOCAMENTO: 15
 - TB_CUSTOM_EDITAL_PEC: 14
 - COB_GL_CENTRO: 13
-- CPE_HOMOLOGACAO: 13
 - MTL_SYSTEM_ITEMS_B: 12
-- PS_ESTAB_TBL: 12
 - TB_PRIORIZACAO: 11
-- VW_SV_CAD_SCR_COB_GL_CENTRO: 10
-- SUB_PROCESSO: 9 — docs/dados_sub_processo.md
-- Z_00143_GRID_DESIGNACAO: 9
+- SUB_PROCESSO: 10 — docs/dados_sub_processo.md
+- PER_ALL_PEOPLE_F: 10
+- DESENHO_PROCESSO: 9 — docs/dados_desenho_processo.md
+- SV_MESSAGE: 9 — docs/dados_sv_message.md
 - Z_00143_ADIT_SOL: 9
+- Z_00143_GRID_DESIGNACAO: 9
 - Z_00143_DADOS_CONTRATOS_C: 9
+- XXBBTSGATE.VW_BBTS_AP_INVOICES_INTERFACE: 9
+- AP_INVOICES_ALL: 9
 - Z_00143_INFORMACAO_FATURAMENTO: 9
 - ITEM: 9 — docs/dados_item.md
 - ITEM_OCORRENCIA: 9 — docs/dados_item_ocorrencia.md
+- NEWTONSOFT.JSON: 9
+- SYSTEM.IO: 9
+- NEWTONSOFT.JSON.LINQ: 9
+- SYSTEM.NET.HTTP.HEADERS: 9
+- SYSTEM.TEXT: 9
+- SYSTEM.TEXT.REGULAREXPRESSIONS: 9
+- SYSTEM.NET.HTTP: 9
 - Z_00143_LISTA_MEDICAMENTOS: 8
-- DESENHO_PROCESSO: 8 — docs/dados_desenho_processo.md
-- SV_MESSAGE: 8 — docs/dados_sv_message.md
-- FIN_AGR: 8
-- ULTIMO_APROV: 8
-- CTRT_AGR: 8
-- AA_ULTIMO: 8
-- ULTIMO_APROVADOR: 8
-- ULTIMO_AA: 8
-- APROVADOR_POR_OCORRENCIA: 8
+- CPE_PESSOAS: 8
 - OS_AGR: 8
+- FIN_AGR: 8
+- ULTIMO_APROVADOR: 8
+- AA_ULTIMO: 8
+- CTRT_AGR: 8
+- APROVADOR_POR_OCORRENCIA: 8
+- ULTIMO_APROV: 8
+- ULTIMO_AA: 8
+- BBTS_GESCON_FORNECEDOR: 8
+- VW_BBTS_GL_INTERFACE_SV_PROCES: 8
+- XXBBTSGATE.VW_BBTS_GL_INTERFACE: 8
 - Z_00143_VALOR_REF_UNIT: 8
-- CPE_PESSOAS: 7
-- XXBBTSGATE.VW_BBTS_AP_INVOICES_INTERFACE: 7
-- AP_INVOICES_ALL: 7
 - ATIVIDADE: 6 — docs/dados_atividade.md
 - MACRO_PROCESSO: 6 — docs/dados_macro_processo.md
 - PROCESSO: 6 — docs/dados_processo.md
 - PS_BBTS_ETAPA_CON2: 6
 - CPE_ORDEM_SERVICO: 6
-- XXBBTSGATE.VW_BBTS_GL_INTERFACE: 6
-- VW_BBTS_GL_INTERFACE_SV_PROCES: 6
 - Z_00143_LISTA_NF: 5
 - FORNECEDOR_COMPRAS: 5
-- VW_BBTS_SV_PLANO_CONTAS: 5
 - COBGATE.PLANO_CONTAS: 5
+- VW_BBTS_SV_PLANO_CONTAS: 5
 - TB_CAD_REEMBOLSO: 5
 - CLASSE_SERVICO: 5 — docs/dados_classe_servico.md
 - ESTADO_V: 5
+- BBTS_GESCON_FUNCIONARIO: 5
 - XXBBTSGATE.VW_BBTS_SV_FA_DADOS_DO_BEM: 5
+- BBTS_GESCON_CONTRATO: 5
+- TA_10: 5
 - TECNICO: 4 — docs/dados_tecnico.md
 - TB_CAD_SUBSERVICO: 4
 - ORG_ORGANIZATION_DEFINITIONS: 4
-- PER_ALL_PEOPLE_F: 4
+- PER_ALL_ASSIGNMENTS_F: 4
 - TID: 4
 - Z_00143_PRECIF_CRONOGRAMA: 4
+- SV_MESSAGE_ATTACH: 4 — docs/dados_sv_message_attach.md
+- SERVICES_PRAM: 4
 - TB_FERIADOS_MUNICIPAIS: 4
-- BBTS_GESCON_FORNECEDOR: 4
 - Z_00143_LISTA_REEMBOLSO_OTICO: 4
 - Z_00143_UOR: 4
+- BBTS_GESCON_DESIGNACAO: 4
+- ERP_RESP_V: 4
 - CLIENTES_VENDA_V: 3
 - TB_EC_OBJETIVO: 3
 - LISTA_UNIDADE_MEDIDA: 3
@@ -93,8 +108,6 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - REST_SERVICO: 3 — docs/dados_rest_servico.md
 - BBTS_PSF_FUNCIONARIO_DEP_VW: 3
 - ASSOCIACAO_OCORR: 3 — docs/dados_associacao_ocorr.md
-- SERVICES_PRAM: 3
-- SV_MESSAGE_ATTACH: 3 — docs/dados_sv_message_attach.md
 - CPE_NEGOCIOS: 3
 - CLL_F189_ENTRY_OPERATIONS: 3
 - Z_00143_DADOS_BEM_INV_COM_ETI: 3
@@ -102,6 +115,8 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - Z_00143_VALOR_REFERENCIAL: 3
 - CPE_BOOTCAMP: 3
 - XXBBTSGATE.VW_BBTS_PROD_NF_MTL_SYSTEM_ITEMS_B: 3
+- VW_BBTS_TRABALHADOR_TEMPORARIO: 3
+- PER_ADDRESSES: 3
 - COBRA_HIERARQUIA: 2
 - EMPRESA: 2 — docs/dados_empresa.md
 - GRUPO_TRABALHO: 2 — docs/dados_grupo_trabalho.md
@@ -110,6 +125,7 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - TB_NN_SERVICO: 2
 - Z_00143_LISTA_PESSOAS: 2
 - FND_LOOKUPS: 2
+- PS_BBTS_FUNCS_VW: 2
 - VW_BBTS_NFE_DESTINATARIO: 2
 - RA_CUST_TRX_TYPES_ALL: 2
 - VW_BBTS_NFE_TRANSPORTE: 2
@@ -120,17 +136,20 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - XXBBTSGATE.VW_BBTS_OC_CONTA_ORC: 2
 - XXBBTSGATE.FND_LOOKUP_VALUES: 2
 - SV_CUSTOM_PROPERTY: 2 — docs/dados_sv_custom_property.md
-- Z_00143_PCMSO_ATESTADOS: 2
-- CPE_SAUDE_OCUPACIONAL: 2
-- PS_GP_ABS_EVENT: 2
 - PS_GP_ABS_RSN_LANG: 2
+- Z_00143_PCMSO_ATESTADOS: 2
+- PS_GP_ABS_EVENT: 2
+- CPE_SAUDE_OCUPACIONAL: 2
 - PO_VENDORS: 2
+- Z_00143_GUIASJUDICIAIS: 2
+- Z_00143_AVALIACAO_FORNECEDOR: 2
 - Z_00143_AGENDAMENTO_DATA_HORA_PSICO: 2
 - CLL_F189_INVOICES: 2
 - XXBBTSGATE.TB_BBTS_LOG_INTEGRA_SV_ERP: 2
 - XXBBTSGATE.VW_BBTS_SV_FA: 2
 - Z_00143_PESQUISA_MERCADO_5: 2
 - Z_00143_CIDADES_CLASSIFICACOES: 2
+- SI_ACESSOS: 2
 - SAUDE_BENEFIC_DEP_ALL_V: 1
 - TB_CAD_PEC_APROVADO: 1
 - SI_ADM_COLABORADORES_V: 1
@@ -139,10 +158,10 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - EXECUCAO_ATIVIDADE: 1 — docs/dados_execucao_atividade.md
 - TB_EC_ACOES: 1
 - TB_NN_TIPO_SERVICO: 1
-- MXD_V_DOCUMENTO: 1
-- MXD_DOCUMENTO: 1
 - MXD_DOC_ANEXO: 1
+- MXD_DOCUMENTO: 1
 - MXD_V_DOC_ANEXO: 1
+- MXD_V_DOCUMENTO: 1
 - TB_REEMBOLSO_SUBSERVICO: 1
 - SV_GAP: 1
 - SINDICATO2: 1
@@ -152,8 +171,8 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - LISTA_TIPO_ITEM: 1
 - LISTA_ORIGEM_ITEM: 1
 - LISTA_LOCALIDADE: 1
-- MTL_CATEGORIES_V: 1
 - VW_BBTS_LISTA_FAMILIA_REPARO: 1
+- MTL_CATEGORIES_V: 1
 - VW_BBTS_TIPO_LOCAL: 1
 - MTL_UNITS_OF_MEASURE_TL: 1
 - VW_BBTS_BANCOS_ESTABELECIMENTO: 1
@@ -165,16 +184,14 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - VW_BBTS_LOCAL_TIPO_LOCAL: 1
 - VW_BBTS_COD_LOCAL: 1
 - USER_TABLES: 1
-- PS_JPM_JP_ITEMS: 1
-- PS_BBTS_FUNCS_VW: 1
 - XXBBTSGATE.COBRA_HIERARQUIA: 1
+- PS_JPM_JP_ITEMS: 1
 - PS_JPM_PROFILE_VW: 1
 - PS_BANK_EC_TBL: 1
 - ESTADO_CIVIL_V: 1
 - AP_SUPPLIERS: 1
-- HR_ALL_ORGANIZATION_UNITS: 1
 - PER_PERSON_TYPE_USAGES_F: 1
-- PER_ALL_ASSIGNMENTS_F: 1
+- HR_ALL_ORGANIZATION_UNITS: 1
 - PS_BBTS_LOC_ATEND: 1
 - Z_TABELA_DA_GRID: 1
 - VW_BBTS_PS_FUNC_DEPEND: 1
@@ -189,10 +206,8 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - Z_00143_PAGAMENTO_A_TERCEIROS: 1
 - SV_CUSTOM_PROPERTY_SCOPE: 1 — docs/dados_sv_custom_property_scope.md
 - SYSTEM.XML: 1
-- Z_00143_GUIASJUDICIAIS: 1
 - Z_00143_LISTA_AGEND_ESTACAO_TRABALHO: 1
 - CPE_RECONHECER: 1
-- Z_00143_AVALIACAO_FORNECEDOR: 1
 - Z_00143_APROVADOR_PB: 1
 - Z_00143_GRID_PESSOAS: 1
 - Z_00143_SELECAPROV: 1
@@ -200,7 +215,6 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - Z_00143_EQUIPAMENTOS: 1
 - XXBBTSGATE.BBTS_PS_JOBCODE_TBL: 1
 - XXBBTSGATE.PER_PERSON_TYPES: 1
-- BBTS_GESCON_FUNCIONARIO: 1
 - CONSULTOR_HITACHI: 1
 - Z_00143_PESQUISA_MERCADO4: 1
 - Z_00143_PESQUISA_MERCADO6: 1
@@ -215,3 +229,12 @@ Tabelas ausentes do modelo de dados oficial (docs/dados_*.md) são views ou tabe
 - Z_00143_LISTA_TRATAMENTO: 1
 - Z_00143_LISTAPCD_TERAPIAS: 1
 - Z_00143_LISTAPCD_COO: 1
+- Z_00143_CSC_LISTA_RESP_ERP: 1
+- SI_LOGON: 1
+- PS_BANK_BRANCH_TBL: 1
+- PS_PYE_BANKACCT: 1
+- PS_BANK_BRCH_BRA: 1
+- Z_00143_FISCAL_SER: 1
+- BBTS_GESCON_INSTRUMENTO_CONTRATUAL: 1
+- TESTE_ARQ: 1
+- XXBBTSGATE.BBTS_GESCON_FORN_CONTR_AVALIACAO: 1

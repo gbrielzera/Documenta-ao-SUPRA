@@ -1,6 +1,6 @@
 # IncluirNoEscopo
 # Caminho: Catálogo > Biblioteca de scripts > IncluirNoEscopo
-# Fonte: Reembolsos__I.A_Versão_1_Reembolso_-_Iniciativa_IA.xml
+# Fonte: Utilização_de_veículo_locado_Versão_10_Indenização_por_Guarda_e_zelo_do_veículo_da_frota_(Lote).xml
 
 # Observação: ainda não foi utilizado em produção. Falta verificar se existe permissão para gravar na tabela 'SV_CUSTOM_PROPERTY_SCOPE'
 # ATENÇÃO: Este script deve ser chamado no "Script Início" do  "evento inicial" para cadastrar todos os escopos utilizados no fluxo

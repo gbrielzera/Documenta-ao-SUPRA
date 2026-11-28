@@ -13,7 +13,8 @@ Já entregues: 1, 2, 11 e 14 (e o 4 em parte). A ordem abaixo põe primeiro o qu
 
 | Ordem | Item | Tempo | O que é | Ganho |
 |---|---|---|---|---|
-| 1 | 6 | 20 min | XMLs dos próximos 10 maiores fluxos sem resumo | cobertura das OS de 53,4% para ~68% |
+| 1 | 5, 9, 16 | 15 min | repetir em **produção** as consultas já feitas em homologação | SQL e propostas com dados de produção |
+| 1b | 6 | 20 min | XMLs dos próximos 10 maiores fluxos sem resumo | cobertura das OS de 65,6% para ~73% |
 | 2 | 4 | 10 min | variáveis dos tipos de script que faltam (4) | variáveis certas em cada tipo de script |
 | 3 | 16 | 2 min | reexportar o mapa de campos | nomes e colunas de campos novos (ex.: `PEC_*`) |
 | 4 | 3 | 15 min + testes | testes T1–T4 em Qualidade | receitas centrais viram `[testado]` |
@@ -196,8 +197,10 @@ ajusta o passo a passo.
   deixam os resumos fiéis ao que roda de verdade.
 - [~] **Recebido em 2026-11-19:** 11 XMLs (Deslocamento, Prestação de Contas, Vale Transporte, Home Office, Base Destacada e o
   lote dela, Equipamento TOA, Reembolso v93, Reembolso IA, PBEE, Faturamento). A cobertura das OS passou de 21,6% para **53,4%**.
-- **Próximo alvo** (`catalogo/fluxos_producao.md`), leva a cobertura a ~68%: INDENAGUARD, CODETICA2324, ACEITEPOL900,
-  AVALIFORNECEDORES, GPESSOASTEMPORARIO, ANONIMIZACAO, EMISEXTMENSAL, CSCGDP, CONTASPAGAR, TERMODEDESIGNACAO.
+- [~] **Recebido em 2026-11-27:** mais 11 XMLs; cobertura **65,6%**. Atenção: o "Avaliação de Fornecedor" enviado é
+  AVALFORNECEDOR (0 OS) e o de GDP é GDPEXPERIENCIA; os de volume são **AVALIFORNECEDORES** e **CSCGDP**.
+- **Próximo alvo** (`catalogo/fluxos_producao.md`), leva a cobertura a ~73%: AVALIFORNECEDORES, CSCGDP, POSTOLOCOMOCOES,
+  ACEITECARTPREVACIDEN, CONFISCOTRIBUTARIA, FINANCEIROREVERSAORI, CADASTROFORNECEDOR, GESTAOQUALIDADEEVOLUA, FALEPV, CONJUR.
 - **Cuidado com o nome do arquivo:** se o título tiver nome de pessoa (ex.: "(Fulana)"), o chat tira antes de resumir.
 - **Como fazer:** exporte da **produção** os fluxos acima (guia geral, "XMLs"). Mesmo poucos já ajudam.
 - **Como enviar:** copie os `.xml` para `XMLs para teste` e avise os nomes.
@@ -287,3 +290,4 @@ ajusta o passo a passo.
 | 2026-11-26 | 4 | Variáveis e tipos de 5 tipos de script confirmados por teste em Qualidade (`guias/scripts.md`) |
 | 2026-11-26 | 4 | Variáveis do Volta e da Fórmula do desvio; edição de XML importada com sucesso |
 | 2026-11-26 | 3 e 4 (parcial) | Diagnóstico do ambiente de scripts: módulos Python, referências .NET, bibliotecas, membros em tempo de execução, versão do Oracle (`catalogo/runtime_19.md`) |
+| 2026-11-27 | 6, 2, 14, 16, 5, 9 (homologação) | 11 XMLs (98 fluxos; cobertura 65,6%); em homologação: schema, campos, fluxos, motivos, valores de PESSOA, donos de objetos, chaves, matrícula repetida, cadastros de apoio e scripts de papéis |

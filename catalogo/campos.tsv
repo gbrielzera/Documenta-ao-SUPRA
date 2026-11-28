@@ -100,6 +100,7 @@ OrdemServico	AQUISICAO_GASTO	Trata-se de aquisição/investimento ou gasto(custo
 OrdemServico	AQUISICAO_PRESTACAO_SERVICOS_MPBS	Aquisição ou Prestação de Serviços - Modelo de Projeto Básico Simplificado	RecordList	DataGrid	Z_00143_AQUISICAO_PRESTACAO_SERVICOS_MPBS	AQUISICAO_PRESTACAO_SERVICOS_MPBS			
 OrdemServico	AQUISICAO_SERVICO	Aquisição ou Prestação de Serviço	String	TextBox	CPE_CONTRATOS	AQUISICAO_SERVICO			
 OrdemServico	AREA	Área 	RecordList	DataGrid	Z_00143_AREA	AREA	200		
+OrdemServico	AREA_APROVACAO_GLOSA	Área responsável pela aprovação	String	TextBox	CPE_FINANCEIRO	AREA_APROVACAO_GLOSA			
 OrdemServico	AREA_ATUACAO_CESEC	Áreas de Atuação - CESEC	String	DropDownList	CPE_CONTRATOS02	AREA_ATUACAO_CESEC	100		3000003341 - CENTRO DE SERVICOS COMPARTILHADOS DE CONTRATOS;3000003610 - CENTRO DE SERVICOS COMPARTILHADOS DE FINANCAS;3
 OrdemServico	AREA_CAD_BEM	Área 	String	TextBox	CPE_CSC	AREA_CAD_BEM			
 OrdemServico	AREA_DE_CONCILIACAO	Area de Conciliação	String	DropDownList	CPE_CONTRATOS	AREA_DE_CONCILIACAO			Contas a Pagar;Contas a Receber;Contabilidade;Contas a Pagar e Contas a Receber;Contas a Pagar e Contabilidade;Contas a 
@@ -338,6 +339,7 @@ OrdemServico	CNPJ_E	CNPJ	String	TextBox	CPE_ECOMERCE	CNPJ_E
 OrdemServico	CNPJ_FATURAMENTO	CNPJ de Faturamento	RecordList	DataGrid	Z_00143_CNPJ_FATURAMENTO	CNPJ_FATURAMENTO			
 OrdemServico	CNPJ_FORNECEDOR	CNPJ	String	TextBox	CP_ORDEM_SERVICO	CNPJ_FORNECEDOR			
 OrdemServico	CNPJ_FORN_QUALIF	CNPJ do Fornecedor - Qualificação Financeira	String	TextBox	CPE_FINANCEIRO	CNPJ_FORN_QUALIF			
+OrdemServico	CNPJ_PARA_FATURAMENTO	CNPJ de Faturamento	RecordList	DataGrid	Z_00143_CNPJ_PARA_FATURAMENTO	CNPJ_PARA_FATURAMENTO			
 OrdemServico	CNPJ_REEMBOLSO	CNPJ	String	TextBox	CPE_CSC	CNPJ_REEMBOLSO			
 OrdemServico	CNPJ_RISCO	CNPJ - Risco Cliente	String	TextBox	CPE_FINANCEIRO	CNPJ_RISCO			
 OrdemServico	CNPJ_SINDICATO	CNPJ do Sindicato	String	TextBox	CPE_CSC	CNPJ_SINDICATO			
@@ -2087,7 +2089,7 @@ OrdemServico	LIMITE_SALARIOS	Limite Salários	String	TextBox	CPE_PDCI2019	LIMITE
 OrdemServico	LIMITE_SUPERIOR	Limite Superior	String	TextBox	CPE_PDCI2019	LIMITE_SUPERIOR			
 OrdemServico	LINK_COMPRA_ITEM	Link de compra do Item	String	TextBox	CPE_ECOMERCE	LINK_COMPRA_ITEM			
 OrdemServico	LINK_LAUDO_CPE_CSC	Link Laudo	String	TextBox	CPE_CSC	LINK_LAUDO_CPE_CSC			
-OrdemServico	LINK_PROCESSO	Link do Teor do Processo	String	TextBox	CPE_CJUR	LINK_PROCESSO			
+OrdemServico	LINK_PROCESSO	Link do Teor do Processo	String	TextBox	CPE_CJUR	LINK_PROCESSO	600		
 OrdemServico	LISTA	Tipo de Pedido	String	DropDownList	CPE_CSC	LISTA			Contrato;Aditivo;Ata de registro de preço;Apostilamento;Convênio
 OrdemServico	LISTA DA AREA RESPONSAVEL	Lista da area responsavel	String	DropDownList	CPE_PESSOAS	LISTA_DA_AREA_RESPONSAVEL			Contas a receber;Contas a pagar
 OrdemServico	LISTA LIBERACAO VERBA TRABALHISTA	Lista liberacao Verba Trabalhista	String	DropDownList	CPE_CSC	LISTA_LIBERACAO_VERBA_TRABALHISTA			Férias;Rescisão;13º Salário (1ª parcela); 13º Salário (2ª parcela)
@@ -3142,6 +3144,7 @@ OrdemServico	PIX_TIPO	Tipo PIX	String	TextBox	CPE_CSC	PIX_TIPO
 OrdemServico	PLACA	Placa do carro	String	TextBox	CPE_CSC	PLACA	80		
 OrdemServico	PLANEJAMENTO_CEAS	Planejamento	RecordList	DataGrid	Z_00143_PLANEJAMENTO_CEAS	PLANEJAMENTO_CEAS			
 OrdemServico	PLANO	Plano	String	Memo	CP_ORDEM_SERVICO	PLANO	800		
+OrdemServico	PLANOS_DE_DADOS	Planos de dados	String	DropDownList	CPE_CSC	PLANOS_DE_DADOS		S	
 OrdemServico	PLANO_BALANCETE	Plano Balanço Patrimonial	String	DropDownList	CP_ORDEM_SERVICO	PLANO_BALANCETE	1000	S	
 OrdemServico	PLANO_BBTS_PREV	Plano BBTS Prev	String	TextBox	CPE_PDCI2019	PLANO_BBTS_PREV			
 OrdemServico	PLANO_DRE	Plano DRE	String	DropDownList	CP_ORDEM_SERVICO	PLANO_DRE	1000	S	
@@ -4138,6 +4141,7 @@ OrdemServico	TIPO_ELEICAO_CIPA	Tipo de Processo Eleitoral	String	DropDownList	CP
 OrdemServico	TIPO_EXCLUSAO	Tipo Exclusão Reembolso Plano de Saúde	String	DropDownList	CPE_PESSOAS	TIPO_EXCLUSAO			Titular e Dependentes;Apenas Dependentes
 OrdemServico	TIPO_FORNECEDOR	Tipo de Fornecedor	String	DropDownList	CPE_CSC	TIPO_FORNECEDOR			Concessionárias de serviços públicos; Fundos Assistenciais; Transportador Contratado por Terceiros; Obrigações Judiciais
 OrdemServico	TIPO_FORNECEDOR_PDPEP	Tipo Fornecedor	String	DropDownList	CPE_CSC	TIPO_FORNECEDOR_PDPEP			Pessoa física;Pessoa Jurídica
+OrdemServico	TIPO_GLOSA	Tipo de glosa	String	DropDownList	CPE_FINANCEIRO	TIPO_GLOSA			Glosa de ISS;Demais glosas
 OrdemServico	TIPO_GRUPO	Tipos de Grupos do Lotus Notes	String	DropDownList	CP_ORDEM_SERVICO	TIPO_GRUPO			Grupo de Email;Grupo de Controle de Acesso;Grupo de Bloqueio;Grupo de Aprovação
 OrdemServico	TIPO_HOSPEDAGEM	Tipo de Hospedagem	String	DropDownList	CPE_DESLOCAMENTO	TIPO_HOSPEDAGEM			Contratada;Avulsa;Avulsa SEM apresentação de NF;Sem Hospedagem
 OrdemServico	TIPO_HOSPEDAGEM_GERED	Tipo de Hospedagem	String	DropDownList	CPE_DESLOCAMENTO	TIPO_HOSPEDAGEM_GERED			Contratada;Avulsa;Sem Hospedagem

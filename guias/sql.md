@@ -49,9 +49,11 @@ Qualidade, que tem mais campos que a produção (inferência).
   (4.702), E estagiário (1.354), P prestador de serviço (656), G menor aprendiz (488), T temporário (337),
   B cedido Banco do Brasil (256), L funcionários CCLP (214), R terceiro (136), O conselheiro (53),
   D diretor não empregado (20), F diretor empregado (1), e 4 linhas em branco.
-- `PESSOA.ATIVO`: `'Sim'` / `'Nao'` por documentação e uso nos fluxos (15 scripts); três scripts usam `'S'`,
-  que não casa. Os valores reais de `PESSOA.ATIVO`, `PESSOA.TIPO_COLABORADOR` e `PESSOA.TIPO` **ainda não
-  foram levantados** (a consulta rodou sem resultado colado): `guias/consultas_banco.md`.
+- `PESSOA` (homologação, 2026-11-27; confirmar contagens em produção): `ATIVO` = `'Sim'` (3.282) ou `'Nao'` (5.356);
+  `TIPO_COLABORADOR` = `'Empregado'` (6.932) ou `'Terceiro'` (1.706); `TIPO` = `'Cliente'` (8.432) ou `'Fila'` (206).
+  Três scripts dos fluxos usam `ATIVO = 'S'`, que não casa.
+- Matrícula repetida em `CAD_FUNCIONARIO_V` (homologação): a consulta retornou 1 matrícula repetida; não trate a matrícula
+  como chave única sem conferir.
 
 ## Quantidade de linhas
 `PESSOA` 9.646; `CP_PESSOA` 5.648; `ORGAO` 788; `CAD_FUNCIONARIO_V` 13.873 (inclui desligados).
@@ -117,7 +119,12 @@ Só se conhece o **número de colunas** de cada um; as colunas de todas as 776 t
   (`owner = USER`): `CAD_FUNCIONARIO_V`, `SV_PARAM`, `CIDADE_V`, `ESTADO_V`, `DEPENDENTES_BENEFICIOS_V`, `CRONOGRAMA_DOD`,
   `TB_CUSTOM_*`, `TB_PRIORIZACAO*`, `PS_*` (PeopleSoft), `MTL_*`/`ORG_*` (ERP), `COB_GL_CENTRO`. São de outros schemas,
   acessados por sinônimo ou permissão; por isso a definição de `CAD_FUNCIONARIO_V` não saiu de `all_views`
-  (consulta vazia). Confirmar dono e tipo: consulta 2 de `guias/consultas_banco.md`.
+  (consulta vazia). **Donos (sinônimos, homologação 2026-11-27):** `XXBBTSGATE` é dono de `CAD_FUNCIONARIO_V` (há também
+  sinônimo apontando para `CAD_FUNCIONARIO_MV`, uma view materializada pelo nome), `CIDADE_V`, `ESTADO_V`,
+  `DEPENDENTES_BENEFICIOS_V`, `SV_PARAM` e `COB_GL_CENTRO`; `CRONOGRAMA_DOD` aparece em `SV_APP_AUX` e em `SV`.
+- Chaves estrangeiras e restrições das tabelas centrais: `catalogo/relacoes_centrais.tsv`.
+- **Homologação difere da produção** (tabelas, campos, motivos de ANS): `catalogo/homolog_vs_producao.md`,
+  `catalogo/campos_homolog.tsv`, `catalogo/schema_homolog.tsv`.
 
 ## Tamanhos: bytes no banco, caracteres no Supravizio
 Em `all_tab_columns`, `data_length` de `NVARCHAR2` é em **bytes** (2 por caractere). O campo do Supravizio mostra
